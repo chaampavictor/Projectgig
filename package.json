@@ -1,0 +1,15 @@
+{
+  "name": "projectgig",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.36",
+    "meteor-node-stubs": "^0.3.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-mount": "^0.1.3",
+    "react-mount-layout": "^1.1.7"
+  }
+}

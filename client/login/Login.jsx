@@ -23,55 +23,42 @@ class Login extends React.Component {
 
       <div>
         <Navbar/>
-<div className="container">
-        <div className="row">
-
-
-
-          <div className="col s6">
-
-            <div className="row center-align">
-              <div className="col s12 m6 l12">
-                <div className="card ">
-                  <div className="card-content">
-                    <span className="card-title">login</span>
-
-                    <div className="row">
-                      <form className="col s12 l6" onSubmit={this.login}>
-                        <div className="row">
-                          <div className="input-field col s6">
-                            <input id="email" type="text" className="validate" name='email'/>
-                            <label htmlFor="email">email</label>
+        <div className="container">
+          <div className="row">
+            <div className="col s12 l6">
+              <div className="row center-align">
+                <div className="col s12 m6 l12">
+                  <div className="card ">
+                    <div className="card-content">
+                      <span className="card-title">login</span>
+                      <div className="row">
+                        <form className="col s12 l6" onSubmit={this.login}>
+                          <div className="row">
+                            <div className="input-field col s6">
+                              <input id="email" type="text" className="validate" name='email'/>
+                              <label htmlFor="email">email</label>
+                            </div>
                           </div>
-                        </div>
-
-                        <div className="row">
-                          <div className="input-field col s12">
-                            <input id="password" type="password" className="validate" name='password'/>
-                            <label htmlFor="password">Password</label>
+                          <div className="row">
+                            <div className="input-field col s12">
+                              <input id="password" type="password" className="validate" name='password'/>
+                              <label htmlFor="password">Password</label>
+                            </div>
                           </div>
-                        </div>
-
-                        <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-                          <i className="material-icons right">send</i>
-                        </button>
-
-                      </form>
-
+                          <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i className="material-icons right">send</i>
+                          </button>
+                        </form>
+                      </div>
                     </div>
-
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-      </div>
-
         <Footer/>
       </div>
-
     );
   }
 }

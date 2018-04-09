@@ -35,10 +35,7 @@ width: 100%;
   background-image: url("/assets/lukas-robertson-27057-unsplash.jpg");
 }
 
-#nav_f {
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-}
+
 
 .text_h {
   padding: 15% 0;
@@ -237,6 +234,10 @@ nav ul a {
   /* change if the mask should have another color then white */
   z-index: 1200;
   /* makes sure it stays on top */
+}
+
+#sidenav-overlay{
+  z-index: 1;
 }
 
 @media only screen and (max-width: 480px) {

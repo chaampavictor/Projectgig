@@ -13,11 +13,11 @@ export class Profile extends React.Component {
       return;
     }
     return property.map((prop) => (
-      <li key={prop.user} className="collection-item dismissable">
-        <div>
+      <li >
+        <div key={prop.user} className="collection-item dismissable">
           <a href="#!" className="primary-content">{prop.type}<br/>{prop.location}</a>
-           <button className="right">edit</button>
-           <button className="right">delete</button>
+          <button className="right">edit</button>
+          <button className="right">delete</button>
         </div>
       </li>
     ))
@@ -30,8 +30,9 @@ export class Profile extends React.Component {
       <div>
         <Navbar/>
         <div className="container">
+          <a href="/property" className={`${this.props.property} link`} className="waves-effect waves-light btn-large">Add property</a>
           <div className="col s6">
-            <h4 className="center">property list</h4>
+            <h4 className="center">my property list</h4>
 
             <ul className="collection">
               {this.renderProperty()}

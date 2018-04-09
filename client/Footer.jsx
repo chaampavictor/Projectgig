@@ -13,22 +13,22 @@ export default class Footer extends Component {
                           <div className="row">
                               <div className="input-field col s6">
                                   <i className="mdi-action-account-circle prefix white-text"></i>
-                                  <input id="icon_prefix" name="name" type="text" class="validate white-text"></input>
-                                  <label for="icon_prefix" class="white-text">First Name</label>
+                                  <input id="icon_prefix" name="name" type="text" className="validate white-text"></input>
+                                  <label htmlFor="icon_prefix" className="white-text">First Name</label>
                               </div>
                               <div className="input-field col s6">
                                   <i className="mdi-communication-email prefix white-text"></i>
-                                  <input id="icon_email" name="email" type="email" class="validate white-text"></input>
-                                  <label for="icon_email" class="white-text">Email-id</label>
+                                  <input id="icon_email" name="email" type="email" className="validate white-text"></input>
+                                  <label htmlFor="icon_email" className="white-text">Email-id</label>
                               </div>
                               <div className="input-field col s12">
-                                  <i class="mdi-editor-mode-edit prefix white-text"></i>
-                                  <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
-                                  <label for="icon_prefix2" class="white-text">Message</label>
+                                  <i className="mdi-editor-mode-edit prefix white-text"></i>
+                                  <textarea id="icon_prefix2" name="message" className="materialize-textarea white-text"></textarea>
+                                  <label htmlFor="icon_prefix2" className="white-text">Message</label>
                               </div>
                               <div className="col offset-s7 s5">
-                                  <button class="btn waves-effect waves-light red darken-1" type="submit">Submit
-                                      <i class="mdi-content-send right white-text"></i>
+                                  <button className="btn waves-effect waves-light red darken-1" type="submit">Submit
+                                      <i className="mdi-content-send right white-text"></i>
                                   </button>
                               </div>
                           </div>
@@ -56,7 +56,7 @@ export default class Footer extends Component {
                           </li>
                           <li>
                               <a className="white-text" href="/">
-                                  <i class="small fa fa-intagram-square white-text"></i>Instagram
+                                  <i className="small fa fa-intagram-square white-text"></i>Instagram
                               </a>
                           </li>
                           <li>

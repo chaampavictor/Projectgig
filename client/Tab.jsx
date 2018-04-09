@@ -10,29 +10,29 @@ export default class Tab extends Component {
 
     return (
 
-      <div class="row">
-        <div class="col s12 l6 tab" >
-          <ul class="tabs">
-            <li class="tab col s3">
+      <div className="row">
+        <div className="col s12 l6 tab" >
+          <ul className="tabs">
+            <li className="tab col s3">
               <a href="#test1">our goal</a>
             </li>
-            <li class="tab col s3">
+            <li className="tab col s3">
               <a href="#test2">aim</a>
             </li>
-            <li class="tab col s3">
+            <li className="tab col s3">
               <a href="#test3">what we do</a>
             </li>
-            <li class="tab col s3">
+            <li className="tab col s3">
               <a href="#test4">team</a>
             </li>
           </ul>
         </div>
 
-        <div id="test1" class="col s12">
-          <div class="row">
-            <div class="col s12 m7 l12">
-              <div class="card">
-                <div class="card-content">
+        <div id="test1" className="col s12">
+          <div className="row">
+            <div className="col s12 m7 l12">
+              <div className="card">
+                <div className="card-content">
                   <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
                 </div>
               </div>
@@ -40,12 +40,12 @@ export default class Tab extends Component {
           </div>
         </div>
 
-        <div id="test2" class="col s12">
+        <div id="test2" className="col s12">
 
-          <div class="row">
-            <div class="col s12 m7 l12">
-              <div class="card">
-                <div class="card-content">
+          <div className="row">
+            <div className="col s12 m7 l12">
+              <div className="card">
+                <div className="card-content">
                   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
                 </div>
               </div>
@@ -54,11 +54,11 @@ export default class Tab extends Component {
 
         </div>
 
-        <div id="test3" class="col s12">
-          <div class="row">
-            <div class="col s12 m7 l12">
-              <div class="card">
-                <div class="card-content">
+        <div id="test3" className="col s12">
+          <div className="row">
+            <div className="col s12 m7 l12">
+              <div className="card">
+                <div className="card-content">
                   <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
                 </div>
               </div>
@@ -66,11 +66,11 @@ export default class Tab extends Component {
           </div>
         </div>
 
-        <div id="test4" class="col s12">
-          <div class="row">
-            <div class="col s12 m7 l12">
-              <div class="card">
-                <div class="card-content">
+        <div id="test4" className="col s12">
+          <div className="row">
+            <div className="col s12 m7 l12">
+              <div className="card">
+                <div className="card-content">
                   <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
                 </div>
               </div>

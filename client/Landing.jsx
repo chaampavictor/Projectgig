@@ -17,34 +17,34 @@ class Landing extends React.Component {
       <Navbar/>
               <Banner/>
 
-        <div id="intro" class="section scrollspy">
-          <div class="container">
-            <div class="row">
-              <div class="col s12">
-                <h2 class="center header text_h2">With over 1000 <span class="span_h2">
-                    listings </span>,5000 <span class="span_h2">
+        <div id="intro" className="section scrollspy">
+          <div className="container">
+            <div className="row">
+              <div className="col s12">
+                <h2 className="center header text_h2">With over 1000 <span className="span_h2">
+                    listings </span>,5000 <span className="span_h2">
                     unique visitors </span>
                    per month.</h2>
               </div>
-              <div class="col s12 m4 l4">
-                <div class="center promo promo-example">
-                  <i class="mdi-image-flash-on"></i>
-                  <h5 class="promo-caption">Realtime Search Experience</h5>
-                  <p class="light center">Search for accomodation and get results in the quickest time possible.</p>
+              <div className="col s12 m4 l4">
+                <div className="center promo promo-example">
+                  <i className="mdi-image-flash-on"></i>
+                  <h5 className="promo-caption">Realtime Search Experience</h5>
+                  <p className="light center">Search for accomodation and get results in the quickest time possible.</p>
                 </div>
               </div>
-              <div class="col s12 m4 l4">
-                <div class="center promo promo-example">
-                  <i class="mdi-social-group"></i>
-                  <h5 class="promo-caption">Easy User Experience</h5>
-                  <p class="light center">your dream accomodation is just a click away</p>
+              <div className="col s12 m4 l4">
+                <div className="center promo promo-example">
+                  <i className="mdi-social-group"></i>
+                  <h5 className="promo-caption">Easy User Experience</h5>
+                  <p className="light center">your dream accomodation is just a click away</p>
                 </div>
               </div>
-              <div class="col s12 m4 l4">
-                <div class="center promo promo-example">
-                  <i class="mdi-hardware-desktop-windows"></i>
-                  <h5 class="promo-caption">Fully responsive</h5>
-                  <p class="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+              <div className="col s12 m4 l4">
+                <div className="center promo promo-example">
+                  <i className="mdi-hardware-desktop-windows"></i>
+                  <h5 className="promo-caption">Fully responsive</h5>
+                  <p className="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                 </div>
               </div>
             </div>
@@ -53,43 +53,43 @@ class Landing extends React.Component {
 
         {/* Testimonials start here */}
 
-        <div class="container">
-          <h2 class="header text_b">Testimonials</h2>
-          <div class="row">
-            <div class="col sm12 m4 l4">
-              <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="assets/bale.jpeg"></img>
+        <div className="container">
+          <h2 className="header text_b">Testimonials</h2>
+          <div className="row">
+            <div className="col sm12 m4 l4">
+              <div className="card">
+                <div className="card-image waves-effect waves-block waves-light">
+                  <img className="activator" src="assets/bale.jpeg"/>
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Project Title
-                    <i class="mdi-navigation-more-vert right"></i>
+                <div className="card-content">
+                  <span className="card-title activator grey-text text-darken-4">Project Title
+                    <i className="mdi-navigation-more-vert right"></i>
                   </span>
                   <p>Here is some more information about this project that is only revealed once clicked on.</p>
                 </div>
               </div>
             </div>
-            <div class="col s12 m4 l4">
-              <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="assets/bane.jpeg"></img>
+            <div className="col s12 m4 l4">
+              <div className="card">
+                <div className="card-image waves-effect waves-block waves-light">
+                  <img className="activator" src="assets/bane.jpeg"/>
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Project Title
-                    <i class="mdi-navigation-more-vert right"></i>
+                <div className="card-content">
+                  <span className="card-title activator grey-text text-darken-4">Project Title
+                    <i className="mdi-navigation-more-vert right"></i>
                   </span>
                   <p>Here is some more information about this project that is only revealed once clicked on.</p>
                 </div>
               </div>
             </div>
-            <div class="col s12 m4 l4">
-              <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="assets/arrow.jpeg"></img>
+            <div className="col s12 m4 l4">
+              <div className="card">
+                <div className="card-image waves-effect waves-block waves-light">
+                  <img className="activator" src="assets/arrow.jpeg"/>
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Project Title
-                    <i class="mdi-navigation-more-vert right"></i>
+                <div className="card-content">
+                  <span className="card-title activator grey-text text-darken-4">Project Title
+                    <i className="mdi-navigation-more-vert right"></i>
                   </span>
                   <p>Here is some more information about this project that is only revealed once clicked on.</p>
                 </div>

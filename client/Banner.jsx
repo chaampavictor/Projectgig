@@ -8,25 +8,18 @@ export default class Banner extends Component {
 
 
     return (
-      <div class="section no-pad-bot" id="index-banner">
-          <div class="container">
-            <div class="col l6 s12">
+      <div className="section no-pad-bot" id="index-banner">
+          <div className="container">
+            <div className="col l12 s12">
 
 
 
 
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
 
-          <div class="input-field col s6">
-            <input id="icon_telephone" type="tel" class="validate"></input>
-            <label for="icon_search">search</label>
-            <i class="material-icons prefix">search</i>
-          </div>
-        </div>
-      </form>
-    </div>
+              <form className="example">
+                <input type="text" placeholder="Search.." name="search"></input>
+                <button type="submit"><i className="fa fa-search"></i></button>
+              </form>
 
 
             </div>

@@ -15,6 +15,7 @@ class Login extends React.Component {
       error
         ? console.log(error.reason)
         : console.log('logged in ')
+          FlowRouter.go('profile')
     });
   }
 
@@ -22,7 +23,7 @@ class Login extends React.Component {
     return (
 
       <div>
-        <Navbar/>
+      <Navbar/>
         <div className="container">
           <div className="row">
             <div className="col s12 l6">

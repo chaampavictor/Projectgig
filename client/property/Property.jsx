@@ -7,6 +7,11 @@ import Navbar from '../Navbar';
 
 class Property extends React.Component {
 
+
+  myCallBack(err,id){
+    FlowRouter.go('profile')
+  }
+
   static handleSubmit(event) {
     event.preventDefault()
     const propertyname = event.target.name.value
@@ -24,7 +29,11 @@ class Property extends React.Component {
       description,
       contact,
       status: false
-    })
+    },(err,id)=>this.myCallBack(err,id)
+  )
+
+
+
   }
 
   render() {

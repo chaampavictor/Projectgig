@@ -13,8 +13,8 @@ export class Profile extends React.Component {
       return;
     }
     return property.map((prop) => (
-      <li >
-        <div key={prop.user} className="collection-item dismissable">
+      <li key={Math.random()}>
+        <div  className="collection-item dismissable">
           <a href="#!" className="primary-content">{prop.type}<br/>{prop.location}</a>
           <button className="right">edit</button>
           <button className="right">delete</button>

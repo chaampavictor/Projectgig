@@ -20,7 +20,16 @@ class Registration extends React.Component {
       password,
       profile
     }
-    Accounts.createUser(user);
+
+    Accounts.createUser(user, (err)=> {
+
+      if (err) {
+        console.log(err.reason);
+      }
+      FlowRouter.go('profile')
+    });
+
+
   }
 
 

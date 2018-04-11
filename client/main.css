@@ -283,21 +283,29 @@ footer.page-footer {
   margin-top: 0px !important;
 }
 
+.hr-style{
+color: red;
+width: 60%;
+}
 /*tabs*/
 
 .tab a {
-  color: #8c001a;
+  color: green;
 }
-
+.tab{
+  align-items: center;
+}
 /*search input form*/
 
 form.example input[type=text] {
-  padding: 10px;
+  padding: 0px;
   font-size: 17px;
   border: 1px solid grey;
   float: left;
   width: 80%;
   background: #f1f1f1;
+    border-radius: 50px;
+    margin: 110px 71px 30px 23px;
 }
 
 form.example button {
@@ -306,9 +314,9 @@ form.example button {
   padding: 10px;
   background: #2196F3;
   color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
+  font-size: 13px;
+  border: 1px ;
+  /*border-left: none;*/
   cursor: pointer;
 }
 
@@ -321,5 +329,16 @@ form.example::after {
   clear: both;
   display: table;
 }
+
+.search-input{
+
+}
+
+/*card styling*/
+.testimony-card{
+  border-radius: 100px 100px 100px;
+}
+
+
 
 /*login/signup*/

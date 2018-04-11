@@ -11,9 +11,9 @@ export default class Banner extends Component {
         <div className="container">
           <div className="col l12 s12">
             <form className="example">
-              <input type="text" placeholder="Search.." name="search"></input>
+              <input type="text" className="search-input" placeholder="Search.." name="search"></input>
               <button type="submit">
-                <i className="fa fa-search"></i>
+                <i className="fa fa-search"/>
               </button>
             </form>
           </div>

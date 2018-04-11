@@ -51,14 +51,15 @@ class Landing extends React.Component {
           </div>
         </div>
 
+<hr className="hr-style"/>
         {/* Testimonials start here */}
 
         <div className="container">
           <h2 className="header text_b">Testimonials</h2>
           <div className="row">
-            <div className="col sm12 m4 l4">
-              <div className="card">
-                <div className="card-image waves-effect waves-block waves-light">
+            <div className="col sm12 m4 l4 ">
+              <div className="card testimony-card">
+                <div className="card-image waves-effect waves-block waves-light testimony-card">
                   <img className="activator" src="assets/bale.jpeg"/>
                 </div>
                 <div className="card-content">
@@ -70,8 +71,8 @@ class Landing extends React.Component {
               </div>
             </div>
             <div className="col s12 m4 l4">
-              <div className="card">
-                <div className="card-image waves-effect waves-block waves-light">
+              <div className="card testimony-card">
+                <div className="card-image waves-effect waves-block waves-light testimony-card">
                   <img className="activator" src="assets/bane.jpeg"/>
                 </div>
                 <div className="card-content">
@@ -83,9 +84,9 @@ class Landing extends React.Component {
               </div>
             </div>
             <div className="col s12 m4 l4">
-              <div className="card">
-                <div className="card-image waves-effect waves-block waves-light">
-                  <img className="activator" src="assets/arrow.jpeg"/>
+              <div className="card testimony-card">
+                <div className="card-image waves-effect waves-block waves-light testimony-card">
+                  <img className="activator" src="assets/bane.jpeg"/>
                 </div>
                 <div className="card-content">
                   <span className="card-title activator grey-text text-darken-4">Project Title

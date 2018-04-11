@@ -4,6 +4,25 @@ import React, {Component} from 'react';
 
 export default class Banner extends Component {
 
+  constructor() {
+        super();
+        this.state = {
+            searchText: '',
+            searchResults: []
+        }
+    }
+
+    onChange(e) {
+        this.setState({searchText: e.target.value});
+    }
+
+    getResults() {
+        calltodb(searchText).then(e => {
+            this.setState({searchResults: e.value})
+        });
+    }
+
+
   render() {
 
 
@@ -11,16 +30,12 @@ export default class Banner extends Component {
       <div className="section no-pad-bot" id="index-banner">
           <div className="container">
             <div className="col l12 s12">
+              
 
-
-
-
-
-              <form className="example">
-                <input type="text" placeholder="Search.." name="search"></input>
-                <button type="submit"><i className="fa fa-search"></i></button>
-              </form>
-
+            <form>
+               <input   placeholder="Search for..."   ref={input => this.search = input}   onChange={this.handleInputChange} />
+               <p>{this.state.query}</p>
+            </form>
 
             </div>
           </div>

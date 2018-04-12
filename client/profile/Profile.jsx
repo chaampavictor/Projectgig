@@ -16,12 +16,23 @@ export class Profile extends React.Component {
       <li key={Math.random()}>
         <div  className="collection-item dismissable">
           <a href="#!" className="primary-content">{prop.type}<br/>{prop.location}</a>
-          <button className="right">edit</button>
-          <button className="right">delete</button>
+          <button  className="delete right" onClick={this.deleteThisProperty.bind(this, prop._id)}>delete</button>
+          <button className="right" onClick={this.editThisProperty.bind(this, prop._id)}>edit</button>
         </div>
       </li>
     ))
   }
+
+  deleteThisProperty(id, e) {
+    e.preventDefault();
+  Listproperty.remove(id);
+}
+//   editThisProperty(id, e) {
+//     e.preventDefault();
+//   Listproperty.update(id);
+// }
+
+
 
   render() {
 
@@ -36,6 +47,7 @@ export class Profile extends React.Component {
 
             <ul className="collection">
               {this.renderProperty()}
+
             </ul>
           </div>
         </div>

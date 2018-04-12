@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Meteor} from 'meteor/meteor';
-
 export default class Footer extends Component {
 
   render() {
@@ -9,12 +8,12 @@ export default class Footer extends Component {
       <footer id="separate" className="page-footer default_color scrollspy">
           <div className="container">
               <div className="row">
-                  
+
                   <div className="col l3 s12">
                       <h5 className="white-text">projectGIg</h5>
                       <ul>
-                          <li><a className="white-text" href="/">Home</a></li>
-                          <li><a className="white-text" href="/">Blog</a></li>
+                          <li><a className="white-text"  href="/" className={` link`}>Home</a></li>
+
                       </ul>
                   </div>
                   <div className="col l3 s12">

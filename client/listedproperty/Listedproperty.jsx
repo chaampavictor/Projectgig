@@ -13,15 +13,15 @@ export class Listedproperty extends React.Component {
       return;
     }
     return property.map((prop) => (
-      <li key={prop.user} className="collection-item dismissable">
-        <div>
+      // <li >
+        <div key={prop.user} className="collection-item dismissable">
             {/* <a href="#!" className="primary-content"></a> */}
           <a href="#!" className="primary-content">{prop.propertyname}  {prop.location}</a>
           <br/>
           {prop.description}
 
         </div>
-      </li>
+      // </li>
     ))
   }
 
@@ -37,9 +37,9 @@ export class Listedproperty extends React.Component {
 
           <h4 className="center">property list</h4>
 
-          <ul className="collection">
+          <div className="collection">
             {this.renderProperty()}
-          </ul>
+          </div>
         </div>
       </div>
     </div>

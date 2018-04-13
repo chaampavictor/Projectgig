@@ -17,7 +17,8 @@ export class Profile extends React.Component {
         <div  className="collection-item dismissable">
           <a href="#!" className="primary-content">{prop.type}<br/>{prop.location}</a>
           <button  className="delete right" onClick={this.deleteThisProperty.bind(this, prop._id)}>delete</button>
-          <button className="right" onClick={this.editThisProperty.bind(this, prop._id)}>edit</button>
+          <button className="right" >edit</button>
+
         </div>
       </li>
     ))
@@ -41,9 +42,9 @@ export class Profile extends React.Component {
       <div>
         <Navbar/>
         <div className="container">
-          <a href="/property" className={`${this.props.property} link`} className="waves-effect waves-light btn-large">Add property</a>
-          <div className="col s6">
-            <h4 className="center">my property list</h4>
+          <div className="col s12">
+            <a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button">Add Property</a>
+            <h5 className="center prop-list">my property list</h5>
 
             <ul className="collection">
               {this.renderProperty()}

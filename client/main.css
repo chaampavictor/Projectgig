@@ -16,6 +16,19 @@
   padding-top: 4rem;
 }
 
+#prop-button{
+  margin-top: 109px;
+   margin-bottom: 12px;
+   margin-right: 150px;
+   margin-left: 39%;
+   border-radius: 12px;
+   background-color: #0b7dda;
+}
+.nav-button{
+  margin-top: -25px;
+
+}
+
 #index-banner {
   /*
 
@@ -335,9 +348,7 @@ form.example::after {
 }
 
 /*card styling*/
-.testimony-card{
-  border-radius: 100px 100px 100px;
-}
+
 
 
 

@@ -70,7 +70,7 @@ class Registration extends React.Component {
                           </div>
                         </div>
 
-                        <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
                           <i className="material-icons right">send</i>
                         </button>
 

@@ -13,9 +13,9 @@ export default class Tab extends Component {
 
       <div className="row">
         <div className="col s12 tab " >
-          <ul className="tabs">
+          <ul className="tabs tab-buttons">
             <li className="tab col s3">
-              <a href="#test1">our goal</a>
+              <a href="#test1" className="">our goal</a>
             </li>
             <li className="tab col s3">
               <a href="#test2">aim</a>

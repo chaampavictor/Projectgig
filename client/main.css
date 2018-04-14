@@ -1,11 +1,11 @@
 /* CSS declarations go here */
 
 .default_color {
-  background-color: #8c001a !important
+  background-color: #0b7dda !important
 }
 
 .default_color_text {
-  color: #8c001a !important
+  color: #0b7dda !important
 }
 
 .icon-block {
@@ -14,6 +14,11 @@
 
 #intro, #work, #team {
   padding-top: 4rem;
+}
+
+.submit-button{
+  border-radius: 12px;
+   background-color: #0b7dda;
 }
 
 #prop-button{
@@ -27,6 +32,30 @@
 .nav-button{
   margin-top: -25px;
 
+}
+
+.tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #0b7dda;
+    will-change: left, right;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color:#0b7dda;
+}
+.tabs .tab a{
+  color:#0b7dda;
+
+width: 100%;
+height: 100%;
+padding: 0 24px;
+font-size: 14px;
+text-overflow: ellipsis;
+overflow: hidden;
+transition: color .28s ease;
 }
 
 #index-banner {
@@ -71,12 +100,12 @@
 
 .span_h2 {
   font-weight: 300;
-  color: #8c001a;
+  color:#0b7dda;
 }
 
 .text_b {
   text-align: center;
-  color: #8c001a;
+  color: #0b7dda;
 }
 
 .in {
@@ -96,14 +125,6 @@
 
 .card-content a:hover {
   color: #2196F3;
-}
-
-#work, #team {
-  background: rgb(247, 247, 247);
-}
-
-.text_pink {
-  color: #EF9A9A;
 }
 
 nav ul a {
@@ -297,7 +318,7 @@ footer.page-footer {
 }
 
 .hr-style{
-color: red;
+color: #0b7dda;
 width: 60%;
 }
 /*tabs*/
@@ -346,6 +367,7 @@ form.example::after {
 .search-input{
 
 }
+
 
 /*card styling*/
 

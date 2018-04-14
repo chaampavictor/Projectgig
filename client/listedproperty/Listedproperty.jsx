@@ -15,8 +15,8 @@ export class Listedproperty extends React.Component {
     return property.map((prop) => (
 
       <div className="row">
-        <div className="col s12 m6">
-          <div className="card  darken-1">
+        <div className="col s12 m6 l6">
+          <div className="card  ">
             <div key={prop.user} className="collection-item dismissable">
               <div className="card-content ">
                 <span className="card-title">Card Title</span>
@@ -30,7 +30,7 @@ export class Listedproperty extends React.Component {
           </div>
         </div>
       </div>
-  
+
     ))
   }
 

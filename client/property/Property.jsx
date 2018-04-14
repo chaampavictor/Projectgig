@@ -14,8 +14,8 @@ class Property extends React.Component {
 
   static handleSubmit(event) {
     event.preventDefault()
-    const propertyname = event.target.name.value
     const type = event.target.type.value
+    const propertyname = event.target.name.value
     const location = event.target.location.value
     const price = event.target.price.value
     const description = event.target.description.value

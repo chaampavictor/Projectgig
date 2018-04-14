@@ -8,14 +8,13 @@ export default class Tab extends Component {
     $(document).ready(function() {
       $('.tabs').tabs();
     });
-
     return (
 
       <div className="row">
-        <div className="col s12 tab " >
-          <ul className="tabs">
+        <div className="col s12 tab ">
+          <ul className="tabs tab-buttons">
             <li className="tab col s3">
-              <a href="#test1">our goal</a>
+              <a href="#test1" className="">our goal</a>
             </li>
             <li className="tab col s3">
               <a href="#test2">aim</a>
@@ -64,7 +63,6 @@ export default class Tab extends Component {
             </div>
           </div>
         </div>
-
 
       </div>
 

@@ -14,8 +14,8 @@ class Property extends React.Component {
 
   static handleSubmit(event) {
     event.preventDefault()
-    const propertyname = event.target.name.value
     const type = event.target.type.value
+    const propertyname = event.target.name.value
     const location = event.target.location.value
     const price = event.target.price.value
     const description = event.target.description.value
@@ -94,7 +94,7 @@ class Property extends React.Component {
                             </div>
                           </div>
 
-                          <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                          <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
                             <i className="material-icons right">send</i>
                           </button>
 

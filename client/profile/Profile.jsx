@@ -13,13 +13,24 @@ export class Profile extends React.Component {
       return;
     }
     return property.map((prop) => (
-      <li key={Math.random()}>
-        <div  className="collection-item dismissable">
-          <a href="#!" className="primary-content">{prop.type}<br/>{prop.location}</a>
-          <button  className="delete right" onClick={this.deleteThisProperty.bind(this, prop._id)}>delete</button>
-          <button className="right" onClick={this.editThisProperty.bind(this, prop._id)}>edit</button>
-        </div>
-      </li>
+      <div key={Math.random()}>
+        <div className="row">
+          <div className="col s12 m6 l6 ">
+            <div className="card ">
+              <div className="card-content ">
+                <span className="card-title">{prop.propertyname}</span>
+                {prop.description}
+                </div>
+                <div className="card-action">
+                  <a href="#">{prop.contact}</a>
+                  <a href="#">{prop.location}</a>
+                  <a className="delete right" onClick={this.deleteThisProperty.bind(this, prop._id)}>delete</a>
+                  <a href="#" className="delete right">edit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     ))
   }
 
@@ -27,13 +38,6 @@ export class Profile extends React.Component {
     e.preventDefault();
   Listproperty.remove(id);
 }
-//   editThisProperty(id, e) {
-//     e.preventDefault();
-//   Listproperty.update(id);
-// }
-
-
-
   render() {
 
     return (
@@ -41,14 +45,10 @@ export class Profile extends React.Component {
       <div>
         <Navbar/>
         <div className="container">
-          <a href="/property" className={`${this.props.property} link`} className="waves-effect waves-light btn-large">Add property</a>
-          <div className="col s6">
-            <h4 className="center">my property list</h4>
-
-            <ul className="collection">
+          <div className="col s12 m6">
+            <a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button">Add Property</a>
+            <h5 className="center prop-list">my property list</h5>
               {this.renderProperty()}
-
-            </ul>
           </div>
         </div>
         <Footer/>

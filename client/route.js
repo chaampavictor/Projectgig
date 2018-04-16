@@ -5,6 +5,7 @@ import Landing from '../client/Landing.jsx';
 import About from '../client/about/About.jsx';
 import Registration from '../client/registration/Registration.jsx';
 import Property from '../client/property/Property.jsx';
+import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
 import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
 import Profile from '../client/profile/Profile.jsx';
 import Login from '../client/login/Login.jsx';
@@ -40,6 +41,12 @@ FlowRouter.route('/property', {
       mount(Property,{
       });
     }
+});
+FlowRouter.route('/propertydetail', {
+  action: () => {
+    mount(Propertydetail,{
+    });
+  }
 });
 FlowRouter.route('/listedproperty', {
     action: () => {

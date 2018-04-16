@@ -46,6 +46,7 @@ componentDidMount(){
   </li>
 
     <li><a href="/profile" className={`${this.profile} link`}>profile</a></li>
+    <div className="divider"></div>
     <li><a href="/property" className={`${this.property} link`}>add property</a></li>
 
     <li><div className="divider"></div></li>
@@ -54,14 +55,13 @@ componentDidMount(){
   </ul>
   <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="material-icons">menu</i></a>
 
-<div className="center">
-<a href="/" className={` link`}><h6>LOGO</h6></a>
-</div>
 
-  <div className="right">
 
-    <a href="/about" className={`${this.about} link`}><button>about</button></a>
-    <a href="#" onClick={e => this.logout(e)}><button>logout</button></a>
+  <div className="right logged-nav-button">
+
+    <a href="/" className={` link`}><button>Home</button></a>
+    <a href="/about" className={`${this.about} link`}><button>About</button></a>
+    <a href="#" onClick={e => this.logout(e)}><button>Logout</button></a>
 
   </div>
 </>

@@ -22,9 +22,9 @@ class Landing extends React.Component {
             <div className="row">
               <div className="col s12">
                 <h2 className="center header text_h2">Find the  <span className="span_h2">
-                    accomodation </span>,that suits your <span className="span_h2">
-                    needs </span>
-                   from over a thousand listed properties</h2>
+                  accomodation </span>,that suits your <span className="span_h2">
+                  needs </span>
+                  from over a thousand listed properties</h2>
               </div>
               <div className="col s12 m4 l4">
                 <div className="center promo promo-example">

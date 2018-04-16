@@ -29,7 +29,7 @@ export default class Banner extends Component {
       <div className="section no-pad-bot" id="index-banner">
           <div className="container">
             <div className="col l12 s12">
-           
+
             {/* {{> search}} */}
 
             <form>
@@ -41,22 +41,8 @@ export default class Banner extends Component {
 
           </div>
         </div>
-      </div>
+
 
     )
   }
 }
-{/* <template name="search"> 
-<form id="search">
-<input type="text" id="searchValue" placeholder="Enter search terms here."/>
-<button>Search</button>
-</form>
-<hr/>
-<h1>Messages</h1>
-<ol>
-{{#each messages}}
-  <li>{{value}}</li>
-{{/each}}
-</ol>
-
-</template> */}

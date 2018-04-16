@@ -14,9 +14,9 @@ export class Listedproperty extends React.Component {
     }
     return property.map((prop) => (
 
-      <li key={prop.user} className="collection-item dismissable">
+
         <div>
-            {/* <a href="#!" className="primary-content"></a> */}
+
           <a href="/propertydetail" className="primary-content">{prop.propertyname}  {prop.location}</a>
           <br/>
           {prop.description}
@@ -38,14 +38,13 @@ export class Listedproperty extends React.Component {
           </div>
         </div>
       </div>
+</div>
 
     ))
   }
 
   render() {
-
     return (
-
       <div>
         <Navbar/>
         <div className="container">

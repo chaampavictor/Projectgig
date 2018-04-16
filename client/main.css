@@ -16,70 +16,74 @@
   padding-top: 4rem;
 }
 
-.submit-button{
+.submit-button {
   border-radius: 12px;
-   background-color: #0b7dda;
+  background-color: #0b7dda;
 }
 
-.btn, .btn-large, .btn-flat{
+.btn, .btn-large, .btn-flat {
   border: none;
-border-radius: 2px;
-display: initial;
-padding: 12px 1rem;
-height: 36px;
-line-height: 36px;
-padding: 13 2rem;
-text-transform: none;
-vertical-align: middle;
+  border-radius: 2px;
+  display: initial;
+  padding: 12px 1rem;
+  height: 36px;
+  line-height: 36px;
+  padding: 13 2rem;
+  text-transform: none;
+  vertical-align: middle;
 }
-
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-    color:  #0b7dda;
-    margin-right: 24px;
-    transition: color .3s ease;
-    text-transform: uppercase;
+  color: #0b7dda;
+  margin-right: 24px;
+  transition: color .3s ease;
+  text-transform: uppercase;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
-    color: #0b7dda;
+  color: #0b7dda;
 }
 
-#prop-button{
+#prop-button {
   margin-top: 109px;
-   margin-bottom: 12px;
-   margin-right: 150px;
-   margin-left: 39%;
-   border-radius: 12px;
-   background-color: #0b7dda;
+  margin-bottom: 12px;
+  margin-right: 150px;
+  margin-left: 39%;
+  border-radius: 12px;
+  background-color: #0b7dda;
 }
-.nav-button{
-  margin-top: -25px;
 
+.nav-button {
+  margin-top: -25px;
 }
+
+.logged-nav-button {
+  margin-top: 0;
+}
+
 
 .tabs .indicator {
-    position: absolute;
-    bottom: 0;
-    height: 2px;
-    background-color: #0b7dda;
-    will-change: left, right;
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #0b7dda;
+  will-change: left, right;
 }
 
 .tabs .tab a:hover, .tabs .tab a.active {
-    background-color: transparent;
-    color:#0b7dda;
+  background-color: transparent;
+  color: #0b7dda;
 }
-.tabs .tab a{
-  color:#0b7dda;
 
-width: 100%;
-height: 100%;
-padding: 0 24px;
-font-size: 14px;
-text-overflow: ellipsis;
-overflow: hidden;
-transition: color .28s ease;
+.tabs .tab a {
+  color: #0b7dda;
+  width: 100%;
+  height: 100%;
+  padding: 0 24px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: color .28s ease;
 }
 
 #index-banner {
@@ -94,7 +98,6 @@ transition: color .28s ease;
   height: 450px;
   /*min-height: 500px;
   max-height: 664px;*/
-
   background-image: url("/assets/rawpixel-com-597438-unsplash.jpg");
 }
 
@@ -124,7 +127,7 @@ transition: color .28s ease;
 
 .span_h2 {
   font-weight: 300;
-  color:#0b7dda;
+  color: #0b7dda;
 }
 
 .text_b {
@@ -341,18 +344,21 @@ footer.page-footer {
   margin-top: 0px !important;
 }
 
-.hr-style{
-color: #0b7dda;
-width: 60%;
+.hr-style {
+  color: #0b7dda;
+  width: 60%;
 }
+
 /*tabs*/
 
 .tab a {
   color: green;
 }
-.tab{
+
+.tab {
   align-items: center;
 }
+
 /*search input form*/
 
 form.example input[type=text] {
@@ -362,20 +368,23 @@ form.example input[type=text] {
   float: left;
   width: 80%;
   background: #f1f1f1;
-    border-radius: 50px;
-    margin: 110px 71px 30px 23px;
+  border-radius: 50px;
+  margin: 110px 71px 30px 23px;
 }
 
 form.example button {
   float: left;
-  width: 20%;
-  padding: 10px;
+  /*width: 20%;*/
+  /*padding: 10px;*/
   background: #2196F3;
   color: white;
   font-size: 13px;
-  border: 1px ;
-  /*border-left: none;*/
+  border: 1px;
+  border-radius: 12px;
+  border-left: none;
   cursor: pointer;
+  /*margin-left: 38%;
+  margin-top: -30px;*/
 }
 
 form.example button:hover {
@@ -387,15 +396,9 @@ form.example::after {
   clear: both;
   display: table;
 }
-
-.search-input{
-
-}
-
-
+ .example{
+   display: flex;
+ }
 /*card styling*/
-
-
-
 
 /*login/signup*/

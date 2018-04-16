@@ -22,8 +22,8 @@ class Property extends React.Component {
     const contact = event.target.contact.value
     Listproperty.insert({
       owner: Meteor.userId(),
-      propertyname,
       type,
+      propertyname,
       location,
       price,
       description,

@@ -12,7 +12,7 @@ export default class Footer extends Component {
                   <div className="col l3 s12">
                       <h5 className="white-text">projectGIg</h5>
                       <ul>
-                          <li><a className="white-text"  href="/" className={` link`}>Home</a></li>
+                          <li><a className="white-text"  href="/" className={` link`} id="footer-home">Home</a></li>
 
                       </ul>
                   </div>

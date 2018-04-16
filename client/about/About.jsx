@@ -19,7 +19,7 @@ class About extends React.Component {
 
 <Tab/>
 
-        <Footer/>
+        <Footer className="fixed-bottom"/>
       </div>
 
     );

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-
-
-
+import {Meteor} from 'meteor/meteor';
+import Navbar from './Navbar';
 export default class Banner extends Component {
 
   constructor() {
@@ -23,6 +22,7 @@ export default class Banner extends Component {
     }
 
 
+
   render() {
     // const name = this.props.searchBoxName || undefined
     return (
@@ -38,10 +38,10 @@ export default class Banner extends Component {
             </form>
 
             </div>
+
           </div>
+        </div>
       </div>
-
-
 
     )
   }

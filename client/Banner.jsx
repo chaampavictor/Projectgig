@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-
-
-
+import {Meteor} from 'meteor/meteor';
+import Navbar from './Navbar';
 export default class Banner extends Component {
 
   constructor() {
@@ -22,6 +21,7 @@ export default class Banner extends Component {
         });
     }
 
+<<<<<<< HEAD
 
   render() {
     // const name = this.props.searchBoxName || undefined
@@ -38,10 +38,22 @@ export default class Banner extends Component {
             </form>
 
             </div>
+=======
+    return (
+      <div className="section" id="index-banner">
+          <Navbar/>
+        <div className="container">
+          <div className="col l12 s12">
+            <form className="example">
+              <input type="text" className="search-input" placeholder="Search.." name="search"></input>
+              <button type="submit">
+                <i className="fa fa-search"/>
+              </button>
+            </form>
+>>>>>>> 518753af5be06828c5a2fb0179da2915d1d23934
           </div>
+        </div>
       </div>
-
-
 
     )
   }

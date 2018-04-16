@@ -2,7 +2,7 @@ import React from 'react';
 import {Meteor} from 'meteor/meteor';
 import Footer from './Footer';
 import Banner from './Banner';
-import Navbar from './Navbar';
+
 
 class Landing extends React.Component {
   render() {
@@ -14,17 +14,17 @@ class Landing extends React.Component {
     return (
 
       <div>
-      <Navbar/>
+
               <Banner/>
 
         <div id="intro" className="section scrollspy">
           <div className="container">
             <div className="row">
               <div className="col s12">
-                <h2 className="center header text_h2">With over 1000 <span className="span_h2">
-                    listings </span>,5000 <span className="span_h2">
-                    unique visitors </span>
-                   per month.</h2>
+                <h2 className="center header text_h2">Find the  <span className="span_h2">
+                    accomodation </span>,that suits your <span className="span_h2">
+                    needs </span>
+                   from over a thousand listed properties</h2>
               </div>
               <div className="col s12 m4 l4">
                 <div className="center promo promo-example">
@@ -51,14 +51,15 @@ class Landing extends React.Component {
           </div>
         </div>
 
+<hr className="hr-style"/>
         {/* Testimonials start here */}
 
         <div className="container">
           <h2 className="header text_b">Testimonials</h2>
           <div className="row">
-            <div className="col sm12 m4 l4">
-              <div className="card">
-                <div className="card-image waves-effect waves-block waves-light">
+            <div className="col sm12 m4 l4 ">
+              <div className="card testimony-card">
+                <div className="card-image waves-effect waves-block waves-light testimony-card">
                   <img className="activator" src="assets/bale.jpeg"/>
                 </div>
                 <div className="card-content">
@@ -70,8 +71,8 @@ class Landing extends React.Component {
               </div>
             </div>
             <div className="col s12 m4 l4">
-              <div className="card">
-                <div className="card-image waves-effect waves-block waves-light">
+              <div className="card testimony-card">
+                <div className="card-image waves-effect waves-block waves-light testimony-card">
                   <img className="activator" src="assets/bane.jpeg"/>
                 </div>
                 <div className="card-content">
@@ -83,12 +84,9 @@ class Landing extends React.Component {
               </div>
             </div>
             <div className="col s12 m4 l4">
-              <div className="card">
-                <div className="card-image waves-effect waves-block waves-light">
-                  <img className="activator" src="assets/arrow.jpeg"/>
-                </div>
+              <div className="card testimony-card">
                 <div className="card-content">
-                  <span className="card-title activator grey-text text-darken-4">Project Title
+                  <span className="card-title activator grey-text text-darken-4">Dizmo uh
                     <i className="mdi-navigation-more-vert right"></i>
                   </span>
                   <p>Here is some more information about this project that is only revealed once clicked on.</p>

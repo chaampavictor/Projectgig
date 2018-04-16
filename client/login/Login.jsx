@@ -15,6 +15,7 @@ class Login extends React.Component {
       error
         ? console.log(error.reason)
         : console.log('logged in ')
+          FlowRouter.go('profile')
     });
   }
 
@@ -22,11 +23,11 @@ class Login extends React.Component {
     return (
 
       <div>
-        <Navbar/>
+      <Navbar/>
         <div className="container">
           <div className="row">
             <div className="col s12 l6">
-              <div className="row center-align">
+              <div className="row">
                 <div className="col s12 m6 l12">
                   <div className="card ">
                     <div className="card-content">
@@ -45,7 +46,7 @@ class Login extends React.Component {
                               <label htmlFor="password">Password</label>
                             </div>
                           </div>
-                          <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                          <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
                             <i className="material-icons right">send</i>
                           </button>
                         </form>

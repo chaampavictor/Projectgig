@@ -14,6 +14,20 @@ componentDidMount(){
   });
 
 }
+
+  logout = (e) => {
+    e.preventDefault();
+    console.log('logout');
+    Meteor.logout((err) => {
+      if (err) {
+        console.log(err.reason);
+      }
+      FlowRouter.go('/')
+    });
+  }
+
+
+
   render() {
     return(
       <div className="navbar-fixed">
@@ -32,30 +46,35 @@ componentDidMount(){
   </li>
 
     <li><a href="/profile" className={`${this.profile} link`}>profile</a></li>
-    <li><a href="/listedproperty" className={`${this.property} link`}>list property</a></li>
-      <a href="/property" className={`${this.props.property} link`} className="waves-effect waves-light btn-large">Add property</a>
+    <li><a href="/property" className={`${this.property} link`}>add property</a></li>
+
     <li><div className="divider"></div></li>
-    <li><a className="subheader">logout</a></li>
+
 
   </ul>
   <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="material-icons">menu</i></a>
 
+<div className="center">
+<a href="/" className={` link`}><h6>LOGO</h6></a>
+</div>
+
   <div className="right">
 
-
-    <a href="#"> logout</a>
+    <a href="/about" className={`${this.about} link`}><button>about</button></a>
+    <a href="#" onClick={e => this.logout(e)}><button>logout</button></a>
 
   </div>
 </>
     :
 <>
-<h5>LOGO</h5>
 
-<div className="right">
+<a href="/" className={` link`}><h6>LOGO</h6></a>
+<div className="right nav-button">
 
-  <a href="/registration" className={`${this.registration} link`}>signup</a>
-  <a href="/login" className={`${this.login} link`}> login</a>
+  <a href="/registration" className={`${this.registration} link`}><button>signup</button></a>
+  <a href="/login" className={`${this.login} link`}><button>login</button></a>
 
+<a href="/about" className={`${this.about} link`}><button id="nav-button">about</button></a>
 </div>
 </>
     }

@@ -16,7 +16,7 @@ export class Listedproperty extends React.Component {
       <li key={prop.user} className="collection-item dismissable">
         <div>
             {/* <a href="#!" className="primary-content"></a> */}
-          <a href="#!" className="primary-content">{prop.propertyname}  {prop.location}</a>
+          <a href="/propertydetail" className="primary-content">{prop.propertyname}  {prop.location}</a>
           <br/>
           {prop.description}
 

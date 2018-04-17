@@ -9,13 +9,14 @@ class Property extends React.Component {
 
 
   myCallBack(err,id){
-    FlowRouter.go('profile')
+    console.log(err)
+    FlowRouter.go('/profile')
   }
 
   static handleSubmit(event) {
     event.preventDefault()
     const type = event.target.type.value
-    const propertyname = event.target.name.value
+    const propertyname = event.target.propertyname.value
     const location = event.target.location.value
     const price = event.target.price.value
     const description = event.target.description.value

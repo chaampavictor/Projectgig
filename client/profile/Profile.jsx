@@ -69,8 +69,8 @@ export class Profile extends React.Component {
 
 
          {/* Modal Structure */}
-         <div id="modal1" class="modal">
-           <div class="modal-content">
+         <div id="modal1" className="modal">
+           <div className="modal-content">
              <h4>Edit Property</h4>
              <div className="row">
                <form className="col s12 l6">

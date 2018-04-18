@@ -124,6 +124,8 @@ export class Profile extends React.Component {
          </div>
 
 
+{/* edit property ends here */}
+
         <div className="container">
           <div className="col s12 m6">
             <a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button">Add Property</a>
@@ -140,7 +142,7 @@ export class Profile extends React.Component {
 export default withTracker(() => {
 
   const propertyName = FlowRouter.getQueryParam('name');
-  alert(propertyName)
+
 
   return {
     property: Listproperty.find({owner: Meteor.userId()}).fetch()

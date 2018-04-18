@@ -30,7 +30,9 @@ export class Propertydetail extends React.Component {
         <div>
           <Navbar/>
           <div className="container">
-            <center>
+              <a href="/listedproperty" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Return to listed properties </h5></button></a>
+              <center>
+
             <h4 className="center">Property</h4>
 
             <h4 className="collection">

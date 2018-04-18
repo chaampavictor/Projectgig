@@ -18,32 +18,23 @@ export class Propertydetail extends React.Component {
            {prop.propertyname}<br/> {prop.type} <br/>{prop.location} <br/>{prop.price}<br/> {prop.description}<br/>
             {prop.contact}<br/> {prop.status}
             <br/>
-
           </div>
       ))
     }
-
     render() {
-
       return (
-
         <div>
           <Navbar/>
           <div className="container">
-              <a href="/listedproperty" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Return to listed properties </h5></button></a>
               <center>
-
             <h4 className="center">Property</h4>
-
             <h4 className="collection">
               {this.renderProperty()}
             </h4>
             </center>
       </div>
-
           <Footer/>
         </div>
-
       );
     }
   }

@@ -46,6 +46,7 @@ export class Propertydetail extends React.Component {
     }
   }
   export default withTracker(() => {
+    const id = FlowRouter.getQueryParam('id');
 
-    return {property: Listproperty.find().fetch()}
+    return {property: Listproperty.find({_id:id}).fetch()}
   })(Propertydetail)

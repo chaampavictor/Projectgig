@@ -15,11 +15,9 @@ export class Listedproperty extends React.Component {
     return property.map((prop) => (
 
 
-        <div>
+        <div key={prop._id}>
 
-          <a href="/propertydetail" className="primary-content">{prop.propertyname}  {prop.location}</a>
-          <br/>
-          {prop.description}
+
 
 
       <div className="row">
@@ -27,11 +25,11 @@ export class Listedproperty extends React.Component {
           <div className="card  ">
             <div key={prop.user} className="collection-item dismissable">
               <div className="card-content ">
-                <span className="card-title">Card Title</span>
+                <span className="card-title">{prop.propertyname}</span>
                 {prop.description}
               </div>
               <div className="card-action">
-                <a href="#!" className="primary-content">{prop.propertyname} {prop.location}</a>
+                <a href="/propertydetail" className="primary-content">{`${prop.location}`}</a>
                 <a href="#">{prop.contact}</a>
               </div>
             </div>

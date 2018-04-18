@@ -9,13 +9,14 @@ class Property extends React.Component {
 
 
   myCallBack(err,id){
-    FlowRouter.go('profile')
+    console.log(err)
+    FlowRouter.go('/profile')
   }
 
   static handleSubmit(event) {
     event.preventDefault()
     const type = event.target.type.value
-    const propertyname = event.target.name.value
+    const propertyname = event.target.propertyname.value
     const location = event.target.location.value
     const price = event.target.price.value
     const description = event.target.description.value
@@ -55,15 +56,15 @@ class Property extends React.Component {
                       <span className="card-title">list property</span>
 
                       <div className="row">
-                        <form className="col s12 l6" onSubmit={Property.handleSubmit.bind(this)}>
+                        <form className="col s12 " onSubmit={Property.handleSubmit.bind(this)}>
                           <div className="row">
-                            <div className="input-field col s6">
+                            <div className="input-field col s12">
                               <input id="propertyname" type="text" className="validate" name='propertyname'/>
                               <label htmlFor="propertyname">property name</label>
                             </div>
                           </div>
                           <div className="row">
-                            <div className="input-field col s6">
+                            <div className="input-field col s12">
                               <input id="type" type="text" className="validate" name='type'/>
                               <label htmlFor="type">type</label>
                             </div>

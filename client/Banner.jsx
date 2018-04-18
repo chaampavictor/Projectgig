@@ -21,22 +21,36 @@ export default class Banner extends Component {
         });
     }
 
+handleInputChange = e => {
 
+}
 
   render() {
     // const name = this.props.searchBoxName || undefined
     return (
       <div className="section no-pad-bot" id="index-banner">
+        <Navbar/>
           <div className="container">
             <div className="col l12 s12">
 
             {/* {{> search}} */}
 
-            <form>
-               <input   placeholder="Search for..."   ref={input => this.search = input}   onChange={this.handleInputChange} />
+            <form className="example">
+               <input className="search-input" id="input-field"   placeholder="Search for accomodation..."   ref={input => this.search = input}   onChange={this.handleInputChange} />
                <p>{this.state.query}</p>
+                <button type="submit"><i className="fa fa-search"></i></button>
             </form>
-
+<a href="/listedproperty" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Listed Properties <i className="fa fa-home banner-fa"></i> </h5></button></a>
+{
+  Meteor.userId() ?
+  <>
+<a href="/property" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
+</>
+  :
+  <>
+    <a href="/registration" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
+  </>
+}
             </div>
 
           </div>

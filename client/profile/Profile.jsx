@@ -139,6 +139,9 @@ export class Profile extends React.Component {
 }
 export default withTracker(() => {
 
+  const propertyName = FlowRouter.getQueryParam('name');
+  alert(propertyName)
+
   return {
     property: Listproperty.find({owner: Meteor.userId()}).fetch()
   }

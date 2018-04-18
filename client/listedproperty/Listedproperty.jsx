@@ -29,7 +29,7 @@ export class Listedproperty extends React.Component {
                 {prop.description}
               </div>
               <div className="card-action">
-                <a href="/propertydetail" className="primary-content">{`${prop.location}`}</a>
+                <a href={"/propertydetail?id="+prop._id} className="primary-content">{`${prop.location}`}</a>
                 <a href="#">{prop.contact}</a>
               </div>
             </div>

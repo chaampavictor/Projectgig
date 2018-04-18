@@ -61,7 +61,7 @@ componentDidMount(){
 
     <a href="/" className={` link`}><button id="nav-buttons">Home</button></a>
     <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
-    <a href="#" onClick={e => this.logout(e)}><button id="nav-buttons">Logout</button></a>
+    <a href="#" onClick={e => this.logout(e)}><button>Logout</button></a>
 
   </div>
 </>
@@ -72,9 +72,9 @@ componentDidMount(){
 <div className="right nav-button">
 
   <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">signup</button></a>
-  <a href="/login" className={`${this.login} link`}><button id="nav-buttons">login</button></a>
 
 <a href="/about" className={`${this.about} link`}><button id="nav-buttons">about</button></a>
+<a href="/login" className={`${this.login} link`}><button>login</button></a>
 </div>
 </>
     }

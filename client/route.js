@@ -9,6 +9,7 @@ import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
 import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
 import Profile from '../client/profile/Profile.jsx';
 import Login from '../client/login/Login.jsx';
+import Searchresults from '../client/searchresults/Searchresults.jsx';
 
 
 
@@ -57,6 +58,12 @@ FlowRouter.route('/listedproperty', {
 FlowRouter.route('/profile', {
     action: () => {
       mount(Profile,{
+      });
+    }
+});
+FlowRouter.route('/searchresults', {
+    action: () => {
+      mount(Searchresults,{
       });
     }
 });

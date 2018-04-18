@@ -56,15 +56,15 @@ class Property extends React.Component {
                       <span className="card-title">list property</span>
 
                       <div className="row">
-                        <form className="col s12 l6" onSubmit={Property.handleSubmit.bind(this)}>
+                        <form className="col s12 " onSubmit={Property.handleSubmit.bind(this)}>
                           <div className="row">
-                            <div className="input-field col s6">
+                            <div className="input-field col s12">
                               <input id="propertyname" type="text" className="validate" name='propertyname'/>
                               <label htmlFor="propertyname">property name</label>
                             </div>
                           </div>
                           <div className="row">
-                            <div className="input-field col s6">
+                            <div className="input-field col s12">
                               <input id="type" type="text" className="validate" name='type'/>
                               <label htmlFor="type">type</label>
                             </div>

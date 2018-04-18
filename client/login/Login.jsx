@@ -33,9 +33,9 @@ class Login extends React.Component {
                     <div className="card-content">
                       <span className="card-title">login</span>
                       <div className="row">
-                        <form className="col s12 l6" onSubmit={this.login}>
+                        <form className="col s12" onSubmit={this.login}>
                           <div className="row">
-                            <div className="input-field col s6">
+                            <div className="input-field col s12">
                               <input id="email" type="text" className="validate form-bottom-border" name='email'/>
                               <label htmlFor="email">email</label>
                             </div>

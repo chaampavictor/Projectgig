@@ -22,7 +22,7 @@ export default class Banner extends Component {
     }
 
 handleInputChange = e => {
-  
+
 }
 
   render() {
@@ -40,7 +40,17 @@ handleInputChange = e => {
                <p>{this.state.query}</p>
                 <button type="submit"><i className="fa fa-search"></i></button>
             </form>
-
+<a href="/listedproperty" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Listed Properties <i className="fa fa-home banner-fa"></i> </h5></button></a>
+{
+  Meteor.userId() ?
+  <>
+<a href="/property" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
+</>
+  :
+  <>
+    <a href="/registration" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
+  </>
+}
             </div>
 
           </div>

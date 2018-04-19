@@ -20,8 +20,11 @@ export class Profile extends React.Component {
           <div className="col s12 m6 l6 ">
             <div className="card ">
               <div className="card-content ">
-                <span className="card-title">{prop.propertyname}</span>
+                <span class="card-title"><a href={"/propertydetail?id="+prop._id} className="primary-content">{`${prop.propertyname}`}</a></span>
+                {/* <span className="card-title">{prop.propertyname}</span> */}
+                <br/>
                 {prop.description}
+                {prop.image}
                 <div className="card-action">
                 <a href="#">{prop.contact}</a>
                 <a href="#">{prop.location}</a>
@@ -124,6 +127,8 @@ export class Profile extends React.Component {
          </div>
 
 
+{/* edit property ends here */}
+
         <div className="container">
           <div className="col s12 m6">
             <a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button">Add Property</a>
@@ -140,7 +145,7 @@ export class Profile extends React.Component {
 export default withTracker(() => {
 
   const propertyName = FlowRouter.getQueryParam('name');
-  alert(propertyName)
+
 
   return {
     property: Listproperty.find({owner: Meteor.userId()}).fetch()

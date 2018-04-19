@@ -7,8 +7,7 @@ import Navbar from '../Navbar';
 
 class Property extends React.Component {
 
-
-  myCallBack(err,id){
+  myCallBack(err, id) {
     console.log(err)
     FlowRouter.go('/profile')
   }
@@ -17,6 +16,7 @@ class Property extends React.Component {
     event.preventDefault()
     const type = event.target.type.value
     const propertyname = event.target.propertyname.value
+    const image = event.target.image.value
     const location = event.target.location.value
     const price = event.target.price.value
     const description = event.target.description.value
@@ -25,15 +25,13 @@ class Property extends React.Component {
       owner: Meteor.userId(),
       type,
       propertyname,
+      image,
       location,
       price,
       description,
       contact,
       status: false
-    },(err,id)=>this.myCallBack(err,id)
-  )
-
-
+    }, (err, id) => this.myCallBack(err, id))
 
   }
 
@@ -43,7 +41,7 @@ class Property extends React.Component {
 
       <div>
 
-<Navbar/>
+        <Navbar/>
         <div className="container">
 
           <div className="row">
@@ -95,6 +93,13 @@ class Property extends React.Component {
                             </div>
                           </div>
 
+                          <div className="row">
+                            <div className="input-field col s12">
+
+                              <input type="file" ref={input =>{this.fileInput = input;}}/>                                                            
+                            <label> <i class="fa fa-picture-o fa-3x" aria-hidden="true"></i></label>
+                            </div>
+                          </div>
                           <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
                             <i className="material-icons right">send</i>
                           </button>
@@ -111,7 +116,7 @@ class Property extends React.Component {
             </div>
           </div>
         </div>
-      <Footer/>
+        <Footer/>
       </div>
 
     );

@@ -20,7 +20,7 @@ export class Profile extends React.Component {
           <div className="col s12 m6 l6 ">
             <div className="card ">
               <div className="card-content ">
-                <a href={"/propertydetail?id="+prop._id} className="primary-content">{`${prop.propertyname}`}</a>
+                <span class="card-title"><a href={"/propertydetail?id="+prop._id} className="primary-content">{`${prop.propertyname}`}</a></span>
                 {/* <span className="card-title">{prop.propertyname}</span> */}
                 <br/>
                 {prop.description}

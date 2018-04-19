@@ -25,12 +25,15 @@ export class Listedproperty extends React.Component {
           <div className="card  ">
             <div key={prop.user} className="collection-item dismissable">
               <div className="card-content ">
-                <span className="card-title">{prop.propertyname}</span>
+                <span className="card-title">
+                  <a href={"/propertydetail?id="+prop._id} className="primary-content">{`${prop.propertyname}`}</a>
+                  </span>
                 {prop.description}
               </div>
               <div className="card-action">
-                <a href={"/propertydetail?id="+prop._id} className="primary-content">{`${prop.location}`}</a>
-                <a href="#">{prop.contact}</a>
+                {prop.contact}
+
+                {prop.location}
               </div>
             </div>
           </div>

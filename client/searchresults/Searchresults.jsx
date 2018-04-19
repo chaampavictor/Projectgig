@@ -53,8 +53,9 @@ class Searchresults extends React.Component {
 
 export default withTracker(() => {
 
-  const propertyName = FlowRouter.getQueryParam('n');
+  let propertyName = FlowRouter.getQueryParam('n');
   // alert(propertyName)
+  propertyName = RegExp(propertyName,'i')
 
   return {
     property: Listproperty.find({propertyname: propertyName}).fetch()

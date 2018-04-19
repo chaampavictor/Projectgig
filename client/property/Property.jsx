@@ -31,9 +31,6 @@ class Property extends React.Component {
       status: false
     },(err,id)=>this.myCallBack(err,id)
   )
-
-
-
   }
 
   render() {

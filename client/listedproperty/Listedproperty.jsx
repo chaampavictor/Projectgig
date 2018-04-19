@@ -13,15 +13,6 @@ export class Listedproperty extends React.Component {
       return;
     }
     return property.map((prop) => (
-<<<<<<< HEAD
-      <li key={prop.user} className="collection-item dismissable">
-        <div>
-            {/* <a href="#!" className="primary-content"></a> */}
-          <a href="/propertydetail" className="primary-content">{prop.propertyname}  {prop.location}</a>
-          <br/>
-          {prop.description}
-=======
->>>>>>> 518753af5be06828c5a2fb0179da2915d1d23934
 
       <div className="row">
         <div className="col s12 m6 l6">

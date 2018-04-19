@@ -13,13 +13,11 @@ export class Propertydetail extends React.Component {
         return;
       }
       return property.map((prop) => (
-          <div>
-            {/* <a href="#!" className="primary-content"></a> */}
-            {prop.user}  {prop.propertyname}<br/> {prop.type} <br/>{prop.location} <br/>{prop.price}<br/> {prop.description}<br/>
-            {prop.contact}<br/> {prop.status}
-            <br/>
-  
-          </div>
+            <div key={prop.user} className="collection-item dismissable">
+              {prop.propertyname}<br/> {prop.type} <br/>{prop.location} <br/>{prop.price}<br/> {prop.description}<br/>
+              {prop.contact}<br/> {prop.status}
+              <br/>
+            </div>
       ))
     }
   

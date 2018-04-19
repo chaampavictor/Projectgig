@@ -20,26 +20,9 @@ export default class Banner extends Component {
             this.setState({searchResults: e.value})
         });
     }
-
-<<<<<<< HEAD
-
-  render() {
-    // const name = this.props.searchBoxName || undefined
-    return (
-      <div className="section no-pad-bot" id="index-banner">
-          <div className="container">
-            <div className="col l12 s12">
-           
-            {/* {{> search}} */}
-
-            <form>
-               <input   placeholder="Search for..."   ref={input => this.search = input}   onChange={this.handleInputChange} />
-               <p>{this.state.query}</p>
-            </form>
-
-            </div>
-=======
-    return (
+    render() {
+      // const name = this.props.searchBoxName || undefined 
+     return (
       <div className="section" id="index-banner">
           <Navbar/>
         <div className="container">
@@ -50,7 +33,6 @@ export default class Banner extends Component {
                 <i className="fa fa-search"/>
               </button>
             </form>
->>>>>>> 518753af5be06828c5a2fb0179da2915d1d23934
           </div>
         </div>
       </div>

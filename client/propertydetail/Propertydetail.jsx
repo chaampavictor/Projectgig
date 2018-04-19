@@ -6,45 +6,55 @@ import Navbar from '../Navbar';
 import {Listproperty} from '../../lib/collections'
 
 export class Propertydetail extends React.Component {
-  
+
     renderProperty() {
       const property = this.props.property
       if (property === undefined) {
         return;
       }
       return property.map((prop) => (
+<<<<<<< HEAD
             <div key={prop.user} className="collection-item dismissable">
               {prop.propertyname}<br/> {prop.type} <br/>{prop.location} <br/>{prop.price}<br/> {prop.description}<br/>
               {prop.contact}<br/> {prop.status}
               <br/>
             </div>
+=======
+          <div>
+
+           {prop.propertyname}<br/> {prop.type} <br/>{prop.location} <br/>{prop.price}<br/> {prop.description}<br/>
+            {prop.contact}<br/> {prop.status}
+            <br/>
+
+          </div>
+>>>>>>> eaccd670a93bb259795642e7abb01ebe15063435
       ))
     }
-  
+
     render() {
-  
+
       return (
-  
+
         <div>
           <Navbar/>
-          <div className="container"> 
+          <div className="container">
             <center>
             <h4 className="center">Property</h4>
-  
+
             <h4 className="collection">
               {this.renderProperty()}
             </h4>
             </center>
       </div>
-  
+
           <Footer/>
         </div>
-  
+
       );
     }
   }
   export default withTracker(() => {
-  
-    return {property: Listproperty.find().fetch()}
-  })(Propertydetail)
+    const id = FlowRouter.getQueryParam('id');
 
+    return {property: Listproperty.find({_id:id}).fetch()}
+  })(Propertydetail)

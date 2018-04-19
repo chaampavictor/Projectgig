@@ -20,6 +20,7 @@ export default class Banner extends Component {
             this.setState({searchResults: e.value})
         });
     }
+<<<<<<< HEAD
     render() {
       // const name = this.props.searchBoxName || undefined 
      return (
@@ -33,24 +34,45 @@ export default class Banner extends Component {
                 <i className="fa fa-search"/>
               </button>
             </form>
+=======
+
+handleInputChange = e => {
+
+}
+
+  render() {
+    // const name = this.props.searchBoxName || undefined
+    return (
+      <div className="section no-pad-bot" id="index-banner">
+        <Navbar/>
+          <div className="container">
+            <div className="col l12 s12">
+
+            {/* {{> search}} */}
+
+            <form className="example" action='/searchresults'>
+               <input className="search-input" id="input-field" name='n'   placeholder="Search for accomodation..."   ref={input => this.search = input}   onChange={this.handleInputChange} />
+               <p>{this.state.query}</p>
+                <button type="submit"><i className="fa fa-search"></i></button>
+            </form>
+<a href="/listedproperty" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Listed Properties <i className="fa fa-home banner-fa"></i> </h5></button></a>
+{
+  Meteor.userId() ?
+  <>
+<a href="/property" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
+</>
+  :
+  <>
+    <a href="/registration" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
+  </>
+}
+            </div>
+
+>>>>>>> eaccd670a93bb259795642e7abb01ebe15063435
           </div>
         </div>
-      </div>
+
 
     )
   }
 }
-{/* <template name="search"> 
-<form id="search">
-<input type="text" id="searchValue" placeholder="Enter search terms here."/>
-<button>Search</button>
-</form>
-<hr/>
-<h1>Messages</h1>
-<ol>
-{{#each messages}}
-  <li>{{value}}</li>
-{{/each}}
-</ol>
-
-</template> */}

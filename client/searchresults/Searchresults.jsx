@@ -58,6 +58,6 @@ export default withTracker(() => {
   propertyName = RegExp(propertyName,'i')
 
   return {
-    property: Listproperty.find({propertyname: propertyName}).fetch()
+    property: Listproperty.find({location: propertyName}).fetch()
   }
 })(Searchresults)

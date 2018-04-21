@@ -3,6 +3,7 @@ import {Meteor} from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
+import Searchform from '../searchform/Searchform';
 import {Listproperty} from '../../lib/collections'
 
 export class Listedproperty extends React.Component {
@@ -30,9 +31,7 @@ export class Listedproperty extends React.Component {
                   </span>
                 {prop.description}
               </div>
-              <div className="card-action">
-                {prop.contact}
-
+              <div className="card-action center">               
                 {prop.location}
               </div>
             </div>
@@ -49,7 +48,9 @@ export class Listedproperty extends React.Component {
       <div>
         <Navbar/>
         <div className="container">
-          <h4 className="center">property list</h4>
+          <Searchform/>
+
+          <h4 className="center">Listed Properties</h4>
           {this.renderProperty()}
         </div>
 

@@ -3,6 +3,7 @@ import {withTracker} from 'meteor/react-meteor-data'
 import {Meteor} from 'meteor/meteor';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
+import Searchform from '../searchform/Searchform';
 // import Searchform from '../searchform/Searchform';
 import {Listproperty} from '../../lib/collections'
 import {Session} from 'meteor/session';
@@ -37,7 +38,9 @@ class Searchresults extends React.Component {
     return (
 
       <div>
-        <Navbar/> {/* <Searchform/> */}
+        <Navbar/>
+
+        <Searchform/>
 
         <div className="container">
           {this.g()

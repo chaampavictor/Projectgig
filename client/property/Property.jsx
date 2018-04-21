@@ -16,7 +16,6 @@ class Property extends React.Component {
     event.preventDefault()
     const type = event.target.type.value
     const propertyname = event.target.propertyname.value
-    const image = event.target.image.value
     const location = event.target.location.value
     const price = event.target.price.value
     const description = event.target.description.value
@@ -25,7 +24,6 @@ class Property extends React.Component {
       owner: Meteor.userId(),
       type,
       propertyname,
-      image,
       location,
       price,
       description,
@@ -43,61 +41,53 @@ class Property extends React.Component {
 
         <Navbar/>
         <div className="container">
-
+<a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button"><h5>Return</h5></a>
           <div className="row">
 
             <div className="col s12 l12">
               <div className="row center-align">
                 <div className="col s12 m6">
+                  <span className="card-title">List Property</span>
                   <div className="card ">
                     <div className="card-content">
-                      <span className="card-title">list property</span>
 
                       <div className="row">
                         <form className="col s12 " onSubmit={Property.handleSubmit.bind(this)}>
                           <div className="row">
                             <div className="input-field col s12">
-                              <input id="propertyname" type="text" className="validate" name='propertyname'/>
+                              <input id="propertyname" type="text" name='propertyname'/>
                               <label htmlFor="propertyname">property name</label>
                             </div>
                           </div>
                           <div className="row">
                             <div className="input-field col s12">
-                              <input id="type" type="text" className="validate" name='type'/>
+                              <input id="type" type="text"name='type'/>
                               <label htmlFor="type">type</label>
                             </div>
                           </div>
 
                           <div className="row">
                             <div className="input-field col s12">
-                              <input id="location" type="text" className="validate" name='location'/>
+                              <input id="location" type="text" name='location'/>
                               <label htmlFor="location">Location</label>
                             </div>
                           </div>
                           <div className="row">
                             <div className="input-field col s12">
-                              <input id="price" type="text" className="validate" name='price'/>
+                              <input id="price" type="text" name='price'/>
                               <label htmlFor="price">Price</label>
                             </div>
                           </div>
                           <div className="row">
                             <div className="input-field col s12">
-                              <input id="description" type="text" className="validate" name='description'/>
+                              <input id="description" type="text" name='description'/>
                               <label htmlFor="description">Description</label>
                             </div>
                           </div>
                           <div className="row">
                             <div className="input-field col s12">
-                              <input id="contact" type="text" className="validate" name='contact'/>
+                              <input id="contact" type="text" name='contact'/>
                               <label htmlFor="price">contact</label>
-                            </div>
-                          </div>
-
-                          <div className="row">
-                            <div className="input-field col s12">
-
-                              <input type="file" ref={input =>{this.fileInput = input;}}/>                                                            
-                            <label> <i class="fa fa-picture-o fa-3x" aria-hidden="true"></i></label>
                             </div>
                           </div>
                           <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
@@ -105,7 +95,6 @@ class Property extends React.Component {
                           </button>
 
                         </form>
-
                       </div>
 
                     </div>

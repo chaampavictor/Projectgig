@@ -49,9 +49,9 @@ class Registration extends React.Component {
                     <span className="card-title">signup</span>
 
                     <div className="row">
-                      <form className="col s12 l6" onSubmit={this.saveUserDetails}>
+                      <form className="col s12 " onSubmit={this.saveUserDetails}>
                         <div className="row">
-                          <div className="input-field col s6">
+                          <div className="input-field col s12">
                             <input id="name" type="text" className="validate" name='name'/>
                             <label htmlFor="name">name</label>
                           </div>

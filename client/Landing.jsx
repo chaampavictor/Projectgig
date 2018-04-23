@@ -51,51 +51,28 @@ class Landing extends React.Component {
           </div>
         </div>
 
-<hr className="hr-style"/>
-        {/* Testimonials start here */}
 
+        {/* Testimonials start here */}
+        <div className="testimony">
         <div className="container">
-          <h2 className="header text_b">Testimonials</h2>
+          <h5 className="header text_b">What our users to say...</h5>
           <div className="row">
-            <div className="col sm12 m4 l4 ">
-              <div className="card testimony-card">
-                <div className="card-image waves-effect waves-block waves-light testimony-card">
-                  <img className="activator" src="assets/bale.jpeg"/>
-                </div>
-                <div className="card-content">
-                  <span className="card-title activator grey-text text-darken-4">Project Title
-                    <i className="mdi-navigation-more-vert right"></i>
-                  </span>
-                  <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col s12 m4 l4">
-              <div className="card testimony-card">
-                <div className="card-image waves-effect waves-block waves-light testimony-card">
-                  <img className="activator" src="assets/bane.jpeg"/>
-                </div>
-                <div className="card-content">
-                  <span className="card-title activator grey-text text-darken-4">Project Title
-                    <i className="mdi-navigation-more-vert right"></i>
-                  </span>
-                  <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col s12 m4 l4">
-              <div className="card testimony-card">
-                <div className="card-content">
-                  <span className="card-title activator grey-text text-darken-4">Dizmo uh
-                    <i className="mdi-navigation-more-vert right"></i>
-                  </span>
-                  <p>Here is some more information about this project that is only revealed once clicked on.</p>
+
+            <div className="col s12 m7 l6">
+
+                <div className="card horizontal">
+                  <div className="card-stacked text_b">
+
+                      <p>"I am a very simple card. I am good at containing small bits of information...."</p>
+                      <h5>John Doe</h5>
+                      <h6>student, dizmo university</h6>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+</div>
         <Footer/>
       </div>
 

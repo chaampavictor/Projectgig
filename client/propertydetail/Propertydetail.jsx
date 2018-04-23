@@ -13,13 +13,6 @@ export class Propertydetail extends React.Component {
         return;
       }
       return property.map((prop) => (
-<<<<<<< HEAD
-            <div key={prop.user} className="collection-item dismissable">
-              {prop.propertyname}<br/> {prop.type} <br/>{prop.location} <br/>{prop.price}<br/> {prop.description}<br/>
-              {prop.contact}<br/> {prop.status}
-              <br/>
-            </div>
-=======
           <div>
 
            {prop.propertyname}<br/> {prop.type} <br/>{prop.location} <br/>{prop.price}<br/> {prop.description}<br/>
@@ -27,7 +20,6 @@ export class Propertydetail extends React.Component {
             <br/>
 
           </div>
->>>>>>> eaccd670a93bb259795642e7abb01ebe15063435
       ))
     }
 

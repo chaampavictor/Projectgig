@@ -20,21 +20,6 @@ export default class Banner extends Component {
             this.setState({searchResults: e.value})
         });
     }
-<<<<<<< HEAD
-    render() {
-      // const name = this.props.searchBoxName || undefined 
-     return (
-      <div className="section" id="index-banner">
-          <Navbar/>
-        <div className="container">
-          <div className="col l12 s12">
-            <form className="example">
-              <input type="text" className="search-input" placeholder="Search.." name="search"></input>
-              <button type="submit">
-                <i className="fa fa-search"/>
-              </button>
-            </form>
-=======
 
 handleInputChange = e => {
 
@@ -68,7 +53,6 @@ handleInputChange = e => {
 }
             </div>
 
->>>>>>> eaccd670a93bb259795642e7abb01ebe15063435
           </div>
         </div>
 

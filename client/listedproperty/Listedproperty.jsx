@@ -13,15 +13,12 @@ export class Listedproperty extends React.Component {
       return;
     }
     return property.map((prop) => (
-<<<<<<< HEAD
-=======
 
 
         <div key={prop._id}>
 
 
 
->>>>>>> eaccd670a93bb259795642e7abb01ebe15063435
 
       <div className="row">
         <div className="col s12 m6 l6">

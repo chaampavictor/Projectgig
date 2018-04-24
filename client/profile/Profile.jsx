@@ -20,8 +20,7 @@ export class Profile extends React.Component {
           <div className="col s12 m6 l6 ">
             <div className="card ">
               <div className="card-content ">
-                <span class="card-title"><a href={"/propertydetail?id="+prop._id} className="primary-content">{`${prop.propertyname}`}</a></span>
-                {/* <span className="card-title">{prop.propertyname}</span> */}
+                <span class="card-title"><a href={"/propertydetail?id="+prop._id} className="primary-content">{`${prop.propertyname}`}</a></span>              
                 <br/>
                 {prop.description}
                 {prop.image}
@@ -79,38 +78,38 @@ export class Profile extends React.Component {
                <form className="col s12 l6">
                  <div className="row">
                    <div className="input-field col s6">
-                     <input id="propertyname" type="text" className="validate" name='propertyname'/>
+                     <input id="propertyname" type="text" name='propertyname'/>
                      <label htmlFor="propertyname">property name</label>
                    </div>
                  </div>
                  <div className="row">
                    <div className="input-field col s6">
-                     <input id="type" type="text" className="validate" name='type'/>
+                     <input id="type" type="text" name='type'/>
                      <label htmlFor="type">type</label>
                    </div>
                  </div>
 
                  <div className="row">
                    <div className="input-field col s12">
-                     <input id="location" type="text" className="validate" name='location'/>
+                     <input id="location" type="text" name='location'/>
                      <label htmlFor="location">Location</label>
                    </div>
                  </div>
                  <div className="row">
                    <div className="input-field col s12">
-                     <input id="price" type="text" className="validate" name='price'/>
+                     <input id="price" type="text" name='price'/>
                      <label htmlFor="price">Price</label>
                    </div>
                  </div>
                  <div className="row">
                    <div className="input-field col s12">
-                     <input id="description" type="text" className="validate" name='description'/>
+                     <input id="description" type="text" name='description'/>
                      <label htmlFor="description">Description</label>
                    </div>
                  </div>
                  <div className="row">
                    <div className="input-field col s12">
-                     <input id="contact" type="text" className="validate" name='contact'/>
+                     <input id="contact" type="text" name='contact'/>
                      <label htmlFor="price">contact</label>
                    </div>
                  </div>

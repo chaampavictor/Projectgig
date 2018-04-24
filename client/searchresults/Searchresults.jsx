@@ -3,7 +3,7 @@ import {withTracker} from 'meteor/react-meteor-data'
 import {Meteor} from 'meteor/meteor';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
-// import Searchform from '../searchform/Searchform';
+import Altsearch from '../altsearch/Altsearch';
 import {Listproperty} from '../../lib/collections'
 import {Session} from 'meteor/session';
 
@@ -19,7 +19,9 @@ class Searchresults extends React.Component {
               <div className="card">
                 <div className="card-content ">
                   <span className="card-title">
-                    {item.propertyname}</span>
+                    {/* {item.propertyname} */}
+                    <a href={"/propertydetail?id="+item._id} className="primary-content">{`${item.propertyname}`}</a>
+                  </span>
                 </div>
                 <div className="card-action">
                   {item.location}
@@ -37,9 +39,11 @@ class Searchresults extends React.Component {
     return (
 
       <div>
-        <Navbar/> {/* <Searchform/> */}
-
+        <Navbar/>
         <div className="container">
+
+          <Altsearch/>
+
           {this.g()
 }
         </div>

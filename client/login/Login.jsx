@@ -36,13 +36,13 @@ class Login extends React.Component {
                         <form className="col s12" onSubmit={this.login}>
                           <div className="row">
                             <div className="input-field col s12">
-                              <input id="email" type="text" className="validate form-bottom-border" name='email'/>
+                              <input id="email" type="text" className="form-bottom-border" name='email'/>
                               <label htmlFor="email">email</label>
                             </div>
                           </div>
                           <div className="row">
                             <div className="input-field col s12">
-                              <input id="password" type="password" className="validate" name='password'/>
+                              <input id="password" type="password"  name='password'/>
                               <label htmlFor="password">Password</label>
                             </div>
                           </div>
@@ -51,6 +51,7 @@ class Login extends React.Component {
                           </button>
                         </form>
                       </div>
+                      <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                     </div>
                   </div>
                 </div>

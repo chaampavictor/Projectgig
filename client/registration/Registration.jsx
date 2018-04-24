@@ -44,7 +44,7 @@ class Registration extends React.Component {
           <div className="col s12 center-align">
             <div className="row center-align">
               <div className="col s12 m6">
-                <div className="card ">
+                <div className="card card-style">
                   <div className="card-content">
                     <span className="card-title">signup</span>
 
@@ -59,13 +59,13 @@ class Registration extends React.Component {
 
                         <div className="row">
                           <div className="input-field col s12">
-                            <input id="password" type="password" className="validate" name='password'/>
+                            <input id="password" type="password" name='password'/>
                             <label htmlFor="password">Password</label>
                           </div>
                         </div>
                         <div className="row">
                           <div className="input-field col s12">
-                            <input id="email" type="email" className="validate" name='email'/>
+                            <input id="email" type="email"  name='email'/>
                             <label htmlFor="email">Email</label>
                           </div>
                         </div>
@@ -77,6 +77,7 @@ class Registration extends React.Component {
                       </form>
 
                     </div>
+                    <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
 
                   </div>
                 </div>

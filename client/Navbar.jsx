@@ -38,7 +38,7 @@ componentDidMount(){
     <li>
       <div className="user-view">
       <div className="background">
-        <img src="assets/bane.jpeg"></img>
+        <img src="assets/david-marcu-1266-unsplash.jpg"></img>
       </div>
       <a href="#!name"><span className="white-text name">John Doe</span></a>
       <a href="#!email"><span className="white-text email">jdandturk@gmail.com</span></a>
@@ -48,8 +48,8 @@ componentDidMount(){
     <li><a href="/profile" className={`${this.profile} link`}>profile</a></li>
     <div className="divider"></div>
     <li><a href="/property" className={`${this.property} link`}>add property</a></li>
-
     <li><div className="divider"></div></li>
+    <li><a href="/listedproperty" className={`${this.listedproperty} link`}>Listed Properties</a></li>
 
 
   </ul>

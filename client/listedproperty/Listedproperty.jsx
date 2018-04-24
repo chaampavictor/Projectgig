@@ -3,16 +3,24 @@ import {Meteor} from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
-import Searchform from '../searchform/Searchform';
+import Altsearch from '../altsearch/Altsearch';
+
 import {Listproperty} from '../../lib/collections'
 
 export class Listedproperty extends React.Component {
+
+  c(id){
+    FlowRouter.go("/propertydetail?id="+id)
+  }
 
   renderProperty() {
     const property = this.props.property
     if (property === undefined) {
       return;
     }
+
+
+
     return property.map((prop) => (
 
 
@@ -23,7 +31,7 @@ export class Listedproperty extends React.Component {
 
       <div className="row">
         <div className="col s12 m6 l6">
-          <div className="card  ">
+          <div className="card" onClick={this.c.bind(this,prop._id)} >
             <div key={prop.user} className="collection-item dismissable">
               <div className="card-content ">
                 <span className="card-title">
@@ -31,7 +39,7 @@ export class Listedproperty extends React.Component {
                   </span>
                 {prop.description}
               </div>
-              <div className="card-action center">               
+              <div className="card-action center">
                 {prop.location}
               </div>
             </div>
@@ -48,7 +56,8 @@ export class Listedproperty extends React.Component {
       <div>
         <Navbar/>
         <div className="container">
-          <Searchform/>
+        <Altsearch/>
+
 
           <h4 className="center">Listed Properties</h4>
           {this.renderProperty()}

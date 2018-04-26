@@ -7,9 +7,6 @@ import Banner from './Banner';
 class Landing extends React.Component {
   render() {
 
-    $(document).ready(function() {
-      $('.carousel').carousel();
-    });
 
     return (
 

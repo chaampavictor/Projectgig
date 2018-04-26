@@ -31,13 +31,8 @@ class Property extends React.Component {
       description,
       contact,
       status: false
-<<<<<<< HEAD
-    },(err,id)=>this.myCallBack(err,id)
-  )
-=======
     }, (err, id) => this.myCallBack(err, id))
 
->>>>>>> 0963d6d58063967404fff11f70e6602321c0f0ea
   }
 
   render() {

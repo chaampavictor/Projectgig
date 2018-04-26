@@ -10,37 +10,39 @@ export default class Footer extends Component {
               <div className="row">
 
                   <div className="col l3 s12">
-                      <h5 className="white-text">projectGIg</h5>
+
                       <ul>
-                          <li><a className="white-text"  href="/" className={` link`} id="footer-home">Home</a></li>
+                          <li><a className="white-text"  href="/" className={` link`} id="footer-home" style={{ color: '#FFF' }}>Home</a></li>
+
+                      </ul>
+                      <ul>
+                          <li><a className="white-text"  href="/terms" className={`${this.terms} link`} style={{ color: '#FFF' }} >Terms and Conditions</a></li>
+
+                      </ul>
+                      <ul>
+                          <li><a className="white-text" href="/privacy" className={`${this.privacy} link`} style={{ color: '#FFF' }} >Privacy policy</a></li>
 
                       </ul>
                   </div>
-                  <div className="col l3 s12">
-                      <h5 className="white-text">Social</h5>
-                      <ul>
-                          <li>
-                              <a className="white-text" href="/">
-                                  <i className="small fa fa-twiiter-square white-text"></i> Twitter
+                  
+
+                     
+                              <a className="white-text" href="/" style={{ marginRight: '15px' }}>
+                                  <i className="small fa fa-twitter-square white-text"></i>
                               </a>
-                          </li>
-                          <li>
-                              <a className="white-text" href="/">
-                                  <i className="small fa fa-facebook-square white-text"></i> Facebook
+                          
+                              <a className="white-text" href="/" style={{ marginRight: '15px' }}>
+                                  <i className="small fa fa-facebook-square white-text"></i> 
                               </a>
-                          </li>
-                          <li>
-                              <a className="white-text" href="/">
-                                  <i className="small fa fa-intagram-square white-text"></i>Instagram
+                          
+                              <a className="white-text" href="/" style={{ marginRight: '15px' }}>
+                                  <i className="small fa fa-linkedin-square white-text"></i> 
+                             </a>
+
+                             <a className="white-text" href="/" style={{ marginRight: '15px' }}>
+                                  <i className="small fa fa-instagram-square white-text"></i>
                               </a>
-                          </li>
-                          <li>
-                              <a className="white-text" href="/">
-                                  <i className="small fa fa-snapchat-square white-text"></i> Snapchat
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
+                          
               </div>
           </div>
       </footer>

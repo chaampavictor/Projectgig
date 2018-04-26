@@ -10,7 +10,8 @@ import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
 import Profile from '../client/profile/Profile.jsx';
 import Login from '../client/login/Login.jsx';
 import Searchresults from '../client/searchresults/Searchresults.jsx';
-
+import Terms from '../client/terms/Terms.jsx';
+import Privacy from '../client/privacy/Privacy.jsx';
 
 
 FlowRouter.route('/', {
@@ -66,6 +67,18 @@ FlowRouter.route('/searchresults', {
       mount(Searchresults,{
       });
     }
+});
+FlowRouter.route('/terms', {
+  action: () => {
+    mount(Terms,{
+    });
+  }
+});
+FlowRouter.route('/privacy', {
+  action: () => {
+    mount(Privacy,{
+    });
+  }
 });
 // FlowRouter.notFound = {
 //   action: () => {

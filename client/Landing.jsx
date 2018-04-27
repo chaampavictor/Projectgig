@@ -25,23 +25,23 @@ class Landing extends React.Component {
               </div>
               <div className="col s12 m4 l4">
                 <div className="center promo promo-example">
-                  <i className="mdi-image-flash-on"></i>
+                <img src="/assets/imagestb.png" className="center-block" />
                   <h5 className="promo-caption">Realtime Search Experience</h5>
                   <p className="light center">Search for accomodation and get results in the quickest time possible.</p>
                 </div>
               </div>
               <div className="col s12 m4 l4">
                 <div className="center promo promo-example">
-                  <i className="mdi-social-group"></i>
+                  <img src="/assets/kat.png" className="center-block" />
                   <h5 className="promo-caption">Easy User Experience</h5>
                   <p className="light center">your dream accomodation is just a click away</p>
                 </div>
               </div>
               <div className="col s12 m4 l4">
                 <div className="center promo promo-example">
-                  <i className="mdi-hardware-desktop-windows"></i>
+                  <img src="/assets/index12345.png" className="center-block" />
                   <h5 className="promo-caption">Fully responsive</h5>
-                  <p className="light center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                  <p className="light center">Navigate the site on a device thats covinient for you.</p>
                 </div>
               </div>
             </div>

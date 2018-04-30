@@ -25,7 +25,7 @@ class Landing extends React.Component {
               </div>
               <div className="col s12 m4 l4">
                 <div className="center promo promo-example">
-                <img src="/assets/imagestb.png" className="center-block" />
+                <img src="/assets/images98.png" className="center-block" />
                   <h5 className="promo-caption">Realtime Search Experience</h5>
                   <p className="light center">Search for accomodation and get results in the quickest time possible.</p>
                 </div>
@@ -55,17 +55,50 @@ class Landing extends React.Component {
           <h5 className="header text_b">What our users to say...</h5>
           <div className="row">
 
-            <div className="col s12 m7 l6">
-
-                <div className="card horizontal">
-                  <div className="card-stacked text_b">
-
-                      <p>"I am a very simple card. I am good at containing small bits of information...."</p>
-                      <h5>John Doe</h5>
-                      <h6>student, dizmo university</h6>
-
+            <div className="col s12 m4 l4">
+              <div class="card">
+                <div class="card-content">
+                  <p>"I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively."</p>
                 </div>
-              </div>
+                <div>
+                  <center>
+                  <h6 className="blue-text">Dizmo</h6>
+                  <p>from lusaka</p>
+                </center>
+                </div>
+            </div>
+            </div>
+
+            <div className="col s12 m4 l4">
+              <div class="card">
+                <div class="card-content">
+                  <p>"I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively."</p>
+                </div>
+                <div>
+                  <center>
+                  <h6 className="blue-text">Dizmo</h6>
+                  <p>from lusaka</p>
+                </center>
+                </div>
+            </div>
+            </div>
+
+            <div className="col s12 m4 l4">
+
+        <div class="card">
+          <div class="card-content">
+            <p>"I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively."</p>
+          </div>
+          <div>
+            <center>
+            <h6 className="blue-text">Dizmo</h6>
+            <p>from lusaka</p>
+          </center>
+          </div>
+      </div>
             </div>
           </div>
         </div>

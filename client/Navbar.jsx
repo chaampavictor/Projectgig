@@ -58,7 +58,7 @@ componentDidMount(){
 
 
   <div className="right logged-nav-button">
-  
+
     <a href="/" className={` link`}><button id="nav-buttons">Home</button></a>
     <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
     <a href="#" onClick={e => this.logout(e)}><button>Logout</button></a>

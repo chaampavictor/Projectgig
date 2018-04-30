@@ -21,7 +21,7 @@
   background-color: #0b7dda;
 }
 
-.btn, .btn-large, .btn-flat {
+.btn, , .btn-flat {
   border: none;
   border-radius: 2px;
   display: initial;
@@ -119,11 +119,11 @@
 }
 
 .testimony{
-  background-color: #0b7dda33;
+  background-color: #d7d4d44d;
    background-blend-mode: multiply;
    background-size: cover;
-   background-image: url("/assets/rawpixel-com-597438-unsplash.jpg");
-   height: 250px;
+   /*background-image: url("/assets/rawpixel-com-597438-unsplash.jpg");*/
+
  }
 
 .text_h {

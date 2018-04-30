@@ -45,7 +45,7 @@
 }
 
 #new-card{
-  margin: -144.5px 0 1px 0;
+  margin: 5px 0 1px 0;
 }
 
 .row{
@@ -110,19 +110,11 @@
 }
 
 #index-banner {
-  /*
-
-
-  background-position: center;
-  background-repeat: no-repeat;
-*/
   background-color: #00000080;
    background-blend-mode: multiply;
   background-size: cover;
   width: 100%;
-  height: 450px;
-  /*min-height: 500px;
-  max-height: 664px;*/
+  height: 375px;
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
 }
 
@@ -257,11 +249,11 @@ nav ul a {
   visibility: visible;
 }
 
-@-webkit-keyframes cd-pulse {
   0% {
     -webkit-transform: translateY(-50%) scale(1);
     opacity: 1;
   }
+  @-webkit-keyframes cd-pulse {
   40% {
     -webkit-transform: translateY(-50%) scale(0.9);
     opacity: 0;
@@ -503,4 +495,10 @@ border-radius: 12px;
 .form-bottom-border{
   border-bottom: 1px solid blue;
 }
-/*login/signup*/
+
+/*extra banners*/
+.term-img{
+  height: 364px;
+width: 100%;
+background-size: cover;
+}

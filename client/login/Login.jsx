@@ -25,9 +25,9 @@ class Login extends React.Component {
       <div>
       <Navbar/>
 
+<img src="/assets/beth-solano-313671-unsplash.jpg" className="term-img"/>
 
-      <div className="section no-pad-bot" id="index-banner">
-</div>
+
         <div className="container">
           <div className="row">
             <div className="col s12 l6">

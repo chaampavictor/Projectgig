@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor'
+import {withTracker} from 'meteor/react-meteor-data'
 
-export default class Navbar extends Component {
+export  class Navbar extends Component {
+
+constructor(){
+  super();
+  this.state = {
+    name: null,
+  }
+}
 
 componentDidMount(){
   $(".button-collapse").sideNav({
@@ -12,7 +20,7 @@ componentDidMount(){
           closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
 
   });
-
+   this.getName();
 }
 
   logout = (e) => {
@@ -26,9 +34,20 @@ componentDidMount(){
     });
   }
 
-
+  getName(){
+    if(this.props.user == undefined){
+      return null;
+    }
+    const user = Meteor.user();
+    const name = user.profile.name;
+    console.log(Meteor.user()); 
+    this.setState({name})
+  }
 
   render() {
+    
+    
+
     return(
       <div className="navbar-fixed">
     {
@@ -40,7 +59,7 @@ componentDidMount(){
       <div className="background">
         <img src="assets/bane.jpeg"></img>
       </div>
-      <a href="#!name"><span className="white-text name">John Doe</span></a>
+      <a href="#!name"><span className="white-text name">{this.state.name}</span></a>
       <a href="#!email"><span className="white-text email">jdandturk@gmail.com</span></a>
     </div>
   </li>
@@ -85,3 +104,9 @@ componentDidMount(){
     )
   }
 }
+
+export default withTracker(() => {
+  
+    return {user: Meteor.user()}
+  })(Navbar)
+  

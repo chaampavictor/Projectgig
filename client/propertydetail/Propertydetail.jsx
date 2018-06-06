@@ -20,7 +20,7 @@ export class Propertydetail extends React.Component {
           <div className="col  s12 m6 l12">
             <div className="card">
               <div className="card-content">
-                <span className="card-title">{prop.propertyname}</span>
+                  <h3>{prop.propertyname}</h3>
               </div>
               {prop.description}
               <br/> {prop.price}
@@ -42,10 +42,10 @@ export class Propertydetail extends React.Component {
         <div className="container">
           <Altsearch/>
           <center>
-            <h4 className="center">Property</h4>
-            <h4 className="collection">
+            <h3 className="center">Property</h3>
+            <h3 className="collection">
               {this.renderProperty()}
-            </h4>
+            </h3>
           </center>
         </div>
         <Footer/>

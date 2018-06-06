@@ -40,18 +40,16 @@ class Registration extends React.Component {
         <Navbar/>
         <div className="container" id="new-card">
         <div className="row">
-
           <div className="col s12 l12 ">
             <div className="row ">
               <div className="col s12 m6 card-style">
-                <div className="card form-content">
+                <div>
                   <div className="card-content">
-                    <span className="card-title">signup</span>
-
+                  <h5 className="default_color_text card-title center"> signup</h5>
                     <div className="row">
                       <form className="col s12 " onSubmit={this.saveUserDetails}>
                         <div className="row">
-                          <div className="input-field col s12">
+                          <div className="input-field col s12 center">
                             <input id="name" type="text" className="validate" name='name'/>
                             <label htmlFor="name">name</label>
                           </div>
@@ -59,7 +57,7 @@ class Registration extends React.Component {
 
                         <div className="row">
                           <div className="input-field col s12">
-                            <input id="password" type="password" name='password'/>
+                            <input id="password" type="password" name='password' className="input-style"/>
                             <label htmlFor="password">Password</label>
                           </div>
                         </div>
@@ -70,7 +68,7 @@ class Registration extends React.Component {
                           </div>
                         </div>
 
-                        <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
+                        <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit
                           <i className="material-icons right">send</i>
                         </button>
 

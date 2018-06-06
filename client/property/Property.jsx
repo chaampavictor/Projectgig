@@ -40,15 +40,13 @@ class Property extends React.Component {
       <div>
 
         <Navbar/>
-        <div className="container">
-<a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button"><h5>Return</h5></a>
+        <div className="container" id="new-card">
           <div className="row">
 
             <div className="col s12 l12">
               <div className="row">
                 <div className="col s12 m6 card-style">
-                  <span className="card-title">List Property</span>
-                  <div className="card ">
+                  <h5 className="default_color_text card-title center"> Add Property:</h5>
                     <div className="card-content">
 
                       <div className="row">
@@ -90,7 +88,7 @@ class Property extends React.Component {
                               <label htmlFor="price">contact</label>
                             </div>
                           </div>
-                          <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
+                          <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit
                             <i className="material-icons right">send</i>
                           </button>
 
@@ -100,8 +98,6 @@ class Property extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
-
             </div>
           </div>
         </div>

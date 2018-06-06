@@ -18,12 +18,11 @@ class Searchresults extends React.Component {
             <div className="col  s12 m6 l6 card-style">
               <div className="card">
                 <div className="card-content ">
-                  <span className="card-title">
-                    {/* {item.propertyname} */}
+                  <span className="card-title center">
                     <a href={"/propertydetail?id="+item._id} className="primary-content">{`${item.propertyname}`}</a>
                   </span>
                 </div>
-                <div className="card-action">
+                <div className="card-action center">
                   {item.location}
                   <br/> {item.type}
                 </div>

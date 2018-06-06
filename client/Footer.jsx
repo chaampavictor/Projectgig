@@ -7,7 +7,7 @@ export default class Footer extends Component {
 
       <footer id="separate" className="page-footer">
           <div className="container">
-              <div className="row">
+              <div className="row center">
 
                   <div className="col l3 s12">
 

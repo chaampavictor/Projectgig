@@ -27,9 +27,8 @@ class Login extends React.Component {
         <div className="container" id="new-card">
           <div className="row">
                 <div className="col s12 m6 l12 card-style">
-                  <div className="card">
                     <div className="card-content">
-                      <span className="card-title">Login</span>
+                      <h5 className="default_color_text card-title center"> signup</h5>
                       <div className="row">
                         <form className="col s12" onSubmit={this.login}>
                           <div className="row">
@@ -44,14 +43,13 @@ class Login extends React.Component {
                               <label htmlFor="password">Password</label>
                             </div>
                           </div>
-                          <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
+                          <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit
                             <i className="material-icons right">send</i>
                           </button>
                         </form>
                       </div>
                       <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                     </div>
-                  </div>
                 </div>
           </div>
         </div>

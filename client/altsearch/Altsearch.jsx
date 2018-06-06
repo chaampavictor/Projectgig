@@ -9,7 +9,7 @@ export default class Altsearch extends Component {
       <div>
         <div className="col l12 s12">
         <form className="second-example" action='/searchresults'>
-           <input id="search-inputs" name='n'   placeholder="Search for accomodation/location...."   ref={input => this.search = input}   onChange={this.handleInputChange} />
+           <input id="search-inputs" name='n' className="center"   placeholder="Search for accomodation/location...."   ref={input => this.search = input}   onChange={this.handleInputChange} />
             <button type="submit" className="alt-search"><i className="fa fa-search"></i></button>
         </form>
       </div>

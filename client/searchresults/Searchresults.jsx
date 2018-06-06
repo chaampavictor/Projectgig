@@ -15,7 +15,7 @@ class Searchresults extends React.Component {
       return this.props.property.map(item => (
         <div key={Math.random()}>
           <div className="row">
-            <div className="col  s12 m6 l6 ">
+            <div className="col  s12 m6 l6 card-style">
               <div className="card">
                 <div className="card-content ">
                   <span className="card-title">

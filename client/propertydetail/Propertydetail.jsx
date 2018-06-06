@@ -28,10 +28,6 @@ export class Propertydetail extends React.Component {
               <br/> {prop.location}
               <br/> {prop.contact}
               <br/> {prop.status}
-
-                  <div className="card-action">
-                    <a href="/Listedproperty" className={`${this.props.Listedproperty} link`}><h5>Return</h5></a>
-                  </div>
             </div>
           </div>
         </div>

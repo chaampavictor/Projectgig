@@ -24,16 +24,10 @@ class Login extends React.Component {
 
       <div>
       <Navbar/>
-
-<img src="/assets/beth-solano-313671-unsplash.jpg" className="term-img"/>
-
-
-        <div className="container">
+        <div className="container" id="new-card">
           <div className="row">
-            <div className="col s12 l6">
-              <div className="row">
-                <div className="col s12 m6 l12">
-                  <div className="card" id="new-card">
+                <div className="col s12 m6 l12 card-style">
+                  <div className="card">
                     <div className="card-content">
                       <span className="card-title">Login</span>
                       <div className="row">
@@ -59,8 +53,6 @@ class Login extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
           </div>
         </div>
         <Footer/>

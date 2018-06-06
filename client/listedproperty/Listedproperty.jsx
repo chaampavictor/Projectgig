@@ -30,7 +30,7 @@ export class Listedproperty extends React.Component {
 
 
       <div className="row">
-        <div className="col s12 m6 l6">
+        <div className="col s12 m6 l6 card-style">
           <div className="card" onClick={this.c.bind(this,prop._id)} >
             <div key={prop.user} className="collection-item dismissable">
               <div className="card-content ">

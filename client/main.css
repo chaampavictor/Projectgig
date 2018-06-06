@@ -45,8 +45,15 @@
 }
 
 #new-card{
-  margin: 5px 0 1px 0;
+  background-image: url("/assets/kari-shea-272383-unsplash.jpg");
+  width: 100%
 }
+
+.form-content{
+  background-color: #2f2828cc;
+
+}
+
 
 .row{
   margin-bottom: 0px;
@@ -119,12 +126,22 @@
 }
 
 .testimony{
-  background-color: #d7d4d44d;
+  /*background-color: #0b7dda;*/
    background-blend-mode: multiply;
    background-size: cover;
-   /*background-image: url("/assets/rawpixel-com-597438-unsplash.jpg");*/
+  background-image: url("/assets/copped.png");
 
  }
+
+ #testimonials{
+   position: relative;
+margin: 0.5rem 0 1rem 0;
+background-color: #5a55544d;
+transition: box-shadow .25s;
+border-radius: 30px;
+color: white;
+}
+
 
 .text_h {
   padding: 15% 0;
@@ -346,10 +363,15 @@ nav a.button-collapse {
   margin-top: 20px;
 }
 
-
-.card-style{
-  /*border: 7px;*/
+@media only screen and (min-width:600px){
+  .card-style{
+    width: 50% !important;
+  margin-left: 25% !important;;
+  left: auto !important;;
+  right: auto !important;;
+  }
 }
+
 
 .card-avatar img {
   height: 150px;
@@ -391,7 +413,7 @@ footer.page-footer {
     box-shadow: 0 1px 0 0 #000;}
 
     .input-field label {
-    color: #000;}
+    color: #0b7dda;}
 /*tabs*/
 
 .tab a {
@@ -418,6 +440,7 @@ form.example input[type=text] {
 form.example button {
   float: left;
   width: 18%;
+  height: 45px;
   padding: 10px;
   background: #2196F3;
   color: white;
@@ -449,7 +472,7 @@ form.example::after {
 }
 .example {
   display: flex;
-  margin-top: 130px;
+  margin-top: 10px;
 }
 
 #input-field{
@@ -461,7 +484,7 @@ form.example::after {
     height: 41px;
     width: 88%;
     font-size: 1rem;
-    margin: 9% 0 -11px 10px;
+    margin: 3% 8 0px 10px;
     padding: 0;
     box-shadow: none;
     box-sizing: content-box;
@@ -501,4 +524,30 @@ border-radius: 12px;
   height: 364px;
 width: 100%;
 background-size: cover;
+}
+
+#separate{
+  background-color: #d7d4d44d;
+  color: #0b7dda;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#listedprop{
+  width: 63%;
+  margin-left: 135px;
+}
+
+.footer-icon{
+  color: #0b7dda;
+}
+
+#formstyle{
+  border-radius: 35px;
+  border: 1px solid #0b7dda;
+}
+
+#form-container{
+  background-image: url("/assets/kari-shea-272383-unsplash.jpg");
+  width: 100%;
 }

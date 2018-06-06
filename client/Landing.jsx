@@ -5,15 +5,19 @@ import Banner from './Banner';
 
 
 class Landing extends React.Component {
+
+
+  componentDidMount() {
+    $(document).ready(function() {
+      $('.carousel.carousel-slider').carousel({fullWidth: true, indicators: true});
+    });
+  }
+
+
   render() {
-
-
     return (
-
       <div>
-
               <Banner/>
-
         <div id="intro" className="section scrollspy">
           <div className="container">
             <div className="row">
@@ -47,58 +51,43 @@ class Landing extends React.Component {
             </div>
           </div>
         </div>
-
-
         {/* Testimonials start here */}
         <div className="testimony">
         <div className="container">
           <h5 className="header text_b">What our users to say...</h5>
           <div className="row">
-
-            <div className="col s12 m4 l4">
-              <div class="card">
-                <div class="card-content">
-                  <p>"I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively."</p>
-                </div>
-                <div>
-                  <center>
-                  <h6 className="blue-text">Dizmo</h6>
-                  <p>from lusaka</p>
-                </center>
-                </div>
-            </div>
-            </div>
-
-            <div className="col s12 m4 l4">
-              <div class="card">
-                <div class="card-content">
-                  <p>"I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively."</p>
-                </div>
-                <div>
-                  <center>
-                  <h6 className="blue-text">Dizmo</h6>
-                  <p>from lusaka</p>
-                </center>
-                </div>
-            </div>
-            </div>
-
-            <div className="col s12 m4 l4">
-
-        <div class="card">
-          <div class="card-content">
-            <p>"I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively."</p>
-          </div>
-          <div>
-            <center>
-            <h6 className="blue-text">Dizmo</h6>
-            <p>from lusaka</p>
-          </center>
-          </div>
-      </div>
+            <div className="carousel carousel-slider center">
+              <div className="carousel-item white-text" href="#one!">
+                <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
+                This website has really been helpful to me,
+                they are life savers.
+                <i className="fa fa-quote-right banner-fa"/>
+              </h4>
+                <br/>
+                <h5>Hanziba Malambo</h5>
+                <h5>student, University of Zambia</h5>
+              </div>
+              <div className="carousel-item white-text" href="#one!">
+                <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
+                I can now easily find tenants at my own convinience
+                and i don't have to spend much money on advertisement.
+                <i className="fa fa-quote-right banner-fa"/>
+              </h4>
+                <br/>
+                <h5>Mrs Sophia Chisakasaka</h5>
+                <h5>landlord, unza area</h5>
+              </div>
+              <div className="carousel-item white-text" href="#one!">
+                <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
+                findng student accomodation has been a challenge for a long time..
+                this platform helped me and my friends find emergency accomodation
+                after we were evicted
+                <i className="fa fa-quote-right banner-fa"/>
+              </h4>
+                <br/>
+                <h5>Elliot Chibolela</h5>
+                <h5>student, eden institute</h5>
+              </div>
             </div>
           </div>
         </div>

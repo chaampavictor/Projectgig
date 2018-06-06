@@ -3,24 +3,24 @@ import {Meteor} from 'meteor/meteor';
 
 export default class Tab extends Component {
 
-  render() {
-
+  componentDidMount() {
     $(document).ready(function() {
       $('.tabs').tabs();
     });
+  }
+  render() {
     return (
-
       <div className="row">
         <div className="col s12 tab ">
           <ul className="tabs tab-buttons">
             <li className="tab col s3">
-              <a href="#test1" className="">About Us</a>
+              <a href="#test1" className="tab-button">About Us</a>
             </li>
             <li className="tab col s3">
-              <a href="#test2">aim</a>
+              <a href="#test2" className="tab-button">aim</a>
             </li>
             <li className="tab col s3">
-              <a href="#test3">what we do</a>
+              <a href="#test3" className="tab-button">what we do</a>
             </li>
 
           </ul>

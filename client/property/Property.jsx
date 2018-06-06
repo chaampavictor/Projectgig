@@ -45,8 +45,8 @@ class Property extends React.Component {
           <div className="row">
 
             <div className="col s12 l12">
-              <div className="row center-align">
-                <div className="col s12 m6">
+              <div className="row">
+                <div className="col s12 m6 card-style">
                   <span className="card-title">List Property</span>
                   <div className="card ">
                     <div className="card-content">

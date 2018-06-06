@@ -38,16 +38,13 @@ class Registration extends React.Component {
 
       <div>
         <Navbar/>
-
-        <div className="section no-pad-bot" id="index-banner">
-  </div>
-<div className="container">
+        <div className="container" id="new-card">
         <div className="row">
 
-          <div className="col s12 center-align">
-            <div className="row center-align">
-              <div className="col s12 m6">
-                <div className="card card-style" id="new-card">
+          <div className="col s12 l12 ">
+            <div className="row ">
+              <div className="col s12 m6 card-style">
+                <div className="card form-content">
                   <div className="card-content">
                     <span className="card-title">signup</span>
 

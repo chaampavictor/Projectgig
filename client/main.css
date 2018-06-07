@@ -47,6 +47,19 @@
 #new-card{
   background-image: url("/assets/so.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+}
+#login-card{
+  background-image: url("/assets/tom-thain-145829-unsplash.jpg");
+  background-size:cover;
+  height: 50%;
+  background-repeat: no-repeat;
+}
+#signup-card{
+  background-image: url("/assets/kari-shea-180802-unsplash.jpg");
+  background-size:cover;
+  height: 50%;
+  background-repeat: no-repeat;
 }
 
 /*.form-content{

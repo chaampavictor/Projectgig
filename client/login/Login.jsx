@@ -24,7 +24,50 @@ class Login extends React.Component {
 
       <div>
       <Navbar/>
-        <div className="container" id="new-card">
+      <div id="login-card">
+      <div className="container">
+        <div className="row">
+          <div className="col s12 m6 card-style">
+            <h5 className="default_color_text card-title center"> Login </h5>
+            <div className="card-content">
+              <form className="col s12" onSubmit={this.login}>
+                <div className="row">
+                  <div className="input-field col s12">
+                    <input id="email" type="text" className="form-bottom-border" name='email'/>
+                    <label htmlFor="email">email</label>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="input-field col s12">
+                    <input id="password" type="password"  name='password'/>
+                    <label htmlFor="password">Password</label>
+                  </div>
+                </div>
+                <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit
+                  <i className="material-icons right">send</i>
+                </button>
+              </form>
+                <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* <div className="container" id="new-card">
           <div className="row">
                 <div className="col s12 m6 l12 card-style">
                     <div className="card-content">
@@ -52,7 +95,7 @@ class Login extends React.Component {
                     </div>
                 </div>
           </div>
-        </div>
+        </div> */}
         <Footer/>
       </div>
     );

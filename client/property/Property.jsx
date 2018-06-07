@@ -12,14 +12,14 @@ class Property extends React.Component {
     FlowRouter.go('/profile')
   }
 
-  static handleSubmit(event) {
-    event.preventDefault()
-    const type = event.target.type.value
-    const propertyname = event.target.propertyname.value
-    const location = event.target.location.value
-    const price = event.target.price.value
-    const description = event.target.description.value
-    const contact = event.target.contact.value
+  static handleSubmit(e) {
+    e.preventDefault()
+    const type = e.target.type.value
+    const propertyname = e.target.propertyname.value
+    const location = e.target.location.value
+    const price = e.target.price.value
+    const description = e.target.description.value
+    const contact = e.target.contact.value
     Listproperty.insert({
       owner: Meteor.userId(),
       type,

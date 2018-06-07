@@ -34,16 +34,7 @@ componentDidMount(){
     {
       Meteor.userId() ?
       <>
-      <ul id="slide-out" className="side-nav">
-    <li>
-      <div className="user-view">
-      <div className="background">
-        <img src="assets/david-marcu-1266-unsplash.jpg"></img>
-      </div>
-      <a href="#!name"><span className="white-text name">John Doe</span></a>
-      <a href="#!email"><span className="white-text email">jdandturk@gmail.com</span></a>
-    </div>
-  </li>
+      <ul id="slide-out" className="side-nav sidenav-style">
 
     <li><a href="/profile" className={`${this.profile} link`}>profile</a></li>
     <div className="divider"></div>

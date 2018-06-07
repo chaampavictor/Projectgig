@@ -42,11 +42,12 @@ class Registration extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col s12 m6 card-style">
+              <div className="card">
               <div className="card-content">
               <h5 className="default_color_text card-title center"> signup</h5>
                   <form className="col s12 " onSubmit={this.saveUserDetails}>
                     <div className="row">
-                      <div className="input-field col s12 center">
+                      <div className="input-field col s12">
                         <input id="name" type="text" className="validate" name='name'/>
                         <label htmlFor="name">name</label>
                       </div>
@@ -54,7 +55,7 @@ class Registration extends React.Component {
 
                     <div className="row">
                       <div className="input-field col s12">
-                        <input id="password" type="password" name='password' className="input-style"/>
+                        <input id="password" type="password" name='password'/>
                         <label htmlFor="password">Password</label>
                       </div>
                     </div>
@@ -73,6 +74,7 @@ class Registration extends React.Component {
                 <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
 
               </div>
+            </div>
             </div>
           </div>
         </div>

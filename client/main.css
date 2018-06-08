@@ -51,7 +51,7 @@
 }
 
 #login-card {
-  background-image: url("/assets/kari-shea-272383-unsplash.jpg");
+  background-image: url("/assets/marvin-meyer-571072-unsplash.jpg");
   background-size: cover;
   height: 50%;
   background-repeat: no-repeat;
@@ -419,6 +419,7 @@ nav a.button-collapse {
 
 footer.page-footer {
   margin-top: 0px !important;
+  padding-bottom: 0px!
 }
 
 .hr-style {
@@ -444,13 +445,7 @@ footer.page-footer {
 
 /*tabs*/
 
-.tab a {
-  color: green;
-}
 
-.tab {
-  align-items: center;
-}
 
 /*search input form*/
 
@@ -468,7 +463,23 @@ form.example input[type=text] {
 form.example button {
   float: left;
   width: 18%;
-  height: 45px;
+  height: 41px;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 13px;
+  border: 1px;
+  border-left-width: 1px;
+  border-left-style: none;
+  border-left-color: currentcolor;
+  border-radius: 12px;
+  border-left: none;
+  cursor: pointer;
+}
+form.second-example button {
+  float: left;
+  width: 18%;
+  height: 41px;
   padding: 10px;
   background: #2196F3;
   color: white;
@@ -495,18 +506,21 @@ form.example::after {
 .second-example {
   display: flex;
   margin-left: 30px;
+  margin-bottom: 18px;
 }
 
 .example {
   display: flex;
-  margin-top: 10px;
+  margin-top: 50px;
 }
+
 
 #input-field {
   background-color: white;
   border: 2px;
-  border-bottom: 1px solid #9e9e9e;
+  border: 1px solid #9e9e9e;
   border-radius: 0;
+  border-color: #0b7dda;
   outline: none;
   height: 41px;
   width: 88%;
@@ -519,15 +533,6 @@ form.example::after {
   border-radius: 12px;
 }
 
-#search-inputs {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #0b7dda;
-  background-color: white;
-  border-radius: 12px;
-  height: 3rem;
-  width: 69%;
-}
 
 .alt-search {
   color: white;
@@ -559,6 +564,7 @@ form.example::after {
   color: #0b7dda;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-bottom: 0;
 }
 
 #listedprop {
@@ -576,4 +582,17 @@ form.example::after {
 }
 .sidenav-style{
   color: #0b7dda;
+}
+
+#alt-banner{
+  background-color: #00000080;
+  background-blend-mode: multiply;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  background-image: url("/assets/david-marcu-1266-unsplash.jpg");
+}
+
+.registration-card{
+  background-color: red;
 }

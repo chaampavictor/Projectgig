@@ -50,9 +50,11 @@ export class Listedproperty extends React.Component {
   render() {
     return (
       <div>
-        <Navbar/>
-        <div className="container">
+        <div id="alt-banner" className="section">
+          <Navbar/>
           <Altsearch/>
+        </div>
+        <div className="container">
 
           <h4 className="center">Listed Properties</h4>
           {this.renderProperty()}

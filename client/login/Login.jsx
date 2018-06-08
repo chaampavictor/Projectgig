@@ -24,7 +24,7 @@ class Login extends React.Component {
 
       <div>
         <Navbar/>
-        <div id="login-card">
+        <div id="login-card" className="section">
           <div className="container">
             <div className="row">
               <div className="col s12 m6 card-style">
@@ -46,9 +46,7 @@ class Login extends React.Component {
                           <label htmlFor="password">Password</label>
                         </div>
                       </div>
-                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit
-                        <i className="material-icons right">send</i>
-                      </button>
+                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                     </form>
                     <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                   </div>

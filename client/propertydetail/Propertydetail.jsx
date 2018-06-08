@@ -20,14 +20,17 @@ export class Propertydetail extends React.Component {
           <div className="col  s12 m6 l12">
             <div className="card">
               <div className="card-content">
-                  <h3>{prop.propertyname}</h3>
+                  <h3 className="default_color_text bold">{prop.propertyname}</h3>
               </div>
-              {prop.description}
-              <br/> {prop.price}
-              <br/> {prop.type}
-              <br/> {prop.location}
-              <br/> {prop.contact}
-              <br/> {prop.status}
+              <h3 className="default_color_text">description:</h3>{prop.description}
+              <br/>
+              <h3 className="default_color_text">Price:</h3>{prop.price}
+              <br/>
+              <h3 className="default_color_text">Type:</h3>{prop.type}
+              <br/>
+              <h3 className="default_color_text">Location:</h3> {prop.location}
+              <br/>
+              <h3 className="default_color_text">Contact info:</h3> {prop.contact}
             </div>
           </div>
         </div>

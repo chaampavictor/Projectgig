@@ -42,9 +42,9 @@ class Registration extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col s12 m6 card-style">
+              <h5 className="default_color_text card-title center"> signup</h5>
               <div className="card">
               <div className="card-content">
-              <h5 className="default_color_text card-title center"> signup</h5>
                   <form className="col s12 " onSubmit={this.saveUserDetails}>
                     <div className="row">
                       <div className="input-field col s12">
@@ -65,11 +65,7 @@ class Registration extends React.Component {
                         <label htmlFor="email">Email</label>
                       </div>
                     </div>
-
-                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit
-                      <i className="material-icons right">send</i>
-                    </button>
-
+                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                   </form>
                 <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
 

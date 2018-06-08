@@ -25,10 +25,10 @@ export class Profile extends React.Component {
                 <br/>
                 <div className="center">
                   {prop.description}
-                </div>
-                <div className="card-action center">
-                  <a href="#">{prop.contact}</a>
-                  <a href="#">{prop.location}</a>
+                  <br/>
+                  {prop.contact}
+                  <br/>
+                  {prop.location}
                 </div>
               </div>
               <div className="card-action center">

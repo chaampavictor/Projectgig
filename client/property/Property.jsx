@@ -40,59 +40,61 @@ class Property extends React.Component {
       <div>
         <Navbar/>
         <div id="new-card">
-        <div className="container">
-          <div className="row">
-            <div className="col s12 m6 card-style">
-              <h5 className="default_color_text card-title center"> Add Property:</h5>
-              <div className="card-content">
-              <form className="col s12 " onSubmit={Property.handleSubmit.bind(this)}>
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input id="propertyname" type="text" name='propertyname'/>
-                    <label htmlFor="propertyname">property name</label>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input id="type" type="text"name='type'/>
-                    <label htmlFor="type">type</label>
-                  </div>
-                </div>
 
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input id="location" type="text" name='location'/>
-                    <label htmlFor="location">Location</label>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input id="price" type="text" name='price'/>
-                    <label htmlFor="price">Price</label>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input id="description" type="text" name='description'/>
-                    <label htmlFor="description">Description</label>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input id="contact" type="text" name='contact'/>
-                    <label htmlFor="price">contact</label>
-                  </div>
-                </div>
-                <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit
-                  <i className="material-icons right">send</i>
-                </button>
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m6 card-style">
+                <div className="card">
+                <h5 className="default_color_text card-title center">
+                  Add Property</h5>
+                  <div className="card-content">
+                    <form className="col s12 " onSubmit={Property.handleSubmit.bind(this)}>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="propertyname" type="text" name='propertyname'/>
+                          <label htmlFor="propertyname">property name</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="type" type="text" name='type'/>
+                          <label htmlFor="type">type</label>
+                        </div>
+                      </div>
 
-              </form>
-            </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="location" type="text" name='location'/>
+                          <label htmlFor="location">Location</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="price" type="text" name='price'/>
+                          <label htmlFor="price">Price</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="description" type="text" name='description'/>
+                          <label htmlFor="description">Description</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="contact" type="text" name='contact'/>
+                          <label htmlFor="price">contact</label>
+                        </div>
+                      </div>
+                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+                    </form>
+                    {/* <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button> */}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
         <Footer/>
       </div>
 

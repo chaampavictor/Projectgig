@@ -19,12 +19,13 @@ class Searchresults extends React.Component {
               <div className="card">
                 <div className="card-content ">
                   <span className="card-title center">
-                    <a href={"/propertydetail?id="+item._id} className="primary-content">{`${item.propertyname}`}</a>
+                    <a href={"/propertydetail?id=" + item._id} className="primary-content">{`${item.propertyname}`}</a>
                   </span>
                 </div>
                 <div className="card-action center">
-                  {item.location}
-                  <br/> {item.type}
+                    <h6 className="default_color_text">Location:</h6> {item.location}
+                  <br/>
+                    <h6 className="default_color_text">Type:</h6>{item.type}
                 </div>
               </div>
             </div>
@@ -42,9 +43,7 @@ class Searchresults extends React.Component {
         <div className="container">
 
           <Altsearch/>
-
-          {this.g()
-}
+          {this.g()}
         </div>
 
         <Footer/>
@@ -58,7 +57,7 @@ export default withTracker(() => {
 
   let propertyName = FlowRouter.getQueryParam('n');
   // alert(propertyName)
-  propertyName = RegExp(propertyName,'i')
+  propertyName = RegExp(propertyName, 'i')
 
   return {
     property: Listproperty.find({location: propertyName}).fetch()

@@ -69,13 +69,13 @@ class Landing extends React.Component {
               </div>
               <div className="carousel-item white-text" href="#one!">
                 <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
-                I can now easily find tenants at my own convinience
+                I can now easily find student tenants at my own convinience
                 and i don't have to spend much money on advertisement.
                 <i className="fa fa-quote-right banner-fa"/>
               </h4>
                 <br/>
-                <h5>Mrs Sophia Chisakasaka</h5>
-                <h5>landlord, unza area</h5>
+                <h5> Sophia Chisakasaka</h5>
+                <h5>landlord, Chongwe</h5>
               </div>
               <div className="carousel-item white-text" href="#one!">
                 <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
@@ -85,8 +85,8 @@ class Landing extends React.Component {
                 <i className="fa fa-quote-right banner-fa"/>
               </h4>
                 <br/>
-                <h5>Elliot Chibolela</h5>
-                <h5>student, eden institute</h5>
+                <h5>Cholwe Malama Malilwe</h5>
+                <h5>student, Mulungushi Univeristy</h5>
               </div>
             </div>
           </div>

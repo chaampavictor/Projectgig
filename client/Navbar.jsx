@@ -44,13 +44,13 @@ componentDidMount(){
 
 
   </ul>
-  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-menu">>menu</i></a>
+  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-plus menu-fa"></i></a>
 
 
 
   <div className="right logged-nav-button">
 
-    <a href="/" className={` link`}><button id="nav-buttons">STUDAC</button></a>
+    <a href="/" className={` link`}><button id="nav-buttons">KUKAYA</button></a>
     <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
     <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>
 
@@ -59,7 +59,7 @@ componentDidMount(){
     :
 <>
 
-<a href="/" className={` link`}><h6>STUDAC</h6></a>
+<a href="/" className={` link`}><h6>KUKAYA</h6></a>
 <div className="right nav-button">
 
   <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">signup</button></a>

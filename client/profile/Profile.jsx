@@ -31,11 +31,11 @@ export class Profile extends React.Component {
                   {prop.location}
                 </div>
               </div>
-              <div className="card-action center">
+              {/* <div className="card-action center">
                 <a className="delete" onClick={this.deleteThisProperty.bind(this, prop._id)}>delete</a>
                 <a href="#modal1" className="delete modal-trigger">edit</a>
               <br/>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

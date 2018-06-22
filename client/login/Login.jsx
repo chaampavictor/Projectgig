@@ -28,10 +28,10 @@ class Login extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col s12 m6 card-style">
-                <h5 className="default_color_text card-title center">
-                  Login
-                </h5>
                 <div className="card">
+                  <h5 className="default_color_text card-title center">
+                    Login
+                  </h5>
                   <div className="card-content">
                     <form className="col s12" onSubmit={this.login}>
                       <div className="row">

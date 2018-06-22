@@ -44,6 +44,10 @@
   color: #0b7dda;
 }
 
+.card{
+  background-color: #ffffffe6;
+}
+
 #new-card {
   background-image: url("/assets/so.jpg");
   background-size: cover;
@@ -445,7 +449,10 @@ footer.page-footer {
 
 /*tabs*/
 
-
+.tab-style{
+  margin-bottom: 55px;
+  margin-top: 55px;
+}
 
 /*search input form*/
 
@@ -531,6 +538,7 @@ form.example::after {
   box-sizing: content-box;
   transition: all 0.3s;
   border-radius: 12px;
+  color: #0b7dda;
 }
 
 

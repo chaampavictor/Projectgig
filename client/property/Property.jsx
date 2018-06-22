@@ -39,16 +39,15 @@ class Property extends React.Component {
 
       <div>
         <Navbar/>
-        <div id="new-card">
-
+        <div id="new-card" className="section">
           <div className="container">
             <div className="row">
               <div className="col s12 m6 card-style">
                 <div className="card">
-                <h5 className="default_color_text card-title center">
-                  Add Property</h5>
+                  <h5 className="default_color_text card-title center">
+                    Add Property</h5>
                   <div className="card-content">
-                    <form className="col s12 " onSubmit={Property.handleSubmit.bind(this)}>
+                    <form className="col s12" onSubmit={Property.handleSubmit.bind(this)}>
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="propertyname" type="text" name='propertyname'/>
@@ -61,7 +60,6 @@ class Property extends React.Component {
                           <label htmlFor="type">type</label>
                         </div>
                       </div>
-
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="location" type="text" name='location'/>
@@ -86,9 +84,9 @@ class Property extends React.Component {
                           <label htmlFor="price">contact</label>
                         </div>
                       </div>
-                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                     </form>
-                    {/* <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button> */}
+                    <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                   </div>
                 </div>
               </div>

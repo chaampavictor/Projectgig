@@ -25,48 +25,37 @@ export default class Tab extends Component {
 
           </ul>
         </div>
-
-        <div id="test1" className="col s12">
+        <div id="test1" className="col s12 ">
           <div className="row">
-            <div className="col s12 m7 l6">
-              <div className="card">
-                <div className="card-content">
-                  <p>STUDAC is a web based application that provides people with a platform were they can easily search for accomodation that suits their needs. think of us as the google of accomodation</p>
+            <div className="col s12 m7 l12">
+                <div className="card-content tab-style">
+                  <p>STUDAC is a web based application that provides people with a platform were they can easily search for accomodation<br/> that suits their needs. think of us as the google of accomodation</p>
                 </div>
-              </div>
             </div>
           </div>
         </div>
 
         <div id="test2" className="col s12">
-
           <div className="row">
-            <div className="col s12 m7 l6">
-              <div className="card">
-                <div className="card-content">
+            <div className="col s12 m7 l12">
+                <div className="card-content tab-style">
                   <p>To provide the best accomodation search services possible.</p>
                 </div>
-              </div>
             </div>
           </div>
-
         </div>
 
-        <div id="test3" className="col s12">
+        <div id="test3" className="col s12 tab-style">
           <div className="row">
-            <div className="col s12 m7 l6">
-              <div className="card">
-                <div className="card-content">
+            <div className="col s12 m7 l12">
+                <div className="card-content tab-style">
                   <p>we make finding accomodation for students easy and quick. the goal is to help students find suitable accomodation with just a few clicks</p>
                 </div>
-              </div>
             </div>
           </div>
         </div>
-
-      </div>
+</div>
 
     )
   }
 }
-// testing

@@ -37,7 +37,6 @@ class Searchresults extends React.Component {
   }
   render() {
     return (
-
       <div>
         <Navbar/>
         <div className="container">

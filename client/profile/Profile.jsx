@@ -1,16 +1,49 @@
 import React from 'react';
 import {Meteor} from 'meteor/meteor';
-import {withTracker} from 'meteor/react-meteor-data'
+import {withTracker} from 'meteor/react-meteor-data';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
-import {Listproperty} from '../../lib/collections'
+import {Listproperty} from '../../lib/collections';
+import {UserFiles} from '../../lib/collections.js';
+import FileUpload from '../fileupload/Uploadfile.jsx';
+
+
 
 export class Profile extends React.Component {
 
-  renderProperty() {
+
+
+
+  // const posts = this.props.posts;
+  // return posts.map((post) => {
+  //   const trial = post.imageId;
+  //   console.log(trial);
+  //   const link = UserFiles.findOne({ _id: trial }).link();
+  //   return (
+  //     <div key={post._id} className=" hover-over-imgs">
+  //       <img className="thumbnail" src={link} />
+  //       <div className=" on-hover-details">
+  //         <a className="link-to-buy" href="/Buy1"></a>
+  //         {/* <a className="hover-item-one">buy</a> */}
+  //         <a className="artist-links hover-item-two" title="artist" href="/ProfilePage"><img src="a.jpg" className="small-img pad2" alt="artist" />Artist</a>
+  //       </div>
+  //     </div>
+  //   )
+  // }
+  // )
+
+
+
+
+  renderProperty = () => {
     const property = this.props.property
     if (property === undefined) {
-      return;
+      return property.map((property) => {
+        const trial = post.imageId;
+        console.log(trials);
+        const link = UserFiles.findOne({ _id:trial }).link();
+      }
+    );
     }
 
     return property.map((prop) => (
@@ -31,11 +64,11 @@ export class Profile extends React.Component {
                   {prop.location}
                 </div>
               </div>
-              <div className="card-action center">
+              {/* <div className="card-action center">
                 <a className="delete" onClick={this.deleteThisProperty.bind(this, prop._id)}>delete</a>
                 <a href="#modal1" className="delete modal-trigger">edit</a>
               <br/>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -139,11 +172,33 @@ export class Profile extends React.Component {
     );
   }
 }
+
+
+
+
+//
+// export default withTracker(() =>{
+//   Meteor.subscribe('posts');
+//   let isDataReady = Meteor.subscribe('files.all');
+//   return{
+//     posts: Posts.find().fetch(),
+//     files : UserFiles.find({}, {sort: {name: 1}}).fetch(),
+//     isDataReady: isDataReady.ready(),
+//   }
+//   })(Home);
+
+
+
 export default withTracker(() => {
 
   const propertyName = FlowRouter.getQueryParam('name');
 
+  Meteor.subscribe('property');
+  let isDataReady = Meteor.subscribe('files.all');
+
   return {
-    property: Listproperty.find({owner: Meteor.userId()}).fetch()
+    property: Listproperty.find({owner: Meteor.userId()}).fetch(),
+    files : UserFiles.find({}, {sort: {name: 1}}).fetch(),
+    isDataReady: isDataReady.ready(),
   }
 })(Profile)

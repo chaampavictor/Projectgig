@@ -28,3 +28,4 @@ react-meteor-data
 ultimatejs:tracker-react
 ostrio:files
 autopublish
+insecure

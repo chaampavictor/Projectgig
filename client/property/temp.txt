@@ -7,80 +7,119 @@ import {UserFiles} from '../../lib/collections.js';
 import FileUpload from '../fileupload/Uploadfile.jsx';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
+import Session  from 'meteor/session';
 
 class Property extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      propertyName: '',
-      type: '',
-      location: '',
-      phoneNumber: '',
-      price: '',
-      description: ''
-    }
-  }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const attempt = Session.get('imageId');
-    const currentUserId = Meteor.userId()
-    const properties = {
-      imageId: attempt,
-      owner: Meteor.userId(),
-      propertyName: this.state.propertyName,
-      category: this.state.type,
-      location: this.state.location,
-      phoneNumber: this.state.phoneNumber,
-      price: this.state.price,
-      description: this.state.description
-    }
-    Meteor.call('property.create', properties);
-    console.log('property created')
-    FlowRouter.go('/profile')
-  }
+  // myCallBack(err, id) {
+  //   console.log(err)
+  //   FlowRouter.go('/profile')
+  // }
+  //
+  // static handleSubmit(e) {
+  //   e.preventDefault()
+  //   const type = e.target.type.value
+  //   const propertyname = e.target.propertyname.value
+  //   const location = e.target.location.value
+  //   const price = e.target.price.value
+  //   const description = e.target.description.value
+  //   const contact = e.target.contact.value
+  //   Listproperty.insert({
+  //     owner: Meteor.userId(),
+  //     type,
+  //     propertyname,
+  //     location,
+  //     price,
+  //     description,
+  //     contact,
+  //     status: false
+  //   }, (err, id) => this.myCallBack(err, id))
+  // }
 
-  handlePropertyNameChange = (e) => {
-    this.setState({propertyName: e.target.value})
-  }
 
-  handleTypeChange = (e) => {
-    this.setState({type: e.target.value})
-  }
 
-  handleLocationChange = (e) => {
-    this.setState({location: e.target.value})
+  constructor(props){
+  super(props);
+  this.state = {
+    imageId:'',
+    propertyName:'',
+    location:'',
+    price:'',
+    description:'',
+    type:'',
+    contact: '',
   }
+}
 
-  handlephoneNumberChange = (e) => {
-    this.setState({phoneNumber: e.target.value})
+handleSubmit=(e)=>{
+  const attempt2 = Session.get('imageId');
+  const item = {
+    imageId: attempt2,
+    number: this.state.number,
+    name:this.state.propertyName,
+    price:this.state.price,
+    description:this.state.description,
+    location: this.state.location,
+    type: this.state.type,
   }
+  Meteor.call('property.create',item);
+  console.log('item created')
+   FlowRouter.go('/profile');
+  e.preventDefault();
+}
 
-  handlePriceChange = (e) => {
-    this.setState({price: e.target.value})
-  }
+handleNameChange = (e) => {
+  this.setState({
+    name: e.target.value
+  })
+}
 
-  handleDescriptionChange = (e) => {
-    this.setState({description: e.target.value})
-  }
+handleLocationChange = (e) => {
+  this.setState({
+    location: e.target.value
+  })
+}
+
+handlePriceChange = (e) => {
+  this.setState({
+    price: e.target.value
+  })
+}
+
+handleDescriptionChange = (e) => {
+  this.setState({
+    description: e.target.value
+  })
+}
+handleTypechangeChange = (e) => {
+  this.setState({
+    type: e.target.value
+  })
+}
+
+handleNumberChange = (e) => {
+  this.setState({
+    number: e.target.value
+  })
+}
+
+
+
 
   render() {
+
 
     let {imagePreviewUrl} = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} style={{
-        width: 100 + "px",
-        height: 100 + "px"
-      }}/>);
+      $imagePreview = (<img src={imagePreviewUrl} style={{width:100+"px",height:100+"px"}}/>);
     } else {
-      $imagePreview = (
-        <div className="previewText">Please select an Image for Preview<br/></div>
-      );
+      $imagePreview = (<div className="previewText">Please select an Image for Preview<br/></div>);
     }
 
-    return (
 
+
+    return (
       <div>
         <Navbar/>
         <div id="new-card" className="section">
@@ -91,49 +130,49 @@ class Property extends React.Component {
                   <h5 className="default_color_text card-title center">
                     Add Property</h5>
                   <div className="card-content">
-                    <form className="col s12" onSubmit={Property.handleSubmit}>
+                    <form className="col s12" onSubmit={this.handleSubmit}>
                       <div className="row">
                         <div className="input-field col s12">
-                          {/* <FileUpload className="white-text" fileName = {this.state.propertyName} /> */}
+                          <FileUpload/>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="propertyname" onChange={this.handlePropertyNameChange} type="text" name='propertyname'/>
+                          <input onChange={this.handleNameChange}  type="text" name='propertyname'/>
                           <label htmlFor="propertyname">property name</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="type" onChange={this.handleTypeChange} type="text" name='type'/>
+                          <input onChange={this.handleTypeChange}  type="text" name='type'/>
                           <label htmlFor="type">type</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="location" onChange={this.handleLocationChange} type="text" name='location'/>
+                          <input onChange={this.handleLocationChange} type="text" name='location'/>
                           <label htmlFor="location">Location</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="price" onChange={this.handlePriceChange} type="text" name='price'/>
+                          <input onChange={this.handlePriceChange} type="text" name='price'/>
                           <label htmlFor="price">Price</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="description" onChange={this.handleDescriptionChange} type="text" name='description'/>
+                          <input onChange={this.handleDescriptionChange} type="text" name='description'/>
                           <label htmlFor="description">Description</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="contact" onChange={this.handleContactChange} type="text" name='contact'/>
+                          <input onChange={this.handleNumberChange} type="text" name='contact'/>
                           <label htmlFor="price">contact</label>
                         </div>
                       </div>
-                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                     </form>
                     <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                   </div>
@@ -148,13 +187,9 @@ class Property extends React.Component {
     );
   }
 }
-
-export default withTracker(() => {
-  Meteor.subscribe('files.all');
-  return {files: Listproperty.find({}, {
-      sort: {
-        name: 1
-      }
-    }).fetch()}
-
+export default withTracker(() =>{
+  Meteor.subscribe('property')
+  return{
+    property : Listproperty.find().fetch(),
+  }
 })(Property);

@@ -14,7 +14,7 @@ class Property extends React.Component {
     console.log(err)
     FlowRouter.go('/profile')
   }
-
+  
   static handleSubmit(e) {
     e.preventDefault()
     const type = e.target.type.value
@@ -26,6 +26,7 @@ class Property extends React.Component {
     Listproperty.insert({
       owner: Meteor.userId(),
       type,
+      imageId,
       propertyname,
       location,
       price,
@@ -33,13 +34,10 @@ class Property extends React.Component {
       contact,
       status: false
     }, (err, id) => this.myCallBack(err, id))
-
   }
 
   render() {
-
     return (
-
       <div>
         <Navbar/>
         <div id="new-card" className="section">

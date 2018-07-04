@@ -21,15 +21,14 @@ class Registration extends React.Component {
       profile
     }
 
-    Accounts.createUser(user, (err)=> {
 
+
+    Accounts.createUser(user, (err)=> {
       if (err) {
         console.log(err.reason);
       }
       FlowRouter.go('profile')
     });
-
-
   }
 
 
@@ -48,7 +47,7 @@ class Registration extends React.Component {
                   <form className="col s12 " onSubmit={this.saveUserDetails}>
                     <div className="row">
                       <div className="input-field col s12">
-                        <input id="name" type="text" className="validate" name='name'/>
+                        <input id="name" type="text" name='name'/>
                         <label htmlFor="name">name</label>
                       </div>
                     </div>

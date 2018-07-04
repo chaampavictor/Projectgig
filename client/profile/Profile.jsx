@@ -53,15 +53,15 @@ export class Profile extends React.Component {
             <div className="card ">
               <div className="card-content ">
                 <span className="card-title center">
-                  <a href={"/propertydetail?id=" + prop._id} className="primary-content">{`${prop.propertyname}`}</a>
+                  <h6><a href={"/propertydetail?id=" + prop._id} className="primary-content">{`${prop.propertyname}`}</a></h6>
                 </span>
                 <br/>
                 <div className="center">
-                  {prop.description}
+                  <h6>{prop.description}</h6>
                   <br/>
-                  {prop.contact}
+                  <h6>{prop.contact}</h6>
                   <br/>
-                  {prop.location}
+                  <h6>{prop.location}</h6>
                 </div>
               </div>
               {/* <div className="card-action center">
@@ -105,7 +105,7 @@ export class Profile extends React.Component {
         <Navbar/> {/* Modal Structure */}
         <div id="modal1" className="modal">
           <div className="modal-content">
-            <h4>Edit Property</h4>
+            <h5>Edit Property</h5>
             <div className="row">
               <form className="col s12 l6">
                 <div className="row">
@@ -161,8 +161,9 @@ export class Profile extends React.Component {
 
         <div className="container">
           <div className="col s12 m6">
-            <a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button">Add Property</a>
+            <h6><a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button">Add Property</a></h6>
             <h5 className="center prop-list">my property list</h5>
+
             {this.renderProperty()}
           </div>
         </div>

@@ -161,7 +161,7 @@ class FileUpload extends Component {
 
          <div className="row">
            <div className="col-md-12">
-             <p className="white-text">Upload Image:</p>
+             <p className="black-text default_color_text">Upload Image:</p>
              <input type="file" id="fileinput"
              disabled={this.state.inProgress}
              ref="fileinput"

@@ -24,7 +24,7 @@ export class Listedproperty extends React.Component {
 
     return property.map((prop) => {
       const trial = property.imageId;
-      // const link = UserFiles.findOne({_id: trial}).link();
+      const link = UserFiles.findOne({_id: trial}).link();
       return (
       <div key={prop._id}>
 
@@ -37,7 +37,7 @@ export class Listedproperty extends React.Component {
                     <h6><a href={"/propertydetail?id=" + prop._id} className="primary-content">{`${prop.propertyname}`}</a></h6>
                   </span>
                   <div className="center">
-                    {/* <img src={link} height="200" width="200"></img> */}
+                    <img src={link} height="200" width="200"></img>
                   </div>
                   <div className="center">
                     <h6>{prop.description}</h6>

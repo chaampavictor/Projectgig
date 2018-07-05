@@ -62,10 +62,10 @@ componentDidMount(){
 <a href="/" className={` link`}><h6>KUKAYA</h6></a>
 <div className="right nav-button">
 
-  <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">signup</button></a>
+  <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>
 
-<a href="/about" className={`${this.about} link`}><button id="nav-buttons">about</button></a>
-<a href="/login" className={`${this.login} link`}><button id="nav-buttons">login</button></a>
+<a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
+<a href="/login" className={`${this.login} link`}><button id="nav-buttons">Login</button></a>
 </div>
 </>
     }

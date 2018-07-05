@@ -14,7 +14,7 @@ class Property extends React.Component {
     console.log(err)
     FlowRouter.go('/profile')
   }
-  
+
   static handleSubmit(e) {
     e.preventDefault()
     const type = e.target.type.value
@@ -23,10 +23,11 @@ class Property extends React.Component {
     const price = e.target.price.value
     const description = e.target.description.value
     const contact = e.target.contact.value
+    const attempt2 = Session.get('imageId')
     Listproperty.insert({
       owner: Meteor.userId(),
       type,
-      imageId,
+      attempt2,
       propertyname,
       location,
       price,

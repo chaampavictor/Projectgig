@@ -12,29 +12,6 @@ import FileUpload from '../fileupload/Uploadfile.jsx';
 export class Profile extends React.Component {
 
 
-
-
-  // const posts = this.props.posts;
-  // return posts.map((post) => {
-  //   const trial = post.imageId;
-  //   console.log(trial);
-  //   const link = UserFiles.findOne({ _id: trial }).link();
-  //   return (
-  //     <div key={post._id} className=" hover-over-imgs">
-  //       <img className="thumbnail" src={link} />
-  //       <div className=" on-hover-details">
-  //         <a className="link-to-buy" href="/Buy1"></a>
-  //         {/* <a className="hover-item-one">buy</a> */}
-  //         <a className="artist-links hover-item-two" title="artist" href="/ProfilePage"><img src="a.jpg" className="small-img pad2" alt="artist" />Artist</a>
-  //       </div>
-  //     </div>
-  //   )
-  // }
-  // )
-
-
-
-
   renderProperty = () => {
     const property = this.props.property
     if (property === undefined) {
@@ -64,11 +41,11 @@ export class Profile extends React.Component {
                   <h6>{prop.location}</h6>
                 </div>
               </div>
-              {/* <div className="card-action center">
-                <a className="delete" onClick={this.deleteThisProperty.bind(this, prop._id)}>delete</a>
+              <div className="card-action center">
+                <a  href="#modal2" className="delete modal-trigger">delete</a>
                 <a href="#modal1" className="delete modal-trigger">edit</a>
               <br/>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -102,22 +79,23 @@ export class Profile extends React.Component {
     return (
 
       <div>
-        <Navbar/> {/* Modal Structure */}
+        <Navbar/>
+        {/* Modal Structure */}
         <div id="modal1" className="modal">
           <div className="modal-content">
             <h5>Edit Property</h5>
             <div className="row">
               <form className="col s12 l6">
                 <div className="row">
-                  <div className="input-field col s6">
+                  <div className="input-field col s12 ">
                     <input id="propertyname" type="text" name='propertyname'/>
-                    <label htmlFor="propertyname">property name</label>
+                    <label htmlFor="propertyname">Property Name</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s6">
                     <input id="type" type="text" name='type'/>
-                    <label htmlFor="type">type</label>
+                    <label htmlFor="type">Type</label>
                   </div>
                 </div>
 
@@ -142,22 +120,34 @@ export class Profile extends React.Component {
                 <div className="row">
                   <div className="input-field col s12">
                     <input id="contact" type="text" name='contact'/>
-                    <label htmlFor="price">contact</label>
+                    <label htmlFor="price">Contact</label>
                   </div>
                 </div>
-
-                <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
-                  <i className="material-icons right">send</i>
-                </button>
-
+                <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit</button>
               </form>
-
             </div>
           </div>
-
         </div>
-
         {/* edit property ends here */}
+
+        {/* delete modal starts here */}
+        <div id="modal2" className="modal">
+          <div className="modal-content">
+            <h5>Delete Property</h5>
+            <div className="row">
+              <div className="col s12 l12">
+                <div className="row">
+                  <h6>Are you sure?</h6>
+                </div>
+                <center>
+                  <button  className="btn waves-effect waves-light submit-button" type="submit" name="action" onClick = {e => this.deleteThisProperty(e, prop._id)}>Delete</button>
+                </center>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* delete modal ends here */}
 
         <div className="container">
           <div className="col s12 m6">

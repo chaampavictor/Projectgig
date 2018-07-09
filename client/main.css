@@ -21,7 +21,7 @@
   background-color: #0b7dda;
 }
 
-.btn, .btn-large, .btn-flat {
+.btn, , .btn-flat {
   border: none;
   border-radius: 2px;
   display: initial;
@@ -44,11 +44,35 @@
   color: #0b7dda;
 }
 
-#new-card{
-  margin: -144.5px 0 1px 0;
+.card{
+  background-color: #ffffffe6;
 }
 
-.row{
+#new-card {
+  background-image: url("/assets/so.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#login-card {
+  background-image: url("/assets/marvin-meyer-571072-unsplash.jpg");
+  background-size: cover;
+  height: 50%;
+  background-repeat: no-repeat;
+}
+
+#signup-card {
+  background-image: url("/assets/kari-shea-180802-unsplash.jpg");
+  background-size: cover;
+  height: 50%;
+  background-repeat: no-repeat;
+}
+
+/*.form-content{
+  background-color: #2f2828cc;
+}*/
+
+.row {
   margin-bottom: 0px;
 }
 
@@ -69,22 +93,24 @@
   margin-top: 0;
 }
 
-#nav-buttons{
+#nav-buttons {
   background-color: transparent;
   border-radius: 12px;
   border: none;
 }
 
-#banner-links{
+#banner-links {
   background-color: transparent;
   border-radius: 12px;
   border: none;
   color: #0b7dda;
   margin-left: 34px;
 }
-.banner-fa{
-  color:white;
+
+.banner-fa {
+  color: white;
 }
+
 .tabs .indicator {
   position: absolute;
   bottom: 0;
@@ -110,29 +136,29 @@
 }
 
 #index-banner {
-  /*
-
-
-  background-position: center;
-  background-repeat: no-repeat;
-*/
   background-color: #00000080;
-   background-blend-mode: multiply;
+  background-blend-mode: multiply;
   background-size: cover;
   width: 100%;
-  height: 450px;
-  /*min-height: 500px;
-  max-height: 664px;*/
+  height: 375px;
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
 }
 
-.testimony{
-  background-color: #0b7dda33;
-   background-blend-mode: multiply;
-   background-size: cover;
-   background-image: url("/assets/rawpixel-com-597438-unsplash.jpg");
-   height: 250px;
- }
+.testimony {
+  /*background-color: #0b7dda;*/
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-image: url("/assets/copped.png");
+}
+
+#testimonials {
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #5a55544d;
+  transition: box-shadow .25s;
+  border-radius: 30px;
+  color: white;
+}
 
 .text_h {
   padding: 15% 0;
@@ -165,7 +191,7 @@
 
 .text_b {
   text-align: center;
-  color:white;
+  color: white;
 }
 
 .in {
@@ -187,9 +213,10 @@
   color: #2196F3;
 }
 
-.horizontal{
+.horizontal {
   background-color: transparent;
 }
+
 nav ul a {
   font-size: 1.2rem;
   color: #FFF;
@@ -257,11 +284,16 @@ nav ul a {
   visibility: visible;
 }
 
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+0% {
+  -webkit-transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+
 @-webkit-keyframes cd-pulse {
-  0% {
-    -webkit-transform: translateY(-50%) scale(1);
-    opacity: 1;
-  }
   40% {
     -webkit-transform: translateY(-50%) scale(0.9);
     opacity: 0;
@@ -330,6 +362,7 @@ nav ul a {
 
 #sidenav-overlay {
   z-index: 1;
+  opacity: 0px !important;
 }
 
 @media only screen and (max-width: 480px) {
@@ -355,8 +388,16 @@ nav a.button-collapse {
 }
 
 
-.card-style{
-  /*border: 7px;*/
+@media only screen and (min-width:600px) {
+  .card-style {
+    width: 50% !important;
+    margin-left: 25% !important;
+    ;
+    left: auto !important;
+    ;
+    right: auto !important;
+    ;
+  }
 }
 
 .card-avatar img {
@@ -383,6 +424,7 @@ nav a.button-collapse {
 
 footer.page-footer {
   margin-top: 0px !important;
+  padding-bottom: 0px!
 }
 
 .hr-style {
@@ -390,24 +432,27 @@ footer.page-footer {
   width: 60%;
 }
 
-.input-field input[type=text].valid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;}
-
-.input-field input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;}
-
-    .input-field label {
-    color: #000;}
-/*tabs*/
-
-.tab a {
-  color: green;
+.btn:hover, .btn-large:hover {
+  background-color: #0b7dda;
 }
 
-.tab {
-  align-items: center;
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #000;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+}
+
+.input-field label {
+  color: #0b7dda;
+}
+
+/*tabs*/
+
+.tab-style{
+  margin-bottom: 55px;
+  margin-top: 55px;
 }
 
 /*search input form*/
@@ -426,6 +471,7 @@ form.example input[type=text] {
 form.example button {
   float: left;
   width: 18%;
+  height: 41px;
   padding: 10px;
   background: #2196F3;
   color: white;
@@ -437,7 +483,22 @@ form.example button {
   border-radius: 12px;
   border-left: none;
   cursor: pointer;
-
+}
+form.second-example button {
+  float: left;
+  width: 18%;
+  height: 41px;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 13px;
+  border: 1px;
+  border-left-width: 1px;
+  border-left-style: none;
+  border-left-color: currentcolor;
+  border-radius: 12px;
+  border-left: none;
+  cursor: pointer;
 }
 
 form.example button:hover {
@@ -450,57 +511,97 @@ form.example::after {
   display: table;
 }
 
-.second-example{
+.second-example {
   display: flex;
   margin-left: 30px;
-
+  margin-bottom: 18px;
 }
+
 .example {
   display: flex;
-  margin-top: 130px;
+  margin-top: 50px;
 }
 
-#input-field{
+
+#input-field {
   background-color: white;
-    border: 2px;
-    border-bottom: 1px solid #9e9e9e;
-    border-radius: 0;
-    outline: none;
-    height: 41px;
-    width: 88%;
-    font-size: 1rem;
-    margin: 9% 0 -11px 10px;
-    padding: 0;
-    box-shadow: none;
-    box-sizing: content-box;
-    transition: all 0.3s;
-    border-radius: 12px;
-
-}
-
-#search-inputs{
-  border-style: solid;
-  border-width: 1px;
+  border: 2px;
+  border: 1px solid #9e9e9e;
+  border-radius: 0;
   border-color: #0b7dda;
-  background-color: white;
+  outline: none;
+  height: 41px;
+  width: 88%;
+  font-size: 1rem;
+  margin: 3% 8 0px 10px;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all 0.3s;
   border-radius: 12px;
-  height: 3rem;
-  width: 69%;
-}
-.alt-search{
-color: white;
-background-color: #0b7dda;
-float: left;
-width: 16%;
-height: 46px;
-font-size: 13px;
-border: 1px;
-border-radius: 12px;
+  color: #0b7dda;
 }
 
+
+.alt-search {
+  color: white;
+  background-color: #0b7dda;
+  float: left;
+  width: 16%;
+  height: 46px;
+  font-size: 13px;
+  border: 1px;
+  border-radius: 12px;
+}
 
 /*card styling*/
-.form-bottom-border{
+
+.form-bottom-border {
   border-bottom: 1px solid blue;
 }
-/*login/signup*/
+
+/*extra banners*/
+
+.term-img {
+  height: 364px;
+  width: 100%;
+  background-size: cover;
+}
+
+#separate {
+  background-color: #d7d4d44d;
+  color: #0b7dda;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 0;
+}
+
+#listedprop {
+  width: 63%;
+  margin-left: 135px;
+}
+
+.footer-icon {
+  color: #0b7dda;
+}
+
+#formstyle {
+  border-radius: 35px;
+  border: 1px solid #0b7dda;
+}
+.sidenav-style{
+  color: #0b7dda;
+}
+
+#alt-banner{
+  background-color: #00000080;
+  background-blend-mode: multiply;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  background-image: url("/assets/david-marcu-1266-unsplash.jpg");
+}
+
+.registration-card{
+  background-color: red;
+}

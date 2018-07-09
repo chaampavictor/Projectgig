@@ -14,24 +14,23 @@ export class Propertydetail extends React.Component {
       return;
     }
     return property.map((prop) => (
-      <div>
+      <div  key={prop._id}>
 
         <div className="row">
           <div className="col  s12 m6 l12">
             <div className="card">
               <div className="card-content">
-                <span className="card-title">{prop.propertyname}</span>
+              <h6 className="default_color_text bold">Property Name:</h6>{prop.propertyname}
               </div>
-              {prop.description}
-              <br/> {prop.price}
-              <br/> {prop.type}
-              <br/> {prop.location}
-              <br/> {prop.contact}
-              <br/> {prop.status}
-
-                  <div className="card-action">
-                    <a href="/Listedproperty" className={`${this.props.Listedproperty} link`}><h5>Return</h5></a>
-                  </div>
+              <h6 className="default_color_text">Description:</h6>{prop.description}
+              <br/>
+              <h6 className="default_color_text">Price:</h6>{prop.price}
+              <br/>
+              <h6 className="default_color_text">Type:</h6>{prop.type}
+              <br/>
+              <h6 className="default_color_text">Location:</h6> {prop.location}
+              <br/>
+              <h6 className="default_color_text">Contact info:</h6> {prop.contact}
             </div>
           </div>
         </div>
@@ -46,10 +45,10 @@ export class Propertydetail extends React.Component {
         <div className="container">
           <Altsearch/>
           <center>
-            <h4 className="center">Property</h4>
-            <h4 className="collection">
+            <h5 className="center">Property</h5>
+            <div className="collection">
               {this.renderProperty()}
-            </h4>
+            </div>
           </center>
         </div>
         <Footer/>

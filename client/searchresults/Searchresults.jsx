@@ -15,17 +15,17 @@ class Searchresults extends React.Component {
       return this.props.property.map(item => (
         <div key={Math.random()}>
           <div className="row">
-            <div className="col  s12 m6 l6 ">
+            <div className="col  s12 m6 l6 card-style">
               <div className="card">
                 <div className="card-content ">
-                  <span className="card-title">
-                    {/* {item.propertyname} */}
-                    <a href={"/propertydetail?id="+item._id} className="primary-content">{`${item.propertyname}`}</a>
+                  <span className="card-title center">
+                    <a href={"/propertydetail?id=" + item._id} className="primary-content">{`${item.propertyname}`}</a>
                   </span>
                 </div>
-                <div className="card-action">
-                  {item.location}
-                  <br/> {item.type}
+                <div className="card-action center">
+                    <h6 className="default_color_text">Location:</h6> {item.location}
+                  <br/>
+                    <h6 className="default_color_text">Type:</h6>{item.type}
                 </div>
               </div>
             </div>
@@ -37,15 +37,12 @@ class Searchresults extends React.Component {
   }
   render() {
     return (
-
       <div>
         <Navbar/>
         <div className="container">
 
           <Altsearch/>
-
-          {this.g()
-}
+          {this.g()}
         </div>
 
         <Footer/>
@@ -59,7 +56,7 @@ export default withTracker(() => {
 
   let propertyName = FlowRouter.getQueryParam('n');
   // alert(propertyName)
-  propertyName = RegExp(propertyName,'i')
+  propertyName = RegExp(propertyName, 'i')
 
   return {
     property: Listproperty.find({location: propertyName}).fetch()

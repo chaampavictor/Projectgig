@@ -26,3 +26,6 @@ accounts-password@1.5.0
 meteortoys:allthings
 react-meteor-data
 ultimatejs:tracker-react
+ostrio:files
+#autopublish
+insecure

@@ -15,7 +15,7 @@ class Login extends React.Component {
       error
         ? console.log(error.reason)
         : console.log('logged in ')
-          FlowRouter.go('profile')
+      FlowRouter.go('profile')
     });
   }
 
@@ -23,40 +23,32 @@ class Login extends React.Component {
     return (
 
       <div>
-      <Navbar/>
-
-
-      <div className="section no-pad-bot" id="index-banner">
-</div>
-        <div className="container">
-          <div className="row">
-            <div className="col s12 l6">
-              <div className="row">
-                <div className="col s12 m6 l12">
-                  <div className="card" id="new-card">
-                    <div className="card-content">
-                      <span className="card-title">login</span>
+        <Navbar/>
+        <div id="login-card" className="section">
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m6 card-style">
+                <div className="card">
+                  <h5 className="default_color_text card-title center">
+                    Login
+                  </h5>
+                  <div className="card-content">
+                    <form className="col s12" onSubmit={this.login}>
                       <div className="row">
-                        <form className="col s12" onSubmit={this.login}>
-                          <div className="row">
-                            <div className="input-field col s12">
-                              <input id="email" type="text" className="form-bottom-border" name='email'/>
-                              <label htmlFor="email">email</label>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="input-field col s12">
-                              <input id="password" type="password"  name='password'/>
-                              <label htmlFor="password">Password</label>
-                            </div>
-                          </div>
-                          <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
-                            <i className="material-icons right">send</i>
-                          </button>
-                        </form>
+                        <div className="input-field col s12">
+                          <input id="email" type="text" className="form-bottom-border" name='email'/>
+                          <label htmlFor="email">email</label>
+                        </div>
                       </div>
-                      <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
-                    </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="password" type="password" name='password'/>
+                          <label htmlFor="password">Password</label>
+                        </div>
+                      </div>
+                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+                    </form>
+                    <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                   </div>
                 </div>
               </div>

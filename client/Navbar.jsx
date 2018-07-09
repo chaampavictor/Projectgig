@@ -34,16 +34,7 @@ componentDidMount(){
     {
       Meteor.userId() ?
       <>
-      <ul id="slide-out" className="side-nav">
-    <li>
-      <div className="user-view">
-      <div className="background">
-        <img src="assets/david-marcu-1266-unsplash.jpg"></img>
-      </div>
-      <a href="#!name"><span className="white-text name">John Doe</span></a>
-      <a href="#!email"><span className="white-text email">jdandturk@gmail.com</span></a>
-    </div>
-  </li>
+      <ul id="slide-out" className="side-nav sidenav-style">
 
     <li><a href="/profile" className={`${this.profile} link`}>profile</a></li>
     <div className="divider"></div>
@@ -53,28 +44,28 @@ componentDidMount(){
 
 
   </ul>
-  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="material-icons">menu</i></a>
+  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-plus menu-fa">SideNav</i></a>
 
 
 
   <div className="right logged-nav-button">
-  
-    <a href="/" className={` link`}><button id="nav-buttons">Home</button></a>
+
+    <a href="/" className={` link`}><button id="nav-buttons">KUKAYA</button></a>
     <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
-    <a href="#" onClick={e => this.logout(e)}><button>Logout</button></a>
+    <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>
 
   </div>
 </>
     :
 <>
 
-<a href="/" className={` link`}><h6>LOGO</h6></a>
+<h6><a href="/" className={` link`}>KUKAYA</a></h6>
 <div className="right nav-button">
 
-  <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">signup</button></a>
+  <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>
 
-<a href="/about" className={`${this.about} link`}><button id="nav-buttons">about</button></a>
-<a href="/login" className={`${this.login} link`}><button id="nav-buttons">login</button></a>
+<a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
+<a href="/login" className={`${this.login} link`}><button id="nav-buttons">Login</button></a>
 </div>
 </>
     }

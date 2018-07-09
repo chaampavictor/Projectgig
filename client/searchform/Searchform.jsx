@@ -22,21 +22,16 @@ export default class Searchform extends Component {
     }
 
 handleInputChange = e => {
-
 }
 
   render() {
-    // const name = this.props.searchBoxName || undefined
     return (
     <div>
 
           <div className="container">
             <div className="col l12 s12">
-
-            {/* {{> search}} */}
-
             <form className="example" action='/searchresults'>
-               <input className="search-input" id="input-field" name='n'   placeholder="Search for accomodation/location...."   ref={input => this.search = input}   onChange={this.handleInputChange} />
+               <input id="input-field" name='n'  placeholder="Search for accomodation/location...."   ref={input => this.search = input}   onChange={this.handleInputChange} />
                <p>{this.state.query}</p>
                 <button type="submit"><i className="fa fa-search"></i></button>
             </form>

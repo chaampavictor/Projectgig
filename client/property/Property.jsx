@@ -1,107 +1,157 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Meteor} from 'meteor/meteor';
-import {withTracker} from 'meteor/react-meteor-data'
-import {Listproperty} from '../../lib/collections'
+import {Session} from 'meteor/session';
+import {withTracker} from 'meteor/react-meteor-data';
+// import {Listproperty} from '../../lib/collections';
+import {UserFiles}  from '../../imports/api/imageUpload/collections.js';
+import FileUpload from '../fileupload/Uploadfile.jsx';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
+import Properties from '../../imports/api/upload/collections.js';
 
-class Property extends React.Component {
-
-  myCallBack(err, id) {
-    console.log(err)
-    FlowRouter.go('/profile')
+export class Property extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      owner: '',
+      propertyname: '',
+      type: '',
+      imageId:'',
+      location:'',
+      price:'',
+      description:'',
+      contact: '',
+      file: '',
+      imagePreviewUrl: '',
+      status: false,
+    }
   }
 
-  static handleSubmit(event) {
-    event.preventDefault()
-    const type = event.target.type.value
-    const propertyname = event.target.propertyname.value
-    const location = event.target.location.value
-    const price = event.target.price.value
-    const description = event.target.description.value
-    const contact = event.target.contact.value
-    Listproperty.insert({
-      owner: Meteor.userId(),
-      type,
-      propertyname,
-      location,
-      price,
-      description,
-      contact,
-      status: false
-    }, (err, id) => this.myCallBack(err, id))
+  // myCallBack(err, id) {
+  //   console.log(err)
+  //   FlowRouter.go('/profile')
+  // }
 
+  handleSubmit =(e, err)=>{
+    e.preventDefault();
+    const attempt2 = Session.get('imageId')
+    const property = {
+      owner: Meteor.userId(),
+      type: this.state.type,
+      imageId: attempt2,
+      propertyname: this.state.propertyname,
+      location: this.state.location,
+      price: this.state.price,
+      description: this.state.description,
+      contact: this.state.contact,
+      status: false
+    }
+    Meteor.call('properties.create',property);
+    alert("Property Created");
+  }
+
+  handleNameChange = (e) => {
+    this.setState({
+      propertyname: e.target.value
+    })
+  }
+
+  handleTypeChange = (e) => {
+    this.setState({
+      type: e.target.value
+    })
+  }
+
+  handlePriceChange = (e) => {
+    this.setState({
+      price: e.target.value
+    })
+  }
+handleLocationChange = (e) => {
+    this.setState({
+      location: e.target.value
+    })
+  }
+
+  handleDescriptionChange = (e) => {
+    this.setState({
+      description: e.target.value
+    })
+  }
+
+  handleContactChange = (e) => {
+    this.setState({
+      contact: e.target.value
+    })
   }
 
   render() {
-
+    let {imagePreviewUrl} = this.state;
+    let $imagePreview = null;
+    if (imagePreviewUrl) {
+      $imagePreview = (<img src={imagePreviewUrl} style={{width:100+"px",height:100+"px"}}/>);
+    } else {
+      $imagePreview = (<div className="previewText">Please select an Image for Preview<br/></div>);
+    }
     return (
-
       <div>
-
         <Navbar/>
-        <div className="container">
-<a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button"><h5>Return</h5></a>
-          <div className="row">
-
-            <div className="col s12 l12">
-              <div className="row center-align">
-                <div className="col s12 m6">
-                  <span className="card-title">List Property</span>
-                  <div className="card ">
-                    <div className="card-content">
-
+        <div id="new-card" className="section">
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m6 card-style">
+                <div className="card">
+                  <h5 className="default_color_text card-title center">
+                    Add Property</h5>
+                  <div className="card-content">
+                    <form className="col s12" onSubmit={this.handleSubmit}>
                       <div className="row">
-                        <form className="col s12 " onSubmit={Property.handleSubmit.bind(this)}>
-                          <div className="row">
-                            <div className="input-field col s12">
-                              <input id="propertyname" type="text" name='propertyname'/>
-                              <label htmlFor="propertyname">property name</label>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="input-field col s12">
-                              <input id="type" type="text"name='type'/>
-                              <label htmlFor="type">type</label>
-                            </div>
-                          </div>
-
-                          <div className="row">
-                            <div className="input-field col s12">
-                              <input id="location" type="text" name='location'/>
-                              <label htmlFor="location">Location</label>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="input-field col s12">
-                              <input id="price" type="text" name='price'/>
-                              <label htmlFor="price">Price</label>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="input-field col s12">
-                              <input id="description" type="text" name='description'/>
-                              <label htmlFor="description">Description</label>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="input-field col s12">
-                              <input id="contact" type="text" name='contact'/>
-                              <label htmlFor="price">contact</label>
-                            </div>
-                          </div>
-                          <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
-                            <i className="material-icons right">send</i>
-                          </button>
-
-                        </form>
+                        <div className="input-field col s12">
+                          <FileUpload fileName = {this.state.propertyname} />
+                        </div>
                       </div>
-
-                    </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleNameChange} id="propertyname" type="text" name='propertyname'/>
+                          <label htmlFor="propertyname">Property Name</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleTypeChange} id="type" type="text" name='type'/>
+                          <label htmlFor="type">Type</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleLocationChange} id="location" type="text" name='location'/>
+                          <label htmlFor="location">Location</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handlePriceChange} id="price" type="text" name='price'/>
+                          <label htmlFor="price">Price</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleDescriptionChange} id="description" type="text" name='description'/>
+                          <label htmlFor="description">Description</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleContactChange} id="contact" type="text" name='contact'/>
+                          <label htmlFor="price">Contact</label>
+                        </div>
+                      </div>
+                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+                    </form>
+                    <a href="/registration" className={`${this.props.registration} link`}>Create an account?</a>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -111,4 +161,11 @@ class Property extends React.Component {
     );
   }
 }
-export default Property;
+export default withTracker(() =>{
+  Meteor.subscribe('files.all');
+  Meteor.subscribe('properties');
+  return{
+    properties : Properties.find().fetch(),
+    files : UserFiles.find({}, {sort: {name: 1}}).fetch(),
+  }
+})(Property);

@@ -59,7 +59,7 @@ componentDidMount(){
     :
 <>
 
-<a href="/" className={` link`}><h6>KUKAYA</h6></a>
+<h6><a href="/" className={` link`}>KUKAYA</a></h6>
 <div className="right nav-button">
 
   <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>

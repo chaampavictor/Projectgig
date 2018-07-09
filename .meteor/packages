@@ -27,5 +27,5 @@ meteortoys:allthings
 react-meteor-data
 ultimatejs:tracker-react
 ostrio:files
-autopublish
+#autopublish
 insecure

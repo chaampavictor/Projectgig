@@ -2,7 +2,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {UserFiles} from '../../lib/collections';
+import {UserFiles}  from '../../imports/api/imageUpload/collections.js';
 import { Session } from 'meteor/session';
 
 
@@ -64,15 +64,15 @@ class FileUpload extends Component {
         const currentUserId = Meteor.userId();
         let uploadInstance = UserFiles.insert({
           file: file,
-
+          fileName: this.props.fileName,
           meta: {
             locator: self.props.fileLocator,
-            // createdBy: currentUserId,
+            createdBy: currentUserId,
             // userId: Meteor.userId() // Optional, used to check on server for file tampering
           },
           streams: 'dynamic',
           chunkSize: 'dynamic',
-          allowWebWorkers: false // If you see issues with uploads, change this to false
+          allowWebWorkers: true // If you see issues with uploads, change this to false
         }, false)
 
         self.setState({
@@ -130,7 +130,7 @@ class FileUpload extends Component {
 
     if (!_.isEmpty(this.state.uploading)) {
       return <div>
-        {/* {this.state.uploading.file.name} */}
+        {this.state.uploading.file.name}
 
         <div className="progress progress-bar-default">
           <div style={{width: this.state.progress + '%'}} aria-valuemax="100"
@@ -145,43 +145,48 @@ class FileUpload extends Component {
     }
   }
 
- render() {
-   // debug("Rendering FileUpload",this.props.docsReadyYet);
-   console.log("files : "+ this.props.docsReadyYet);
-   if (this.props.files && this.props.docsReadyYet) {
-  let {imagePreviewUrl} = this.state;
-  // let $imagePreview = null;
-  if (imagePreviewUrl) {
-    $imagePreview = (<img src={imagePreviewUrl} style={{width:100+"px",height:100+"px"}}/>);
-  } else {
-    $imagePreview = (<div className="previewText"><br/></div>);
-  }
-     return (
-       <div>
-
-         <div className="row">
-           <div className="col-md-12">
-             <p className="black-text default_color_text">Upload Image:</p>
-             <input type="file" id="fileinput"
-             disabled={this.state.inProgress}
-             ref="fileinput"
-                 onChange={this.uploadIt}/>
-           </div>
-                    <div className="col-md-6">
-           {/* {this.showImages()} */}
-           {$imagePreview}
-         </div>
-         </div>          <div className="row m-t-sm m-b-sm">
-           <div className="col-md-6">
-             {/* {this.showImages()} */}
-             {this.showUploads()}
-           </div>
-         </div>
-       </div>)
+  render() {
+    // debug("Rendering FileUpload",this.props.docsReadyYet);
+    console.log("files : "+ this.props.docsReadyYet);
+    if (this.props.files && this.props.docsReadyYet) {
+   let {imagePreviewUrl} = this.state;
+   let $imagePreview = null;
+   if (imagePreviewUrl) {
+     $imagePreview = (<img src={imagePreviewUrl} style={{width:100+"px",height:100+"px"}}/>);
    } else {
-     return <p>loading . . .</p>
-   }  }
+     $imagePreview = (<div className="previewText"><br/></div>);
+   }
+      return (
+        <div>
+          <div className="col-md-6">
+            {/* {this.showImages()} */}
+            {$imagePreview}
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <p>Upload Image:</p>
+              <input type="file" id="fileinput"
+              disabled={this.state.inProgress}
+              ref="fileinput"
+                  onChange={this.uploadIt}/>
+            </div>
+          </div>
+
+          <div className="row m-t-sm m-b-sm">
+            <div className="col-md-6">
+              {/* {this.showImages()} */}
+              {this.showUploads()}
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return <p>loading . . .</p>
+    }
+
+  }
 }
+
 //
 // This is the HOC - included in this file just for convenience, but usually kept
 // in a separate file to provide separation of concerns.

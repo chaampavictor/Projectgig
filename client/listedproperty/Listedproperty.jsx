@@ -19,7 +19,7 @@ export class Listedproperty extends Component {
     const properties = this.props.properties;
     return properties.map((property) => {
       const trial = property.imageId;
-      const link = UserFiles.find({_id: trial}).link();
+      const link = UserFiles.findOne({ _id: trial }).link()
       return (
         <div key = {property._id} className="card">
           <img className="card-img-top" src={link} style={{width: 100 + "%",height:200 + "px"}} alt="Card image cap"/>

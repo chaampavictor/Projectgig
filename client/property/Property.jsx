@@ -36,7 +36,7 @@ export class Property extends Component {
     e.preventDefault();
     const attempt2 = Session.get('imageId')
     const property = {
-      owner: Meteor.userId(),
+      owner: Meteor.user().profile.name,
       type: this.state.type,
       imageId: attempt2,
       propertyname: this.state.propertyname,

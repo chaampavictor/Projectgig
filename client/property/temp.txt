@@ -1,0 +1,195 @@
+import React from 'react';
+import {Meteor} from 'meteor/meteor';
+import {Session} from 'meteor/session';
+import {withTracker} from 'meteor/react-meteor-data';
+import {Listproperty} from '../../lib/collections';
+import {UserFiles} from '../../lib/collections.js';
+import FileUpload from '../fileupload/Uploadfile.jsx';
+import Footer from '../Footer';
+import Navbar from '../Navbar';
+import Session  from 'meteor/session';
+
+class Property extends React.Component {
+
+  // myCallBack(err, id) {
+  //   console.log(err)
+  //   FlowRouter.go('/profile')
+  // }
+  //
+  // static handleSubmit(e) {
+  //   e.preventDefault()
+  //   const type = e.target.type.value
+  //   const propertyname = e.target.propertyname.value
+  //   const location = e.target.location.value
+  //   const price = e.target.price.value
+  //   const description = e.target.description.value
+  //   const contact = e.target.contact.value
+  //   Listproperty.insert({
+  //     owner: Meteor.userId(),
+  //     type,
+  //     propertyname,
+  //     location,
+  //     price,
+  //     description,
+  //     contact,
+  //     status: false
+  //   }, (err, id) => this.myCallBack(err, id))
+  // }
+
+
+
+  constructor(props){
+  super(props);
+  this.state = {
+    imageId:'',
+    propertyName:'',
+    location:'',
+    price:'',
+    description:'',
+    type:'',
+    contact: '',
+  }
+}
+
+handleSubmit=(e)=>{
+  const attempt2 = Session.get('imageId');
+  const item = {
+    imageId: attempt2,
+    number: this.state.number,
+    name:this.state.propertyName,
+    price:this.state.price,
+    description:this.state.description,
+    location: this.state.location,
+    type: this.state.type,
+  }
+  Meteor.call('property.create',item);
+  console.log('item created')
+   FlowRouter.go('/profile');
+  e.preventDefault();
+}
+
+handleNameChange = (e) => {
+  this.setState({
+    name: e.target.value
+  })
+}
+
+handleLocationChange = (e) => {
+  this.setState({
+    location: e.target.value
+  })
+}
+
+handlePriceChange = (e) => {
+  this.setState({
+    price: e.target.value
+  })
+}
+
+handleDescriptionChange = (e) => {
+  this.setState({
+    description: e.target.value
+  })
+}
+handleTypechangeChange = (e) => {
+  this.setState({
+    type: e.target.value
+  })
+}
+
+handleNumberChange = (e) => {
+  this.setState({
+    number: e.target.value
+  })
+}
+
+
+
+
+  render() {
+
+
+    let {imagePreviewUrl} = this.state;
+    let $imagePreview = null;
+    if (imagePreviewUrl) {
+      $imagePreview = (<img src={imagePreviewUrl} style={{width:100+"px",height:100+"px"}}/>);
+    } else {
+      $imagePreview = (<div className="previewText">Please select an Image for Preview<br/></div>);
+    }
+
+
+
+    return (
+      <div>
+        <Navbar/>
+        <div id="new-card" className="section">
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m6 card-style">
+                <div className="card">
+                  <h5 className="default_color_text card-title center">
+                    Add Property</h5>
+                  <div className="card-content">
+                    <form className="col s12" onSubmit={this.handleSubmit}>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <FileUpload/>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleNameChange}  type="text" name='propertyname'/>
+                          <label htmlFor="propertyname">property name</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleTypeChange}  type="text" name='type'/>
+                          <label htmlFor="type">type</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleLocationChange} type="text" name='location'/>
+                          <label htmlFor="location">Location</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handlePriceChange} type="text" name='price'/>
+                          <label htmlFor="price">Price</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleDescriptionChange} type="text" name='description'/>
+                          <label htmlFor="description">Description</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input onChange={this.handleNumberChange} type="text" name='contact'/>
+                          <label htmlFor="price">contact</label>
+                        </div>
+                      </div>
+                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+                    </form>
+                    <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer/>
+      </div>
+
+    );
+  }
+}
+export default withTracker(() =>{
+  Meteor.subscribe('property')
+  return{
+    property : Listproperty.find().fetch(),
+  }
+})(Property);

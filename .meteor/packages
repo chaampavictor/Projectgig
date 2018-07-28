@@ -18,7 +18,7 @@ ecmascript@0.10.6              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.3.1            # Server-side component of the `meteor shell` command
 
 
-insecure           
+insecure
 materialize:materialize
 kadira:flow-router
 fortawesome:fontawesome
@@ -27,4 +27,4 @@ meteortoys:allthings
 react-meteor-data
 ultimatejs:tracker-react
 ostrio:files
-autopublish
+#autopublish

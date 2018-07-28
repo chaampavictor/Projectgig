@@ -21,15 +21,14 @@ class Registration extends React.Component {
       profile
     }
 
-    Accounts.createUser(user, (err)=> {
 
+
+    Accounts.createUser(user, (err)=> {
       if (err) {
         console.log(err.reason);
       }
       FlowRouter.go('profile')
     });
-
-
   }
 
 
@@ -43,12 +42,16 @@ class Registration extends React.Component {
           <div className="row">
             <div className="col s12 m6 card-style">
               <div className="card">
+<<<<<<< HEAD
                 <h5 className="default_color_text card-title center"> signup</h5>
+=======
+                <h5 className="default_color_text card-title center"> Signup</h5>
+>>>>>>> fa945df8b995ce26f59965bfee1635b0095e8088
               <div className="card-content">
                   <form className="col s12 " onSubmit={this.saveUserDetails}>
                     <div className="row">
                       <div className="input-field col s12">
-                        <input id="name" type="text" className="validate" name='name'/>
+                        <input id="name" type="text" name='name'/>
                         <label htmlFor="name">name</label>
                       </div>
                     </div>

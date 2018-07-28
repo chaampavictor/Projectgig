@@ -5,6 +5,7 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 import Altsearch from '../altsearch/Altsearch';
 import {Listproperty} from '../../lib/collections'
+import {UserFiles} from '../../lib/collections';
 
 export class Propertydetail extends React.Component {
 
@@ -22,6 +23,7 @@ export class Propertydetail extends React.Component {
               <div className="card-content">
                   <h3 className="default_color_text bold">{prop.propertyname}</h3>
               </div>
+              <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
               <h3 className="default_color_text">description:</h3>{prop.description}
               <br/>
               <h3 className="default_color_text">Price:</h3>{prop.price}

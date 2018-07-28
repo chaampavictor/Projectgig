@@ -1,9 +1,12 @@
 import React from 'react';
 import {Meteor} from 'meteor/meteor';
-import {withTracker} from 'meteor/react-meteor-data'
-import {Listproperty} from '../../lib/collections'
+import {withTracker} from 'meteor/react-meteor-data';
+import {Listproperty} from '../../lib/collections';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
+import FileUpload from '../Upload.jsx';
+import {UserFiles} from '../../lib/collections';
+import { Session } from 'meteor/session';
 
 class Property extends React.Component {
 
@@ -14,12 +17,16 @@ class Property extends React.Component {
 
   static handleSubmit(e) {
     e.preventDefault()
+    const attempt = Session.get('imageId');
     const type = e.target.type.value
     const propertyname = e.target.propertyname.value
     const location = e.target.location.value
     const price = e.target.price.value
     const description = e.target.description.value
     const contact = e.target.contact.value
+
+    // imageId ==>
+    // imageType ==> Session.get
     Listproperty.insert({
       owner: Meteor.userId(),
       type,
@@ -28,6 +35,8 @@ class Property extends React.Component {
       price,
       description,
       contact,
+      imageId: Session.get('imageId'),
+      imageType: Session.get('imageType'),
       status: false
     }, (err, id) => this.myCallBack(err, id))
 
@@ -48,6 +57,7 @@ class Property extends React.Component {
                     Add Property</h5>
                   <div className="card-content">
                     <form className="col s12" onSubmit={Property.handleSubmit.bind(this)}>
+                      <FileUpload/>
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="propertyname" type="text" name='propertyname'/>
@@ -99,4 +109,11 @@ class Property extends React.Component {
     );
   }
 }
-export default Property;
+export default withTracker(() =>{
+  Meteor.subscribe('property')
+  Meteor.subscribe('files.all');
+  return{
+    property : Listproperty.find().fetch(),
+    files : UserFiles.find({}, {sort: {name: 1}}).fetch(),
+  }
+})(Property);

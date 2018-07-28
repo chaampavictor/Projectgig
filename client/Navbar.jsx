@@ -44,7 +44,7 @@ componentDidMount(){
 
 
   </ul>
-  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-plus menu-fa"></i></a>
+  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-plus menu-fa"></i> KUKAYA</a>
 
 
 

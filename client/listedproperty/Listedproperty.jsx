@@ -4,8 +4,8 @@ import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 import Altsearch from '../altsearch/Altsearch';
-
-import {Listproperty} from '../../lib/collections'
+import {UserFiles} from '../../lib/collections';
+import {Listproperty} from '../../lib/collections';
 
 export class Listedproperty extends React.Component {
 
@@ -13,9 +13,10 @@ export class Listedproperty extends React.Component {
     FlowRouter.go("/propertydetail?id=" + id)
   }
 
+
   renderProperty() {
-    const property = this.props.property
-    if (property === undefined) {
+    const {property, userfiles} = this.props;
+    if (!property) {
       return;
     }
 
@@ -29,12 +30,14 @@ export class Listedproperty extends React.Component {
               <div key={prop.user} className="collection-item dismissable">
                 <div className="card-content ">
                   <span className="card-title center">
+                    <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
                     <a href={"/propertydetail?id=" + prop._id} className="primary-content">{`${prop.propertyname}`}</a>
                   </span>
                   <div className="center">
                     {prop.description}
                   </div>
                 </div>
+
                 <div className="card-action center">
                   {prop.location}
                 </div>
@@ -48,6 +51,7 @@ export class Listedproperty extends React.Component {
   }
 
   render() {
+
     return (
       <div>
         <div id="alt-banner" className="section">
@@ -67,6 +71,10 @@ export class Listedproperty extends React.Component {
   }
 }
 export default withTracker(() => {
+    Meteor.subscribe('userfiles')
 
-  return {property: Listproperty.find().fetch()}
+  return {
+    property: Listproperty.find().fetch(),
+    userfiles: UserFiles.findOne(),
+  }
 })(Listedproperty)

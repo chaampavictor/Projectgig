@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import {UserFiles}  from '../../imports/api/imageUpload/collections.js';
 import { Session } from 'meteor/session';
 
-
 // import IndividualFile from './FileIndividualFile.js';
 
 // const debug = require('debug')('demo:file');

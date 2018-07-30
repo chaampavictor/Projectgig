@@ -44,11 +44,7 @@ componentDidMount(){
 
 
   </ul>
-<<<<<<< HEAD
   <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-plus menu-fa"></i> KUKAYA</a>
-=======
-  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-plus menu-fa">SideNav</i></a>
->>>>>>> fa945df8b995ce26f59965bfee1635b0095e8088
 
 
 
@@ -63,11 +59,7 @@ componentDidMount(){
     :
 <>
 
-<<<<<<< HEAD
 <a href="/" className={` link`}><h6>KUKAYA</h6></a>
-=======
-<h6><a href="/" className={` link`}>KUKAYA</a></h6>
->>>>>>> fa945df8b995ce26f59965bfee1635b0095e8088
 <div className="right nav-button">
 
   <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>

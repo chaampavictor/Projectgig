@@ -15,28 +15,24 @@ export class Propertydetail extends React.Component {
       return;
     }
     return property.map((prop) => (
-      <div  key={prop._id}>
+      <div>
 
         <div className="row">
           <div className="col  s12 m6 l12">
             <div className="card">
               <div className="card-content">
-              <h6 className="default_color_text bold">Property Name:</h6>{prop.propertyname}
+                  <h3 className="default_color_text bold">{prop.propertyname}</h3>
               </div>
-<<<<<<< HEAD
               <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
               <h3 className="default_color_text">description:</h3>{prop.description}
-=======
-              <h6 className="default_color_text">Description:</h6>{prop.description}
->>>>>>> fa945df8b995ce26f59965bfee1635b0095e8088
               <br/>
-              <h6 className="default_color_text">Price:</h6>{prop.price}
+              <h3 className="default_color_text">Price:</h3>{prop.price}
               <br/>
-              <h6 className="default_color_text">Type:</h6>{prop.type}
+              <h3 className="default_color_text">Type:</h3>{prop.type}
               <br/>
-              <h6 className="default_color_text">Location:</h6> {prop.location}
+              <h3 className="default_color_text">Location:</h3> {prop.location}
               <br/>
-              <h6 className="default_color_text">Contact info:</h6> {prop.contact}
+              <h3 className="default_color_text">Contact info:</h3> {prop.contact}
             </div>
           </div>
         </div>
@@ -51,10 +47,10 @@ export class Propertydetail extends React.Component {
         <div className="container">
           <Altsearch/>
           <center>
-            <h5 className="center">Property</h5>
-            <div className="collection">
+            <h3 className="center">Property</h3>
+            <h3 className="collection">
               {this.renderProperty()}
-            </div>
+            </h3>
           </center>
         </div>
         <Footer/>
@@ -64,7 +60,6 @@ export class Propertydetail extends React.Component {
 }
 export default withTracker(() => {
   const id = FlowRouter.getQueryParam('id');
-
   return {
     property: Listproperty.find({_id: id}).fetch()
   }

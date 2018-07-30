@@ -44,7 +44,7 @@ componentDidMount(){
 
 
   </ul>
-  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-plus menu-fa">SideNav</i></a>
+  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-plus menu-fa"></i> KUKAYA</a>
 
 
 
@@ -59,7 +59,7 @@ componentDidMount(){
     :
 <>
 
-<h6><a href="/" className={` link`}>KUKAYA</a></h6>
+<a href="/" className={` link`}><h6>KUKAYA</h6></a>
 <div className="right nav-button">
 
   <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>

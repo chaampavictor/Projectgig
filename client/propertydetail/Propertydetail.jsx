@@ -4,10 +4,9 @@ import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 import Altsearch from '../altsearch/Altsearch';
-import FileUpload from '../fileupload/Uploadfile.jsx';
-import Properties from '../../imports/api/upload/collections.js';
-import {UserFiles}  from '../../imports/api/imageUpload/collections.js';
-import { Mongo } from 'meteor/mongo';
+import {Listproperty} from '../../lib/collections'
+import {UserFiles} from '../../lib/collections';
+
 
 export class Propertydetail extends React.Component {
   
@@ -16,30 +15,27 @@ export class Propertydetail extends React.Component {
     if (properties === undefined) {
       return;
     }
-    return properties.map((property) => {
-      const trial = property.imageId;
-      const link = UserFiles.findOne({_id: trial}).link();
-      return (
-        <div  key={property._id}>
-          <div className="row">
-            <div className="col  s12 m6 l12">
-              <div className="card">
-                <div className="card-content">
-                  <h6 className="default_color_text bold">Property Name:</h6>{property.propertyname}
-                </div>
-                <div className="center">
-                  <img src={link} height="200" width="200"></img>
-                </div>
-                <h6 className="default_color_text">Description:</h6>{property.description}
-                <br/>
-                <h6 className="default_color_text">Price:</h6>{property.price}
-                <br/>
-                <h6 className="default_color_text">Type:</h6>{property.type}
-                <br/>
-                <h6 className="default_color_text">Location:</h6> {property.location}
-                <br/>
-                <h6 className="default_color_text">Contact info:</h6> {property.contact}
+
+    return property.map((prop) => (
+      <div>
+
+        <div className="row">
+          <div className="col  s12 m6 l12">
+            <div className="card">
+              <div className="card-content">
+                  <h3 className="default_color_text bold">{prop.propertyname}</h3>
               </div>
+              <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
+              <h3 className="default_color_text">description:</h3>{prop.description}
+              <br/>
+              <h3 className="default_color_text">Price:</h3>{prop.price}
+              <br/>
+              <h3 className="default_color_text">Type:</h3>{prop.type}
+              <br/>
+              <h3 className="default_color_text">Location:</h3> {prop.location}
+              <br/>
+              <h3 className="default_color_text">Contact info:</h3> {prop.contact}
+
             </div>
           </div>
         </div>
@@ -48,31 +44,19 @@ export class Propertydetail extends React.Component {
   }
 
   render() {
-    if (this.props.isDataReady) {
-      return (
-        <div>
-          <Navbar/>
-          <div className="container">
-            <Altsearch/>
-            <center>
-              <h5 className="center">Property</h5>
-              <div className="collection">
-                {this.renderProperty()}
-              </div>
-            </center>
-          </div>
-          <Footer/>
-        </div>
-      );
-    }
-    else {
-      return (
-        <div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <h1>Please wait</h1>
+
+    return (
+      <div>
+        <Navbar/>
+        <div className="container">
+          <Altsearch/>
+          <center>
+            <h3 className="center">Property</h3>
+            <h3 className="collection">
+              {this.renderProperty()}
+            </h3>
+          </center>
+
         </div>
       )
     }
@@ -81,10 +65,6 @@ export class Propertydetail extends React.Component {
 }
 export default withTracker(() => {
   const id = FlowRouter.getQueryParam('id');
-  Meteor.subscribe('properties');
-  Meteor.subscribe('files.all');
-  let isDataReady = Meteor.subscribe('files.all');
-
   return {
     properties: Properties.find({_id: id}).fetch(),
     files : UserFiles.find({}, {sort: {name: 1}}).fetch(),

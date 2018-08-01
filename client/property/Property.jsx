@@ -39,13 +39,10 @@ class Property extends React.Component {
       imageType: Session.get('imageType'),
       status: false
     }, (err, id) => this.myCallBack(err, id))
-
   }
 
   render() {
-
     return (
-
       <div>
         <Navbar/>
         <div id="new-card" className="section">

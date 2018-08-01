@@ -7,13 +7,15 @@ import Altsearch from '../altsearch/Altsearch';
 import {Listproperty} from '../../lib/collections'
 import {UserFiles} from '../../lib/collections';
 
-export class Propertydetail extends React.Component {
 
+export class Propertydetail extends React.Component {
+  
   renderProperty() {
-    const property = this.props.property
-    if (property === undefined) {
+    const properties = this.props.properties
+    if (properties === undefined) {
       return;
     }
+
     return property.map((prop) => (
       <div>
 
@@ -33,14 +35,16 @@ export class Propertydetail extends React.Component {
               <h3 className="default_color_text">Location:</h3> {prop.location}
               <br/>
               <h3 className="default_color_text">Contact info:</h3> {prop.contact}
+
             </div>
           </div>
         </div>
-      </div>
-
-    ))
+      )
+    })
   }
+
   render() {
+
     return (
       <div>
         <Navbar/>
@@ -52,15 +56,18 @@ export class Propertydetail extends React.Component {
               {this.renderProperty()}
             </h3>
           </center>
+
         </div>
-        <Footer/>
-      </div>
-    );
+      )
+    }
+
   }
 }
 export default withTracker(() => {
   const id = FlowRouter.getQueryParam('id');
   return {
-    property: Listproperty.find({_id: id}).fetch()
+    properties: Properties.find({_id: id}).fetch(),
+    files : UserFiles.find({}, {sort: {name: 1}}).fetch(),
+    isDataReady: isDataReady.ready(),
   }
 })(Propertydetail)

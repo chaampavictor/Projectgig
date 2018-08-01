@@ -25,6 +25,7 @@ class Property extends React.Component {
     const description = e.target.description.value
     const contact = e.target.contact.value
 
+
     // imageId ==>
     // imageType ==> Session.get
     Listproperty.insert({
@@ -37,6 +38,7 @@ class Property extends React.Component {
       contact,
       imageId: Session.get('imageId'),
       imageType: Session.get('imageType'),
+
       status: false
     }, (err, id) => this.myCallBack(err, id))
   }

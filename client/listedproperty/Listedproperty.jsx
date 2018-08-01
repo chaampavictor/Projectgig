@@ -62,6 +62,8 @@ export class Listedproperty extends React.Component {
 
           <h4 className="center">Listed Properties</h4>
           {this.renderProperty()}
+  
+  
         </div>
 
         <Footer/>

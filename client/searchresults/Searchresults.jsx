@@ -19,6 +19,7 @@ class Searchresults extends React.Component {
               <div className="card">
                 <div className="card-content ">
                   <span className="card-title center">
+                    <img src={`/uploads/${item.imageId}.${item.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
                     <a href={"/propertydetail?id=" + item._id} className="primary-content">{`${item.propertyname}`}</a>
                   </span>
                 </div>

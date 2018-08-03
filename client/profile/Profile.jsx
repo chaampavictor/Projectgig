@@ -20,11 +20,66 @@ export class Profile extends React.Component {
     }
   }
 
-  // deleteThisProperty() {
-  // Meteor.call('property.remove', this.props.prop._id);}
+  deleteProp = (e, id) => {
+    Meteor.call('deleteProp', id);
+    console.log(id);
+  }
 
-  deleteThisTask() {
-    Meteor.call('property.remove', this.props.prop._id);
+  editProp = (e) => {
+    e.preventDefault();
+    const property = {
+      type: this.state.type,
+      propertyname: this.state.propertyname,
+      location: this.state.location,
+      price: this.state.price,
+      description: this.state.description,
+      contact: this.state.contact
+    }
+    Meteor.call('editProperty', property, (error, response) => {
+      if (error) {
+        alert(error.reason, 'Please solve this problem')
+      }
+      else {
+        alert(response)
+      }
+    });
+    // Meteor.call('editProperty', property);
+  }
+
+  handleTypeChange = (e) => {
+    this.setState({
+      type: e.target.value
+    })
+  }
+
+  handleNameChange = (e) => {
+    this.setState({
+      propertyname: e.target.value
+    })
+  }
+
+  handleLocationChange = (e) => {
+    this.setState({
+      location: e.target.value
+    })
+  }
+
+  handlePriceChange = (e) => {
+    this.setState({
+      price: e.target.value
+    })
+  }
+
+  handleDescriptionChange = (e) => {
+    this.setState({
+      description: e.target.value
+    })
+  }
+
+  handleContactChange = (e) => {
+    this.setState({
+      contact: e.target.value
+    })
   }
 
 
@@ -54,7 +109,8 @@ export class Profile extends React.Component {
                 </div>
               </div>
               <div className="card-action center">
-                <button className="delete" onClick={this.deleteThisTask.bind(this)}>delete</button>
+                <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button>
+                {/* <button className="delete" onClick={e => this.editProp(e, prop._id)}>edit</button> */}
                 <a href="#modal1" className="delete modal-trigger">edit</a>
               <br/>
               </div>
@@ -66,14 +122,11 @@ export class Profile extends React.Component {
   }
 
 
-
-
   render() {
-
     $(document).ready(function() {
-      $('.modal').modal();
+      $('#modal1').modal();
     });
-
+    // placeholder={`${property.propertyname}`}
     return (
 
       <div>
@@ -82,41 +135,41 @@ export class Profile extends React.Component {
           <div className="modal-content">
             <h4>Edit Property</h4>
             <div className="row">
-              <form className="col s12 l6">
+              <form onSubmit={this.editProp} className="col s12 l6">
                 <div className="row">
                   <div className="input-field col s6">
-                    <input id="propertyname" type="text" name='propertyname'/>
+                    <input onChange={this.handleNameChange} className="form-control" id="propertyname" type="text" name='propertyname'/>
                     <label htmlFor="propertyname">property name</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s6">
-                    <input id="type" type="text" name='type'/>
+                    <input onChange={this.handleTypeChange} className="form-control" id="type" type="text" name='type'/>
                     <label htmlFor="type">type</label>
                   </div>
                 </div>
 
                 <div className="row">
                   <div className="input-field col s12">
-                    <input id="location" type="text" name='location'/>
+                    <input onChange={this.handleLocationChange} className="form-control" id="location" type="text" name='location'/>
                     <label htmlFor="location">Location</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
-                    <input id="price" type="text" name='price'/>
+                    <input onChange={this.handlePriceChange} className="form-control" id="price" type="text" name='price'/>
                     <label htmlFor="price">Price</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
-                    <input id="description" type="text" name='description'/>
+                    <input onChange={this.handleDescriptionChange} className="form-control" id="description" type="text" name='description'/>
                     <label htmlFor="description">Description</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
-                    <input id="contact" type="text" name='contact'/>
+                    <input onChange={this.handleContactChange} className="form-control" id="contact" type="text" name='contact'/>
                     <label htmlFor="price">contact</label>
                   </div>
                 </div>
@@ -124,12 +177,9 @@ export class Profile extends React.Component {
                 <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
                   <i className="material-icons right">send</i>
                 </button>
-
               </form>
-
             </div>
           </div>
-
         </div>
 
         {/* edit property ends here */}

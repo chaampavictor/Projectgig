@@ -3,6 +3,8 @@ import React from 'react';
 import {mount} from 'react-mount-layout';
 import Landing from '../client/Landing.jsx';
 import About from '../client/about/About.jsx';
+import Dashlogin from '../client/dashlogin/Dashlogin.jsx';
+import Dashboard from '../client/dashboard/Dashboard.jsx';
 import Registration from '../client/registration/Registration.jsx';
 import Property from '../client/property/Property.jsx';
 import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
@@ -77,6 +79,18 @@ FlowRouter.route('/terms', {
 FlowRouter.route('/privacy', {
   action: () => {
     mount(Privacy,{
+    });
+  }
+});
+FlowRouter.route('/dashboard', {
+  action: () => {
+    mount(Dashboard,{
+    });
+  }
+});
+FlowRouter.route('/dashLogin', {
+  action: () => {
+    mount(Dashlogin,{
     });
   }
 });

@@ -54,6 +54,13 @@
   background-repeat: no-repeat;
 }
 
+#dashlogin-card {
+  background-image: url("/assets/babyme.jpg");
+  background-size: auto;
+  height: 50%;
+  /*background-repeat: no-repeat;*/
+}
+
 #login-card {
   background-image: url("/assets/marvin-meyer-571072-unsplash.jpg");
   background-size: cover;

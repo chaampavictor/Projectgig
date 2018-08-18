@@ -23,28 +23,23 @@ export class Listedproperty extends React.Component {
     return property.map((prop) => (
 
       <div key={prop._id}>
-
         <div className="row">
-          <div className="col s12 m6 l6 card-style">
-            <div className="card" onClick={this.c.bind(this, prop._id)}>
-              <div key={prop.user} className="collection-item dismissable">
-                <div className="card-content ">
-                  <span className="card-title center">
-                    <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
-                    <a href={"/propertydetail?id=" + prop._id} className="primary-content">{`${prop.propertyname}`}</a>
-                  </span>
-                  <div className="center">
-                    {prop.description}
-                  </div>
-                </div>
+          <div className="col s12 m6 l10 ">
+            <div className="card horizontal card-shadow">
+              <div className="card-stacked">
+                  <p className="header liststyle left card-detail"><a href={"/propertydetail?id=" + prop._id} id="trying" className="primary-content">{`${prop.propertyname}`}</a></p>
 
-                <div className="card-action center">
-                  {prop.location}
-                </div>
+                <p className="left card-detail">{prop.description}</p>
+
+                <p className="card-alt-detail">location: {prop.location}</p>
+              </div>
+              <div className="card-image right">
+                <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:145 + "px"}} />
               </div>
             </div>
           </div>
         </div>
+        <hr className="list-hr"/>
       </div>
 
     ))
@@ -54,16 +49,16 @@ export class Listedproperty extends React.Component {
 
     return (
       <div>
-        <div id="alt-banner" className="section">
+        {/* <div id="alt-banner" className="section"> */}
           <Navbar/>
           <Altsearch/>
-        </div>
+        {/* </div> */}
         <div className="container">
 
           <h4 className="center">Listed Properties</h4>
           {this.renderProperty()}
-  
-  
+
+
         </div>
 
         <Footer/>

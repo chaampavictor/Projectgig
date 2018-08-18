@@ -21,7 +21,7 @@ class Dashlogin extends React.Component {
         error
         ? console.log(error.reason)
         : console.log('logged in ')
-        FlowRouter.go('landing')
+        FlowRouter.go('/')
       }
     });
   }
@@ -36,20 +36,20 @@ class Dashlogin extends React.Component {
               <div className="col s12 m6 card-style">
                 <div className="card">
                   <h5 className="default_color_text card-title center">
-                    Login
+                    Admin
                   </h5>
                   <div className="card-content">
                     <form className="col s12" onSubmit={this.dashLogin}>
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="email" type="text" className="form-bottom-border" name='email'/>
-                          <label htmlFor="email">email</label>
+                          <label htmlFor="email">Password</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="password" type="password" name='password'/>
-                          <label htmlFor="password">Password</label>
+                          <label htmlFor="password">Email</label>
                         </div>
                       </div>
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>

@@ -13,15 +13,14 @@ class Registration extends React.Component {
     const password = target.password.value;
     const email = target.email.value;
     const profile = {
-      name
+      name,
+      email
     };
     const user = {
       email,
       password,
       profile
     }
-
-
 
     Accounts.createUser(user, (err)=> {
       if (err) {

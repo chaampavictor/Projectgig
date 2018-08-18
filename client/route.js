@@ -5,6 +5,7 @@ import Landing from '../client/Landing.jsx';
 import About from '../client/about/About.jsx';
 import Dashlogin from '../client/dashlogin/Dashlogin.jsx';
 import Dashboard from '../client/dashboard/Dashboard.jsx';
+import Dashuser from '../client/dashboard/Dashuser.jsx';
 import Registration from '../client/registration/Registration.jsx';
 import Property from '../client/property/Property.jsx';
 import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
@@ -85,6 +86,12 @@ FlowRouter.route('/privacy', {
 FlowRouter.route('/dashboard', {
   action: () => {
     mount(Dashboard,{
+    });
+  }
+});
+FlowRouter.route('/dashuser', {
+  action: () => {
+    mount(Dashuser,{
     });
   }
 });

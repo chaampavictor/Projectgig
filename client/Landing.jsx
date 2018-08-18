@@ -2,6 +2,8 @@ import React from 'react';
 import {Meteor} from 'meteor/meteor';
 import Footer from './Footer';
 import Banner from './Banner';
+import Navbar from './Navbar';
+
 
 
 class Landing extends React.Component {
@@ -17,6 +19,7 @@ class Landing extends React.Component {
   render() {
     return (
       <div>
+        <Navbar/>
               <Banner/>
         <div id="intro" className="section scrollspy">
           <div className="container">

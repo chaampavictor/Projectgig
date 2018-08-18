@@ -2,7 +2,7 @@ import React from 'react';
 import {Meteor} from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
-import Navbar from '../Navbar';
+import Adminnav from '../Adminnav';
 import Altsearch from '../altsearch/Altsearch';
 import {UserFiles} from '../../lib/collections';
 import {Listproperty} from '../../lib/collections';
@@ -13,50 +13,81 @@ export class Dashboard extends React.Component {
     FlowRouter.go("/propertydetail?id=" + id)
   }
 
+  deleteProp = (e, id) => {
+    Meteor.call('deleteProp', id);
+    console.log(id);
+  }
 
-  renderProperty() {
-    const {property, userfiles} = this.props;
-    if (!property) {
+  propertyTable() {
+    const property = this.props.property;
+     let count = 1;
+    if (property === undefined) {
       return;
     }
 
+
     return property.map((prop) => (
-      <div key={prop._id}>
-        <div className="row">
-          <div className="col s12 m6 l6 card-style">
-            <div className="card" onClick={this.c.bind(this, prop._id)}>
-              <div key={prop.user} className="collection-item dismissable">
-                <div className="card-content ">
-                  <span className="card-title center">
-                    <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
-                    <a href={"/propertydetail?id=" + prop._id} className="primary-content">{`${prop.propertyname}`}</a>
-                  </span>
-                  <div className="center">
-                    {prop.description}
-                  </div>
-                </div>
-                <div className="card-action center">
-                  {prop.location}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <tr key={Math.random()}>
+        <td>{count++}</td>
+        <td>{prop.propertyname}</td>
+        <td>{prop.location}</td>
+        <td>{prop.type}</td>
+        <td>{prop.price}</td>
+        <td>{prop.description}</td>
+        <td>{prop.contact}</td>
+        <td><a href="#modaldash" className="delete modal-trigger">delete</a></td>
+      </tr>
     ))
   }
 
   render() {
+    $(document).ready(function() {
+      $('#modaldash').modal();
+    });
     return (
       <div>
-        <h4 className="center default_color_text">Dashboard</h4>
-        <div id="alt-banner" className="section">
-          <Navbar/>
-          <Altsearch/>
+
+        {/* delete modal begins here */}
+        <div id="modaldash" className="modal">
+          <div className="modal-content">
+            <h4>Edit Property</h4>
+            <div className="row">
+
+                <div className="row">
+                  <div className="input-field col s6">
+                  <p>Are you sure?</p>
+                  </div>
+                </div>
+                <a className="btn waves-effect waves-light submit-button" onClick={e => this.deleteProp(e, prop._id)}>Yes</a>
+                <a className="btn waves-effect waves-light submit-button" type="submit" name="action">No</a>
+            </div>
+          </div>
         </div>
-        <div className="container">
-          {this.renderProperty()}
-        </div>
+        {/* delete modal ends here */}
+
+
+      <Adminnav/>
+          <div className="container">
+        <table className="striped">
+      <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Contact</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {this.propertyTable()}
+      </tbody>
+    </table>
+  </div>
+      <br/>
         <Footer/>
       </div>
     );

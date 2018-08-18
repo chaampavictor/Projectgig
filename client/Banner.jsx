@@ -9,7 +9,7 @@ export default class Banner extends Component {
 
       <div>
         <div className="section no-pad-bot" id="index-banner">
-      <Navbar/>
+      {/* <Navbar/> */}
 <Searchform/>
 
 

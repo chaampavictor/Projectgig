@@ -37,13 +37,13 @@ class Login extends React.Component {
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="email" type="text" className="form-bottom-border" name='email'/>
-                          <label htmlFor="email">email</label>
+                          <label className="label" htmlFor="email">email</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="password" type="password" name='password'/>
-                          <label htmlFor="password">Password</label>
+                          <label className="active label" htmlFor="password">Password</label>
                         </div>
                       </div>
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>

@@ -45,7 +45,8 @@ componentDidMount(){
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-twitter-square footer-icon"></i></a>
 
   <div className="right logged-nav-button">
-    <button id="nav-buttons"><a href="/" id="trying" className={` link`}>KUKAYA</a></button>
+    {/* <button id="nav-buttons"><a href="/" id="trying" className={` link`}>KUKAYA</a></button> */}
+    <a href="/" id="trying" className={` link `}>KUKAYA</a>
     <a href="/about" className={`${this.about} link`} id="trying"><button id="nav-buttons">About</button></a>
     <a href="#" onClick={e => this.logout(e)} id="trying"><button  id="nav-buttons">Logout</button></a>
   </div>

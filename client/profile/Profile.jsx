@@ -191,6 +191,7 @@ export class Profile extends React.Component {
             {this.renderProperty()}
           </div>
         </div>
+        <hr className="alt-hr"/>
         <Footer/>
       </div>
 

@@ -32,14 +32,13 @@ export class Dashboard extends React.Component {
 
    return user.map((user) => (
      <tr key={Math.random()} >
-       <td>{count++}</td>
+       <td>{count++}.</td>
        <td>{user.profile.name}</td>
        <td>{user.profile.email}</td>
      </tr>
    )
  )
  }
-
 
   render() {
     $(document).ready(function() {

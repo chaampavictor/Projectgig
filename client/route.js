@@ -19,97 +19,111 @@ import Terms from '../client/terms/Terms.jsx';
 import Privacy from '../client/privacy/Privacy.jsx';
 
 
+
+let exposed;
+exposed = FlowRouter.group({});
+loggedIn = FlowRouter.group({
+  triggersEnter: [
+      function(){
+          if (!(Meteor.loggingIn() || Meteor.userId())) {
+              return FlowRouter.go("/login");
+          }
+      }
+  ]
+});
+
+
+
 FlowRouter.route('/', {
     name: 'Landing',
     action: () => {
       mount(Landing,{})
     }
 });
-FlowRouter.route('/about', {
+exposed.route('/about', {
     action: () => {
-      mount(About,{
-      });
+      mount(About,{});
     }
 });
-FlowRouter.route('/registration', {
+exposed.route('/registration', {
     action: () => {
       mount(Registration,{
       });
     }
 });
-FlowRouter.route('/login', {
+exposed.route('/login', {
     action: () => {
       mount(Login,{
       });
     }
 });
-FlowRouter.route('/property', {
+loggedIn.route('/property', {
     action: () => {
       mount(Property,{
       });
     }
 });
-FlowRouter.route('/propertydetail', {
+exposed.route('/propertydetail', {
   action: () => {
     mount(Propertydetail,{
     });
   }
 });
-FlowRouter.route('/listedproperty', {
+exposed.route('/listedproperty', {
     action: () => {
       mount(Listedproperty,{
       });
     }
 });
-FlowRouter.route('/profile', {
+loggedIn.route('/profile', {
     action: () => {
       mount(Profile,{
       });
     }
 });
-FlowRouter.route('/searchresults', {
+exposed.route('/searchresults', {
     action: () => {
       mount(Searchresults,{
       });
     }
 });
-FlowRouter.route('/terms', {
+exposed.route('/terms', {
   action: () => {
     mount(Terms,{
     });
   }
 });
-FlowRouter.route('/privacy', {
+exposed.route('/privacy', {
   action: () => {
     mount(Privacy,{
     });
   }
 });
-FlowRouter.route('/dashboard', {
+loggedIn.route('/dashboard', {
   action: () => {
     mount(Dashboard,{
     });
   }
 });
-FlowRouter.route('/adminpropertyt', {
+loggedIn.route('/adminpropertyt', {
   action: () => {
     mount(Adminproperty,{
     });
   }
 });
-FlowRouter.route('/clientproperty', {
+loggedIn.route('/clientproperty', {
   action: () => {
     mount(Clientproperty,{
     });
   }
 });
-FlowRouter.route('/dashuser', {
+loggedIn.route('/dashuser', {
   action: () => {
     mount(Dashuser,{
     });
   }
 });
-FlowRouter.route('/dashLogin', {
+loggedIn.route('/dashLogin', {
   action: () => {
     mount(Dashlogin,{
     });

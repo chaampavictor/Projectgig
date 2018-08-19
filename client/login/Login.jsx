@@ -29,7 +29,7 @@ class Login extends React.Component {
             <div className="row">
               <div className="col s12 m6 card-style">
                 <div className="card">
-                  <h5 className="default_color_text card-title center">
+                  <h5 className="card-title center">
                     Login
                   </h5>
                   <div className="card-content">

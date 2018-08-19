@@ -23,15 +23,16 @@ export class Listedproperty extends React.Component {
     return property.map((prop) => (
 
       <div key={prop._id}>
+          <hr className="list-hr"/>
         <div className="row">
           <div className="col s12 m6 l10 ">
             <div className="card horizontal card-shadow">
               <div className="card-stacked">
                   <p className="header liststyle left card-detail"><a href={"/propertydetail?id=" + prop._id} id="trying" className="primary-content">{`${prop.propertyname}`}</a></p>
 
-                <p className="left card-detail">{prop.description}</p>
+                <p className="left card-detail">description:{prop.description}</p>
 
-                <p className="card-alt-detail">location: {prop.location}</p>
+                <p className="card-alt-detail">location:{prop.location}</p>
               </div>
               <div className="card-image right">
                 <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:145 + "px"}} />
@@ -39,7 +40,6 @@ export class Listedproperty extends React.Component {
             </div>
           </div>
         </div>
-        <hr className="list-hr"/>
       </div>
 
     ))
@@ -60,7 +60,7 @@ export class Listedproperty extends React.Component {
 
 
         </div>
-
+<hr className="alt-hr"/>
         <Footer/>
       </div>
 

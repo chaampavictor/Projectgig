@@ -8,6 +8,8 @@ import Dashboard from '../client/dashboard/Dashboard.jsx';
 import Dashuser from '../client/dashboard/Dashuser.jsx';
 import Registration from '../client/registration/Registration.jsx';
 import Property from '../client/property/Property.jsx';
+import Adminproperty from '../client/property/Adminproperty.jsx';
+import Clientproperty from '../client/property/Clientproperty.jsx';
 import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
 import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
 import Profile from '../client/profile/Profile.jsx';
@@ -86,6 +88,18 @@ FlowRouter.route('/privacy', {
 FlowRouter.route('/dashboard', {
   action: () => {
     mount(Dashboard,{
+    });
+  }
+});
+FlowRouter.route('/adminpropertyt', {
+  action: () => {
+    mount(Adminproperty,{
+    });
+  }
+});
+FlowRouter.route('/clientproperty', {
+  action: () => {
+    mount(Clientproperty,{
     });
   }
 });

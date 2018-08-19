@@ -47,6 +47,7 @@ export default class Privacy extends Component {
             </div>
           </div>
         </div>
+        <hr/>
         <Footer className="fixed-bottom"/>
       </div>
 

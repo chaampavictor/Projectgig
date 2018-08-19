@@ -39,11 +39,11 @@ handleInputChange = e => {
 {
   Meteor.userId() ?
   <>
-<a href="/property" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
+<a href="/property" className={`${this.property} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
 </>
   :
   <>
-    <a href="/registration" className={`${this.listedproperty} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
+    <a href="/registration" className={`${this.registration} link`}><button id="banner-links"><h5>Add Property <i className="fa fa-plus banner-fa"></i> </h5></button></a>
   </>
 }
             </div>

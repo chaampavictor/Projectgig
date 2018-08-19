@@ -18,6 +18,7 @@ class Searchresults extends React.Component {
 
         <div key={Math.random()}>
           <div className="row">
+            <hr className="list-hr"/>
             <div className="col s12 m6 l10 ">
               <div className="card horizontal card-shadow">
                 <div className="card-stacked">
@@ -33,29 +34,7 @@ class Searchresults extends React.Component {
               </div>
             </div>
           </div>
-          <hr className="list-hr"/>
         </div>
-
-
-        // <div key={Math.random()}>
-        //   <div className="row">
-        //     <div className="col  s12 m6 l6 card-style">
-        //       <div className="card">
-        //         <div className="card-content ">
-        //           <span className="card-title center">
-        //             <img src={`/uploads/${item.imageId}.${item.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
-        //             <a href={"/propertydetail?id=" + item._id} className="primary-content">{`${item.propertyname}`}</a>
-        //           </span>
-        //         </div>
-        //         <div className="card-action center">
-        //             <h6 className="default_color_text">Location:</h6> {item.location}
-        //           <br/>
-        //             <h6 className="default_color_text">Type:</h6>{item.type}
-        //         </div>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div>
       ))
 
     }
@@ -69,7 +48,7 @@ class Searchresults extends React.Component {
           <Altsearch/>
           {this.g()}
         </div>
-
+        <hr/>
         <Footer/>
       </div>
 

@@ -30,11 +30,11 @@ export class Dashboard extends React.Component {
 
 
 
-   return user.map((users) => (
+   return user.map((user) => (
      <tr key={Math.random()} >
        <td>{count++}</td>
-       <td>{users.profile.name}</td>
-       <td>{users.profile.email}</td>
+       <td>{user.profile.name}</td>
+       <td>{user.profile.email}</td>
      </tr>
    )
  )
@@ -85,6 +85,7 @@ export class Dashboard extends React.Component {
     </table>
   </div>
       <br/>
+      <hr/>
         <Footer/>
       </div>
     );

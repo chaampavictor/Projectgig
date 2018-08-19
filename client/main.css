@@ -49,6 +49,9 @@
   box-shadow: none;
 }
 
+.card-height{
+  height: 400px;
+}
 
 .card-shadow{
   box-shadow: none !important;
@@ -159,7 +162,7 @@
 }
 
 #index-banner {
-  background-color: #00000080;
+  background-color:rgba(0, 0, 0, 0.89);
   background-blend-mode: multiply;
   background-size: cover;
   width: 100%;
@@ -543,7 +546,7 @@ form.example::after {
 
 .example {
   display: flex;
-  margin-top: 50px;
+  margin-top: 125px;
 }
 
 
@@ -651,7 +654,11 @@ form.example::after {
 }
 
 .card-second-alt{
-  margin-top: 65px
+  margin-top: 65px;
+}
+
+.prop-detail{
+margin-top: 25px;
 }
 
 .card-detail{
@@ -659,4 +666,7 @@ form.example::after {
 }
 .list-hr{
   color: rgba(0, 0, 0, 0.45);
+}
+.alt-hr{
+  color: rgb(0, 0, 0);
 }

@@ -6,11 +6,12 @@ export default class Adminnav extends Component {
     return(
       <nav>
         <div className="nav-wrapper adminnav">
-          <a href="" className="brand-logo" id="trying">KUKAYA Admin</a>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <a href="/dashboard" className={`${this.dashboard} link`} id="trying">KUKAYA Admin</a>
+          <ul id="nav-mobile" className="right">
             <li><a href="/" id="trying">Home</a></li>
-            <li><a href="/property" className={`${this.property} link`} id="trying">add property</a></li>
-            <li><a href="/dashuser" className={`${this.dashuser} link`} id="trying">user</a></li>
+            <li><a href="/property" className={`${this.property} link`} id="trying">Add Property</a></li>
+            <li><a href="/listedproperty" className={`${this.listedproperty} link`} id="trying">Listed Property</a></li>
+            <li><a href="/dashuser" className={`${this.dashuser} link`} id="trying">User</a></li>
           </ul>
         </div>
         </nav>

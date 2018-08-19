@@ -88,6 +88,7 @@ export class Dashboard extends React.Component {
     </table>
   </div>
       <br/>
+      <hr/>
         <Footer/>
       </div>
     );

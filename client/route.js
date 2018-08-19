@@ -20,8 +20,8 @@ import Privacy from '../client/privacy/Privacy.jsx';
 
 
 
-let exposed;
-exposed = FlowRouter.group({});
+let open;
+open = FlowRouter.group({});
 loggedIn = FlowRouter.group({
   triggersEnter: [
       function(){
@@ -40,18 +40,18 @@ FlowRouter.route('/', {
       mount(Landing,{})
     }
 });
-exposed.route('/about', {
+open.route('/about', {
     action: () => {
       mount(About,{});
     }
 });
-exposed.route('/registration', {
+open.route('/registration', {
     action: () => {
       mount(Registration,{
       });
     }
 });
-exposed.route('/login', {
+open.route('/login', {
     action: () => {
       mount(Login,{
       });
@@ -63,13 +63,13 @@ loggedIn.route('/property', {
       });
     }
 });
-exposed.route('/propertydetail', {
+open.route('/propertydetail', {
   action: () => {
     mount(Propertydetail,{
     });
   }
 });
-exposed.route('/listedproperty', {
+open.route('/listedproperty', {
     action: () => {
       mount(Listedproperty,{
       });
@@ -81,19 +81,19 @@ loggedIn.route('/profile', {
       });
     }
 });
-exposed.route('/searchresults', {
+open.route('/searchresults', {
     action: () => {
       mount(Searchresults,{
       });
     }
 });
-exposed.route('/terms', {
+open.route('/terms', {
   action: () => {
     mount(Terms,{
     });
   }
 });
-exposed.route('/privacy', {
+open.route('/privacy', {
   action: () => {
     mount(Privacy,{
     });

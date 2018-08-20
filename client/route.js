@@ -129,11 +129,3 @@ loggedIn.route('/dashLogin', {
     });
   }
 });
-// FlowRouter.notFound = {
-//   action: () => {
-//     mount(NotFound, {});
-//   }
-// }
-
-// const WelcomeComponent = ({name}) => (<p>Hello, {name}</p>);
-// mount(WelcomeComponent, {name: 'Arunoda'});

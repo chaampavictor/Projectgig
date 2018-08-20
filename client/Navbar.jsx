@@ -46,19 +46,19 @@ componentDidMount(){
 
   <div className="right logged-nav-button">
     {/* <button id="nav-buttons"><a href="/" id="trying" className={` link`}>KUKAYA</a></button> */}
-    <a href="/" id="trying" className={` link `}>KUKAYA</a>
-    <a href="/about" className={`${this.about} link`} id="trying"><button id="nav-buttons">About</button></a>
-    <a href="#" onClick={e => this.logout(e)} id="trying"><button  id="nav-buttons">Logout</button></a>
+    <a href="/" className={` link `}>KUKAYA</a>
+    <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
+    <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>
   </div>
 </>
     :
 <>
 
-<h6><a href="/" id="trying" className={` link`}>KUKAYA</a></h6>
+<h6><a href="/" className={` link`}>KUKAYA</a></h6>
   <div className="right nav-button">
-    <a href="/registration" id="trying" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>
-    <a href="/about" id="trying" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
-    <a href="/login" id="trying" className={`${this.login} link`}><button id="nav-buttons">Login</button></a>
+    <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>
+    <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
+    <a href="/login" className={`${this.login} link`}><button id="nav-buttons">Login</button></a>
   </div>
 </>
     }

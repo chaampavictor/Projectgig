@@ -608,8 +608,13 @@ form.example::after {
   background-size: cover;
 }
 
-#footer-home{
+#trying{
   color: rgb(0,0,0);
+}
+
+
+#footer-home{
+  color: #0b7dda;
 }
 
 #separate {
@@ -625,7 +630,7 @@ form.example::after {
 }
 
 .footer-icon {
-  color: rgb(0,0,0);
+  color:#0b7dda;
 }
 
 .label{
@@ -647,9 +652,6 @@ form.example::after {
   width: 100%;
   height: 200px;
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
-}
-#trying{
-  color: rgb(0,0,0);
 }
 
 .liststyle{

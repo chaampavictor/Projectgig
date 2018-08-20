@@ -29,7 +29,7 @@ export default class Tab extends Component {
           <div className="row">
             <div className="col s12 m7 l12">
                 <div className="card-content tab-style">
-                  <p>STUDAC is a web based application that provides people with a platform were they can easily search for accomodation<br/> that suits their needs. think of us as the google of accomodation</p>
+                  <p>KUKAYA is a web based application that provides people with a platform were they can easily search for accomodation<br/> that suits their needs. think of us as the google of accomodation</p>
                 </div>
             </div>
           </div>

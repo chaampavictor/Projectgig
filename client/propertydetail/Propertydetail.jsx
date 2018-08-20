@@ -17,25 +17,24 @@ export class Propertydetail extends React.Component {
     return properties.map((prop) => (
       <div>
         <div className="row">
-          <div className="col  s12 m6 l12">
-            <div className="card">
-              <div className="card-content">
-                <h3 className="default_color_text bold">{prop.propertyname}</h3>
+          <div className="col s12 m6 l12 ">
+            <div className="card horizontal card-height">
+              <div className="card-stacked">
+                <br/>
+                <p className="header liststyle prop-detail" id="trying">name: {prop.propertyname}</p>
+                <p className="card-detail">description: {prop.description}</p>
+                <p className="card-alt-detail">price: {prop.price}</p>
+                <p className="card-alt-detail ">type: {prop.type}</p>
+                <p className="card-alt-detail ">contact: {prop.contact}</p>
+                <p className="card-alt-detail ">location: {prop.location }</p>
               </div>
-              <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
-              <h3 className="default_color_text">description:</h3>{prop.description}
-              <br/>
-              <h3 className="default_color_text">Price:</h3>{prop.price}
-              <br/>
-              <h3 className="default_color_text">Type:</h3>{prop.type}
-              <br/>
-              <h3 className="default_color_text">Location:</h3> {prop.location}
-              <br/>
-              <h3 className="default_color_text">Contact info:</h3> {prop.contact}
+              <div className="card-image  prop-detail right">
+                <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 200 + "%",height:245 + "px"}} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+    </div>
     ))
   }
 
@@ -44,14 +43,13 @@ export class Propertydetail extends React.Component {
       <div>
         <Navbar/>
         <div className="container">
-          <Altsearch/>
           <center>
             <h3 className="center">Property</h3>
-            <h3 className="collection">
               {this.renderProperty()}
-            </h3>
           </center>
         </div>
+        <hr/>
+        <Footer/>
       </div>
     )
   }

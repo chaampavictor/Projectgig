@@ -19,7 +19,6 @@ shell-server@0.3.1            # Server-side component of the `meteor shell` comm
 
 
 insecure
-materialize:materialize
 kadira:flow-router
 fortawesome:fontawesome
 accounts-password@1.5.0
@@ -28,3 +27,4 @@ react-meteor-data
 ultimatejs:tracker-react
 ostrio:files
 autopublish
+materialize:materialize

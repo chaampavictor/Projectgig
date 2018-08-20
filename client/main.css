@@ -46,6 +46,15 @@
 
 .card{
   background-color: #ffffffe6;
+  box-shadow: none;
+}
+
+.card-height{
+  height: 400px;
+}
+
+.card-shadow{
+  box-shadow: none !important;
 }
 
 #new-card {
@@ -100,6 +109,16 @@
   margin-top: 0;
 }
 
+.adminnav{
+  background-color: white;
+}
+
+.navbar-fixed{
+  height: 64px;
+  margin-top: 23px;
+  margin-bottom: -23px;
+}
+
 #nav-buttons {
   background-color: transparent;
   border-radius: 12px;
@@ -123,7 +142,6 @@
   bottom: 0;
   height: 2px;
   background-color: #0b7dda;
-  will-change: left, right;
 }
 
 .tabs .tab a:hover, .tabs .tab a.active {
@@ -139,11 +157,11 @@
   font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
-  transition: color .28s ease;
+  /*transition: color .28s ease;*/
 }
 
 #index-banner {
-  background-color: #00000080;
+  background-color:rgba(0, 0, 0, 0.89);
   background-blend-mode: multiply;
   background-size: cover;
   width: 100%;
@@ -152,7 +170,7 @@
 }
 
 .testimony {
-  /*background-color: #0b7dda;*/
+  background-color: rgb(30,28,28);
   background-blend-mode: multiply;
   background-size: cover;
   background-image: url("/assets/copped.png");
@@ -192,8 +210,8 @@
 }
 
 .span_h2 {
-  font-weight: 300;
-  color: #0b7dda;
+  font-weight: 500;
+  color: rgb(0,0,0);
 }
 
 .text_b {
@@ -428,6 +446,9 @@ nav a.button-collapse {
 .card-avatar .card-content .card-title {
   line-height: 30px !important;
 }
+ .card-title {
+  font-weight: 400 !important;
+}
 
 footer.page-footer {
   margin-top: 0px !important;
@@ -452,7 +473,7 @@ footer.page-footer {
 }
 
 .input-field label {
-  color: #0b7dda;
+  color: rgb(0,0,0);
 }
 
 /*tabs*/
@@ -463,6 +484,7 @@ footer.page-footer {
 }
 
 /*search input form*/
+
 
 form.example input[type=text] {
   padding: 0px;
@@ -519,18 +541,37 @@ form.example::after {
 }
 
 .second-example {
-  display: flex;
   margin-left: 30px;
   margin-bottom: 18px;
+
 }
 
 .example {
   display: flex;
-  margin-top: 50px;
+  margin-top: 125px;
+}
+
+
+#alt-input-field {
+  background-color: white;
+  border-color: rgb(0,0,0);
+  border-bottom-width: 2px;
+  outline: none;
+  height: 60px;
+  width: 88%;
+  font-size: 20px;
+  margin: 3% 8 0px 10px;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all 0.3s;
+  color:rgb(0,0,0);
+  text-align: center;
 }
 
 
 #input-field {
+  text-align: center;
   background-color: white;
   border: 2px;
   border: 1px solid #9e9e9e;
@@ -539,32 +580,24 @@ form.example::after {
   outline: none;
   height: 41px;
   width: 88%;
-  font-size: 1rem;
+  font-size: 20px;
   margin: 3% 8 0px 10px;
   padding: 0;
   box-shadow: none;
   box-sizing: content-box;
   transition: all 0.3s;
   border-radius: 12px;
-  color: #0b7dda;
+  color: rgb(0, 0, 0);
 }
 
 
-.alt-search {
-  color: white;
-  background-color: #0b7dda;
-  float: left;
-  width: 16%;
-  height: 46px;
-  font-size: 13px;
-  border: 1px;
-  border-radius: 12px;
-}
+
+
 
 /*card styling*/
 
 .form-bottom-border {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid rgb(0,0,0) !important;
 }
 
 /*extra banners*/
@@ -575,9 +608,17 @@ form.example::after {
   background-size: cover;
 }
 
-#separate {
-  background-color: #d7d4d44d;
+#trying{
+  color: rgb(0,0,0);
+}
+
+
+#footer-home{
   color: #0b7dda;
+}
+
+#separate {
+  background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 0;
@@ -589,7 +630,11 @@ form.example::after {
 }
 
 .footer-icon {
-  color: #0b7dda;
+  color:#0b7dda;
+}
+
+.label{
+  color: red;
 }
 
 #formstyle {
@@ -609,6 +654,24 @@ form.example::after {
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
 }
 
-.registration-card{
-  background-color: red;
+.liststyle{
+  font-weight: 1000;
+}
+
+.card-second-alt{
+  margin-top: 65px;
+}
+
+.prop-detail{
+margin-top: 25px;
+}
+
+.card-detail{
+  margin-top: -10px;
+}
+.list-hr{
+  color: rgba(0, 0, 0, 0.45);
+}
+.alt-hr{
+  color: rgb(0, 0, 0);
 }

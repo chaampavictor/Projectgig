@@ -189,6 +189,7 @@ export class Profile extends React.Component {
         <div className="center">
           <a className="waves-effect waves-dark btn-small" onClick={this.deleteAcc}>Delete Account</a>
         </div>
+        <hr className="alt-hr"/>
         <Footer/>
       </div>
     );

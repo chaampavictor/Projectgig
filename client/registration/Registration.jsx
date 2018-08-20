@@ -26,7 +26,7 @@ class Registration extends React.Component {
       if (err) {
         console.log(err.reason);
       }
-      FlowRouter.go('profile')
+      FlowRouter.go('/profile')
     });
   }
 

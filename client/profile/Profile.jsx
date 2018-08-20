@@ -7,7 +7,6 @@ import {Listproperty} from '../../lib/collections'
 import {UserFiles} from '../../lib/collections';
 
 export class Profile extends React.Component {
-
   constructor(props) {
     super();
     this.state = {
@@ -16,7 +15,8 @@ export class Profile extends React.Component {
       location: '',
       price: '',
       description: '',
-      contact: ''
+      contact: '',
+      _id: '',
     }
   }
 
@@ -25,63 +25,53 @@ export class Profile extends React.Component {
     console.log(id);
   }
 
-  editProp = (e) => {
-    e.preventDefault();
+  deleteAcc() {
+    const userId= this._id;
+    Meteor.call('deleteUserAccount', {_id:userId});
+    FlowRouter.go('/');
+  }
+
+  getId = (e, id) => {
+    const edits = Listproperty.find({_id: id}).fetch();
+    // this.setState({
+    //   propertyname: edits[0].propertyname,
+    //   type: edits[0].type,
+    //   location: edits[0].location,
+    //   price: edits[0].price,
+    //   description: edits[0].description,
+    //   contact: edits[0].contact,
+    //   _id: edits[0]._id
+    // });
+    this.state.propertyname = edits[0].propertyname;
+    this.state.type = edits[0].type;
+    this.state.location = edits[0].location;
+    this.state.price = edits[0].price;
+    this.state.description = edits[0].description;
+    this.state.contact = edits[0].contact;
+    this.state._id = edits[0]._id;
+    console.log(this.state.propertyname);
+  }
+
+  editProp = () => {
+    const { _id, propertyname, type, location, price, description, contact } = this.state;
     const property = {
-      type: this.state.type,
-      propertyname: this.state.propertyname,
-      location: this.state.location,
-      price: this.state.price,
-      description: this.state.description,
-      contact: this.state.contact
-    }
+      _id,
+      propertyname,
+      type,
+      location,
+      price,
+      description,
+      contact
+    };
     Meteor.call('editProperty', property, (error, response) => {
       if (error) {
         alert(error.reason, 'Please solve this problem')
       }
       else {
-        alert(response)
+        alert("Your property has been updated!")
       }
     });
-    // Meteor.call('editProperty', property);
   }
-
-  handleTypeChange = (e) => {
-    this.setState({
-      type: e.target.value
-    })
-  }
-
-  handleNameChange = (e) => {
-    this.setState({
-      propertyname: e.target.value
-    })
-  }
-
-  handleLocationChange = (e) => {
-    this.setState({
-      location: e.target.value
-    })
-  }
-
-  handlePriceChange = (e) => {
-    this.setState({
-      price: e.target.value
-    })
-  }
-
-  handleDescriptionChange = (e) => {
-    this.setState({
-      description: e.target.value
-    })
-  }
-
-  handleContactChange = (e) => {
-    this.setState({
-      contact: e.target.value
-    })
-  }
-
 
   renderProperty() {
     const property = this.props.property
@@ -101,6 +91,10 @@ export class Profile extends React.Component {
                 </span>
                 <br/>
                 <div className="center">
+                  {prop.type}
+                  <br />
+                  {prop.price}
+                  <br />
                   {prop.description}
                   <br/>
                   {prop.contact}
@@ -111,7 +105,7 @@ export class Profile extends React.Component {
               <div className="card-action center">
                 <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button>
                 {/* <button className="delete" onClick={e => this.editProp(e, prop._id)}>edit</button> */}
-                <a href="#modal1" className="delete modal-trigger">edit</a>
+                <a href="#modal1" onClick={e => this.getId(e, prop._id)} className="delete modal-trigger">edit</a>
               <br/>
               </div>
             </div>
@@ -126,9 +120,7 @@ export class Profile extends React.Component {
     $(document).ready(function() {
       $('#modal1').modal();
     });
-    // placeholder={`${property.propertyname}`}
     return (
-
       <div>
         <Navbar/> {/* Modal Structure */}
         <div id="modal1" className="modal">
@@ -137,39 +129,39 @@ export class Profile extends React.Component {
             <div className="row">
               <form onSubmit={this.editProp} className="col s12 l6">
                 <div className="row">
-                  <div className="input-field col s6">
-                    <input onChange={this.handleNameChange} className="form-control" id="propertyname" type="text" name='propertyname'/>
+                  <div className="input-field col s12">
+                    <input className="form-control" id="propertyname" type="text" name='propertyname' placeholder={this.state.propertyname} />
                     <label htmlFor="propertyname">property name</label>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="input-field col s6">
-                    <input onChange={this.handleTypeChange} className="form-control" id="type" type="text" name='type'/>
+                  <div className="input-field col s12">
+                    <input className="form-control" id="type" type="text" name='type' />
                     <label htmlFor="type">type</label>
                   </div>
                 </div>
 
                 <div className="row">
                   <div className="input-field col s12">
-                    <input onChange={this.handleLocationChange} className="form-control" id="location" type="text" name='location'/>
+                    <input className="form-control" id="location" type="text" name='location'/>
                     <label htmlFor="location">Location</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
-                    <input onChange={this.handlePriceChange} className="form-control" id="price" type="text" name='price'/>
+                    <input className="form-control" id="price" type="text" name='price'/>
                     <label htmlFor="price">Price</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
-                    <input onChange={this.handleDescriptionChange} className="form-control" id="description" type="text" name='description'/>
+                    <input className="form-control" id="description" type="text" name='description'/>
                     <label htmlFor="description">Description</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
-                    <input onChange={this.handleContactChange} className="form-control" id="contact" type="text" name='contact'/>
+                    <input className="form-control" id="contact" type="text" name='contact'/>
                     <label htmlFor="price">contact</label>
                   </div>
                 </div>
@@ -191,17 +183,22 @@ export class Profile extends React.Component {
             {this.renderProperty()}
           </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <div className="center">
+          <a className="waves-effect waves-dark btn-small" onClick={this.deleteAcc}>Delete Account</a>
+        </div>
         <hr className="alt-hr"/>
         <Footer/>
       </div>
-
     );
   }
 }
+
 export default withTracker(() => {
-
   const propertyName = FlowRouter.getQueryParam('name');
-
+  Meteor.subscribe('property');
   return {
     property: Listproperty.find({owner: Meteor.userId()}).fetch()
   }

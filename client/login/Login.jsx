@@ -15,7 +15,7 @@ class Login extends React.Component {
       error
         ? console.log(error.reason)
         : console.log('logged in ')
-      FlowRouter.go('profile')
+      FlowRouter.go('/profile')
     });
   }
 

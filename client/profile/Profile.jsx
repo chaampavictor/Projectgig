@@ -25,6 +25,12 @@ export class Profile extends React.Component {
     console.log(id);
   }
 
+  deleteAcc() {
+    const userId= this._id;
+    Meteor.call('deleteUserAccount', {_id:userId});
+    FlowRouter.go('/');
+  }
+
   getId = (e, id) => {
     const edits = Listproperty.find({_id: id}).fetch();
     // this.setState({
@@ -176,6 +182,12 @@ export class Profile extends React.Component {
             <h5 className="center prop-list">my property list</h5>
             {this.renderProperty()}
           </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div className="center">
+          <a className="waves-effect waves-dark btn-small" onClick={this.deleteAcc}>Delete Account</a>
         </div>
         <Footer/>
       </div>

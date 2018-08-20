@@ -27,7 +27,7 @@ export class Listedproperty extends React.Component {
         <div className="row">
           <div className="col s12 m6 l10 ">
             <div className="card horizontal card-shadow">
-              <div className="card-stacked">
+              {/* <div className="card-stacked">
                   <p className="header liststyle left card-detail"><a href={"/propertydetail?id=" + prop._id} id="trying" className="primary-content">{`${prop.propertyname}`}</a></p>
 
                 <p className="left card-detail">description:{prop.description}</p>
@@ -36,7 +36,22 @@ export class Listedproperty extends React.Component {
               </div>
               <div className="card-image right">
                 <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:145 + "px"}} />
-              </div>
+              </div> */}
+
+
+
+              <div class="row">
+               <div class="col s12 l6">
+                <p className="header liststyle card-detail"><a href={"/propertydetail?id=" + prop._id} id="trying" className="primary-content">{`${prop.propertyname}`}</a></p>
+
+               <p className="card-detail">description:{prop.description}</p>
+
+               <p className="card-alt-detail">location:{prop.location}</p>
+               </div>
+               <div class="col s12 l6 right">
+                 <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:145 + "px"}} />
+               </div>
+             </div>
             </div>
           </div>
         </div>

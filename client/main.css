@@ -612,6 +612,10 @@ form.example::after {
   color: rgb(0,0,0);
 }
 
+.card-margin{
+  width: 75% !important;
+  margin-left: 25px !important;
+}
 
 #footer-home{
   color: #0b7dda;
@@ -669,8 +673,15 @@ margin-top: 25px;
 .card-detail{
   margin-top: -10px;
 }
+
+.uploaded-image{
+  height: 145px;
+}
+
 .list-hr{
   color: rgba(0, 0, 0, 0.45);
+  width: 87%;
+  margin-left: 8px;
 }
 .alt-hr{
   color: rgb(0, 0, 0);

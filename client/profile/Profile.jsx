@@ -27,7 +27,7 @@ export class Profile extends React.Component {
 
   deleteAcc() {
     const userId= this._id;
-    Meteor.call('deleteUserAccount', {_id:userId});
+    Meteor.call('deleteUserAccount', {_id:userId}); 
     FlowRouter.go('/');
   }
 

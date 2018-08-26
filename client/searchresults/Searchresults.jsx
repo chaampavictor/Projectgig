@@ -23,7 +23,7 @@ class Searchresults extends React.Component {
                 <hr className="list-hr"/>
           <div className="col s12 m6 l8 ">
             <div className="card card-shadow">
-              <div class="col s12 l8">
+              <div className="col s12 l8">
                 <p className="header liststyle left card-detail"><a href={"/propertydetail?id=" + item._id} id="trying" className="primary-content">{`${item.propertyname}`}</a></p>
                 <p className="left card-detail">description:{item.description}</p>
                 <p className="card-alt-detail">location:{item.location}</p>
@@ -33,24 +33,7 @@ class Searchresults extends React.Component {
               </div>
             </div>
           </div>
-        </div>
-          {/* <div className="row">
-            <hr className="list-hr"/>
-            <div className="col s12 m6 l10 ">
-              <div className="card horizontal card-shadow">
-                <div className="card-stacked">
-                    <p className="header liststyle left card-detail"><a href={"/propertydetail?id=" + item._id} id="trying" className="primary-content">{`${item.propertyname}`}</a></p>
-
-                  <p className="left card-detail">{item.description}</p>
-
-                  <p className="card-alt-detail">location: {item.location}</p>
-                </div>
-                <div className="card-image right">
-                 <img src={`/uploads/${item.imageId}.${item.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
-                </div>
-              </div>
-            </div>
-          </div> */}
+          </div>
         </div>
       ))
 

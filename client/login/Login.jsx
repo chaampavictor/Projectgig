@@ -12,10 +12,17 @@ class Login extends React.Component {
     const password = target.password.value;
     const email = target.email.value;
     Meteor.loginWithPassword(email, password, (error) => {
-      error
-        ? console.log(error.reason)
-        : console.log('logged in ')
-      FlowRouter.go('/profile')
+
+      if (error) {
+         console.log(error.reason);
+
+      }
+      // else if (Email === "nimba@yayaku.com") {
+      //     FlowRouter.go('/dashboard')
+      // }
+      else {
+        FlowRouter.go('/profile')
+      }
     });
   }
 

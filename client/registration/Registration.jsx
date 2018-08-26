@@ -12,22 +12,30 @@ class Registration extends React.Component {
     const name = target.name.value;
     const password = target.password.value;
     const email = target.email.value;
-    const profile = {
-      name,
-      email
-    };
-    const user = {
-      email,
-      password,
-      profile
-    }
 
-    Accounts.createUser(user, (err)=> {
-      if (err) {
-        console.log(err.reason);
-      }
-      FlowRouter.go('/profile')
-    });
+
+    const profile = {
+      email,
+      name
+    };
+
+
+				Meteor.call('createAccount',email,name,profile,function(error) {
+					if (error !== undefined) {
+						$('.alert').addClass('alert-danger').html(error.reason);
+					}
+           else {
+            Accounts.createUser(user, (err)=> {
+              FlowRouter.go('/profile')
+
+            });
+					}
+				});
+		// 	}
+		// })
+
+
+
   }
 
 

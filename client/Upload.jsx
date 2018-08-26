@@ -61,13 +61,13 @@ import { Session } from 'meteor/session'
 
           self.setState({
             uploading: uploadInstance, // Keep track of this instance to use below
-            inProgress: true // Show the progress bar now
+            // inProgress: true // Show the progress bar now
           });
 
           // These are the event functions, don't need most of them, it shows where we are in the process
-          uploadInstance.on('start', function () {
-            console.log('Starting');
-          })
+          // uploadInstance.on('start', function () {
+          //   console.log('Starting');
+          // })
 
           uploadInstance.on('end', function (error, fileObj) {
             console.log('On end File Object: ', fileObj);
@@ -81,7 +81,7 @@ import { Session } from 'meteor/session'
             })
 
             // Remove the filename from the upload box
-            self.refs['fileinput'].value = '';
+            // self.refs['fileinput'].value = '';
 
             // Reset our state for the next file
             self.setState({
@@ -94,14 +94,14 @@ import { Session } from 'meteor/session'
           uploadInstance.on('error', function (error, fileObj) {
             console.log('Error during upload: ' + error)
           });
-
-          uploadInstance.on('progress', function (progress, fileObj) {
-            console.log('Upload Percentage: ' + progress)
-            // Update our progress bar
-            self.setState({
-              progress: progress
-            });
-          });
+          //
+          // uploadInstance.on('progress', function (progress, fileObj) {
+          //   console.log('Upload Percentage: ' + progress)
+          //   // Update our progress bar
+          //   self.setState({
+          //     progress: progress
+          //   });
+          // });
 
           uploadInstance.start(); // Must manually start the upload
         }
@@ -113,8 +113,9 @@ import { Session } from 'meteor/session'
       console.log('**********************************', this.state.uploading);
 
       if (!_.isEmpty(this.state.uploading)) {
-        return <div>
-          {this.state.uploading.file.name}
+        return
+         <div>
+          {/* {this.state.uploading.file.name} */}
 
           <div className="progress progress-bar-default">
             <div style={{width: this.state.progress + '%'}} aria-valuemax="100"

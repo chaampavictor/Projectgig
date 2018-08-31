@@ -16,14 +16,6 @@ export class Propertydetail extends React.Component {
     }
     return properties.map((prop) => (
       <div>
-
-
-
-
-
-
-
-
         <div className="row">
           <div className="col s12 m6 l9 ">
             <div className="card card-shadow card-height">

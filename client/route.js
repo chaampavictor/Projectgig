@@ -8,11 +8,13 @@ import Dashboard from '../client/dashboard/Dashboard.jsx';
 import Dashuser from '../client/dashboard/Dashuser.jsx';
 import Registration from '../client/registration/Registration.jsx';
 import Property from '../client/property/Property.jsx';
-import Adminproperty from '../client/property/Adminproperty.jsx';
-import Clientproperty from '../client/property/Clientproperty.jsx';
+import EditProperty from '../client/property/EditProperty.jsx';
+// import Adminproperty from '../client/property/Adminproperty.jsx';
+// import Clientproperty from '../client/property/Clientproperty.jsx';
 import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
 import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
 import Profile from '../client/profile/Profile.jsx';
+import EditAccount from '../client/profile/EditAccount.jsx';
 import Login from '../client/login/Login.jsx';
 import Searchresults from '../client/searchresults/Searchresults.jsx';
 import Terms from '../client/terms/Terms.jsx';
@@ -57,9 +59,22 @@ open.route('/login', {
       });
     }
 });
+open.route('/editaccount', {
+    action: () => {
+      mount(EditAccount,{
+      });
+    }
+});
 loggedIn.route('/property', {
     action: () => {
       mount(Property,{
+      });
+    }
+});
+
+loggedIn.route('/editproperty', {
+    action: () => {
+      mount(EditProperty,{
       });
     }
 });
@@ -105,18 +120,18 @@ loggedIn.route('/dashboard', {
     });
   }
 });
-loggedIn.route('/adminpropertyt', {
-  action: () => {
-    mount(Adminproperty,{
-    });
-  }
-});
-loggedIn.route('/clientproperty', {
-  action: () => {
-    mount(Clientproperty,{
-    });
-  }
-});
+// loggedIn.route('/adminpropertyt', {
+//   action: () => {
+//     mount(Adminproperty,{
+//     });
+//   }
+// });
+// loggedIn.route('/clientproperty', {
+//   action: () => {
+//     mount(Clientproperty,{
+//     });
+//   }
+// });
 loggedIn.route('/dashuser', {
   action: () => {
     mount(Dashuser,{

@@ -29,17 +29,29 @@ componentDidMount(){
 
 
   render() {
+
+
+    let email = '';
+    if (Meteor.user()) {
+      const user = Meteor.user();
+      email = user.emails[0].address;
+    }
+
     return(
       <div className="navbar-fixed">
     {
       Meteor.userId() ?
       <>
       <ul id="slide-out" className="side-nav sidenav-style">
-        <li><a href="/profile" className={`${this.profile} link`}>profile</a></li>
+        <li>{email}</li>
         <div className="divider"></div>
-        <li><a href="/property" className={`${this.property} link`}>add property</a></li>
+        <li><a href="/profile" className={`${this.profile} link`}>Profile</a></li>
+        <div className="divider"></div>
+        <li><a href="/property" className={`${this.property} link`}>Add Property</a></li>
         <li><div className="divider"></div></li>
         <li><a href="/listedproperty" className={`${this.listedproperty} link`}>Listed Properties</a></li>
+        <li><div className="divider"></div></li>
+        <li><a href="/editaccount" className={`${this.editaccount} link`}>Edit Account</a></li>
       </ul>
 
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>

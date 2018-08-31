@@ -57,6 +57,5 @@ export default withTracker(() => {
   return {
     properties: Listproperty.find({_id: id}).fetch(),
     files : UserFiles.find({}, {sort: {name: 1}}).fetch(),
-    // isDataReady: isDataReady.ready(),
   }
 })(Propertydetail)

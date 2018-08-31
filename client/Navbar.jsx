@@ -5,14 +5,10 @@ export default class Navbar extends Component {
 
 componentDidMount(){
   $(".button-collapse").sideNav({
-
-
     menuWidth: 250, // Default is 300
           edge: 'left', // Choose the horizontal origin
           closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-
   });
-
 }
 
   logout = (e) => {
@@ -26,11 +22,7 @@ componentDidMount(){
     });
   }
 
-
-
   render() {
-
-
     let email = '';
     if (Meteor.user()) {
       const user = Meteor.user();
@@ -39,8 +31,9 @@ componentDidMount(){
 
     return(
       <div className="navbar-fixed">
-    {
-      Meteor.userId() ?
+
+
+    { Meteor.userId() ?
       <>
       <ul id="slide-out" className="side-nav sidenav-style">
         <li>{email}</li>
@@ -57,7 +50,6 @@ componentDidMount(){
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>
 
   <div className="right logged-nav-button">
-    {/* <button id="nav-buttons"><a href="/" id="trying" className={` link`}>KUKAYA</a></button> */}
     <a href="/" className={` link `}>KUKAYA</a>
     <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
     <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>

@@ -120,18 +120,6 @@ loggedIn.route('/dashboard', {
     });
   }
 });
-// loggedIn.route('/adminpropertyt', {
-//   action: () => {
-//     mount(Adminproperty,{
-//     });
-//   }
-// });
-// loggedIn.route('/clientproperty', {
-//   action: () => {
-//     mount(Clientproperty,{
-//     });
-//   }
-// });
 loggedIn.route('/dashuser', {
   action: () => {
     mount(Dashuser,{

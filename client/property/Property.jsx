@@ -26,8 +26,6 @@ class Property extends React.Component {
     const contact = e.target.contact.value
 
 
-    // imageId ==>
-    // imageType ==> Session.get
     Listproperty.insert({
       owner: Meteor.userId(),
       type,

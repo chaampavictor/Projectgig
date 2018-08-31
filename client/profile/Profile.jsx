@@ -31,28 +31,7 @@ export class Profile extends React.Component {
     FlowRouter.go('/');
   }
 
-  getId = (e, id) => {
-    const edits = Listproperty.find({_id: id}).fetch();
-    // this.setState({
-    //   propertyname: edits[0].propertyname,
-    //   type: edits[0].type,
-    //   location: edits[0].location,
-    //   price: edits[0].price,
-    //   description: edits[0].description,
-    //   contact: edits[0].contact,
-    //   _id: edits[0]._id
-    // });
-    this.state.propertyname = edits[0].propertyname;
-    this.state.type = edits[0].type;
-    this.state.location = edits[0].location;
-    this.state.price = edits[0].price;
-    this.state.description = edits[0].description;
-    this.state.contact = edits[0].contact;
-    this.state._id = edits[0]._id;
-    console.log(this.state.propertyname);
-  }
 
-  
   renderProperty() {
     const property = this.props.property
     if (property === undefined) {

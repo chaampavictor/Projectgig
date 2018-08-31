@@ -20,14 +20,12 @@ export class Dashboard extends React.Component {
 
   propertyTable() {
     const property = this.props.property;
-     let count = 1;
+    let count = 1;
     if (property === undefined) {
       return;
     }
 
-
     return property.map((prop) => (
-
       <tr key={Math.random()}>
         <td>{count++}</td>
         <td>{prop.propertyname}</td>
@@ -36,7 +34,9 @@ export class Dashboard extends React.Component {
         <td>{prop.price}</td>
         <td>{prop.description}</td>
         <td>{prop.contact}</td>
-        <td><a href="#modaldash" className="delete modal-trigger">delete</a></td>
+        <td>
+          <a href="#modaldash" className="delete modal-trigger">delete</a>
+        </td>
       </tr>
     ))
   }
@@ -47,58 +47,50 @@ export class Dashboard extends React.Component {
     });
     return (
       <div>
-
-        {/* delete modal begins here */}
         <div id="modaldash" className="modal">
           <div className="modal-content">
             <h4>Edit Property</h4>
             <div className="row">
-
-                <div className="row">
-                  <div className="input-field col s6">
+              <div className="row">
+                <div className="input-field col s6">
                   <p>Are you sure?</p>
-                  </div>
                 </div>
-                <a className="btn waves-effect waves-light submit-button" onClick={e => this.deleteProp(e, prop._id)}>Yes</a>
-                <a className="btn waves-effect waves-light submit-button" type="submit" name="action">No</a>
+              </div>
+              <a className="btn waves-effect waves-light submit-button" onClick={e => this.deleteProp(e, prop._id)}>Yes</a>
+              <a className="btn waves-effect waves-light submit-button" type="submit" name="action">No</a>
             </div>
           </div>
         </div>
-        {/* delete modal ends here */}
-
-
-      <Adminnav/>
-          <div className="container">
-        <table className="striped">
-      <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Type</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Contact</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {this.propertyTable()}
-      </tbody>
-    </table>
-  </div>
-      <br/>
-      <hr/>
+        <Adminnav/>
+        <div className="container">
+          <table className="striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Contact</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.propertyTable()}
+            </tbody>
+          </table>
+        </div>
+        <br/>
+        <hr/>
         <Footer/>
       </div>
     );
   }
 }
 export default withTracker(() => {
-    Meteor.subscribe('userfiles')
+  Meteor.subscribe('userfiles')
 
   return {
-    property: Listproperty.find().fetch(),
-    userfiles: UserFiles.findOne(),
-  }
+    property: Listproperty.find().fetch(), 
+    userfiles: UserFiles.findOne()}
 })(Dashboard)

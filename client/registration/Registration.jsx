@@ -12,13 +12,10 @@ class Registration extends React.Component {
     const name = target.name.value;
     const password = target.password.value;
     const email = target.email.value;
-
-
     const profile = {
       email,
       name
     };
-
 
 				Meteor.call('createAccount',email,name,profile,function(error) {
 					if (error !== undefined) {
@@ -27,22 +24,14 @@ class Registration extends React.Component {
            else {
             Accounts.createUser(user, (err)=> {
               FlowRouter.go('/profile')
-
             });
 					}
 				});
-		// 	}
-		// })
-
-
-
   }
-
 
   render() {
     return (
-
-      <div>
+    <div>
         <Navbar/>
       <div id="signup-card">
         <div className="container">
@@ -58,7 +47,6 @@ class Registration extends React.Component {
                         <label htmlFor="name">name</label>
                       </div>
                     </div>
-
                     <div className="row">
                       <div className="input-field col s12">
                         <input id="password" type="password" name='password'/>
@@ -74,7 +62,6 @@ class Registration extends React.Component {
                     <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                   </form>
                 <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
-
               </div>
             </div>
             </div>
@@ -82,8 +69,7 @@ class Registration extends React.Component {
         </div>
       </div>
         <Footer/>
-      </div>
-
+    </div>
     );
   }
 }

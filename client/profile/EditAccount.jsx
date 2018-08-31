@@ -10,19 +10,14 @@ export default class EditAccount extends Component {
       $('#modal1').modal();
     });
     return (
-
         <div>
           <Navbar/>
-
            <div className="section">
              <div className="container">
                <div className="row">
                  <div className="col s12 m6 card-style">
-                     <h5 className="center">
-                       Edit Profile
-                     </h5>
+                     <h5 className="center">Edit Profile</h5>
                      <div className="card card-edit">
-                     {/* <div className="card-content"> */}
                        <form className="col s12" onSubmit={this.login}>
                          <div className="row">
                            <div className="input-field col s12">
@@ -50,9 +45,6 @@ export default class EditAccount extends Component {
              </div>
            </div>
          </div>
-
-
-
     );
   }
 }

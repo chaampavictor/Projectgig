@@ -61,7 +61,7 @@ import { Session } from 'meteor/session'
 
           self.setState({
             uploading: uploadInstance, // Keep track of this instance to use below
-            // inProgress: true // Show the progress bar now
+            inProgress: true // Show the progress bar now
           });
 
           // These are the event functions, don't need most of them, it shows where we are in the process
@@ -81,7 +81,7 @@ import { Session } from 'meteor/session'
             })
 
             // Remove the filename from the upload box
-            // self.refs['fileinput'].value = '';
+            self.refs['fileinput'].value = '';
 
             // Reset our state for the next file
             self.setState({
@@ -113,8 +113,7 @@ import { Session } from 'meteor/session'
       console.log('**********************************', this.state.uploading);
 
       if (!_.isEmpty(this.state.uploading)) {
-        return
-         <div>
+        return <div>
           {/* {this.state.uploading.file.name} */}
 
           <div className="progress progress-bar-default">
@@ -140,10 +139,11 @@ import { Session } from 'meteor/session'
             <div className="row">
               <div className="col-md-12">
                 <p>Upload New File:</p>
+                
                 <input type="file" id="fileinput"
                 disabled={this.state.inProgress}
-                ref="fileinput"
-                    onChange={this.uploadIt}/>
+                ref="fileinput" onChange={this.uploadIt}/>
+            
               </div>
             </div>
 

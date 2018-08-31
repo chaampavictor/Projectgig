@@ -27,7 +27,7 @@ export class Profile extends React.Component {
 
   deleteAcc() {
     const userId= this._id;
-    Meteor.call('deleteUserAccount', {_id:userId}); 
+    Meteor.call('deleteUserAccount', {_id:userId});
     FlowRouter.go('/');
   }
 
@@ -122,7 +122,8 @@ export class Profile extends React.Component {
     });
     return (
       <div>
-        <Navbar/> {/* Modal Structure */}
+        <Navbar/>
+         {/* Modal Structure */}
         <div id="modal1" className="modal">
           <div className="modal-content">
             <h4>Edit Property</h4>

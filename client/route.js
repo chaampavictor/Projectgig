@@ -2,6 +2,7 @@ import React from 'react';
 // import mount from 'react-mounter';
 import {mount} from 'react-mount-layout';
 import Landing from '../client/Landing.jsx';
+import NotFound from '../client/NotFound.jsx';
 import About from '../client/about/About.jsx';
 import Dashlogin from '../client/dashlogin/Dashlogin.jsx';
 import Dashboard from '../client/dashboard/Dashboard.jsx';
@@ -132,3 +133,9 @@ loggedIn.route('/dashLogin', {
     });
   }
 });
+
+FlowRouter.notFound = {
+  action() {
+    mount(NotFound, {});
+  },
+};

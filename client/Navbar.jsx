@@ -13,7 +13,6 @@ componentDidMount(){
 
   logout = (e) => {
     e.preventDefault();
-    console.log('logout');
     Meteor.logout((err) => {
       if (err) {
         console.log(err.reason);

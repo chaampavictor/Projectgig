@@ -17,59 +17,59 @@ class Registration extends React.Component {
       name
     };
 
-				Meteor.call('createAccount',email,name,profile,function(error) {
-					if (error !== undefined) {
-						$('.alert').addClass('alert-danger').html(error.reason);
-					}
-           else {
-            Accounts.createUser(user, (err)=> {
-              FlowRouter.go('/profile')
-            });
-					}
-				});
+
+    Meteor.call('createAccount', email, name, profile, function(error) {
+      if (error !== undefined) {
+        $('.alert').addClass('alert-danger').html(error.reason);
+      }
+       else {
+        FlowRouter.go('/profile');
+      }
+    });
   }
 
   render() {
     return (
-    <div>
+      <div>
         <Navbar/>
-      <div id="signup-card">
-        <div className="container">
-          <div className="row">
-            <div className="col s12 m6 card-style">
-              <div className="card">
-                <h5 className="card-title center"> signup</h5>
-              <div className="card-content">
-                  <form className="col s12 " onSubmit={this.saveUserDetails}>
-                    <div className="row">
-                      <div className="input-field col s12">
-                        <input id="name" type="text" name='name'/>
-                        <label htmlFor="name">name</label>
+        <div id="signup-card">
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m6 card-style">
+                <div className="card">
+                  <h5 className="card-title center">
+                    signup</h5>
+                  <div className="card-content">
+                    <form className="col s12 " onSubmit={this.saveUserDetails}>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="name" type="text" name='name'/>
+                          <label htmlFor="name">name</label>
+                        </div>
                       </div>
-                    </div>
-                    <div className="row">
-                      <div className="input-field col s12">
-                        <input id="password" type="password" name='password'/>
-                        <label htmlFor="password">Password</label>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="password" type="password" name='password'/>
+                          <label htmlFor="password">Password</label>
+                        </div>
                       </div>
-                    </div>
-                    <div className="row">
-                      <div className="input-field col s12">
-                        <input id="email" type="email"  name='email'/>
-                        <label htmlFor="email">Email</label>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="email" type="email" name='email'/>
+                          <label htmlFor="email">Email</label>
+                        </div>
                       </div>
-                    </div>
-                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
-                  </form>
-                <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
+                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+                    </form>
+                    <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
+                  </div>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
-      </div>
         <Footer/>
-    </div>
+      </div>
     );
   }
 }

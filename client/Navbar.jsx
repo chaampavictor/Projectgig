@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor'
+import {withTracker} from 'meteor/react-meteor-data'
+import {Listproperty} from './../lib/collections'
 
-export default class Navbar extends Component {
+
+export class Navbar extends Component {
 
 componentDidMount(){
   $(".button-collapse").sideNav({
@@ -20,6 +23,16 @@ componentDidMount(){
       FlowRouter.go('/')
     });
   }
+
+
+
+  deleteAcc() {
+    const userId= this._id;
+    Meteor.call('deleteUserAccount', {_id:userId});
+    FlowRouter.go('/');
+  }
+
+
 
   render() {
     let email = '';
@@ -44,6 +57,7 @@ componentDidMount(){
         <li><a href="/listedproperty" className={`${this.listedproperty} link`}>Listed Properties</a></li>
         <li><div className="divider"></div></li>
         <li><a href="/editaccount" className={`${this.editaccount} link`}>Edit Account</a></li>
+        <li>  <a onClick={this.deleteAcc}>Delete Account</a></li>
       </ul>
 
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>
@@ -71,3 +85,14 @@ componentDidMount(){
     )
   }
 }
+
+
+
+
+export default withTracker(() => {
+  const propertyName = FlowRouter.getQueryParam('name');
+  Meteor.subscribe('property');
+  return {
+    property: Listproperty.find({owner: Meteor.userId()}).fetch()
+  }
+})(Navbar)

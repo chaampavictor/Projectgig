@@ -45,7 +45,6 @@ import { Session } from 'meteor/session'
         // there was multiple files selected
         var file = e.currentTarget.files[0];
               console.log(file);
-
         if (file) {
           let uploadInstance = UserFiles.insert({
             file: file,
@@ -139,11 +138,11 @@ import { Session } from 'meteor/session'
             <div className="row">
               <div className="col-md-12">
                 <p>Upload New File:</p>
-                
+
                 <input type="file" id="fileinput"
                 disabled={this.state.inProgress}
                 ref="fileinput" onChange={this.uploadIt}/>
-            
+
               </div>
             </div>
 

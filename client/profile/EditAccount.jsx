@@ -1,4 +1,4 @@
-/* eslint class-methods-use-this: "off" */
+
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import Navbar from '../Navbar';
@@ -34,7 +34,7 @@ export default class EditAccount extends Component {
                          <div className="row">
                            <div className="input-field col s12">
                              <input id="password" type="password" name='password'/>
-                             <label className="active label" htmlFor="password">password</label>
+                             <label className="active label" htmlFor="password">Password</label>
                            </div>
                          </div>
                          <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Update</button>

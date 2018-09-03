@@ -11,7 +11,6 @@ export default class Termsandconditions extends Component {
 
             <div>
             <Navbar/>
-<img src="/assets/radu-spataru-506314-unsplash.jpg" className="term-img"/>
 
             <div className="container">
               <div className="row">

@@ -7,7 +7,6 @@ import {Listproperty} from '../../lib/collections'
 import {UserFiles} from '../../lib/collections';
 
 export class Profile extends React.Component {
-
   constructor(props) {
     super();
     this.state = {
@@ -16,17 +15,63 @@ export class Profile extends React.Component {
       location: '',
       price: '',
       description: '',
-      contact: ''
+      contact: '',
+      _id: '',
     }
   }
 
-  // deleteThisProperty() {
-  // Meteor.call('property.remove', this.props.prop._id);}
-
-  deleteThisTask() {
-    Meteor.call('property.remove', this.props.prop._id);
+  deleteProp = (e, id) => {
+    Meteor.call('deleteProp', id);
+    console.log(id);
   }
 
+  deleteAcc() {
+    const userId= this._id;
+    Meteor.call('deleteUserAccount', {_id:userId});
+    FlowRouter.go('/');
+  }
+
+  getId = (e, id) => {
+    const edits = Listproperty.find({_id: id}).fetch();
+    // this.setState({
+    //   propertyname: edits[0].propertyname,
+    //   type: edits[0].type,
+    //   location: edits[0].location,
+    //   price: edits[0].price,
+    //   description: edits[0].description,
+    //   contact: edits[0].contact,
+    //   _id: edits[0]._id
+    // });
+    this.state.propertyname = edits[0].propertyname;
+    this.state.type = edits[0].type;
+    this.state.location = edits[0].location;
+    this.state.price = edits[0].price;
+    this.state.description = edits[0].description;
+    this.state.contact = edits[0].contact;
+    this.state._id = edits[0]._id;
+    console.log(this.state.propertyname);
+  }
+
+  editProp = () => {
+    const { _id, propertyname, type, location, price, description, contact } = this.state;
+    const property = {
+      _id,
+      propertyname,
+      type,
+      location,
+      price,
+      description,
+      contact
+    };
+    Meteor.call('editProperty', property, (error, response) => {
+      if (error) {
+        alert(error.reason, 'Please solve this problem')
+      }
+      else {
+        alert("Your property has been updated!")
+      }
+    });
+  }
 
   renderProperty() {
     const property = this.props.property
@@ -46,6 +91,10 @@ export class Profile extends React.Component {
                 </span>
                 <br/>
                 <div className="center">
+                  {prop.type}
+                  <br />
+                  {prop.price}
+                  <br />
                   {prop.description}
                   <br/>
                   {prop.contact}
@@ -54,8 +103,9 @@ export class Profile extends React.Component {
                 </div>
               </div>
               <div className="card-action center">
-                <button className="delete" onClick={this.deleteThisTask.bind(this)}>delete</button>
-                <a href="#modal1" className="delete modal-trigger">edit</a>
+                <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button>
+                {/* <button className="delete" onClick={e => this.editProp(e, prop._id)}>edit</button> */}
+                <a href="#modal1" onClick={e => this.getId(e, prop._id)} className="delete modal-trigger">edit</a>
               <br/>
               </div>
             </div>
@@ -66,57 +116,52 @@ export class Profile extends React.Component {
   }
 
 
-
-
   render() {
-
     $(document).ready(function() {
-      $('.modal').modal();
+      $('#modal1').modal();
     });
-
     return (
-
       <div>
         <Navbar/> {/* Modal Structure */}
         <div id="modal1" className="modal">
           <div className="modal-content">
             <h4>Edit Property</h4>
             <div className="row">
-              <form className="col s12 l6">
+              <form onSubmit={this.editProp} className="col s12 l6">
                 <div className="row">
-                  <div className="input-field col s6">
-                    <input id="propertyname" type="text" name='propertyname'/>
+                  <div className="input-field col s12">
+                    <input className="form-control" id="propertyname" type="text" name='propertyname' placeholder={this.state.propertyname} />
                     <label htmlFor="propertyname">property name</label>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="input-field col s6">
-                    <input id="type" type="text" name='type'/>
+                  <div className="input-field col s12">
+                    <input className="form-control" id="type" type="text" name='type' />
                     <label htmlFor="type">type</label>
                   </div>
                 </div>
 
                 <div className="row">
                   <div className="input-field col s12">
-                    <input id="location" type="text" name='location'/>
+                    <input className="form-control" id="location" type="text" name='location'/>
                     <label htmlFor="location">Location</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
-                    <input id="price" type="text" name='price'/>
+                    <input className="form-control" id="price" type="text" name='price'/>
                     <label htmlFor="price">Price</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
-                    <input id="description" type="text" name='description'/>
+                    <input className="form-control" id="description" type="text" name='description'/>
                     <label htmlFor="description">Description</label>
                   </div>
                 </div>
                 <div className="row">
                   <div className="input-field col s12">
-                    <input id="contact" type="text" name='contact'/>
+                    <input className="form-control" id="contact" type="text" name='contact'/>
                     <label htmlFor="price">contact</label>
                   </div>
                 </div>
@@ -124,12 +169,9 @@ export class Profile extends React.Component {
                 <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
                   <i className="material-icons right">send</i>
                 </button>
-
               </form>
-
             </div>
           </div>
-
         </div>
 
         {/* edit property ends here */}
@@ -141,16 +183,22 @@ export class Profile extends React.Component {
             {this.renderProperty()}
           </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <div className="center">
+          <a className="waves-effect waves-dark btn-small" onClick={this.deleteAcc}>Delete Account</a>
+        </div>
+        <hr className="alt-hr"/>
         <Footer/>
       </div>
-
     );
   }
 }
+
 export default withTracker(() => {
-
   const propertyName = FlowRouter.getQueryParam('name');
-
+  Meteor.subscribe('property');
   return {
     property: Listproperty.find({owner: Meteor.userId()}).fetch()
   }

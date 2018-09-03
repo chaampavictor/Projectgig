@@ -35,41 +35,33 @@ componentDidMount(){
       Meteor.userId() ?
       <>
       <ul id="slide-out" className="side-nav sidenav-style">
+        <li><a href="/profile" className={`${this.profile} link`}>profile</a></li>
+        <div className="divider"></div>
+        <li><a href="/property" className={`${this.property} link`}>add property</a></li>
+        <li><div className="divider"></div></li>
+        <li><a href="/listedproperty" className={`${this.listedproperty} link`}>Listed Properties</a></li>
+      </ul>
 
-    <li><a href="/profile" className={`${this.profile} link`}>profile</a></li>
-    <div className="divider"></div>
-    <li><a href="/property" className={`${this.property} link`}>add property</a></li>
-    <li><div className="divider"></div></li>
-    <li><a href="/listedproperty" className={`${this.listedproperty} link`}>Listed Properties</a></li>
-
-
-  </ul>
-  <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="fa fa-plus menu-fa"></i> KUKAYA</a>
-
-
+      <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-twitter-square footer-icon"></i></a>
 
   <div className="right logged-nav-button">
-
-    <a href="/" className={` link`}><button id="nav-buttons">KUKAYA</button></a>
+    {/* <button id="nav-buttons"><a href="/" id="trying" className={` link`}>KUKAYA</a></button> */}
+    <a href="/" className={` link `}>KUKAYA</a>
     <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
     <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>
-
   </div>
 </>
     :
 <>
 
-<a href="/" className={` link`}><h6>KUKAYA</h6></a>
-<div className="right nav-button">
-
-  <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>
-
-<a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
-<a href="/login" className={`${this.login} link`}><button id="nav-buttons">Login</button></a>
-</div>
+<h6><a href="/" className={` link`}>KUKAYA</a></h6>
+  <div className="right nav-button">
+    <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>
+    <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
+    <a href="/login" className={`${this.login} link`}><button id="nav-buttons">Login</button></a>
+  </div>
 </>
     }
-
 
   </div>
 

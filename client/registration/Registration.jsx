@@ -13,7 +13,8 @@ class Registration extends React.Component {
     const password = target.password.value;
     const email = target.email.value;
     const profile = {
-      name
+      name,
+      email
     };
     const user = {
       email,
@@ -21,13 +22,11 @@ class Registration extends React.Component {
       profile
     }
 
-
-
     Accounts.createUser(user, (err)=> {
       if (err) {
         console.log(err.reason);
       }
-      FlowRouter.go('profile')
+      FlowRouter.go('/profile')
     });
   }
 
@@ -42,7 +41,7 @@ class Registration extends React.Component {
           <div className="row">
             <div className="col s12 m6 card-style">
               <div className="card">
-                <h5 className="default_color_text card-title center"> signup</h5>
+                <h5 className="card-title center"> signup</h5>
               <div className="card-content">
                   <form className="col s12 " onSubmit={this.saveUserDetails}>
                     <div className="row">

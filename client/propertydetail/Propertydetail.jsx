@@ -7,67 +7,64 @@ import Altsearch from '../altsearch/Altsearch';
 import {Listproperty} from '../../lib/collections'
 import {UserFiles} from '../../lib/collections';
 
-
 export class Propertydetail extends React.Component {
-  
+
   renderProperty() {
-    const properties = this.props.properties
+    const properties = this.props.properties;
     if (properties === undefined) {
       return;
     }
-
-    return property.map((prop) => (
+    return properties.map((prop) => (
       <div>
 
-        <div className="row">
-          <div className="col  s12 m6 l12">
-            <div className="card">
-              <div className="card-content">
-                  <h3 className="default_color_text bold">{prop.propertyname}</h3>
-              </div>
-              <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
-              <h3 className="default_color_text">description:</h3>{prop.description}
-              <br/>
-              <h3 className="default_color_text">Price:</h3>{prop.price}
-              <br/>
-              <h3 className="default_color_text">Type:</h3>{prop.type}
-              <br/>
-              <h3 className="default_color_text">Location:</h3> {prop.location}
-              <br/>
-              <h3 className="default_color_text">Contact info:</h3> {prop.contact}
 
+
+
+
+
+
+
+        <div className="row">
+          <div className="col s12 m6 l9 ">
+            <div className="card card-shadow card-height">
+              <div class="col s12 l8">
+              <br/>
+              <p className="header liststyle prop-detail" id="trying">name: {prop.propertyname}</p>
+              <p className="card-detail">description: {prop.description}</p>
+              <p className="card-alt-detail">price: {prop.price}</p>
+              <p className="card-alt-detail ">type: {prop.type}</p>
+              <p className="card-alt-detail ">contact: {prop.contact}</p>
+              <p className="card-alt-detail ">location: {prop.location }</p>
+              </div>
+              <div className="card-image col s12 l4">
+                <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:245+ "px"}} />
+              </div>
             </div>
           </div>
         </div>
-      )
-    })
+    </div>
+    ))
   }
 
-  render() {
-
+  render(){
     return (
       <div>
         <Navbar/>
         <div className="container">
-          <Altsearch/>
-          <center>
-            <h3 className="center">Property</h3>
-            <h3 className="collection">
-              {this.renderProperty()}
-            </h3>
-          </center>
-
+            {this.renderProperty()}
         </div>
-      )
-    }
-
+        <hr/>
+        <Footer/>
+      </div>
+    )
   }
 }
+
 export default withTracker(() => {
   const id = FlowRouter.getQueryParam('id');
   return {
-    properties: Properties.find({_id: id}).fetch(),
+    properties: Listproperty.find({_id: id}).fetch(),
     files : UserFiles.find({}, {sort: {name: 1}}).fetch(),
-    isDataReady: isDataReady.ready(),
+    // isDataReady: isDataReady.ready(),
   }
 })(Propertydetail)

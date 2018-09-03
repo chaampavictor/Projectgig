@@ -6,6 +6,7 @@ export default class Footer extends Component {
     return (
 
       <footer id="separate" className="page-footer">
+      
           <div className="container">
               <div className="row center">
 
@@ -16,11 +17,11 @@ export default class Footer extends Component {
 
                       </ul>
                       <ul>
-                          <li><a href="/terms" className={`${this.terms} link`} >Terms and Conditions</a></li>
+                          <li><a href="/terms" className={`${this.terms} link`} id="footer-home">Terms and Conditions</a></li>
 
                       </ul>
                       <ul>
-                          <li><a href="/privacy" className={`${this.privacy} link`} >Privacy policy</a></li>
+                          <li><a href="/privacy" className={`${this.privacy} link`} id="footer-home">Privacy policy</a></li>
 
                       </ul>
                   </div>

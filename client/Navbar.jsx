@@ -51,12 +51,10 @@ componentDidMount(){
         <li>
           <div className="user-view">
             <div className="background sidenav-banner">
-              {/* <img src="/assets/tom-thain-145829-unsplash.jpg"/> */}
             </div>
             <a href="#email"><span className="white-text email">{email}</span></a>
           </div>
         </li>
-        {/* <div className="divider"></div> */}
         <li><a href="/profile" className={`${this.profile} link`}>Profile</a></li>
         <div className="divider"></div>
         <li><a href="/property" className={`${this.property} link`}>Add Property</a></li>
@@ -67,14 +65,13 @@ componentDidMount(){
         <li><div className="divider"></div></li>
         <li><a href="" className="danger" onClick={this.deleteAcc}>Delete Account</a></li>
       </ul>
-
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>
 
-  <div className="right logged-nav-button">
-    <a href="/" className={` link `}>KUKAYA</a>
-    <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
-    <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>
-  </div>
+      <div className="right logged-nav-button">
+        <a href="/" className={` link `}>KUKAYA</a>
+        <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
+        <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>
+      </div>
 </>
     :
 <>

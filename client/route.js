@@ -29,6 +29,8 @@ loggedIn = FlowRouter.group({
       function(){
           if (!(Meteor.loggingIn() || Meteor.userId())) {
               return FlowRouter.go("/login");
+          } else if (!Roles.userIsInRole( Meteor.userId(), 'admin')) {
+            // return FlowRouter.go("/");
           }
       }
   ]

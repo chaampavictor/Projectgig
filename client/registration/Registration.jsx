@@ -5,7 +5,9 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 
 class Registration extends React.Component {
-
+state = {
+  error: ''
+}
   saveUserDetails = e => {
     e.preventDefault();
     const {target} = e;
@@ -25,9 +27,11 @@ class Registration extends React.Component {
       //     console.log(results);
       //   }
       //   else {
-          Meteor.call('createAccount', email, name, profile, function(error) {
+          Meteor.call('createAccount', email, name, profile, error => {
             if (error !== undefined) {
-              console.log(error.reason);
+              this.setState({
+                error: error.reason
+              })
             }
           //   else if(password.length < 7 ){
       		// 	console.log('password must be more than 7 letters');
@@ -42,6 +46,7 @@ class Registration extends React.Component {
   }
 
   render() {
+    const { error } = this.state;
     return (
       <div>
         <Navbar/>
@@ -53,6 +58,7 @@ class Registration extends React.Component {
                   <h5 className="card-title center">
                     signup</h5>
                   <div className="card-content">
+                    {error.length ? <p className="red-text">{error}</p> : <span/>}
                     <form className="col s12 " onSubmit={this.saveUserDetails}>
                       <div className="row">
                         <div className="input-field col s12">
@@ -72,8 +78,11 @@ class Registration extends React.Component {
                           <label htmlFor="password">Password</label>
                         </div>
                       </div>
+
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+
                     </form>
+
                     <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
                   </div>
                 </div>

@@ -142,7 +142,6 @@ import { Session } from 'meteor/session'
                 <input type="file" id="fileinput"
                 disabled={this.state.inProgress}
                 ref="fileinput" onChange={this.uploadIt}/>
-
               </div>
             </div>
 

@@ -1,8 +1,7 @@
 the app is 70% done first deployment,
 tasks left to be done include but not limeited to the following
 
-1.percect the admin side !'super important';
-2.make sure the 'uploadIt' only submits only when the form submit is clecked instead of automatic uploadIt
+1.perfect the admin side !'super important';
 3.edit property
 4.edit user Profile
 5.property not found page

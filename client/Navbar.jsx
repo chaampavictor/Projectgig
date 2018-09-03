@@ -57,7 +57,8 @@ componentDidMount(){
         <li><a href="/listedproperty" className={`${this.listedproperty} link`}>Listed Properties</a></li>
         <li><div className="divider"></div></li>
         <li><a href="/editaccount" className={`${this.editaccount} link`}>Edit Account</a></li>
-        <li>  <a onClick={this.deleteAcc}>Delete Account</a></li>
+        <li><div className="divider"></div></li>
+        <li><a href="" className="danger" onClick={this.deleteAcc}>Delete Account</a></li>
       </ul>
 
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>

@@ -48,8 +48,15 @@ componentDidMount(){
     { Meteor.userId() ?
       <>
       <ul id="slide-out" className="side-nav sidenav-style">
-        <li>{email}</li>
-        <div className="divider"></div>
+        <li>
+          <div className="user-view">
+            <div className="background sidenav-banner">
+              {/* <img src="/assets/tom-thain-145829-unsplash.jpg"/> */}
+            </div>
+            <a href="#email"><span className="white-text email">{email}</span></a>
+          </div>
+        </li>
+        {/* <div className="divider"></div> */}
         <li><a href="/profile" className={`${this.profile} link`}>Profile</a></li>
         <div className="divider"></div>
         <li><a href="/property" className={`${this.property} link`}>Add Property</a></li>

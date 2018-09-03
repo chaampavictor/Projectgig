@@ -29,10 +29,10 @@ class Registration extends React.Component {
             if (error !== undefined) {
               console.log(error.reason);
             }
-            else if(password.length < 7 ){
-      			console.log('password must be more than 7 letters');
-      			return ;
-      		}
+          //   else if(password.length < 7 ){
+      		// 	console.log('password must be more than 7 letters');
+      		// 	return ;
+      		// }
              else {
               FlowRouter.go('/profile');
             }

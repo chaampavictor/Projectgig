@@ -175,6 +175,12 @@
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
 }
 
+.sidenav-banner{
+  background-color:rgba(0, 0, 0, 0.89);
+  background-blend-mode: multiply;
+  background-image: url("/assets/david-marcu-1266-unsplash.jpg");
+}
+
 .testimony {
   background-color: rgb(30,28,28);
   background-blend-mode: multiply;

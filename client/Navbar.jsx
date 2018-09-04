@@ -41,9 +41,34 @@ componentDidMount(){
       email = user.emails[0].address;
     }
 
+    $(document).ready(function() {
+      $('#modalaccount').modal();
+    });
     return(
-      <div className="navbar-fixed">
 
+      <div>
+
+
+        {/* delete account modal begins here */}
+        <div id="modalaccount" className="modal">
+          <div className="modal-content">
+            <h4>Delete Account</h4>
+            <div className="row">
+
+                <div className="row">
+                  <div className="input-field col s6">
+                  <p>Are you sure?</p>
+                  </div>
+                </div>
+                <a className="btn waves-effect waves-light submit-button" onClick={e => this.deleteProp(e, prop._id)}>Yes</a>
+                <a className="btn waves-effect waves-light submit-button" type="submit" name="action">No</a>
+            </div>
+          </div>
+        </div>
+        {/* delete account modal ends here */}
+
+
+      <div className="navbar-fixed">
 
     { Meteor.userId() ?
       <>
@@ -55,15 +80,15 @@ componentDidMount(){
             <a href="#email"><span className="white-text email">{email}</span></a>
           </div>
         </li>
-        <li><a href="/profile" className={`${this.profile} link`}>Profile</a></li>
+        <li><a href="/profile"> Profile</a></li>
         <div className="divider"></div>
-        <li><a href="/property" className={`${this.property} link`}>Add Property</a></li>
+        <li><a href="/property" >Add Property</a></li>
         <li><div className="divider"></div></li>
-        <li><a href="/listedproperty" className={`${this.listedproperty} link`}>Listed Properties</a></li>
+        <li><a href="/listedproperty">Listed Properties</a></li>
         <li><div className="divider"></div></li>
-        <li><a href="/editaccount" className={`${this.editaccount} link`}>Edit Account</a></li>
+        <li><a href="/editaccount">Edit Account</a></li>
         <li><div className="divider"></div></li>
-        <li><a href="" className="danger" onClick={this.deleteAcc}>Delete Account</a></li>
+        <li><a href="#modalaccount" className="danger">Delete Account</a></li>
       </ul>
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>
 
@@ -78,14 +103,15 @@ componentDidMount(){
 
 <h6><a href="/" className={` link`}>KUKAYA</a></h6>
   <div className="right nav-button">
-    <a href="/registration" className={`${this.registration} link`}><button id="nav-buttons">Signup</button></a>
-    <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
-    <a href="/login" className={`${this.login} link`}><button id="nav-buttons">Login</button></a>
+    <a href="/registration"><button id="nav-buttons">Signup</button></a>
+    <a href="/about"><button id="nav-buttons">About</button></a>
+    <a href="/login"><button id="nav-buttons">Login</button></a>
   </div>
 </>
     }
 
   </div>
+</div>
 
     )
   }

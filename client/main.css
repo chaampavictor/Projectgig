@@ -150,6 +150,7 @@
 
 .active{
   color:rgb(0,0,0) !important;
+  border-bottom: none !important;
 }
 
 .input-border{

@@ -14,8 +14,7 @@ import { Session } from 'meteor/session'
 
       this.state = {
         uploading: [],
-        progress: 0,
-        inProgress: false
+        // inProgress: false
       };
 
       this.uploadIt = this.uploadIt.bind(this);
@@ -71,15 +70,6 @@ import { Session } from 'meteor/session'
           uploadInstance.on('error', function (error, fileObj) {
             console.log('Error during upload: ' + error)
           });
-          //
-          // uploadInstance.on('progress', function (progress, fileObj) {
-          //   console.log('Upload Percentage: ' + progress)
-          //   // Update our progress bar
-          //   self.setState({
-          //     progress: progress
-          //   });
-          // });
-
           uploadInstance.start(); // Must manually start the upload
         }
       }

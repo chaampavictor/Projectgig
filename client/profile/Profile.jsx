@@ -92,9 +92,9 @@ export class Profile extends React.Component {
         <br />
         <br />
         <br />
-        <div className="center">
+        {/* <div className="center">
           <a className="waves-effect waves-dark btn-small" onClick={this.deleteAcc}>Delete Account</a>
-        </div>
+        </div> */}
         <hr className="alt-hr"/>
         <Footer/>
       </div>

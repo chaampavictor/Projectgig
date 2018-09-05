@@ -12,6 +12,15 @@
   padding: 0 15px;
 }
 
+.delete-button{
+  background-color: red !important;
+  border-radius: 12px !important;
+}
+
+.modal-footer{
+  text-align: center !important;
+}
+
 #intro, #work, #team {
   padding-top: 4rem;
 }

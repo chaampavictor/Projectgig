@@ -19,7 +19,7 @@ export class Propertydetail extends React.Component {
         <div className="row">
           <div className="col s12 m6 l9 ">
             <div className="card card-shadow card-height">
-              <div class="col s12 l8">
+              <div className="col s12 l8">
               <br/>
               <p className="header liststyle prop-detail" id="trying">name: {prop.propertyname}</p>
               <p className="card-detail">description: {prop.description}</p>

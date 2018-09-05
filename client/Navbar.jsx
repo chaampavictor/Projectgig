@@ -26,14 +26,6 @@ componentDidMount(){
 
 
 
-  deleteAcc() {
-    const userId= this._id;
-    Meteor.call('deleteUserAccount', {_id:userId});
-    FlowRouter.go('/');
-  }
-
-
-
   render() {
     let email = '';
     if (Meteor.user()) {
@@ -41,36 +33,37 @@ componentDidMount(){
       email = user.emails[0].address;
     }
 
-    $(document).ready(function() {
-      $('#modalaccount').modal();
-    });
+    $(document).ready(function(){
+        $('.modal').modal({
+          opacity: 0.5, //you can adjust the overlay from here
+          preventScrolling: true,
+          dismissible:false,
+          startingTop:'0.001%'
+        });
+      });
+
     return(
+
 
       <div>
 
 
         {/* delete account modal begins here */}
-        <div id="modalaccount" className="modal">
-          <div className="modal-content">
-            <h4>Delete Account</h4>
-            <div className="row">
-
-                <div className="row">
-                  <div className="input-field col s6">
-                  <p>Are you sure?</p>
-                  </div>
-                </div>
-                <a className="btn waves-effect waves-light submit-button" onClick={e => this.deleteProp(e, prop._id)}>Yes</a>
-                <a className="btn waves-effect waves-light submit-button" type="submit" name="action">No</a>
-            </div>
-          </div>
-        </div>
+        {/* <!-- Modal Structure --> */}
+    <div id="modaldelete" class="modal">
+      <div className="modal-content center">
+        <h4>Are you sure?</h4>
+      </div>
+      <div className="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+        <a className="waves-effect waves-light btn modal-trigger delete-button" href="#modaldelete">Delete</a>
+      </div>
+    </div>
         {/* delete account modal ends here */}
 
 
       <div className="navbar-fixed">
-
-    { Meteor.userId() ?
+        { Meteor.userId() ?
       <>
       <ul id="slide-out" className="side-nav sidenav-style">
         <li>
@@ -88,7 +81,8 @@ componentDidMount(){
         <li><div className="divider"></div></li>
         <li><a href="/editaccount">Edit Account</a></li>
         <li><div className="divider"></div></li>
-        <li><a href="#modalaccount" className="danger">Delete Account</a></li>
+        <li><a className="modal-trigger" href="#modaldelete">Delete Account</a></li>
+
       </ul>
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>
 

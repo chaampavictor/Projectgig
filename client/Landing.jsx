@@ -67,8 +67,8 @@ class Landing extends React.Component {
                 <i className="fa fa-quote-right banner-fa"/>
               </h4>
                 <br/>
-                <h5>Hanziba Malambo</h5>
-                <h5>student, University of Zambia</h5>
+                <h5 className="text_b">Hanziba Malambo</h5>
+                <h5 className="text_b">student, University of Zambia</h5>
               </div>
               <div className="carousel-item white-text" href="#one!">
                 <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
@@ -77,19 +77,19 @@ class Landing extends React.Component {
                 <i className="fa fa-quote-right banner-fa"/>
               </h4>
                 <br/>
-                <h5> Sophia Chisakasaka</h5>
-                <h5>landlord, Chongwe</h5>
+                <h5 className="text_b"> Sophia Chisakasaka</h5>
+                <h5 className="text_b">landlord, Chongwe</h5>
               </div>
               <div className="carousel-item white-text" href="#one!">
-                <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
+                <h4 className="white-text text_b"><i className="fa fa-quote-left banner-fa"/>
                 findng student accomodation has been a challenge for a long time..
                 this platform helped me and my friends find emergency accomodation
                 after we were evicted
                 <i className="fa fa-quote-right banner-fa"/>
               </h4>
                 <br/>
-                <h5>Cholwe Malama Malilwe</h5>
-                <h5>student, Mulungushi Univeristy</h5>
+                <h5 className="text_b">Cholwe Malama Malilwe</h5>
+                <h5 className="text_b">student, Mulungushi Univeristy</h5>
               </div>
             </div>
           </div>

@@ -17,19 +17,17 @@ export class Propertydetail extends React.Component {
     return properties.map((prop) => (
       <div>
         <div className="row">
-          <div className="col s12 m6 l9 ">
-            <div className="card card-shadow card-height">
-              <div className="col s12 l8">
-              <br/>
-              <p className="header liststyle prop-detail" id="trying">name: {prop.propertyname}</p>
-              <p className="card-detail">description: {prop.description}</p>
-              <p className="card-alt-detail">price: {prop.price}</p>
-              <p className="card-alt-detail ">type: {prop.type}</p>
-              <p className="card-alt-detail ">contact: {prop.contact}</p>
-              <p className="card-alt-detail ">location: {prop.location }</p>
-              </div>
-              <div className="card-image col s12 l4">
+          <div className="col s12 m6 l12 ">
+            <div className="card card-shadow card-height card-style">
+              <div className="col s12 l10">
                 <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:245+ "px"}} />
+                <br/>
+                <p>name: {prop.propertyname}</p>
+                <p>description: {prop.description}</p>
+                <p>price: {prop.price}</p>
+                <p>type: {prop.type}</p>
+                <p>contact: {prop.contact}</p>
+                <p>location: {prop.location }</p>
               </div>
             </div>
           </div>

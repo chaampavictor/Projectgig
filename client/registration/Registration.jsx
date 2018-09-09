@@ -8,43 +8,37 @@ class Registration extends React.Component {
 state = {
   error: ''
 }
-  saveUserDetails = e => {
+
+
+
+
+
+
+
+
+saveUserDetails = e => {
     e.preventDefault();
     const {target} = e;
     const name = target.name.value;
     const password = target.password.value;
     const email = target.email.value;
-    const emailsRegX = 	/^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
     const profile = {
       email,
       name
     };
+    const user = {
+      email,
+      password,
+      profile
+    }
 
-      // Need to add alerts to certain params e.g email already exists and password length
-
-      // Meteor.call('userExists', email, function(err,result){
-      //   if (results) {
-      //     console.log(results);
-      //   }
-      //   else {
-          Meteor.call('createAccount', email, name, profile, error => {
-            if (error !== undefined) {
-              this.setState({
-                error: error.reason
-              })
-            }
-          //   else if(password.length < 7 ){
-      		// 	console.log('password must be more than 7 letters');
-      		// 	return ;
-      		// }
-             else {
-              FlowRouter.go('/profile');
-            }
-          });
-      //   }
-      // })
+    Accounts.createUser(user, (err)=> {
+      if (err) {
+        console.log(err.reason);
+      }
+      FlowRouter.go('/')
+    });
   }
-
   render() {
     const { error } = this.state;
     return (

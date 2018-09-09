@@ -70,7 +70,7 @@ componentDidMount(){
           <div className="user-view">
             <div className="background sidenav-banner">
             </div>
-            <a href="#email"><span className="white-text email">{email}</span></a>
+          <span className="white-text email">{email}</span>
           </div>
         </li>
         <li><a href="/profile"> Profile</a></li>

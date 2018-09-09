@@ -14,21 +14,18 @@ class Searchresults extends React.Component {
 
         <div key={Math.random()}>
           <div className="row">
-            <hr className="list-hr"/>
-            <div className="col s12 m6 l8 ">
+            <div className="col s12 m6 l9 ">
               <div className="card card-shadow">
-                <div className="col s12 l8">
-                  <p className="header liststyle left card-detail">
+                <div class="col s12 l8">
+                  <p className="header liststyle card-detail">
                     <a href={"/propertydetail?id=" + item._id} id="trying" className="primary-content">{`${item.propertyname}`}</a>
                   </p>
-                  <p className="left card-detail">description:{item.description}</p>
+                  <br/>
+                  <p className=" card-detail">description:{item.description}</p>
                   <p className="card-alt-detail">location:{item.location}</p>
                 </div>
                 <div className="card-image col s12 l4">
-                  <img src={`/uploads/${item.imageId}.${item.imageType}`} style={{
-                    width: 105 + "%",
-                    height: 150 + "px"
-                  }}/>
+                  <img src={`/uploads/${item.imageId}.${item.imageType}`} style={{width: 105 + "%",height: 150 + "px"}}/>
                 </div>
               </div>
             </div>

@@ -9,8 +9,6 @@ import Dashuser from '../client/dashboard/Dashuser.jsx';
 import Registration from '../client/registration/Registration.jsx';
 import Property from '../client/property/Property.jsx';
 import EditProperty from '../client/property/EditProperty.jsx';
-// import Adminproperty from '../client/property/Adminproperty.jsx';
-// import Clientproperty from '../client/property/Clientproperty.jsx';
 import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
 import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
 import Profile from '../client/profile/Profile.jsx';

@@ -29,7 +29,7 @@ export default class Tab extends Component {
           <div className="row">
             <div className="col s12 m7 l12">
                 <div className="card-content tab-style">
-                  <p>KUKAYA is a web based application that provides people with a platform were they can easily search for accomodation<br/> that suits their needs. think of us as the google of accomodation</p>
+                  <p>KUKAYA is a web based application that provides people with a platform were they can easily search for and find accomodation<br/> that suits their needs.</p>
                 </div>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default class Tab extends Component {
           <div className="row">
             <div className="col s12 m7 l12">
                 <div className="card-content tab-style">
-                  <p>we make finding accomodation for students easy and quick. the goal is to help students find suitable accomodation with just a few clicks</p>
+                  <p>We make finding accomodation for students easy and quick. the goal is to help students find suitable accomodation with just a few clicks</p>
                 </div>
             </div>
           </div>

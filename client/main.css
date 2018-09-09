@@ -70,6 +70,13 @@
   box-shadow: none !important;
 }
 
+/*.card_property_details{
+  width: 50% !important;
+  margin-left: 25% !important;
+  left: auto !important;
+  right: auto !important;
+}*/
+
 #new-card {
   background-image: url("/assets/so.jpg");
   background-size: cover;

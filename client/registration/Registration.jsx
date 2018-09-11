@@ -5,16 +5,26 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 
 class Registration extends React.Component {
+state = {
+  error: ''
+}
 
-  saveUserDetails = e => {
+
+
+
+
+
+
+
+saveUserDetails = e => {
     e.preventDefault();
     const {target} = e;
     const name = target.name.value;
     const password = target.password.value;
     const email = target.email.value;
     const profile = {
-      name,
-      email
+      email,
+      name
     };
     const user = {
       email,
@@ -26,56 +36,56 @@ class Registration extends React.Component {
       if (err) {
         console.log(err.reason);
       }
-      FlowRouter.go('/profile')
+      FlowRouter.go('/')
     });
   }
-
-
   render() {
+    const { error } = this.state;
     return (
-
       <div>
         <Navbar/>
-      <div id="signup-card">
-        <div className="container">
-          <div className="row">
-            <div className="col s12 m6 card-style">
-              <div className="card">
-                <h5 className="card-title center"> signup</h5>
-              <div className="card-content">
-                  <form className="col s12 " onSubmit={this.saveUserDetails}>
-                    <div className="row">
-                      <div className="input-field col s12">
-                        <input id="name" type="text" name='name'/>
-                        <label htmlFor="name">name</label>
+        <div id="signup-card">
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m6 card-style">
+                <div className="card">
+                  <h5 className="card-title center">
+                    signup</h5>
+                  <div className="card-content">
+                    {error.length ? <p className="red-text">{error}</p> : <span/>}
+                    <form className="col s12 " onSubmit={this.saveUserDetails}>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="name" type="text" name='name'/>
+                          <label htmlFor="name">Name</label>
+                        </div>
                       </div>
-                    </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="email" type="email" name='email'/>
+                          <label htmlFor="email">Email</label>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="password" type="password" name='password'/>
+                          <label htmlFor="password">Password</label>
+                        </div>
+                      </div>
 
-                    <div className="row">
-                      <div className="input-field col s12">
-                        <input id="password" type="password" name='password'/>
-                        <label htmlFor="password">Password</label>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="input-field col s12">
-                        <input id="email" type="email"  name='email'/>
-                        <label htmlFor="email">Email</label>
-                      </div>
-                    </div>
-                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
-                  </form>
-                <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
+                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
 
+                    </form>
+
+                    <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
+                  </div>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
-      </div>
         <Footer/>
       </div>
-
     );
   }
 }

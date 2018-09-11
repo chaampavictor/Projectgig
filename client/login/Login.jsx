@@ -12,10 +12,12 @@ class Login extends React.Component {
     const password = target.password.value;
     const email = target.email.value;
     Meteor.loginWithPassword(email, password, (error) => {
-      error
-        ? console.log(error.reason)
-        : console.log('logged in ')
-      FlowRouter.go('/profile')
+      if (error) {
+         console.log(error.reason);
+      }
+      else {
+        FlowRouter.go('/profile')
+      }
     });
   }
 
@@ -29,9 +31,7 @@ class Login extends React.Component {
             <div className="row">
               <div className="col s12 m6 card-style">
                 <div className="card">
-                  <h5 className="card-title center">
-                    Login
-                  </h5>
+                  <h5 className="card-title center">Login</h5>
                   <div className="card-content">
                     <form className="col s12" onSubmit={this.login}>
                       <div className="row">

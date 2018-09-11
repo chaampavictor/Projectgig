@@ -25,8 +25,8 @@ class Landing extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col s12">
-                <h2 className="center header text_h2">Find the  <span className="span_h2">
-                  accomodation </span>,that suits your <span className="span_h2">
+                <h2 className="center header text_h2">Find the best <span className="span_h2">student
+                  accomodation </span>that suits your <span className="span_h2">
                   needs </span>
                   from over a thousand listed properties</h2>
               </div>
@@ -67,8 +67,8 @@ class Landing extends React.Component {
                 <i className="fa fa-quote-right banner-fa"/>
               </h4>
                 <br/>
-                <h5>Hanziba Malambo</h5>
-                <h5>student, University of Zambia</h5>
+                <h5 className="text_b">Hanziba Malambo</h5>
+                <h5 className="text_b">student, University of Zambia</h5>
               </div>
               <div className="carousel-item white-text" href="#one!">
                 <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
@@ -77,19 +77,19 @@ class Landing extends React.Component {
                 <i className="fa fa-quote-right banner-fa"/>
               </h4>
                 <br/>
-                <h5> Sophia Chisakasaka</h5>
-                <h5>landlord, Chongwe</h5>
+                <h5 className="text_b"> Sophia Chisakasaka</h5>
+                <h5 className="text_b">landlord, Chongwe</h5>
               </div>
               <div className="carousel-item white-text" href="#one!">
-                <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
+                <h4 className="white-text text_b"><i className="fa fa-quote-left banner-fa"/>
                 findng student accomodation has been a challenge for a long time..
                 this platform helped me and my friends find emergency accomodation
                 after we were evicted
                 <i className="fa fa-quote-right banner-fa"/>
               </h4>
                 <br/>
-                <h5>Cholwe Malama Malilwe</h5>
-                <h5>student, Mulungushi Univeristy</h5>
+                <h5 className="text_b">Cholwe Malama Malilwe</h5>
+                <h5 className="text_b">student, Mulungushi Univeristy</h5>
               </div>
             </div>
           </div>

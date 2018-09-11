@@ -31,47 +31,6 @@ export class Profile extends React.Component {
     FlowRouter.go('/');
   }
 
-  getId = (e, id) => {
-    const edits = Listproperty.find({_id: id}).fetch();
-    // this.setState({
-    //   propertyname: edits[0].propertyname,
-    //   type: edits[0].type,
-    //   location: edits[0].location,
-    //   price: edits[0].price,
-    //   description: edits[0].description,
-    //   contact: edits[0].contact,
-    //   _id: edits[0]._id
-    // });
-    this.state.propertyname = edits[0].propertyname;
-    this.state.type = edits[0].type;
-    this.state.location = edits[0].location;
-    this.state.price = edits[0].price;
-    this.state.description = edits[0].description;
-    this.state.contact = edits[0].contact;
-    this.state._id = edits[0]._id;
-    console.log(this.state.propertyname);
-  }
-
-  editProp = () => {
-    const { _id, propertyname, type, location, price, description, contact } = this.state;
-    const property = {
-      _id,
-      propertyname,
-      type,
-      location,
-      price,
-      description,
-      contact
-    };
-    Meteor.call('editProperty', property, (error, response) => {
-      if (error) {
-        alert(error.reason, 'Please solve this problem')
-      }
-      else {
-        alert("Your property has been updated!")
-      }
-    });
-  }
 
   renderProperty() {
     const property = this.props.property
@@ -104,8 +63,8 @@ export class Profile extends React.Component {
               </div>
               <div className="card-action center">
                 <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button>
-                {/* <button className="delete" onClick={e => this.editProp(e, prop._id)}>edit</button> */}
-                <a href="#modal1" onClick={e => this.getId(e, prop._id)} className="delete modal-trigger">edit</a>
+                <a href={"/editproperty?id=" + prop._id} ><button id="nav-buttons">Edit</button></a>
+                {/* <a href="#modal1" onClick={e => this.getId(e, prop._id)} className="delete modal-trigger">edit</a> */}
               <br/>
               </div>
             </div>
@@ -122,60 +81,7 @@ export class Profile extends React.Component {
     });
     return (
       <div>
-        <Navbar/> {/* Modal Structure */}
-        <div id="modal1" className="modal">
-          <div className="modal-content">
-            <h4>Edit Property</h4>
-            <div className="row">
-              <form onSubmit={this.editProp} className="col s12 l6">
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input className="form-control" id="propertyname" type="text" name='propertyname' placeholder={this.state.propertyname} />
-                    <label htmlFor="propertyname">property name</label>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input className="form-control" id="type" type="text" name='type' />
-                    <label htmlFor="type">type</label>
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input className="form-control" id="location" type="text" name='location'/>
-                    <label htmlFor="location">Location</label>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input className="form-control" id="price" type="text" name='price'/>
-                    <label htmlFor="price">Price</label>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input className="form-control" id="description" type="text" name='description'/>
-                    <label htmlFor="description">Description</label>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12">
-                    <input className="form-control" id="contact" type="text" name='contact'/>
-                    <label htmlFor="price">contact</label>
-                  </div>
-                </div>
-
-                <button className="btn waves-effect waves-light submit-button" type="submit" name="action">Submit
-                  <i className="material-icons right">send</i>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        {/* edit property ends here */}
-
+        <Navbar/>
         <div className="container">
           <div className="col s12 m6">
             <a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button">Add Property</a>
@@ -186,9 +92,9 @@ export class Profile extends React.Component {
         <br />
         <br />
         <br />
-        <div className="center">
+        {/* <div className="center">
           <a className="waves-effect waves-dark btn-small" onClick={this.deleteAcc}>Delete Account</a>
-        </div>
+        </div> */}
         <hr className="alt-hr"/>
         <Footer/>
       </div>

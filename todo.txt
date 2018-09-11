@@ -1,0 +1,7 @@
+the app is 70% done first deployment,
+tasks left to be done include but not limeited to the following
+
+1.perfect the admin side !'super important';
+3.edit property
+4.edit user Profile
+5.property not found page

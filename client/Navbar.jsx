@@ -25,13 +25,23 @@ componentDidMount(){
   }
 
 
+  welcome = () => {
+     if (Meteor.user()){
+       const name = Meteor.user().profile.name
+       return(name);
+     }
+   }
+
+
+
 
   render() {
-    let email = '';
-    if (Meteor.user()) {
-      const user = Meteor.user();
-      email = user.emails[0].address;
-    }
+    // let name = '';
+    // let email = '';
+    // if (Meteor.user()) {
+    //   const user = Meteor.user();
+    //   email = user.emails[0].address;
+    // }
 
     $(document).ready(function(){
         $('.modal').modal({
@@ -50,12 +60,12 @@ componentDidMount(){
 
         {/* delete account modal begins here */}
         {/* <!-- Modal Structure --> */}
-    <div id="modaldelete" class="modal">
+    <div id="modaldelete" className="modal">
       <div className="modal-content center">
         <h4>Are you sure?</h4>
       </div>
       <div className="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+        <a href="#!" className="modal-close waves-effect waves-green btn-flat">Cancel</a>
         <a className="waves-effect waves-light btn modal-trigger delete-button" href="#modaldelete">Delete</a>
       </div>
     </div>
@@ -70,7 +80,7 @@ componentDidMount(){
           <div className="user-view">
             <div className="background sidenav-banner">
             </div>
-          <span className="white-text email">{email}</span>
+            <span className="white-text email">{this.welcome()}</span>
           </div>
         </li>
         <li><a href="/profile"> Profile</a></li>

@@ -13,6 +13,7 @@ class Searchresults extends React.Component {
       return this.props.property.map(item => (
 
         <div key={Math.random()}>
+          <hr className="list-hr"/>
           <div className="row">
             <div className="col s12 m6 l9 ">
               <div className="card card-shadow">
@@ -20,7 +21,6 @@ class Searchresults extends React.Component {
                   <p className="header liststyle card-detail">
                     <a href={"/propertydetail?id=" + item._id} id="trying" className="primary-content">{`${item.propertyname}`}</a>
                   </p>
-                  <br/>
                   <p className=" card-detail">description:{item.description}</p>
                   <p className="card-alt-detail">location:{item.location}</p>
                 </div>

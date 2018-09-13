@@ -116,6 +116,10 @@
   background-color: #0b7dda;
 }
 
+.card-button {
+font-weight: 2000;
+}
+
 .nav-button {
   margin-top: -25px;
 }

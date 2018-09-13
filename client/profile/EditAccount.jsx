@@ -22,7 +22,6 @@ export default class EditAccount extends Component {
                          <div className="row">
                            <div className="input-field col s12">
                              <input id="email" type="text" className="form-bottom-border" name='email'/>
-                             <label className="label" htmlFor="email">Name</label>
                            </div>
                          </div>
                          <div className="row">

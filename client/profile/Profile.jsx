@@ -46,19 +46,15 @@ export class Profile extends React.Component {
               <div className="card-content ">
                 <span className="card-title center">
                     <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} />
-                  <a href={"/propertydetail?id=" + prop._id} className="primary-content">{`${prop.propertyname}`}</a>
                 </span>
                 <br/>
                 <div className="center">
-                  {prop.type}
+                  {prop.propertyname}
                   <br />
                   {prop.price}
-                  <br />
-                  {prop.description}
-                  <br/>
-                  {prop.contact}
-                  <br/>
                   {prop.location}
+                   <br/>
+                     <p className="header card-button card-detail"><a href={"/propertydetail?id=" + prop._id} className="primary-content">More Details <i className="fa fa-info banner-fa"></i> </a></p>
                 </div>
               </div>
               <div className="card-action center">

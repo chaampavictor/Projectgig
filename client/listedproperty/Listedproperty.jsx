@@ -24,13 +24,15 @@ export class Listedproperty extends React.Component {
         <div className="row">
           <div className="col s12 m6 l9 ">
             <div className="card card-shadow">
-              <div class="col s12 l8">
-                <p className="header liststyle card-detail">
-                  <a href={"/propertydetail?id=" + prop._id} id="trying" className="primary-content">{`${prop.propertyname}`}</a>
-                </p>
+              <div className="col s12 l8">
+                <p className="header liststyle card-detail">{prop.propertyname}</p>
                 <br/>
                 <p className=" card-detail">description:{prop.description}</p>
                 <p className="card-alt-detail">location:{prop.location}</p>
+                <br/>
+
+                <p className="header card-button card-detail"><a href={"/propertydetail?id=" + prop._id} className="primary-content">More Details</a></p>
+
               </div>
               <div className="card-image col s12 l4">
                 <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 105 + "%",height: 150 + "px"}}/>

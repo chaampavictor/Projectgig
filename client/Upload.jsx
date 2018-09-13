@@ -13,7 +13,7 @@ import { Session } from 'meteor/session'
       super(props);
 
       this.state = {
-        uploading: [],
+        // uploading: [],
         // inProgress: false
       };
 
@@ -41,16 +41,16 @@ import { Session } from 'meteor/session'
             },
             streams: 'dynamic',
             chunkSize: 'dynamic',
-            allowWebWorkers: true // If you see issues with uploads, change this to false
+            allowWebWorkers: false // If you see issues with uploads, change this to false
           }, false)
 
-
-          uploadInstance.on('end', function (error, fileObj) {
-            console.log('On end File Object: ', fileObj);
-          })
+          //
+          // uploadInstance.on('end', function (error, fileObj) {
+          //   console.log('On end File Object: ', fileObj);
+          // })
 
           uploadInstance.on('uploaded', function (error, fileObj) {
-            console.log('uploaded: ', fileObj);
+            // console.log('uploaded: ', fileObj);
             Session.set({
               imageId: fileObj._id,
               imageType: fileObj.ext
@@ -60,23 +60,23 @@ import { Session } from 'meteor/session'
             self.refs['fileinput'].value = '';
 
             // Reset our state for the next file
+            // uploading: [],
             self.setState({
-              uploading: [],
               // progress: 0,
               inProgress: false
             });
           })
 
-          uploadInstance.on('error', function (error, fileObj) {
-            console.log('Error during upload: ' + error)
-          });
+          // uploadInstance.on('error', function (error, fileObj) {
+          //   console.log('Error during upload: ' + error)
+          // });
           uploadInstance.start(); // Must manually start the upload
         }
       }
     }
     render() {
       // debug("Rendering FileUpload",this.props.docsReadyYet);
-      console.log("files : "+ this.props.docsReadyYet);
+      // console.log("files : "+ this.props.docsReadyYet);
       // this.props.files && this.props.docsReadyYet
       if (true) {
         return (
@@ -84,9 +84,7 @@ import { Session } from 'meteor/session'
             <div className="row">
               <div className="col-md-12">
                 <p>Upload New File:</p>
-
                 <input type="file" id="fileinput"
-                // disabled={this.state.inProgress}
                 ref="fileinput" onChange={this.uploadIt}/>
               </div>
             </div>

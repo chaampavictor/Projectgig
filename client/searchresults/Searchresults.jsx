@@ -17,12 +17,13 @@ class Searchresults extends React.Component {
           <div className="row">
             <div className="col s12 m6 l9 ">
               <div className="card card-shadow">
-                <div class="col s12 l8">
-                  <p className="header liststyle card-detail">
-                    <a href={"/propertydetail?id=" + item._id} id="trying" className="primary-content">{`${item.propertyname}`}</a>
-                  </p>
-                  <p className=" card-detail">description:{item.description}</p>
+                <div className="col s12 l8">
+                  <p className="header liststyle card-detail">{item.propertyname}</p>
+                  <p className=" card-detail">price:{item.price}</p>
                   <p className="card-alt-detail">location:{item.location}</p>
+                  <br/>
+                  <h6 className="header liststyle card-detail"><a href={"/propertydetail?id=" + item._id} id="trying" className="primary-content">More Details</a></h6>
+
                 </div>
                 <div className="card-image col s12 l4">
                   <img src={`/uploads/${item.imageId}.${item.imageType}`} style={{width: 105 + "%",height: 150 + "px"}}/>

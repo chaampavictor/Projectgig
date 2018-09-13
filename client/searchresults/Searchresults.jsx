@@ -22,7 +22,7 @@ class Searchresults extends React.Component {
                   <p className=" card-detail">price:{item.price}</p>
                   <p className="card-alt-detail">location:{item.location}</p>
                   <br/>
-                  <h6 className="header liststyle card-detail"><a href={"/propertydetail?id=" + item._id} id="trying" className="primary-content">More Details</a></h6>
+                  <h6 className="header liststyle card-detail"><a href={"/propertydetail?id=" + item._id} className="primary-content">More Details</a></h6>
 
                 </div>
                 <div className="card-image col s12 l4">

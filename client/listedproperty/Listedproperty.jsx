@@ -27,7 +27,7 @@ export class Listedproperty extends React.Component {
               <div className="col s12 l8">
                 <p className="header liststyle card-detail">{prop.propertyname}</p>
                 <br/>
-                <p className=" card-detail">description:{prop.description}</p>
+                <p className=" card-detail">price:{prop.price}</p>
                 <p className="card-alt-detail">location:{prop.location}</p>
                 <br/>
 

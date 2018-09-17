@@ -94,10 +94,10 @@ componentDidMount(){
         <li><a className="modal-trigger" href="#modaldelete">Delete Account</a></li>
 
       </ul>
-      <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>
+      <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon nav-icon"></i></a>
 
       <div className="right logged-nav-button">
-        <a href="/" className={` link `}>KUKAYA</a>
+        <a href="/" className={` link `}>HIMAKUNI</a>
         <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
         <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>
       </div>
@@ -105,7 +105,7 @@ componentDidMount(){
     :
 <>
 
-<h6><a href="/" className={` link`}>KUKAYA</a></h6>
+<h6><a href="/" className={` link`}>HIMAKUNI</a></h6>
   <div className="right nav-button">
     <a href="/registration"><button id="nav-buttons">Signup</button></a>
     <a href="/about"><button id="nav-buttons">About</button></a>

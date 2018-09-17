@@ -62,7 +62,7 @@ class Property extends React.Component {
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="propertyname" type="text" name='propertyname'/>
-                          <label htmlFor="propertyname">property name</label>
+                          <label htmlFor="propertyname">Property name</label>
                         </div>
                       </div>
                       <div className="row">
@@ -92,7 +92,7 @@ class Property extends React.Component {
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="contact" type="text" name='contact'/>
-                          <label htmlFor="price">contact</label>
+                          <label htmlFor="price">Contact</label>
                         </div>
                       </div>
                     <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>

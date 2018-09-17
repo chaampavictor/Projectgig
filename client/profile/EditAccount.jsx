@@ -5,6 +5,35 @@ import Navbar from '../Navbar';
 
 export default class EditAccount extends Component {
 
+
+  saveArticle(event){
+    event.preventDefault();
+    let para1 = event.target.para1.value;
+    let para2 = event.target.para2.value;
+    let para3 = event.target.para3.value;
+    let title = event.target.title.value;
+    let id = $('#blogId').val();
+    Blogdb.update(
+        {_id:id},
+        {$set:{
+            propertyname:propertyname,
+            para1:para1,
+            para2:para2,
+            para3:para3
+        }}
+    );
+    // $('.alert').addClass('alert-info').html('Updated the Blog article');
+    //immediately remove the alert after it is seen
+    // setTimeout(()=>{
+    //     $('.alert').removeClass('alert-info').html('');
+    //     $("#EditModal").modal('hide');
+    // }, 1500);
+
+
+}
+
+
+
   render() {
     $(document).ready(function() {
       $('#modal1').modal();

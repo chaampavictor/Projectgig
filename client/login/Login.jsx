@@ -36,14 +36,14 @@ class Login extends React.Component {
                     <form className="col s12" onSubmit={this.login}>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="email" type="text" className="form-bottom-border" name='email'/>
+                          <input id="email" type="text" name='email'/>
                           <label className="label" htmlFor="email">email</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="password" type="password" name='password'/>
-                          <label className="active label" htmlFor="password">Password</label>
+                          <label className=" label" htmlFor="password">Password</label>
                         </div>
                       </div>
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>

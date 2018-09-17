@@ -6,6 +6,64 @@ import Navbar from '../Navbar';
 import {Listproperty} from '../../lib/collections'
 import {UserFiles} from '../../lib/collections';
 
+
+
+export class EditModal extends React.Component{
+
+  static handleSubmit(e) {
+    e.preventDefault()
+    const attempt = Session.get('imageId');
+    const type = e.target.type.value
+    const propertyname = e.target.propertyname.value
+    const location = e.target.location.value
+    const price = e.target.price.value
+    const description = e.target.description.value
+    const contact = e.target.contact.value
+
+
+    Listproperty.insert({
+      owner: Meteor.userId(),
+      type,
+      propertyname,
+      location,
+      price,
+      description,
+      contact,
+      imageId: Session.get('imageId'),
+      imageType: Session.get('imageType'),
+
+      status: false
+    }, (err, id) => this.myCallBack(err, id))
+    console.log(error.reason);
+  }
+
+render(){
+  $(document).ready(function(){
+      $('.modal').modal({
+        opacity: 0.5, //you can adjust the overlay from here
+        preventScrolling: true,
+        dismissible:false,
+        startingTop:'0.001%'
+      });
+    });
+  return(
+
+
+        <div>
+          <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Edits</a>
+{/* <!-- Modal Structure --> */}
+<div id="modal1" className="modal">
+  <div className="modal-content">
+    <h4>Edit Property</h4>
+    Are you sure?
+      </div>
+    </div>
+  </div>
+  );
+}
+}
+
+
 export class Profile extends React.Component {
   constructor(props) {
     super();
@@ -17,6 +75,7 @@ export class Profile extends React.Component {
       description: '',
       contact: '',
       _id: '',
+      propertyId: null,
     }
   }
 
@@ -38,6 +97,15 @@ export class Profile extends React.Component {
       return;
     }
 
+    $(document).ready(function(){
+        $('.modal').modal({
+          opacity: 0.5, //you can adjust the overlay from here
+          preventScrolling: true,
+          dismissible:false,
+          startingTop:'0.001%'
+        });
+      });
+
     return property.map((prop) => (
       <div key={Math.random()}>
         <div className="row">
@@ -58,9 +126,8 @@ export class Profile extends React.Component {
                 </div>
               </div>
               <div className="card-action center">
+                {/* <p className="header card-button card-detail"><a href={"/editproperty?id=" + prop._id} className="primary-content">Edit </a></p> */}
                 <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button>
-                <a href={"/editproperty?id=" + prop._id} ><button id="nav-buttons">Edit</button></a>
-                {/* <a href="#modal1" onClick={e => this.getId(e, prop._id)} className="delete modal-trigger">edit</a> */}
               <br/>
               </div>
             </div>
@@ -72,15 +139,12 @@ export class Profile extends React.Component {
 
 
   render() {
-    $(document).ready(function() {
-      $('#modal1').modal();
-    });
     return (
       <div>
         <Navbar/>
         <div className="container">
           <div className="col s12 m6">
-            <a href="/property" className={`${this.props.property} link`} className=" btn-large" id="prop-button">Add Property</a>
+              <a href="/property" className={`${this.props.property} link`} className="btn-large" id="prop-button"><p>Add Property</p></a>
             <h5 className="center prop-list">my property list</h5>
             {this.renderProperty()}
           </div>
@@ -88,9 +152,9 @@ export class Profile extends React.Component {
         <br />
         <br />
         <br />
-        {/* <div className="center">
+        <div className="center">
           <a className="waves-effect waves-dark btn-small" onClick={this.deleteAcc}>Delete Account</a>
-        </div> */}
+        </div>
         <hr className="alt-hr"/>
         <Footer/>
       </div>

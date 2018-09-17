@@ -27,7 +27,7 @@ export class Dashboard extends React.Component {
 
     return property.map((prop) => (
       <tr key={Math.random()}>
-        <td>{count++}</td>
+        <td>{count++}.</td>
         <td>{prop.propertyname}</td>
         <td>{prop.location}</td>
         <td>{prop.type}</td>
@@ -91,6 +91,6 @@ export default withTracker(() => {
   Meteor.subscribe('userfiles')
 
   return {
-    property: Listproperty.find().fetch(), 
+    property: Listproperty.find().fetch(),
     userfiles: UserFiles.findOne()}
 })(Dashboard)

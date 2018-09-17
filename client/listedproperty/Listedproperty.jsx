@@ -8,7 +8,6 @@ import {UserFiles} from '../../lib/collections';
 import {Listproperty} from '../../lib/collections';
 
 export class Listedproperty extends React.Component {
-
   c(id) {
     FlowRouter.go("/propertydetail?id=" + id)
   }

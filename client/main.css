@@ -58,9 +58,6 @@
   box-shadow: none;
 }
 
-.card-edit{
-  box-shadow:  0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
-}
 
 .card-height{
   height: 400px;
@@ -107,15 +104,23 @@
   margin-bottom: 0px;
 }
 
+.input-border{
+  border-bottom-color: red !important;
+}
+
+
+
 #prop-button {
-  margin-top: 109px;
+  margin-top: 90px;
   margin-bottom: 12px;
   margin-right: 150px;
-  margin-left: 39%;
+  margin-left: 36%;
   border-radius: 12px;
   background-color: #0b7dda;
 }
-
+.btn-large {
+  line-height: 15px !important;
+}
 .card-button {
 font-weight: 2000;
 }
@@ -142,6 +147,10 @@ font-weight: 2000;
   background-color: transparent;
   border-radius: 12px;
   border: none;
+}
+
+.nav-icon{
+  margin-left: 6px;
 }
 
 #banner-links {
@@ -496,16 +505,9 @@ footer.page-footer {
   background-color: #0b7dda;
 }
 
-.input-field input[type=text].valid {
-  border-bottom: 1px solid #000;
-}
-
-.input-field input[type=text]:focus {
-  border-bottom: 1px solid #000;
-}
-
 .input-field label {
   color: rgb(0,0,0);
+
 }
 
 .tab-style{

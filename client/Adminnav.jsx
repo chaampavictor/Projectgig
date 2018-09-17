@@ -6,7 +6,7 @@ export default class Adminnav extends Component {
     return(
       <nav>
         <div className="nav-wrapper adminnav">
-          <a href="/dashboard" className={`${this.dashboard} link`} id="trying">KUKAYA Admin</a>
+          <a href="/dashboard" className={`${this.dashboard} link`} id="trying">HIMAKUNI Admin</a>
           <ul id="nav-mobile" className="right">
             <li><a href="/" id="trying">Home</a></li>
             <li><a href="/property" className={`${this.property} link`} id="trying">Add Property</a></li>

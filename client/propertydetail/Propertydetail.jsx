@@ -15,7 +15,7 @@ export class Propertydetail extends React.Component {
       return;
     }
     return properties.map((prop) => (
-      <div>
+      <div key={prop._id}>
         <div className="row">
           <div className="col s12 m6 l12 card-style">
             <div className="card">
@@ -29,13 +29,14 @@ export class Propertydetail extends React.Component {
                 <p>type: {prop.type}</p>
                 <p>contact: {prop.contact}</p>
                 <p>location: {prop.location }</p>
-            
+
               </div>
             </div>
           </div>
         </div>
     </div>
-    ))
+    )
+  )
   }
 
   render(){

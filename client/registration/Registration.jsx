@@ -10,12 +10,6 @@ state = {
 }
 
 
-
-
-
-
-
-
 saveUserDetails = e => {
     e.preventDefault();
     const {target} = e;
@@ -56,27 +50,28 @@ saveUserDetails = e => {
                     <form className="col s12 " onSubmit={this.saveUserDetails}>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="name" type="text" name='name'/>
+                          <input id="name" type="text" className="input" name='name'/>
                           <label htmlFor="name">Name</label>
                         </div>
                       </div>
+
+
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="email" type="email" name='email'/>
+                          <input id="email" type="email" className="input" name='email'/>
                           <label htmlFor="email">Email</label>
                         </div>
                       </div>
+
+
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="password" type="password" name='password'/>
+                          <input id="password" type="password" className="input" name='password'/>
                           <label htmlFor="password">Password</label>
                         </div>
                       </div>
-
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
-
                     </form>
-
                     <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
                   </div>
                 </div>

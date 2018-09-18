@@ -1,97 +1,101 @@
-
-import React, { Component } from 'react';
-import { Meteor } from 'meteor/meteor';
+import React from 'react';
+import {Meteor} from 'meteor/meteor';
+import {withTracker} from 'meteor/react-meteor-data'
+import Footer from '../Footer';
 import Navbar from '../Navbar';
-import {withTracker} from 'meteor/react-meteor-data';
-import {Listproperty} from '../../lib/collections';
+import Altsearch from '../altsearch/Altsearch';
+import {Listproperty} from '../../lib/collections'
+import {UserFiles} from '../../lib/collections';
 
+export class EditProperty extends React.Component {
 
-export class EditProperty extends Component {
-
-
-    handleSubmit(event){
-        event.preventDefault();
-        let para1 = event.target.para1.value;
-        let para2 = event.target.para2.value;
-        let para3 = event.target.para3.value;
-        let propertyname = event.target.propertyname.value;
-        let id = $('#propertyId').val();
-        Listproperty.update(
-            {_id:id},
-            {$set:{
-                propertyname:propertyname,
-                'article.para1':para1,
-                'article.para2':para2,
-                'article.para3':para3
-            }}
-        );
-    }
-
-  //  toggleEdit(id, title,article,event){
-  //     event.preventDefault();
-  //     $('#propertyId').val(id);
-  //     $('#propertyname').val(propertyname);
-  //     $('#p1').val(article.para1);
-  //     $('#p2').val(article.para2);
-  //     $('#p3').val(article.para3);
-  // }
-  //
-
-  render() {
-
+  renderProperty() {
     const properties = this.props.properties;
     if (properties === undefined) {
       return;
     }
-
     return properties.map((prop) => (
+      <div key={prop._id}>
+        <div id="new-card" className="section">
+          <div className="container">
+            <div className="row">
+              <div className="col s12 m6 card-style">
+                <div className="card">
+                  <h5 className="default_color_text card-title center">Edit Property</h5>
+                  <div className="card-content">
+                    <form className="col s12" onSubmit={this.login}>
+                     <div className="row">
+                       <div className="input-field col s12">
+                         <input defaultValue={prop.propertyname} type="text" id="first_name2" className="validate"/>
+                         <label className="active" htmlFor="first_name2" > Property Name </label>
+                       </div>
+                     </div>
+                     <div className="row">
+                       <div className="input-field col s12">
+                         <input defaultValue={prop.location} type="text" id="first_name2" className="validate"/>
+                         <label className="active" htmlFor="first_name2" > Location </label>
+                       </div>
+                     </div>
+                     <div className="row">
+                       <div className="input-field col s12">
+                         <input defaultValue={prop.description} type="text" id="first_name2" className="validate"/>
+                         <label className="active" htmlFor="first_name2" > Description </label>
+                       </div>
+                     </div>
+                     <div className="row">
+                       <div className="input-field col s12">
+                         <input defaultValue={prop.price} type="text" id="first_name2" className="validate"/>
+                         <label className="active" htmlFor="first_name2" > Price </label>
+                       </div>
+                     </div>
+                     <div className="row">
+                       <div className="input-field col s12">
+                         <input defaultValue={prop.type} type="text" id="first_name2" className="validate"/>
+                         <label className="active" htmlFor="first_name2" > Type </label>
+                       </div>
+                     </div>
+                     <div className="row">
+                       <div className="input-field col s12">
+                         <input defaultValue={prop.contact} type="text" id="first_name2" className="validate"/>
+                         <label className="active" htmlFor="first_name2" > Contact </label>
+                       </div>
+                     </div>
+                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Update</button>
+                    </form>
+                    <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  )
+  }
 
-        <div key={prop._id}>
-          <Navbar/>
+  render(){
+    return (
+      <div>
+        <Navbar/>
 
-               <div className="row">
-                 <div className="col s12 m6 card-style">
-                     <h5 className="center">
-                       Edit Property
-                     </h5>
-                     <div className="card">
-                     <div className="card-content">
-                       <form onSubmit={this.handleSubmit.bind(this)}>
-                                <div className="form-group">
-                                    <label htmlFor="title">Title of the blog *</label>
-                                    <input type="text" className="form-control" id="title" name="title" required/>
-                                    <input type="text" className="hidden" id="blogId"/>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="article">1. Paragraph *</label>
-                                    <textarea className="form-control" rows="4" id="p1" name="para1" required/>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="comment">2. Paragraph *</label>
-                                    <textarea className="form-control" rows="3" id="p2" name="para2" />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="comment">3. Paragraph</label>
-                                    <textarea className="form-control" rows="2" id="p3" name="para3"/>
-                                </div>
-                                    {/* <button className="btn btn-primary">Update</button> */}
-                                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Update</button>
-                                    <div className="alert" role="alert"></div>
-                            </form>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+            {this.renderProperty()}
 
-
-      )
-    );
+        <hr/>
+        <Footer/>
+      </div>
+    )
   }
 }
 
-
 export default withTracker(() => {
-  Meteor.subscribe('property')
-  return {property: Listproperty.find().fetch()}
+  const id = FlowRouter.getQueryParam('id');
+  return {
+    properties: Listproperty.find({_id: id}).fetch(),
+    files : UserFiles.find({}, {sort: {name: 1}}).fetch(),
+  }
 })(EditProperty)
+
+
+
+{/*  */}

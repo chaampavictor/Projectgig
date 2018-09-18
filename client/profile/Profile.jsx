@@ -118,15 +118,16 @@ export class Profile extends React.Component {
                 <br/>
                 <div className="center">
                   {prop.propertyname}
-                  <br />
+                  <br/>
                   {prop.price}
+                  <br/>
                   {prop.location}
                    <br/>
                      <p className="header card-button card-detail"><a href={"/propertydetail?id=" + prop._id} className="primary-content">More Details <i className="fa fa-info banner-fa"></i> </a></p>
                 </div>
               </div>
               <div className="card-action center">
-                {/* <p className="header card-button card-detail"><a href={"/editproperty?id=" + prop._id} className="primary-content">Edit </a></p> */}
+                <p className="header card-button card-detail"><a href={"/editproperty?id=" + prop._id} className="primary-content">Edit </a></p>
                 <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button>
               <br/>
               </div>

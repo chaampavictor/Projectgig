@@ -35,9 +35,6 @@ export default class EditAccount extends Component {
 
 
   render() {
-    $(document).ready(function() {
-      $('#modal1').modal();
-    });
     return (
         <div>
           <Navbar/>
@@ -48,23 +45,12 @@ export default class EditAccount extends Component {
                      <h5 className="center">Edit Profile</h5>
                      <div className="card card-edit">
                        <form className="col s12" onSubmit={this.login}>
-                         <div className="row">
-                           <div className="input-field col s12">
-                             <input id="email" type="text" className="form-bottom-border" name='email'/>
-                           </div>
-                         </div>
-                         <div className="row">
-                           <div className="input-field col s12">
-                             <input id="email" type="email" name='email'/>
-                             <label className="active label" htmlFor="email">Email</label>
-                           </div>
-                         </div>
-                         <div className="row">
-                           <div className="input-field col s12">
-                             <input id="password" type="password" name='password'/>
-                             <label className="active label" htmlFor="password">Password</label>
-                           </div>
-                         </div>
+                        <div className="row">
+                          <div className="input-field col 6">
+                            <input defaultValue="texas" type="text" id="first_name2" className="validate"/>
+                            <label className="active" htmlFor="first_name2" > name </label>
+                          </div>
+                        </div>
                          <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Update</button>
                        </form>
                    </div>

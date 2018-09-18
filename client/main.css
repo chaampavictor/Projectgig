@@ -491,6 +491,10 @@ nav a.button-collapse {
   font-weight: 400 !important;
 }
 
+.edit_card_content{
+  height: 575px;
+}
+
 footer.page-footer {
   margin-top: 0px !important;
   padding-bottom: 0px!

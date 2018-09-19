@@ -14,6 +14,7 @@ class Searchresults extends React.Component {
 
         <div key={Math.random()}>
           <hr className="list-hr"/>
+          <br/>
           <div className="row">
             <div className="col s12 m6 l9 ">
               <div className="card card-shadow">

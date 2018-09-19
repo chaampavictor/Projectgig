@@ -44,6 +44,13 @@ class Property extends React.Component {
   }
 
 
+       username = () => {
+          if (Meteor.user()){
+            const name = Meteor.user().profile.name
+            return(name);
+          }
+        }
+
 
   render() {
     return (
@@ -61,8 +68,8 @@ class Property extends React.Component {
                       <FileUpload/>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="propertyname" type="text" name='propertyname' required/>
-                          <label htmlFor="propertyname">Property name</label>
+                          <input  defaultValue={this.username()} id="propertyname" type="text" name='propertyname' required/>
+                          <label className="active" htmlFor="propertyname">Property name</label>
                         </div>
                       </div>
                       <div className="row">

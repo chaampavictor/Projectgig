@@ -12,7 +12,6 @@ import EditProperty from '../client/property/EditProperty.jsx';
 import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
 import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
 import Profile from '../client/profile/Profile.jsx';
-import EditAccount from '../client/profile/EditAccount.jsx';
 import Login from '../client/login/Login.jsx';
 import Searchresults from '../client/searchresults/Searchresults.jsx';
 import Terms from '../client/terms/Terms.jsx';
@@ -59,12 +58,7 @@ open.route('/login', {
       });
     }
 });
-open.route('/editaccount', {
-    action: () => {
-      mount(EditAccount,{
-      });
-    }
-});
+
 loggedIn.route('/property', {
     action: () => {
       mount(Property,{

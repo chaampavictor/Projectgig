@@ -20,12 +20,12 @@ export class Listedproperty extends React.Component {
     return property.map((prop) => (
       <div key={prop._id}>
         <hr className="list-hr"/>
+        <br/>
         <div className="row">
           <div className="col s12 m6 l9 ">
             <div className="card card-shadow">
               <div className="col s12 l8">
                 <p className="header liststyle card-detail">{prop.propertyname}</p>
-                <br/>
                 <p className=" card-detail">price:{prop.price}</p>
                 <p className="card-alt-detail">location:{prop.location}</p>
                 <br/>

@@ -25,7 +25,7 @@ componentDidMount(){
   }
 
 
-  welcome = () => {
+  username = () => {
      if (Meteor.user()){
        const name = Meteor.user().profile.name
        return(name);
@@ -36,13 +36,6 @@ componentDidMount(){
 
 
   render() {
-    // let name = '';
-    // let email = '';
-    // if (Meteor.user()) {
-    //   const user = Meteor.user();
-    //   email = user.emails[0].address;
-    // }
-
     $(document).ready(function(){
         $('.modal').modal({
           opacity: 0.5, //you can adjust the overlay from here
@@ -60,7 +53,7 @@ componentDidMount(){
 
         {/* delete account modal begins here */}
         {/* <!-- Modal Structure --> */}
-    <div id="modaldelete" className="modal">
+    {/* <div id="modaldelete" className="modal">
       <div className="modal-content center">
         <h4>Are you sure?</h4>
       </div>
@@ -68,7 +61,7 @@ componentDidMount(){
         <a href="#!" className="modal-close waves-effect waves-green btn-flat">Cancel</a>
         <a className="waves-effect waves-light btn modal-trigger delete-button" href="#modaldelete">Delete</a>
       </div>
-    </div>
+    </div> */}
         {/* delete account modal ends here */}
 
 
@@ -80,7 +73,7 @@ componentDidMount(){
           <div className="user-view">
             <div className="background sidenav-banner">
             </div>
-            <span className="white-text email">{this.welcome()}</span>
+            <span className="white-text email">{this.username()}</span>
           </div>
         </li>
         <li><a href="/profile"> Profile</a></li>
@@ -89,13 +82,9 @@ componentDidMount(){
         <li><div className="divider"></div></li>
         <li><a href="/listedproperty">Listed Properties</a></li>
         <li><div className="divider"></div></li>
-        <li><a href="/editaccount">Edit Account</a></li>
-        <li><div className="divider"></div></li>
         <li><a className="modal-trigger" href="#modaldelete">Delete Account</a></li>
-
       </ul>
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon nav-icon"></i></a>
-
       <div className="right logged-nav-button">
         <a href="/" className={` link `}>HIMAKUNI</a>
         <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>

@@ -6,6 +6,7 @@ import Navbar from '../Navbar';
 import Altsearch from '../altsearch/Altsearch';
 import {Listproperty} from '../../lib/collections'
 import {UserFiles} from '../../lib/collections';
+import FileUpload from '../Upload.jsx';
 
 export class EditProperty extends React.Component {
 
@@ -17,6 +18,7 @@ export class EditProperty extends React.Component {
 
   static handleEditSubmit(e){
      e.preventDefault();
+     let attempt = Session.get('imageId');
      let type = e.target.type.value;
      let propertyname = e.target.propertyname.value;
      let location = e.target.location.value;
@@ -31,9 +33,13 @@ export class EditProperty extends React.Component {
              location:location,
              price:price,
              description: description,
-             contact: contact
-         }}
+             contact: contact,
+             imageId: Session.get('imageId'),
+             imageType: Session.get('imageType'),
+         }
+       }
      );
+     FlowRouter.go('/profile')
  }
 
 
@@ -55,6 +61,9 @@ export class EditProperty extends React.Component {
                   <div className="card-content">
                     <form className="col s12" onSubmit={EditProperty.handleEditSubmit.bind(this)}>
                       <input type="hidden" value={prop._id} id="propertyid" name="propertyid" />
+                      <FileUpload/>
+                      <br/>
+                      <br/>
                       <div className="row">
                         <div className="input-field col s12">
                           <input defaultValue={prop.propertyname} id="propertyname" type="text" name='propertyname'/>
@@ -111,7 +120,7 @@ export class EditProperty extends React.Component {
       <div>
         <Navbar/>
             {this.renderProperty()}
-      
+
         <Footer/>
       </div>
     )

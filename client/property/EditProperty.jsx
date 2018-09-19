@@ -63,32 +63,32 @@ export class EditProperty extends React.Component {
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="type" type="text" name='type'/>
-                          <label htmlFor="type">type</label>
+                          <input defaultValue={prop.type} id="type" type="text" name='type'/>
+                          <label className="active" htmlFor="type">type</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="location" type="text" name='location'/>
-                          <label htmlFor="location">Location</label>
+                          <input defaultValue={prop.location} id="location" type="text" name='location'/>
+                          <label className="active" htmlFor="location">Location</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="price" type="text" name='price'/>
-                          <label htmlFor="price">Price</label>
+                          <input defaultValue={prop.price} id="price" type="text" name='price'/>
+                          <label className="active" htmlFor="price">Price</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="description" type="text" name='description'/>
-                          <label htmlFor="description">Description</label>
+                          <input defaultValue={prop.description} id="description" type="text" name='description'/>
+                          <label className="active" htmlFor="description">Description</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="contact" type="text" name='contact'/>
-                          <label htmlFor="price">Contact</label>
+                          <input defaultValue={prop.contact} id="contact" type="text" name='contact'/>
+                          <label className="active" htmlFor="price">Contact</label>
                         </div>
                       </div>
                     <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
@@ -111,7 +111,7 @@ export class EditProperty extends React.Component {
       <div>
         <Navbar/>
             {this.renderProperty()}
-        <hr/>
+      
         <Footer/>
       </div>
     )

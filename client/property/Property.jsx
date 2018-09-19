@@ -61,37 +61,37 @@ class Property extends React.Component {
                       <FileUpload/>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="propertyname" type="text" name='propertyname'/>
+                          <input id="propertyname" type="text" name='propertyname' required/>
                           <label htmlFor="propertyname">Property name</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="type" type="text" name='type'/>
+                          <input id="type" type="text" name='type' required/>
                           <label htmlFor="type">type</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="location" type="text" name='location'/>
+                          <input id="location" type="text" name='location' required/>
                           <label htmlFor="location">Location</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="price" type="text" name='price'/>
+                          <input id="price" type="text" name='price' required/>
                           <label htmlFor="price">Price</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="description" type="text" name='description'/>
+                          <input id="description" type="text" name='description' required/>
                           <label htmlFor="description">Description</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="contact" type="text" name='contact'/>
+                          <input id="contact" type="text" name='contact' required/>
                           <label htmlFor="price">Contact</label>
                         </div>
                       </div>

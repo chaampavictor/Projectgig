@@ -26,8 +26,6 @@ class Property extends React.Component {
     const contact = e.target.contact.value
 
 
-    // imageId ==>
-    // imageType ==> Session.get
     Listproperty.insert({
       owner: Meteor.userId(),
       type,
@@ -40,7 +38,9 @@ class Property extends React.Component {
       imageType: Session.get('imageType'),
 
       status: false
-    }, (err, id) => this.myCallBack(err, id))
+    },
+    (err, id) => this.myCallBack(err, id)
+    )
   }
 
 

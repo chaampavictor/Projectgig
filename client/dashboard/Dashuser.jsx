@@ -35,6 +35,7 @@ export class Dashboard extends React.Component {
        <td>{count++}.</td>
        <td>{user.profile.name}</td>
        <td>{user.profile.email}</td>
+       <td>  <a href="#modaldash" className="delete modal-trigger">View Properties</a></td>
      </tr>
    )
  )
@@ -50,16 +51,10 @@ export class Dashboard extends React.Component {
         {/* delete modal begins here */}
         <div id="modaldash" className="modal">
           <div className="modal-content">
-            <h4>Edit Property</h4>
+            <h4>Properties by user</h4>
             <div className="row">
 
-                <div className="row">
-                  <div className="input-field col s6">
-                  <p>Are you sure?</p>
-                  </div>
-                </div>
-                <a className="btn waves-effect waves-light submit-button" onClick={e => this.deleteProp(e, prop._id)}>Yes</a>
-                <a className="btn waves-effect waves-light submit-button" type="submit" name="action">No</a>
+
             </div>
           </div>
         </div>

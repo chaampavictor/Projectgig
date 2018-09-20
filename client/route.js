@@ -5,6 +5,7 @@ import NotFound from '../client/NotFound.jsx';
 import About from '../client/about/About.jsx';
 import Dashlogin from '../client/dashlogin/Dashlogin.jsx';
 import Dashboard from '../client/dashboard/Dashboard.jsx';
+import DashUserProperty from '../client/dashboard/DashUserProperty.jsx';
 import Dashuser from '../client/dashboard/Dashuser.jsx';
 import Registration from '../client/registration/Registration.jsx';
 import Property from '../client/property/Property.jsx';
@@ -111,6 +112,12 @@ open.route('/privacy', {
 loggedIn.route('/dashboard', {
   action: () => {
     mount(Dashboard,{
+    });
+  }
+});
+loggedIn.route('/dashUserProperty', {
+  action: () => {
+    mount(DashUserProperty,{
     });
   }
 });

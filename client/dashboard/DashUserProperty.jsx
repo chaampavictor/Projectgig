@@ -8,20 +8,7 @@ import {UserFiles} from '../../lib/collections';
 
 
 
-export class Profile extends React.Component {
-  constructor(props) {
-    super();
-    this.state = {
-      type: '',
-      propertyname: '',
-      location: '',
-      price: '',
-      description: '',
-      contact: '',
-      _id: '',
-      propertyId: null,
-    }
-  }
+export class DashUserProperty extends React.Component {
 
   deleteProp = (e, id) => {
     Meteor.call('deleteProp', id);
@@ -40,15 +27,6 @@ export class Profile extends React.Component {
     if (property === undefined) {
       return;
     }
-
-    $(document).ready(function(){
-        $('.modal').modal({
-          opacity: 0.5, //you can adjust the overlay from here
-          preventScrolling: true,
-          dismissible:false,
-          startingTop:'0.001%'
-        });
-      });
 
     return property.map((prop) => (
       <div key={Math.random()}>
@@ -113,4 +91,4 @@ export default withTracker(() => {
   return {
     property: Listproperty.find({owner: Meteor.userId()}).fetch()
   }
-})(Profile)
+})(DashUserProperty)

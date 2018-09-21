@@ -33,8 +33,6 @@ componentDidMount(){
    }
 
 
-
-
   render() {
     $(document).ready(function(){
         $('.modal').modal({
@@ -46,25 +44,7 @@ componentDidMount(){
       });
 
     return(
-
-
       <div>
-
-
-        {/* delete account modal begins here */}
-        {/* <!-- Modal Structure --> */}
-    {/* <div id="modaldelete" className="modal">
-      <div className="modal-content center">
-        <h4>Are you sure?</h4>
-      </div>
-      <div className="modal-footer">
-        <a href="#!" className="modal-close waves-effect waves-green btn-flat">Cancel</a>
-        <a className="waves-effect waves-light btn modal-trigger delete-button" href="#modaldelete">Delete</a>
-      </div>
-    </div> */}
-        {/* delete account modal ends here */}
-
-
       <div className="navbar-fixed">
         { Meteor.userId() ?
       <>

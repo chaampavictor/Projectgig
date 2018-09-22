@@ -5,17 +5,28 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 
 class Registration extends React.Component {
-state = {
-  error: ''
-}
+  constructor(props){
+    super(props);
+    this.state = {
+      error :"",
+    }
+  }
 
 
 saveUserDetails = e => {
     e.preventDefault();
     const {target} = e;
     const name = target.name.value;
-    const password = target.password.value;
     const email = target.email.value;
+    const password = target.password.value;
+    const confirmpassword = target.confirmpassword.value;
+
+
+   if(password.length <= 6){
+       seconderror: "Password too short"
+     return;
+   }
+
     const profile = {
       email,
       name
@@ -50,7 +61,7 @@ saveUserDetails = e => {
                     <form className="col s12 " onSubmit={this.saveUserDetails}>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="name" type="text" className="input" name='name'/>
+                          <input id="name" type="text" className="input" name='name' required/>
                           <label htmlFor="name">Name</label>
                         </div>
                       </div>
@@ -58,7 +69,7 @@ saveUserDetails = e => {
 
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="email" type="email" className="input" name='email'/>
+                          <input id="email" type="email" className="input" name='email' required/>
                           <label htmlFor="email">Email</label>
                         </div>
                       </div>
@@ -66,7 +77,7 @@ saveUserDetails = e => {
 
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="password" type="password" className="input" name='password'/>
+                          <input id="password" type="password" className="input" name='password' required/>
                           <label htmlFor="password">Password</label>
                         </div>
                       </div>

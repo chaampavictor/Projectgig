@@ -27,13 +27,12 @@ loggedIn = FlowRouter.group({
       function(){
           if (!(Meteor.loggingIn() || Meteor.userId())) {
               return FlowRouter.go("/login");
-          } else if (!Roles.userIsInRole( Meteor.userId(), 'admin')) {
+          } else if (!Roles.userIsInRole( Meteor.userId(), 'Admin')) {
             // return FlowRouter.go("/");
           }
       }
   ]
 });
-
 
 
 FlowRouter.route('/', {

@@ -28,11 +28,12 @@ export class Profile extends React.Component {
     console.log(id);
   }
 
-  deleteAcc() {
-    const userId= this._id;
-    Meteor.call('deleteUserAccount', {_id:userId});
-    FlowRouter.go('/');
-  }
+
+  // deleteAcc() {
+  //    const userId= this._id;
+  //    Meteor.call('deleteUserAccount', {_id:userId});
+  //    FlowRouter.go('/');
+  //  }
 
 
   renderProperty() {
@@ -41,14 +42,6 @@ export class Profile extends React.Component {
       return;
     }
 
-    $(document).ready(function(){
-        $('.modal').modal({
-          opacity: 0.5, //you can adjust the overlay from here
-          preventScrolling: true,
-          dismissible:false,
-          startingTop:'0.001%'
-        });
-      });
 
     return property.map((prop) => (
       <div key={Math.random()}>
@@ -61,11 +54,11 @@ export class Profile extends React.Component {
                 </span>
                 <br/>
                 <div className="center">
-                  {prop.propertyname}
+                  { "Name :" + prop.propertyname}
                   <br/>
-                  {prop.price}
+                  { "Price :" + prop.price}
                   <br/>
-                  {prop.location}
+                  {"Location :" + prop.location}
                    <br/>
                      <p className="header card-button card-detail"><a href={"/propertydetail?id=" + prop._id} className="primary-content">More Details <i className="fa fa-info banner-fa"></i> </a></p>
                 </div>
@@ -98,7 +91,7 @@ export class Profile extends React.Component {
         <br />
         <br />
         <div className="center">
-          <a className="waves-effect waves-dark btn-small" onClick={this.deleteAcc}>Delete Account</a>
+          <a className="waves-effect waves-dark btn-small" onClick= {() =>{  Meteor.call('user.delete')}}>Delete Account</a>
         </div>
         <hr className="alt-hr"/>
         <Footer/>
@@ -110,6 +103,7 @@ export class Profile extends React.Component {
 export default withTracker(() => {
   const propertyName = FlowRouter.getQueryParam('name');
   Meteor.subscribe('property');
+  Meteor.subscribe('users');
   return {
     property: Listproperty.find({owner: Meteor.userId()}).fetch()
   }

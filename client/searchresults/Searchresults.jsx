@@ -36,15 +36,6 @@ class Searchresults extends React.Component {
       )
     )
     }
-
-    else {
-      return(
-      <div>
-        <h1>Property Not Found</h1>
-      </div>
-    )
-    }
-
   }
   render() {
     return (

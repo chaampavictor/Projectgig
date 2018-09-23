@@ -20,7 +20,7 @@ export default class Tab extends Component {
               <a href="#test2" className="tab-button">Aim</a>
             </li>
             <li className="tab col s3">
-              <a href="#test3" className="tab-button">Goal</a>
+              <a href="#test3" className="tab-button">Team</a>
             </li>
 
           </ul>

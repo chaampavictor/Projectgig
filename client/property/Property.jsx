@@ -68,8 +68,8 @@ class Property extends React.Component {
                       <FileUpload/>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input  defaultValue={this.username()} id="propertyname" type="text" name='propertyname' required/>
-                          <label className="active" htmlFor="propertyname">Property name</label>
+                          <input id="propertyname" type="text" name='propertyname' required/>
+                          <label  htmlFor="propertyname">Property name</label>
                         </div>
                       </div>
                       <div className="row">

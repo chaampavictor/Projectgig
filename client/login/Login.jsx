@@ -47,7 +47,7 @@ class Login extends React.Component {
                           <label className=" label" htmlFor="password">Password</label>
                         </div>
                       </div>
-                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+                      <button className="btn waves-light submit-button center" type="submit" name="action">Submit</button>
                     </form>
                     <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                   </div>

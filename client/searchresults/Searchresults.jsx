@@ -9,7 +9,12 @@ import {Session} from 'meteor/session';
 
 class Searchresults extends React.Component {
   g() {
-    if (this.props.property) {
+
+    let property = this.props.property;
+      if (property === undefined) {
+        return "Location not found"
+      }
+
       return this.props.property.map(item => (
 
         <div key={Math.random()}>
@@ -35,7 +40,6 @@ class Searchresults extends React.Component {
         </div>
       )
     )
-    }
   }
   render() {
     return (

@@ -8,7 +8,7 @@ export default class Altsearch extends Component {
       <div className="container">
         <div className="col l12 s12">
           <form className="second-example" action='/searchresults'>
-            <input id="alt-input-field" name='n' placeholder="Search for accomodation/location...." ref={input => this.search = input} onChange={this.handleInputChange}/>
+            <input id="alt-input-field" name='n' placeholder="Search for accomodation/location...." ref={input => this.search = input} onChange={this.handleInputChange} required />
             <i className="fa fa-search"></i>
           </form>
         </div>

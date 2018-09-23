@@ -62,13 +62,13 @@ class Landing extends React.Component {
             <div className="carousel carousel-slider center">
               <div className="carousel-item white-text" href="#one!">
                 <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
-                This website has really been helpful to me,
+                This website has really helped to us find suitable accomodation for our child in a new place as she was about to begin her studies ,
                 they are life savers.
                 <i className="fa fa-quote-right banner-fa"/>
               </h4>
                 <br/>
                 <h5 className="text_b">Hanziba Malambo</h5>
-                <h5 className="text_b">student, University of Zambia</h5>
+                <h5 className="text_b">Parent, University of Zambia Student</h5>
               </div>
               <div className="carousel-item white-text" href="#one!">
                 <h4 className="white-text"><i className="fa fa-quote-left banner-fa"/>
@@ -78,7 +78,7 @@ class Landing extends React.Component {
               </h4>
                 <br/>
                 <h5 className="text_b"> Sophia Chisakasaka</h5>
-                <h5 className="text_b">landlord, Chongwe</h5>
+                <h5 className="text_b">Landlord, Chongwe</h5>
               </div>
               <div className="carousel-item white-text" href="#one!">
                 <h4 className="white-text text_b"><i className="fa fa-quote-left banner-fa"/>

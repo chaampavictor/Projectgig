@@ -35,7 +35,7 @@ export class Dashboard extends React.Component {
        <td>{count++}.</td>
        <td>{user.profile.name}</td>
        <td>{user.profile.email}</td>
-       <td>  <a href="#modaldash" className="delete modal-trigger">View Properties</a></td>
+       <td>  <a href="#modaldashuser" className="delete modal-trigger">View Properties</a></td>
      </tr>
    )
  )
@@ -43,18 +43,18 @@ export class Dashboard extends React.Component {
 
   render() {
     $(document).ready(function() {
-      $('#modaldash').modal();
+      $('#modaldashuser').modal();
     });
     return (
       <div>
 
         {/* delete modal begins here */}
-        <div id="modaldash" className="modal">
+        <div id="modaldashuser" className="modal">
           <div className="modal-content">
             <h4>Properties by user</h4>
             <div className="row">
 
-
+              
             </div>
           </div>
         </div>

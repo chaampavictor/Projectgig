@@ -64,8 +64,14 @@ export class Profile extends React.Component {
                 </div>
               </div>
               <div className="card-action center">
+                <div className="col s6 l6">
                 <p className="header card-button card-detail"><a href={"/editproperty?id=" + prop._id} className="primary-content">Edit </a></p>
-                <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button>
+                </div>
+                <div className="card-image col s6 l6">
+                  <p className="header card-button card-detail"><a href="#" onClick={e => this.deleteProp(e, prop._id)} className="primary-content">Delete </a></p>
+
+                  {/* <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button> */}
+                </div>
               <br/>
               </div>
             </div>
@@ -86,13 +92,7 @@ export class Profile extends React.Component {
             <h5 className="center prop-list">my property list</h5>
             {this.renderProperty()}
           </div>
-        </div>
-        <br />
-        <br />
-        <br />
-        <div className="center">
-          <a className="waves-effect waves-dark btn-small" onClick= {() =>{  Meteor.call('user.delete')}}>Delete Account</a>
-        </div>
+        </div> 
         <hr className="alt-hr"/>
         <Footer/>
       </div>

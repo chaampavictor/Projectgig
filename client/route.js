@@ -36,6 +36,33 @@ loggedIn = FlowRouter.group({
 });
 
 
+
+const adminRoutes = FlowRouter.group({
+  triggersEnter: [
+    () => {
+      if (!(Meteor.loggingIn() || Meteor.userId())) {
+        return FlowRouter.go('/login');
+      } else if (!Roles.userIsInRole(Meteor.userId(), ['content-manager', 'admin'])) {
+        return FlowRouter.go('/');
+      }
+    },
+  ],
+});
+
+
+
+
+
+adminRoutes.route('/dashboard', {
+  name: 'Admin',
+  action() {
+    mount(Dashboard, { children: <Dashboard /> });
+  },
+});
+
+
+
+
 FlowRouter.route('/', {
     name: 'Landing',
     action: () => {

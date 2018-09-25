@@ -3,6 +3,7 @@ import {Meteor} from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
+import Adminnav from '../Adminnav';
 import {Listproperty} from '../../lib/collections'
 import {UserFiles} from '../../lib/collections';
 
@@ -92,7 +93,7 @@ export class Profile extends React.Component {
             <h5 className="center prop-list">my property list</h5>
             {this.renderProperty()}
           </div>
-        </div> 
+        </div>
         <hr className="alt-hr"/>
         <Footer/>
       </div>

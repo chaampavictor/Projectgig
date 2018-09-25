@@ -19,7 +19,6 @@ saveUserDetails = e => {
     const name = target.name.value;
     const email = target.email.value;
     const password = target.password.value;
-    const confirmpassword = target.confirmpassword.value;
 
 
    if(password.length <= 6){

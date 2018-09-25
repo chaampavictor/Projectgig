@@ -9,6 +9,7 @@ import DashUserProperty from '../client/dashboard/DashUserProperty.jsx';
 import Dashuser from '../client/dashboard/Dashuser.jsx';
 import Registration from '../client/registration/Registration.jsx';
 import Property from '../client/property/Property.jsx';
+import Statistics from '../client/statistics/Statistics.jsx';
 import EditProperty from '../client/property/EditProperty.jsx';
 import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
 import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
@@ -111,6 +112,12 @@ open.route('/privacy', {
 loggedIn.route('/dashboard', {
   action: () => {
     mount(Dashboard,{
+    });
+  }
+});
+loggedIn.route('/statistics', {
+  action: () => {
+    mount(Statistics,{
     });
   }
 });

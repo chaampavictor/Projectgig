@@ -728,3 +728,7 @@ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default
     border-radius: 12px;
     /*border-color: #0b7dda;*/
 }
+
+.tab-margin{
+  margin-top: 50px
+}

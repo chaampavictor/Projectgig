@@ -10,6 +10,7 @@ class About extends React.Component {
       <div>
         <Navbar/>
         <Tab/>
+        <hr className="alt-hr"/>
         <Footer className="fixed-bottom"/>
       </div>
 

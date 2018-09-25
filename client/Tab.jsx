@@ -11,10 +11,10 @@ export default class Tab extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col s12 tab ">
+        <div className="col s12 tab tab-margin">
           <ul className="tabs tab-buttons">
             <li className="tab col s3">
-              <a href="#test1" className="tab-button">About Us</a>
+              <a href="#test1" className="tab-button">About</a>
             </li>
             <li className="tab col s3">
               <a href="#test2" className="tab-button">Aim</a>

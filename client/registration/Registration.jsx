@@ -37,10 +37,17 @@ saveUserDetails = e => {
     }
 
     Accounts.createUser(user, (err)=> {
-      if (err) {
-        console.log(err.reason);
-      }
-      FlowRouter.go('/')
+
+      user.roles = "user";
+
+      if ( options.profile )
+        user.profile = options.profile;
+      return user;
+
+      // if (err) {
+      //   console.log(err.reason);
+      // }
+      // FlowRouter.go('/')
     });
   }
   render() {

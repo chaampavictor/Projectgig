@@ -59,6 +59,18 @@ adminRoutes.route('/dashboard', {
     mount(Dashboard, { children: <Dashboard /> });
   },
 });
+adminRoutes.route('/dashuser', {
+  name: 'dashuser',
+  action() {
+    mount(Dashuser, { children: <Dashuser /> });
+  },
+});
+adminRoutes.route('/dashUserProperty', {
+  name: 'Admin',
+  action() {
+    mount(dashUserProperty, { children: <DashUserProperty /> });
+  },
+});
 
 
 

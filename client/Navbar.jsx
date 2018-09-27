@@ -39,24 +39,25 @@ componentDidMount(){
    }
 
   render() {
+    // $(document).ready(function(){
+    //     $('.modal').modal({
+    //       opacity: 0.5, //you can adjust the overlay from here
+    //       preventScrolling: true,
+    //       dismissible:false,
+    //       startingTop:'0.001%'
+    //     });
+    //   });
+
     $(document).ready(function(){
-        $('.modal').modal({
-          opacity: 0.5, //you can adjust the overlay from here
-          preventScrolling: true,
-          dismissible:false,
-          startingTop:'0.001%'
-        });
-      });
+   $('.modal').modal();
+ });
 
     return(
 
 
       <div>
-
-
         {/* delete account modal begins here */}
-        {/* <!-- Modal Structure --> */}
-			    <div id="modaldelete" className="modal">
+			    <div id="modal" className="modal">
 			      <div className="modal-content center">
 							<h4>Are you sure?</h4>
 			        <h3>This action cannot be undone!</h3>
@@ -88,11 +89,10 @@ componentDidMount(){
         <li><div className="divider"></div></li>
         <li><a href="/editaccount">Edit Account</a></li>
         <li><div className="divider"></div></li>
-        <li><a className="modal-trigger" href="#modaldelete">Delete Account</a></li>
+        <li><a className="modal-trigger" href="#modal">Delete Account</a></li>
 
       </ul>
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>
-
       <div className="right logged-nav-button">
         <a href="/" className={` link `}>KUKAYA</a>
         <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
@@ -110,7 +110,6 @@ componentDidMount(){
   </div>
 </>
     }
-
   </div>
 </div>
 

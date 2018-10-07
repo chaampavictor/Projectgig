@@ -51,7 +51,7 @@ export class Profile extends React.Component {
             <div className="card ">
               <div className="card-content ">
                 <span className="card-title center">
-                    <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:200 + "px"}} alt="No Image Uploaded" />
+                    <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 80 + "%",height:200 + "px"}} alt="No Image Uploaded" />
                 </span>
                 <br/>
                 <div className="center">
@@ -70,8 +70,6 @@ export class Profile extends React.Component {
                 </div>
                 <div className="card-image col s6 l6">
                   <p className="header card-button card-detail"><a href="#" onClick={e => this.deleteProp(e, prop._id)} className="primary-content">Delete </a></p>
-
-                  {/* <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button> */}
                 </div>
               <br/>
               </div>

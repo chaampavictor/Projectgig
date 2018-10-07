@@ -51,26 +51,24 @@ const adminRoutes = FlowRouter.group({
 
 
 
-
-
-adminRoutes.route('/dashboard', {
-  name: 'Admin',
-  action() {
-    mount(Dashboard, { children: <Dashboard /> });
-  },
-});
+// adminRoutes.route('/dashboard', {
+//   name: 'Admin',
+//   action() {
+//     mount(Dashboard, { children: <Dashboard /> });
+//   },
+// });
 adminRoutes.route('/dashuser', {
   name: 'dashuser',
   action() {
     mount(Dashuser, { children: <Dashuser /> });
   },
 });
-adminRoutes.route('/dashUserProperty', {
-  name: 'Admin',
-  action() {
-    mount(dashUserProperty, { children: <DashUserProperty /> });
-  },
-});
+// adminRoutes.route('/dashUserProperty', {
+//   name: 'Admin',
+//   action() {
+//     mount(dashUserProperty, { children: <DashUserProperty /> });
+//   },
+// });
 
 
 

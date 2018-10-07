@@ -12,44 +12,36 @@ class Registration extends React.Component {
     }
   }
 
+  saveUserDetails = e => {
+      e.preventDefault();
+      const {target} = e;
+      const name = target.name.value;
+      const password = target.password.value;
+      const email = target.email.value;
+      const profile = {
+        email,
+        name
+      };
+      const user = {
+        email,
+        password,
+        profile
+      }
 
-saveUserDetails = e => {
-    e.preventDefault();
-    const {target} = e;
-    const name = target.name.value;
-    const email = target.email.value;
-    const password = target.password.value;
+         if(password.length <= 6){
+             seconderror: "Password too short"
+           return;
+         }
 
-
-   if(password.length <= 6){
-       seconderror: "Password too short"
-     return;
-   }
-
-    const profile = {
-      email,
-      name
-    };
-    const user = {
-      email,
-      password,
-      profile
-    }
-
-    Accounts.createUser(user, (err)=> {
-
-      user.roles = "user";
-
-      if ( options.profile )
-        user.profile = options.profile;
-      return user;
-
-      // if (err) {
-      //   console.log(err.reason);
-      // }
-      // FlowRouter.go('/')
-    });
+      Accounts.createUser(user, (err)=> {
+        if (err) {
+          Materialize.toast(err.reason);
+          // console.log(err.reason);
+        }
+        FlowRouter.go('/profile')
+      });
   }
+
   render() {
     const { error } = this.state;
     return (
@@ -63,7 +55,6 @@ saveUserDetails = e => {
                   <h5 className="card-title center">
                     signup</h5>
                   <div className="card-content">
-                    {error.length ? <p className="red-text">{error}</p> : <span/>}
                     <form className="col s12 " onSubmit={this.saveUserDetails}>
                       <div className="row">
                         <div className="input-field col s12">
@@ -85,6 +76,7 @@ saveUserDetails = e => {
                         <div className="input-field col s12">
                           <input id="password" type="password" className="input" name='password' required/>
                           <label htmlFor="password">Password</label>
+                          <p>NB: password should not be less than six characters</p>
                         </div>
                       </div>
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>

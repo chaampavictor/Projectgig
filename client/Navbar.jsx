@@ -39,15 +39,6 @@ componentDidMount(){
    }
 
   render() {
-    // $(document).ready(function(){
-    //     $('.modal').modal({
-    //       opacity: 0.5, //you can adjust the overlay from here
-    //       preventScrolling: true,
-    //       dismissible:false,
-    //       startingTop:'0.001%'
-    //     });
-    //   });
-
     $(document).ready(function(){
    $('.modal').modal();
  });
@@ -86,8 +77,6 @@ componentDidMount(){
         <li><a href="/property" >Add Property</a></li>
         <li><div className="divider"></div></li>
         <li><a href="/listedproperty">Listed Properties</a></li>
-        <li><div className="divider"></div></li>
-        <li><a href="/editaccount">Edit Account</a></li>
         <li><div className="divider"></div></li>
         <li><a className="modal-trigger" href="#modal">Delete Account</a></li>
 

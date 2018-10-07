@@ -9,7 +9,9 @@ class About extends React.Component {
     return (
       <div>
         <Navbar/>
+        <div id="tab-height">  
         <Tab/>
+        </div>
         <hr className="alt-hr"/>
         <Footer className="fixed-bottom"/>
       </div>

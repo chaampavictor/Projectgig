@@ -13,11 +13,6 @@ export class Dashboard extends React.Component {
     FlowRouter.go("/propertydetail?id=" + id)
   }
 
-  deleteProp = (e, id) => {
-    Meteor.call('deleteProp', id);
-    console.log(id);
-  }
-
   propertyTable() {
     const property = this.props.property;
     let count = 1;
@@ -34,10 +29,6 @@ export class Dashboard extends React.Component {
         <td>{prop.price}</td>
         <td>{prop.description}</td>
         <td>{prop.contact}</td>
-        <td>{prop.contact}</td>
-        <td>
-          <a href="#modaldash" className="delete modal-trigger">delete</a>
-        </td>
       </tr>
     ))
   }
@@ -74,7 +65,6 @@ export class Dashboard extends React.Component {
                 <th>Price</th>
                 <th>Description</th>
                 <th>Contact</th>
-                <th>Posted by</th>
               </tr>
             </thead>
             <tbody>

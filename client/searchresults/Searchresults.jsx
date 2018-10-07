@@ -11,13 +11,10 @@ class Searchresults extends React.Component {
   g() {
 
     let property = this.props.property;
+
+
+
       if (true) {
-        return (
-          <div className="center">
-          <h4>Requested Location not Found</h4>
-        </div>
-        )
-      }
 
       return this.props.property.map(item => (
 
@@ -44,6 +41,11 @@ class Searchresults extends React.Component {
         </div>
       )
     )
+    }
+
+    else if (false) {      
+      return <p>page not find</p>
+    }
   }
   render() {
     return (

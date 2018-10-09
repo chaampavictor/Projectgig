@@ -9,7 +9,7 @@ class About extends React.Component {
     return (
       <div>
         <Navbar/>
-        <div id="tab-height">  
+        <div className="page-height">  
         <Tab/>
         </div>
         <hr className="alt-hr"/>

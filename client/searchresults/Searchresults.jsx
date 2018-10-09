@@ -13,8 +13,19 @@ class Searchresults extends React.Component {
     let property = this.props.property;
 
 
+    if (this.props.property.length === 0) {
+    return (
 
-      if (true) {
+      <div className="notfound center " >
+        <br/>
+        <br/>
+        <br/>
+        <h1>
+          <h6>Sorry!! No property found in that location </h6>
+        </h1>
+      </div>
+    );
+  }
 
       return this.props.property.map(item => (
 
@@ -41,12 +52,8 @@ class Searchresults extends React.Component {
         </div>
       )
     )
-    }
+}
 
-    else if (false) {      
-      return <p>page not find</p>
-    }
-  }
   render() {
     return (
       <div>

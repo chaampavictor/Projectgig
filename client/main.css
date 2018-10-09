@@ -183,7 +183,7 @@ font-weight: 2000;
 }
 
 
-#tab-height{
+.page-height{
   height: 400px;
 }
 
@@ -733,6 +733,10 @@ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default
   margin-top: 50px
 }
 
+
+.notfound{
+height: 300px;
+}
 
 /*.back{
   background-color: linear-gradient(to right, #0b7dda, #246ba5cc)

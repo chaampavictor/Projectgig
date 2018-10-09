@@ -42,9 +42,10 @@ const adminRoutes = FlowRouter.group({
     () => {
       if (!(Meteor.loggingIn() || Meteor.userId())) {
         return FlowRouter.go('/login');
-      } else if (!Roles.userIsInRole(Meteor.userId(), ['content-manager', 'admin'])) {
-        return FlowRouter.go('/');
       }
+      else if (!Roles.userIsInRole(Meteor.userId(), ['content-manager', 'admin'])) {
+       return FlowRouter.go('/');
+     }
     },
   ],
 });

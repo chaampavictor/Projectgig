@@ -4,8 +4,8 @@ import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Adminnav from '../Adminnav';
 import Altsearch from '../altsearch/Altsearch';
-import {UserFiles} from '../../lib/collections';
-import {Listproperty} from '../../lib/collections';
+import {UserFiles} from '../../api/accounts/collections.js';
+import {Listproperty} from '../../api/accounts/collections.js';
 import {Accounts} from 'meteor/accounts-base'
 
 
@@ -54,7 +54,7 @@ export class Dashboard extends React.Component {
             <h4>Properties by user</h4>
             <div className="row">
 
-              
+
             </div>
           </div>
         </div>

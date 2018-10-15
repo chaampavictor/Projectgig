@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor'
 import {withTracker} from 'meteor/react-meteor-data'
-import {Listproperty} from './../lib/collections'
+import {Listproperty} from '../api/accounts/collections.js'
 
 
 export class Navbar extends Component {

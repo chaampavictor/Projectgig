@@ -1,11 +1,11 @@
 import React from 'react';
 import {Meteor} from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data';
-import {Listproperty} from '../../lib/collections';
+import {Listproperty} from '../../api/accounts/collections.js';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 import FileUpload from '../Upload.jsx';
-import {UserFiles} from '../../lib/collections';
+import {UserFiles} from '../../api/accounts/collections.js';
 import { Session } from 'meteor/session';
 
 class Property extends React.Component {
@@ -24,7 +24,6 @@ class Property extends React.Component {
     const price = e.target.price.value
     const description = e.target.description.value
     const contact = e.target.contact.value
-
 
     Listproperty.insert({
       owner: Meteor.userId(),

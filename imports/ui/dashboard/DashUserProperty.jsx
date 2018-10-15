@@ -3,38 +3,23 @@ import {Meteor} from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
-import Adminnav from '../Adminnav';
-import {Listproperty} from '../../lib/collections'
-import {UserFiles} from '../../lib/collections';
+import {Listproperty} from '../../api/accounts/collections.js'
+import {UserFiles} from '../../api/accounts/collections.js';
 
 
 
-export class Profile extends React.Component {
-  constructor(props) {
-    super();
-    this.state = {
-      type: '',
-      propertyname: '',
-      location: '',
-      price: '',
-      description: '',
-      contact: '',
-      _id: '',
-      propertyId: null,
-    }
-  }
+export class DashUserProperty extends React.Component {
 
   deleteProp = (e, id) => {
     Meteor.call('deleteProp', id);
     console.log(id);
   }
 
-
-  // deleteAcc() {
-  //    const userId= this._id;
-  //    Meteor.call('deleteUserAccount', {_id:userId});
-  //    FlowRouter.go('/');
-  //  }
+  deleteAcc() {
+    const userId= this._id;
+    Meteor.call('deleteUserAccount', {_id:userId});
+    FlowRouter.go('/');
+  }
 
 
   renderProperty() {
@@ -42,7 +27,6 @@ export class Profile extends React.Component {
     if (property === undefined) {
       return;
     }
-
 
     return property.map((prop) => (
       <div key={Math.random()}>
@@ -55,24 +39,18 @@ export class Profile extends React.Component {
                 </span>
                 <br/>
                 <div className="center">
-                  { "Name :" + prop.propertyname}
+                  {prop.propertyname}
                   <br/>
-                  { "Price :" + prop.price}
+                  {prop.price}
                   <br/>
-                  {"Location :" + prop.location}
+                  {prop.location}
                    <br/>
                      <p className="header card-button card-detail"><a href={"/propertydetail?id=" + prop._id} className="primary-content">More Details <i className="fa fa-info banner-fa"></i> </a></p>
                 </div>
               </div>
               <div className="card-action center">
-                <div className="col s6 l6">
                 <p className="header card-button card-detail"><a href={"/editproperty?id=" + prop._id} className="primary-content">Edit </a></p>
-                </div>
-                <div className="card-image col s6 l6">
-                  <p className="header card-button card-detail"><a href="#" onClick={e => this.deleteProp(e, prop._id)} className="primary-content">Delete </a></p>
-
-                  {/* <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button> */}
-                </div>
+                <button className="delete" onClick={e => this.deleteProp(e, prop._id)}>delete</button>
               <br/>
               </div>
             </div>
@@ -94,6 +72,12 @@ export class Profile extends React.Component {
             {this.renderProperty()}
           </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <div className="center">
+          <a className="waves-effect waves-dark btn-small" onClick={this.deleteAcc}>Delete Account</a>
+        </div>
         <hr className="alt-hr"/>
         <Footer/>
       </div>
@@ -104,8 +88,7 @@ export class Profile extends React.Component {
 export default withTracker(() => {
   const propertyName = FlowRouter.getQueryParam('name');
   Meteor.subscribe('property');
-  Meteor.subscribe('users');
   return {
     property: Listproperty.find({owner: Meteor.userId()}).fetch()
   }
-})(Profile)
+})(DashUserProperty)

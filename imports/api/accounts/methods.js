@@ -1,6 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import {Listproperty} from './collections.js';
-import {Security} from './Security.js';
+import {UserFiles} from './collections.js';
 import { check } from 'meteor/check';
 import { Roles } from 'meteor/alanning:roles';
 // import {Accounts} from 'meteor/accounts-base'
@@ -25,6 +25,10 @@ Meteor.methods({
   'deleteUser': (user)=> Meteor.users.remove(user)
 });
 
+// Meteor.methods({
+//   'deleteProp': (id)=> Listproperty.remove.remove({_id: _id, userId: this.userId})
+// });
+
 Meteor.methods({
-  'deleteProp': (id)=> Listproperty.remove.remove({_id: _id, userId: this.userId})
+  'deleteProp': (property)=> Listproperty.remove(property)
 });

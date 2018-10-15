@@ -1,23 +1,23 @@
 import React from 'react';
 import {mount} from 'react-mount-layout';
-import Landing from '../client/Landing.jsx';
-import NotFound from '../client/NotFound.jsx';
-import About from '../client/about/About.jsx';
-import Dashlogin from '../client/dashlogin/Dashlogin.jsx';
-import Dashboard from '../client/dashboard/Dashboard.jsx';
-import DashUserProperty from '../client/dashboard/DashUserProperty.jsx';
-import Dashuser from '../client/dashboard/Dashuser.jsx';
-import Registration from '../client/registration/Registration.jsx';
-import Property from '../client/property/Property.jsx';
-import Statistics from '../client/statistics/Statistics.jsx';
-import EditProperty from '../client/property/EditProperty.jsx';
-import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
-import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
-import Profile from '../client/profile/Profile.jsx';
-import Login from '../client/login/Login.jsx';
-import Searchresults from '../client/searchresults/Searchresults.jsx';
-import Terms from '../client/terms/Terms.jsx';
-import Privacy from '../client/privacy/Privacy.jsx';
+import Landing from '../imports/ui/Landing.jsx';
+import Terms from '../imports/ui/terms/Terms';
+import Login from '../imports/ui/login/Login.jsx';
+import NotFound from '../imports/ui/NotFound.jsx';
+import About from '../imports/ui/about/About.jsx';
+import Dashlogin from '../imports/ui/dashlogin/Dashlogin.jsx';
+import Dashboard from '../imports/ui/dashboard/Dashboard';
+import DashUserProperty from '../imports/ui/dashboard/DashUserProperty.jsx';
+import Dashuser from '../imports/ui/dashboard/Dashuser.jsx';
+import Registration from '../imports/ui/registration/Registration.jsx';
+import Property from '../imports/ui/property/Property.jsx';
+import Statistics from '../imports/ui/statistics/Statistics.jsx';
+import EditProperty from '../imports/ui/property/EditProperty.jsx';
+import Propertydetail from '../imports/ui/propertydetail/Propertydetail.jsx';
+import Listedproperty from '../imports/ui/listedproperty/Listedproperty.jsx';
+import Profile from '../imports/ui/profile/Profile.jsx';
+import Searchresults from '../imports/ui/searchresults/Searchresults.jsx';
+import Privacy from '../imports/ui/privacy/Privacy.jsx';
 
 
 
@@ -59,7 +59,6 @@ open.route('/login', {
       });
     }
 });
-
 loggedIn.route('/property', {
     action: () => {
       mount(Property,{

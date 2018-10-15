@@ -4,8 +4,8 @@ import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 import Altsearch from '../altsearch/Altsearch';
-import {Listproperty} from '../../lib/collections'
-import {UserFiles} from '../../lib/collections';
+import {Listproperty} from '../../api/accounts/collections.js'
+import {UserFiles} from '../../api/accounts/collections.js';
 import FileUpload from '../Upload.jsx';
 
 export class EditProperty extends React.Component {

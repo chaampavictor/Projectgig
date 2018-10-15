@@ -2,7 +2,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {UserFiles} from '../lib/collections';
+import {UserFiles} from '../api/accounts/collections.js';
 import { Session } from 'meteor/session'
 // import IndividualFile from './FileIndividualFile.js';
 

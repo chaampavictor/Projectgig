@@ -1,4 +1,8 @@
 /* CSS declarations go here */
+/*.card-image{
+  background-color: red;
+  width: 110px !important;
+}*/
 
 .default_color {
   background-color: #0b7dda !important
@@ -116,7 +120,8 @@
   margin-right: 150px;
   margin-left: 36%;
   border-radius: 12px;
-  background-color: #0b7dda;
+  /*background-color: #0b7dda;*/
+  background-image: linear-gradient(to right, #246ba5cc, #0b7dda) !important;
 }
 .btn-large {
   line-height: 15px !important;
@@ -177,6 +182,11 @@ font-weight: 2000;
   color: #0b7dda;
 }
 
+
+.page-height{
+  height: 400px;
+}
+
 .active{
   color:rgb(0,0,0) !important;
   border-bottom: none !important;
@@ -201,7 +211,7 @@ font-weight: 2000;
   background-blend-mode: multiply;
   background-size: cover;
   width: 100%;
-  height: 375px;
+  height: 335px;
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
 }
 
@@ -227,12 +237,6 @@ font-weight: 2000;
   color: white;
 }
 
-.text_h {
-  padding: 15% 0;
-  font-size: 6.0em;
-  font-weight: 100;
-  color: white;
-}
 
 .brand-logo {
   position: absolute;
@@ -245,14 +249,9 @@ font-weight: 2000;
   letter-spacing: 7px;
 }
 
-.text_h2 {
-  font-weight: 100;
-  margin-bottom: 4%;
-  line-height: 4.5rem;
-}
 
 .span_h2 {
-  font-weight: 500;
+  font-weight: 250;
   color: rgb(0,0,0);
 }
 
@@ -532,7 +531,7 @@ form.example input[type=text] {
 
 form.example button {
   float: left;
-  width: 18%;
+  width: 8%;
   height: 41px;
   padding: 10px;
   background: #2196F3;
@@ -580,7 +579,7 @@ form.example::after {
 
 .example {
   display: flex;
-  margin-top: 125px;
+  margin-top: 135px;
 }
 
 
@@ -610,9 +609,9 @@ form.example::after {
   border-color: #0b7dda;
   outline: none;
   height: 41px;
-  width: 88%;
+  width: 65%;
   font-size: 20px;
-  margin: 3% 8 0px 10px;
+  margin: 3% 8 0px 10px !important;
   padding: 0;
   box-shadow: none;
   box-sizing: content-box;
@@ -715,7 +714,8 @@ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default
 
 
 .tabs .tab a.active {
-    background-color: #0b7dda !important;
+    /*background-color: #0b7dda !important;*/
+    background-image: linear-gradient(to right, #246ba5cc, #0b7dda) !important;
     color: white !important;
     border-radius: 12px;
     border-bottom: none !important;
@@ -732,3 +732,12 @@ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default
 .tab-margin{
   margin-top: 50px
 }
+
+
+.notfound{
+height: 300px;
+}
+
+/*.back{
+  background-color: linear-gradient(to right, #0b7dda, #246ba5cc)
+}*/

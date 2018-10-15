@@ -105,7 +105,6 @@ export class Dashboard extends React.Component {
                 <th>Price</th>
                 <th>Description</th>
                 <th>Contact</th>
-                <th>Posted by</th>
               </tr>
             </thead>
             <tbody>

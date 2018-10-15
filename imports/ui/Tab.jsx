@@ -10,6 +10,7 @@ export default class Tab extends Component {
   }
   render() {
     return (
+      <div>
       <div className="row">
         <div className="col s12 tab tab-margin">
           <ul className="tabs tab-buttons">
@@ -25,7 +26,7 @@ export default class Tab extends Component {
 
           </ul>
         </div>
-        <div id="test1" className="col s12 ">
+        <div id="test1" className="col s12  tab-style">
           <div className="row">
             <div className="col s12 m7 l12">
                 <div className="card-content tab-style">
@@ -35,7 +36,7 @@ export default class Tab extends Component {
           </div>
         </div>
 
-        <div id="test2" className="col s12">
+        <div id="test2" className="col s12  tab-style">
           <div className="row">
             <div className="col s12 m7 l12">
                 <div className="card-content tab-style">
@@ -55,7 +56,7 @@ export default class Tab extends Component {
           </div>
         </div>
 </div>
-
+</div>
     )
   }
 }

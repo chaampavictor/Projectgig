@@ -29,12 +29,10 @@ export class Listedproperty extends React.Component {
                 <p className=" card-detail">{ "price:" + prop.price}</p>
                 <p className="card-alt-detail">{ "location:" + prop.location}</p>
                 <br/>
-
                 <p className="header card-button card-detail"><a href={"/propertydetail?id=" + prop._id} className="primary-content">More Details</a></p>
-
               </div>
               <div className="card-image col s12 l4">
-                <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 105 + "%",height: 150 + "px"}}/>
+                <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 110 + "%",height: 150 + "px"}} alt="no image uploaded"/>
               </div>
             </div>
           </div>

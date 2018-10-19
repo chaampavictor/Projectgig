@@ -1,5 +1,4 @@
 import React from 'react';
-import {Meteor} from 'meteor/meteor';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 import Tab from '../Tab';
@@ -9,7 +8,7 @@ class About extends React.Component {
     return (
       <div>
         <Navbar/>
-        <div className="page-height">  
+        <div className="page-height">
         <Tab/>
         </div>
         <hr className="alt-hr"/>

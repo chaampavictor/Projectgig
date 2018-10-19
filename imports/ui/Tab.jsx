@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Meteor} from 'meteor/meteor';
 
 export default class Tab extends Component {
 
@@ -29,8 +28,8 @@ export default class Tab extends Component {
         <div id="test1" className="col s12  tab-style">
           <div className="row">
             <div className="col s12 m7 l12">
-                <div className="card-content tab-style">
-                  <p>HIMAKUNI is a web based application that provides people with a platform were they can easily search for and find accomodation<br/> that suits their needs.</p>
+                <div className="card-content tab-style center">
+                  <p>Nidavel is a web based application that provides people with a platform were they can easily search for and find accomodation<br/> that suits their needs.</p>
                 </div>
             </div>
           </div>
@@ -39,7 +38,7 @@ export default class Tab extends Component {
         <div id="test2" className="col s12  tab-style">
           <div className="row">
             <div className="col s12 m7 l12">
-                <div className="card-content tab-style">
+                <div className="card-content tab-style center">
                   <p>To provide the best accomodation search services possible.</p>
                 </div>
             </div>
@@ -49,8 +48,9 @@ export default class Tab extends Component {
         <div id="test3" className="col s12 tab-style">
           <div className="row">
             <div className="col s12 m7 l12">
-                <div className="card-content tab-style">
-                  <p>We make finding accomodation for students easy and quick. the goal is to help students find suitable accomodation with just a few clicks</p>
+                <div className="card-content tab-style center">
+                  <p>Hear me and rejoice, the privelage to view the children of <span className="span_delete">thanos</span> is upon you.</p>
+                  <p>The varguely irritating persons listed below might or might not possess skills straight from the furnances of Nidavellir </p>
                 </div>
             </div>
           </div>

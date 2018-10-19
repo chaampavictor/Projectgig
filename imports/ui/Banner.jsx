@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {Meteor} from 'meteor/meteor';
-import Navbar from './Navbar';
 import Searchform from './searchform/Searchform';
 
 export default class Banner extends Component {

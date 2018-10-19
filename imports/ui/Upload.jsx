@@ -1,12 +1,8 @@
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {UserFiles} from '../api/accounts/collections.js';
 import { Session } from 'meteor/session'
-// import IndividualFile from './FileIndividualFile.js';
-
-// const debug = require('debug')('demo:file');
+import {UserFiles} from '../../imports/api/property/collections.js'
 
   class FileUpload extends Component {
     constructor(props) {
@@ -25,9 +21,7 @@ import { Session } from 'meteor/session'
 
     uploadIt(e) {
       e.preventDefault();
-
       let self = this;
-
       if (e.currentTarget.files && e.currentTarget.files[0]) {
         // We upload only one file, in case
         // there was multiple files selected

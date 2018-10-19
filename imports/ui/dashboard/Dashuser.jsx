@@ -4,10 +4,9 @@ import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Adminnav from '../Adminnav';
 import Altsearch from '../altsearch/Altsearch';
-import {UserFiles} from '../../api/accounts/collections.js';
-import {Listproperty} from '../../api/accounts/collections.js';
+import {Listproperty} from '../../../imports/api/property/collections';
+import {UserFiles} from '../../../imports/api/property/collections';
 import {Accounts} from 'meteor/accounts-base'
-
 
 export class Dashboard extends React.Component {
 
@@ -15,71 +14,52 @@ export class Dashboard extends React.Component {
     FlowRouter.go("/propertydetail?id=" + id)
   }
 
-  deleteProp = (e, id) => {
-    Meteor.call('deleteProp', id);
-    console.log(id);
+  renderUser() {
+    const user = this.props.user;
+    let count = 1;
+    if (user === undefined) {
+      return;
+    }
+
+    return user.map((user) => (
+      <tr key={Math.random()}>
+        <td>{count++}.</td>
+        <td>{user.profile.name}</td>
+        <td>{user.profile.email}</td>
+        <td>
+          <a href="" className="primary-content">Edit
+          </a>
+        </td>
+        <td>
+          <a className="dashdelete" href="#">Delete
+          </a>
+        </td>
+      </tr>
+    ))
   }
 
-
-  renderUser(){
-   const user = this.props.user;
-   let count = 1;
-   if  (user === undefined) {
-     return;
-   }
-
-
-
-   return user.map((user) => (
-     <tr key={Math.random()} >
-       <td>{count++}.</td>
-       <td>{user.profile.name}</td>
-       <td>{user.profile.email}</td>
-       <td>  <a href="#modaldashuser" className="delete modal-trigger">View Properties</a></td>
-     </tr>
-   )
- )
- }
-
   render() {
-    $(document).ready(function() {
-      $('#modaldashuser').modal();
-    });
     return (
       <div>
+        <Adminnav/>
+        <div className="container">
+          <table className="striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
 
-        {/* delete modal begins here */}
-        <div id="modaldashuser" className="modal">
-          <div className="modal-content">
-            <h4>Properties by user</h4>
-            <div className="row">
+              </tr>
+            </thead>
 
-
-            </div>
-          </div>
+            <tbody>
+              {this.renderUser()}
+            </tbody>
+          </table>
         </div>
-        {/* delete modal ends here */}
-
-
-      <Adminnav/>
-          <div className="container">
-        <table className="striped">
-      <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-
-        </tr>
-      </thead>
-
-      <tbody>
-        {this.renderUser()}
-      </tbody>
-    </table>
-  </div>
-      <br/>
-      <hr/>
+        <br/>
+        <hr/>
         <Footer/>
       </div>
     );
@@ -87,9 +67,5 @@ export class Dashboard extends React.Component {
 }
 export default withTracker(() => {
   Meteor.subscribe('user')
-  return {
-    user: Meteor.users.find().fetch(),
-    property: Listproperty.find().fetch(),
-    userfiles: UserFiles.findOne(),
-  }
+  return {user: Meteor.users.find().fetch(), property: Listproperty.find().fetch(), userfiles: UserFiles.findOne()}
 })(Dashboard)

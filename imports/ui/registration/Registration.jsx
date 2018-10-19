@@ -5,45 +5,43 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 
 class Registration extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      error :"",
+      error: ""
     }
   }
 
   saveUserDetails = e => {
-      e.preventDefault();
-      const {target} = e;
-      const name = target.name.value;
-      const password = target.password.value;
-      const email = target.email.value;
-      const profile = {
+    e.preventDefault();
+    const {target} = e;
+    const name = target.name.value;
+    const password = target.password.value;
+    const email = target.email.value;
+    const phonenumber = target.phonenumber.value;
+
+    const user = {
+      email,
+      password,
+      profile: {
         email,
+        phonenumber,
         name
-      };
-      const user = {
-        email,
-        password,
-        profile
       }
+    };
 
-         if(password.length <= 6){
-             seconderror: "Password too short"
-           return;
-         }
 
-      Accounts.createUser(user, (err)=> {
-        if (err) {
-          Materialize.toast(err.reason);
-          // console.log(err.reason);
-        }
-        FlowRouter.go('/profile')
-      });
+    Accounts.createUser(user, err => {
+      err
+        ? console.log(err.reason)
+        : Meteor.call('account.check', email)
+      FlowRouter.go('/profile')
+    })
+
   }
 
   render() {
-    const { error } = this.state;
+    const {error} = this.state;
     return (
       <div>
         <Navbar/>
@@ -62,16 +60,18 @@ class Registration extends React.Component {
                           <label htmlFor="name">Name</label>
                         </div>
                       </div>
-
-
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="email" type="email" className="input" name='email' required/>
+                          <input id="email" type="text" className="input" name='email' required/>
                           <label htmlFor="email">Email</label>
                         </div>
                       </div>
-
-
+                      <div className="row">
+                        <div className="input-field col s12">
+                          <input id="phonenumber" type="text" className="input" name='phonenumber' required/>
+                          <label htmlFor="phonenumber">Contact</label>
+                        </div>
+                      </div>
                       <div className="row">
                         <div className="input-field col s12">
                           <input id="password" type="password" className="input" name='password' required/>

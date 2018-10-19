@@ -1,12 +1,12 @@
 import React from 'react';
 import {Meteor} from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data';
-import {Listproperty} from '../../api/accounts/collections.js';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 import FileUpload from '../Upload.jsx';
-import {UserFiles} from '../../api/accounts/collections.js';
-import { Session } from 'meteor/session';
+import {Listproperty} from '../../../imports/api/property/collections';
+import {UserFiles} from '../../../imports/api/property/collections'
+import {Session} from 'meteor/session';
 
 class Property extends React.Component {
 
@@ -37,18 +37,21 @@ class Property extends React.Component {
       imageType: Session.get('imageType'),
 
       status: false
-    },
-    (err, id) => this.myCallBack(err, id)
-    )
+    }, (err, id) => this.myCallBack(err, id))
   }
 
-
-       username = () => {
-          if (Meteor.user()){
-            const name = Meteor.user().profile.name
-            return(name);
-          }
-        }
+  welcome = () => {
+     if (Meteor.user()){
+       const name = Meteor.user().profile.name
+       return(name);
+     }
+   }
+  number = () => {
+     if (Meteor.user()){
+       const phonenumber = Meteor.user().profile.phonenumber
+       return(phonenumber);
+     }
+   }
 
 
   render() {
@@ -65,10 +68,11 @@ class Property extends React.Component {
                   <div className="card-content">
                     <form className="col s12" onSubmit={Property.handleSubmit.bind(this)}>
                       <FileUpload/>
+                      <br/>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="propertyname" type="text" name='propertyname' required/>
-                          <label  htmlFor="propertyname">Property name</label>
+                          <input id="propertyname" defaultValue={this.welcome()} type="text" name='propertyname'/>
+                          <label className="active" htmlFor="propertyname">Property name</label>
                         </div>
                       </div>
                       <div className="row">
@@ -97,11 +101,11 @@ class Property extends React.Component {
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="contact" type="text" name='contact' required/>
-                          <label htmlFor="price">Contact</label>
+                          <input id="contact" defaultValue={this.number()} type="text" name='contact' required/>
+                          <label className="active" htmlFor="price">Contact</label>
                         </div>
                       </div>
-                    <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
+                      <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                     </form>
                     <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                   </div>
@@ -116,11 +120,12 @@ class Property extends React.Component {
     );
   }
 }
-export default withTracker(() =>{
+export default withTracker(() => {
   Meteor.subscribe('property')
   Meteor.subscribe('files.all');
-  return{
-    property : Listproperty.find().fetch(),
-    files : UserFiles.find({}, {sort: {name: 1}}).fetch(),
-  }
+  return {property: Listproperty.find().fetch(), files: UserFiles.find({}, {
+      sort: {
+        name: 1
+      }
+    }).fetch()}
 })(Property);

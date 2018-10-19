@@ -1,4 +1,5 @@
 /* CSS declarations go here */
+
 /*.card-image{
   background-color: red;
   width: 110px !important;
@@ -16,12 +17,19 @@
   padding: 0 15px;
 }
 
-.delete-button{
+.delete-button {
+  margin-left: 20px !important;
   background-color: red !important;
   border-radius: 12px !important;
 }
 
-.modal-footer{
+.cancel-button {
+  margin-right: 20px !important;
+  background-color: #0b7dda !important;
+  border-radius: 12px !important;
+}
+
+.modal-footer {
   text-align: center !important;
 }
 
@@ -31,7 +39,7 @@
 
 .submit-button {
   border-radius: 12px;
-  background-color: #0b7dda;
+  background-image: linear-gradient(to right, #246ba5cc, #0b7dda) !important;
 }
 
 .btn, , .btn-flat {
@@ -57,26 +65,18 @@
   color: #0b7dda;
 }
 
-.card{
+.card {
   background-color: #ffffffe6;
   box-shadow: none;
 }
 
-
-.card-height{
+.card-height {
   height: 400px;
 }
 
-.card-shadow{
+.card-shadow {
   box-shadow: none !important;
 }
-
-/*.card_property_details{
-  width: 50% !important;
-  margin-left: 25% !important;
-  left: auto !important;
-  right: auto !important;
-}*/
 
 #new-card {
   background-image: url("/assets/so.jpg");
@@ -108,11 +108,9 @@
   margin-bottom: 0px;
 }
 
-.input-border{
+.input-border {
   border-bottom-color: red !important;
 }
-
-
 
 #prop-button {
   margin-top: 90px;
@@ -123,11 +121,13 @@
   /*background-color: #0b7dda;*/
   background-image: linear-gradient(to right, #246ba5cc, #0b7dda) !important;
 }
+
 .btn-large {
   line-height: 15px !important;
 }
+
 .card-button {
-font-weight: 2000;
+  font-weight: 2000;
 }
 
 .nav-button {
@@ -138,11 +138,11 @@ font-weight: 2000;
   margin-top: 0;
 }
 
-.adminnav{
+.adminnav {
   background-color: white;
 }
 
-.navbar-fixed{
+.navbar-fixed {
   height: 64px;
   margin-top: 23px;
   margin-bottom: -23px;
@@ -154,7 +154,7 @@ font-weight: 2000;
   border: none;
 }
 
-.nav-icon{
+.nav-icon {
   margin-left: 6px;
 }
 
@@ -182,18 +182,17 @@ font-weight: 2000;
   color: #0b7dda;
 }
 
-
-.page-height{
+.page-height {
   height: 400px;
 }
 
-.active{
-  color:rgb(0,0,0) !important;
+.active {
+  color: rgb(0, 0, 0) !important;
   border-bottom: none !important;
 }
 
-.input-border{
-  border-bottom: 1px solid rgb(0,0,0) !important;
+.input-border {
+  border-bottom: 1px solid rgb(0, 0, 0) !important;
 }
 
 .tabs .tab a {
@@ -207,7 +206,7 @@ font-weight: 2000;
 }
 
 #index-banner {
-  background-color:rgba(0, 0, 0, 0.89);
+  background-color: rgba(0, 0, 0, 0.89);
   background-blend-mode: multiply;
   background-size: cover;
   width: 100%;
@@ -215,14 +214,14 @@ font-weight: 2000;
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
 }
 
-.sidenav-banner{
-  background-color:rgba(0, 0, 0, 0.89);
+.sidenav-banner {
+  background-color: rgba(0, 0, 0, 0.89);
   background-blend-mode: multiply;
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
 }
 
 .testimony {
-  background-color: rgb(30,28,28);
+  background-color: rgb(30, 28, 28);
   background-blend-mode: multiply;
   background-size: cover;
   background-image: url("/assets/copped.png");
@@ -237,7 +236,6 @@ font-weight: 2000;
   color: white;
 }
 
-
 .brand-logo {
   position: absolute;
   color: #fff;
@@ -249,10 +247,14 @@ font-weight: 2000;
   letter-spacing: 7px;
 }
 
-
 .span_h2 {
   font-weight: 250;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
+}
+
+.span_delete {
+  font-weight: 500;
+  color: rgb(0, 0, 0);
 }
 
 .text_b {
@@ -411,21 +413,6 @@ nav ul a {
     opacity: 0;
   }
 }
-
-/* Preloader */
-
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  /* change if the mask should have another color then white */
-  z-index: 1200;
-  /* makes sure it stays on top */
-}
-
 #sidenav-overlay {
   z-index: 1;
   opacity: 0px !important;
@@ -486,11 +473,12 @@ nav a.button-collapse {
 .card-avatar .card-content .card-title {
   line-height: 30px !important;
 }
- .card-title {
+
+.card-title {
   font-weight: 400 !important;
 }
 
-.edit_card_content{
+.edit_card_content {
   height: 575px;
 }
 
@@ -509,11 +497,10 @@ footer.page-footer {
 }
 
 .input-field label {
-  color: rgb(0,0,0);
-
+  color: rgb(0, 0, 0);
 }
 
-.tab-style{
+.tab-style {
   margin-bottom: 55px;
   margin-top: 55px;
 }
@@ -531,10 +518,10 @@ form.example input[type=text] {
 
 form.example button {
   float: left;
-  width: 8%;
+  width: 15%;
   height: 41px;
   padding: 10px;
-  background: #2196F3;
+  background-image: linear-gradient(to right, #246ba5cc, #0b7dda) !important;
   color: white;
   font-size: 13px;
   border: 1px;
@@ -545,12 +532,11 @@ form.example button {
   border-left: none;
   cursor: pointer;
 }
+
 form.second-example button {
-  float: left;
-  width: 18%;
   height: 41px;
   padding: 10px;
-  background: #2196F3;
+  background-color: rgba(0, 0, 0, 0.87) !important;
   color: white;
   font-size: 13px;
   border: 1px;
@@ -560,6 +546,7 @@ form.second-example button {
   border-radius: 12px;
   border-left: none;
   cursor: pointer;
+  margin-top: 18px;
 }
 
 form.example button:hover {
@@ -573,8 +560,9 @@ form.example::after {
 }
 
 .second-example {
-  margin-left: 30px;
-  margin-bottom: 18px;
+  display: flex;
+  /*margin-left: 30px;*/
+  /*margin-bottom: 18px;*/
 }
 
 .example {
@@ -582,10 +570,9 @@ form.example::after {
   margin-top: 135px;
 }
 
-
 #alt-input-field {
   background-color: white;
-  border-color: rgb(0,0,0);
+  border-color: rgb(0, 0, 0);
   border-bottom-width: 2px;
   outline: none;
   height: 60px;
@@ -596,7 +583,7 @@ form.example::after {
   box-shadow: none;
   box-sizing: content-box;
   transition: all 0.3s;
-  color:rgb(0,0,0);
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 
@@ -609,7 +596,7 @@ form.example::after {
   border-color: #0b7dda;
   outline: none;
   height: 41px;
-  width: 65%;
+  width: 80%;
   font-size: 20px;
   margin: 3% 8 0px 10px !important;
   padding: 0;
@@ -621,22 +608,23 @@ form.example::after {
 }
 
 /*extra banners*/
+
 .term-img {
   height: 364px;
   width: 100%;
   background-size: cover;
 }
 
-#trying{
-  color: rgb(0,0,0);
+#trying {
+  color: rgb(0, 0, 0);
 }
 
-.card-margin{
+.card-margin {
   width: 75% !important;
   margin-left: 25px !important;
 }
 
-#footer-home{
+#footer-home {
   color: #0b7dda;
 }
 
@@ -647,28 +635,20 @@ form.example::after {
   padding-bottom: 0;
 }
 
-#listedprop {
-  width: 63%;
-  margin-left: 135px;
-}
 
 .footer-icon {
-  color:#0b7dda;
-}
-
-.label{
-  color: red;
-}
-
-#formstyle {
-  border-radius: 35px;
-  border: 1px solid #0b7dda;
-}
-.sidenav-style{
   color: #0b7dda;
 }
 
-#alt-banner{
+.label {
+  color: red;
+}
+
+.sidenav-style {
+  color: #0b7dda;
+}
+
+#alt-banner {
   background-color: #00000080;
   background-blend-mode: multiply;
   background-size: cover;
@@ -677,67 +657,100 @@ form.example::after {
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
 }
 
-.liststyle{
+.liststyle {
   font-weight: 1000;
 }
 
-.card-second-alt{
+.card-second-alt {
   margin-top: 65px;
 }
 
-.prop-detail{
-margin-top: 25px;
+.prop-detail {
+  margin-top: 25px;
 }
 
-.card-detail{
+.card-detail {
   margin-top: -10px;
 }
 
-.uploaded-image{
+.uploaded-image {
   height: 145px;
 }
 
-.list-hr{
+.list-hr {
   color: rgba(0, 0, 0, 0.45);
   width: 87%;
   margin-left: 8px;
 }
-.alt-hr{
+
+.alt-hr {
   color: rgb(0, 0, 0);
 }
 
 input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid  rgba(0, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.45);
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
 
-
 .tabs .tab a.active {
-    /*background-color: #0b7dda !important;*/
-    background-image: linear-gradient(to right, #246ba5cc, #0b7dda) !important;
-    color: white !important;
-    border-radius: 12px;
-    border-bottom: none !important;
+  background-image: linear-gradient(to right, #246ba5cc, #0b7dda) !important;
+  color: white !important;
+  border-radius: 12px;
+  border-bottom: none !important;
 }
 
- .tab a:hover{
-    background-color: white !important;
-    border: 2px;
-    border: 1px solid #0b7dda;
-    border-radius: 12px;
-    /*border-color: #0b7dda;*/
+.tab a:hover {
+  background-color: white !important;
+  border: 2px;
+  border: 1px solid #0b7dda;
+  border-radius: 12px;
 }
 
-.tab-margin{
+.tab-margin {
   margin-top: 50px
 }
 
-
-.notfound{
-height: 300px;
+.notfound {
+  height: 300px;
 }
 
-/*.back{
-  background-color: linear-gradient(to right, #0b7dda, #246ba5cc)
-}*/
+.toast {
+  border-radius: 2px;
+  top: 35px;
+  width: auto;
+  margin-top: 10px;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  min-height: 48px;
+  line-height: 1.5em;
+  word-break: break-all;
+  background-color: #da190b;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+}
+.dashdelete {
+  color: red;
+  font-weight: 500;
+}
+.column-space {
+  margin-top: 25px !important;
+}
+::placeholder {
+  color: rgba(0, 0, 0, 0.87);;
+}
+.uploaded-image{
+  text-align: center;
+  background-color: #dad4d4b3;
+}
+
+#altsearch-icon{
+  color: rgba(0, 0, 0, 0.87);
+}

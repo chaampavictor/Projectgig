@@ -1,6 +1,5 @@
 import React from 'react';
 import {Meteor} from 'meteor/meteor';
-import {Accounts} from 'meteor/accounts-base'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 
@@ -11,11 +10,11 @@ class Login extends React.Component {
     const {target} = event;
     const password = target.password.value;
     const email = target.email.value;
+
     Meteor.loginWithPassword(email, password, (error) => {
       if (error) {
-         Materialize.toast(error.reason);
-      }
-      else {
+        Materialize.toast(error.reason);
+      } else {
         FlowRouter.go('/profile')
       }
     });
@@ -23,7 +22,6 @@ class Login extends React.Component {
 
   render() {
     return (
-
       <div>
         <Navbar/>
         <div id="login-card" className="section">

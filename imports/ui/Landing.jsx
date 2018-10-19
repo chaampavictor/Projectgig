@@ -1,5 +1,4 @@
 import React from 'react';
-import {Meteor} from 'meteor/meteor';
 import Footer from './Footer';
 import Banner from './Banner';
 import Navbar from './Navbar';

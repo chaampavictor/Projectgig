@@ -1,11 +1,9 @@
 import React from 'react';
-import {Meteor} from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
-import Altsearch from '../altsearch/Altsearch';
-import {Listproperty} from '../../api/accounts/collections.js'
-import {UserFiles} from '../../api/accounts/collections.js';
+import {Listproperty} from '../../../imports/api/property/collections';
+import {UserFiles} from '../../../imports/api/property/collections'
 
 export class Propertydetail extends React.Component {
 
@@ -20,7 +18,6 @@ export class Propertydetail extends React.Component {
           <div className="col s12 m6 l12 card-style">
             <div className="card">
                 <div className="card-content ">
-
                 <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:245+ "px"}} />
                 <br/>
                 <p>{ "Name :" + prop.propertyname}</p>
@@ -29,7 +26,6 @@ export class Propertydetail extends React.Component {
                 <p>{ "Type :" + prop.type}</p>
                 <p>{ "Contact :" + prop.contact}</p>
                 <p>{ "Location :" + prop.location }</p>
-
               </div>
             </div>
           </div>

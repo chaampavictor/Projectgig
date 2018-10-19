@@ -32,34 +32,10 @@ componentDidMount(){
      }
    }
 
-	 deleteAcc() {
-     const userId = Meteor.userId()
-     Meteor.call('deleteUser', userId);
-     FlowRouter.go('/');
-   }
 
-  render() {
-    $(document).ready(function(){
-   $('.modal').modal();
- });
-
-    return(
-
-
+   render() {
+   return(
       <div>
-        {/* delete account modal begins here */}
-			    <div id="modal" className="modal">
-			      <div className="modal-content center">
-							<h4>Are you sure?</h4>
-			        <h3>This action cannot be undone!</h3>
-			      </div>
-			      <div className="modal-footer">
-			        <a href="#!" className="modal-close waves-effect waves-green btn-flat">Cancel</a>
-			        <a className="waves-effect waves-light btn modal-trigger delete-button" onClick={this.deleteAcc} href="#modaldelete">Delete</a>
-			      </div>
-			    </div>
-        {/* delete account modal ends here */}
-
 
       <div className="navbar-fixed">
         { Meteor.userId() ?
@@ -78,12 +54,26 @@ componentDidMount(){
         <li><div className="divider"></div></li>
         <li><a href="/listedproperty">Listed Properties</a></li>
         <li><div className="divider"></div></li>
-        <li><a className="modal-trigger" href="#modal">Delete Account</a></li>
+        <li><a href="/editaccount">Edit Account</a></li>
 
+
+
+        <li>
+
+
+
+
+
+          {Roles.userIsInRole(Meteor.userId(), ['admin']) ? (<a href="/dashboard">Dashboard</a>)
+            :
+            (<p></p>)}
+        </li>
+        <li><div className="divider"></div></li>
+        <li><a href="/deleteaccount">Delete Account</a></li>
       </ul>
       <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>
       <div className="right logged-nav-button">
-        <a href="/" className={` link `}>KUKAYA</a>
+        <a href="/" className={` link `}>Nidavel</a>
         <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
         <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>
       </div>
@@ -91,7 +81,7 @@ componentDidMount(){
     :
 <>
 
-<h6><a href="/" className={` link`}>KUKAYA</a></h6>
+<h6><a href="/" className={` link`}>Nidavel</a></h6>
   <div className="right nav-button">
     <a href="/registration"><button id="nav-buttons">Signup</button></a>
     <a href="/about"><button id="nav-buttons">About</button></a>

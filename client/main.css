@@ -1,4 +1,8 @@
 /* CSS declarations go here */
+/*.card-image{
+  background-color: red;
+  width: 110px !important;
+}*/
 
 .default_color {
   background-color: #0b7dda !important
@@ -58,9 +62,6 @@
   box-shadow: none;
 }
 
-.card-edit{
-  box-shadow:  0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
-}
 
 .card-height{
   height: 400px;
@@ -107,13 +108,26 @@
   margin-bottom: 0px;
 }
 
+.input-border{
+  border-bottom-color: red !important;
+}
+
+
+
 #prop-button {
-  margin-top: 109px;
+  margin-top: 90px;
   margin-bottom: 12px;
   margin-right: 150px;
-  margin-left: 39%;
+  margin-left: 36%;
   border-radius: 12px;
-  background-color: #0b7dda;
+  /*background-color: #0b7dda;*/
+  background-image: linear-gradient(to right, #246ba5cc, #0b7dda) !important;
+}
+.btn-large {
+  line-height: 15px !important;
+}
+.card-button {
+font-weight: 2000;
 }
 
 .nav-button {
@@ -140,6 +154,10 @@
   border: none;
 }
 
+.nav-icon{
+  margin-left: 6px;
+}
+
 #banner-links {
   background-color: transparent;
   border-radius: 12px;
@@ -156,12 +174,17 @@
   position: absolute;
   bottom: 0;
   height: 2px;
-  background-color: #0b7dda;
+  background-color: white !important;
 }
 
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
   color: #0b7dda;
+}
+
+
+.page-height{
+  height: 400px;
 }
 
 .active{
@@ -188,7 +211,7 @@
   background-blend-mode: multiply;
   background-size: cover;
   width: 100%;
-  height: 375px;
+  height: 335px;
   background-image: url("/assets/david-marcu-1266-unsplash.jpg");
 }
 
@@ -214,12 +237,6 @@
   color: white;
 }
 
-.text_h {
-  padding: 15% 0;
-  font-size: 6.0em;
-  font-weight: 100;
-  color: white;
-}
 
 .brand-logo {
   position: absolute;
@@ -232,14 +249,9 @@
   letter-spacing: 7px;
 }
 
-.text_h2 {
-  font-weight: 100;
-  margin-bottom: 4%;
-  line-height: 4.5rem;
-}
 
 .span_h2 {
-  font-weight: 500;
+  font-weight: 250;
   color: rgb(0,0,0);
 }
 
@@ -478,6 +490,10 @@ nav a.button-collapse {
   font-weight: 400 !important;
 }
 
+.edit_card_content{
+  height: 575px;
+}
+
 footer.page-footer {
   margin-top: 0px !important;
   padding-bottom: 0px!
@@ -492,16 +508,9 @@ footer.page-footer {
   background-color: #0b7dda;
 }
 
-.input-field input[type=text].valid {
-  border-bottom: 1px solid #000;
-}
-
-.input-field input[type=text]:focus {
-  border-bottom: 1px solid #000;
-}
-
 .input-field label {
   color: rgb(0,0,0);
+
 }
 
 .tab-style{
@@ -522,7 +531,7 @@ form.example input[type=text] {
 
 form.example button {
   float: left;
-  width: 18%;
+  width: 8%;
   height: 41px;
   padding: 10px;
   background: #2196F3;
@@ -570,7 +579,7 @@ form.example::after {
 
 .example {
   display: flex;
-  margin-top: 125px;
+  margin-top: 135px;
 }
 
 
@@ -600,9 +609,9 @@ form.example::after {
   border-color: #0b7dda;
   outline: none;
   height: 41px;
-  width: 88%;
+  width: 65%;
   font-size: 20px;
-  margin: 3% 8 0px 10px;
+  margin: 3% 8 0px 10px !important;
   padding: 0;
   box-shadow: none;
   box-sizing: content-box;
@@ -696,3 +705,39 @@ margin-top: 25px;
 .alt-hr{
   color: rgb(0, 0, 0);
 }
+
+input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid  rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+
+.tabs .tab a.active {
+    /*background-color: #0b7dda !important;*/
+    background-image: linear-gradient(to right, #246ba5cc, #0b7dda) !important;
+    color: white !important;
+    border-radius: 12px;
+    border-bottom: none !important;
+}
+
+ .tab a:hover{
+    background-color: white !important;
+    border: 2px;
+    border: 1px solid #0b7dda;
+    border-radius: 12px;
+    /*border-color: #0b7dda;*/
+}
+
+.tab-margin{
+  margin-top: 50px
+}
+
+
+.notfound{
+height: 300px;
+}
+
+/*.back{
+  background-color: linear-gradient(to right, #0b7dda, #246ba5cc)
+}*/

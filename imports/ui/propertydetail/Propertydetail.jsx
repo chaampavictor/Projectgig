@@ -18,7 +18,7 @@ export class Propertydetail extends React.Component {
           <div className="col s12 m6 l12 card-style">
             <div className="card">
                 <div className="card-content ">
-                <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:245+ "px"}} />
+                <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:245+ "px"}} className="uploaddetail-image" />
                 <br/>
                 <p>{ "Name :" + prop.propertyname}</p>
                 <p>{ "Description :" + prop.description}</p>

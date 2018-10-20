@@ -673,10 +673,6 @@ form.example::after {
   margin-top: -10px;
 }
 
-.uploaded-image {
-  height: 145px;
-}
-
 .list-hr {
   color: rgba(0, 0, 0, 0.45);
   width: 87%;
@@ -747,7 +743,12 @@ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default
   color: rgba(0, 0, 0, 0.87);;
 }
 .uploaded-image{
+  height: 145px;
   text-align: center;
+  background-color: #dad4d4b3;
+}
+
+.uploaddetail-image{
   background-color: #dad4d4b3;
 }
 

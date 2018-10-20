@@ -3,7 +3,7 @@ import {Meteor} from 'meteor/meteor';
 import {withTracker} from 'meteor/react-meteor-data'
 import Footer from '../Footer';
 import Navbar from '../Navbar';
-import {Listproperty} from '../../api/accounts/collections.js'
+import {Listproperty} from '../../api/property/collections.js'
 
 
 export class Profile extends React.Component {

@@ -21,7 +21,7 @@ export class Listedproperty extends React.Component {
       <div key={prop._id}>
 
         <div className="row">
-          <div className="col s12 m6 l9 column-space">
+          <div className="col s12 m6 l9">
             <div className="card card-shadow">
               <div className="col s12 l8">
                 <p className=" liststyle card-detail">{prop.propertyname}</p>
@@ -30,7 +30,7 @@ export class Listedproperty extends React.Component {
                 <p className="header card-button card-detail"><a href={"/propertydetail?id=" + prop._id} className="primary-content">More Details...</a></p>
               </div>
               <div className="card-image col s12 l4">
-                <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height: 200 + "px"}} className="uploaded-image" alt="no image uploaded"/>
+                <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height: 170 + "px"}} className="uploaded-image" alt="no image uploaded"/>
               </div>
             </div>
           </div>

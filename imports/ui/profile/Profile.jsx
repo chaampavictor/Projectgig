@@ -62,8 +62,6 @@ export class Profile extends React.Component {
                 <div className="card-image col s6 l6">
                   <a className="waves-effect waves-light btn modal-trigger delete-button" onClick={e => this.deleteProp(e, prop._id)}>Delete</a>
                 </div>
-
-
                 <br/>
               </div>
             <br/>
@@ -75,26 +73,8 @@ export class Profile extends React.Component {
   }
 
   render() {
-    $(document).ready(function(){
-  $('.modal').modal();
-});
-
     return (
       <div>
-
-
-
-        <div id="modal1" className="modal">
-            <div className="modal-content">
-              <h4>Modal Header</h4>
-              <p>A bunch of text</p>
-            </div>
-            <div className="modal-footer">
-              <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
-          </div>
-
-
         <Navbar/>
         <div className="container">
           <div className="col s12 m6">

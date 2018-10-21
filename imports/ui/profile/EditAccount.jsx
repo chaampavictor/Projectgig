@@ -26,7 +26,6 @@ export class EditAccount extends React.Component {
       }
     };
 
-    // Meteor.call('account.check', email)
     Meteor.call('edituser',Meteor.userId(), name,err => {
       err
         ? (Materialize.toast(err.reason, 9000, 'error-toast'))
@@ -43,12 +42,14 @@ export class EditAccount extends React.Component {
       return (name);
     }
   }
+
   email = () => {
     if (Meteor.user()) {
       const email = Meteor.user().profile.email
       return (email);
     }
   }
+
   number = () => {
     if (Meteor.user()) {
       const phonenumber = Meteor.user().profile.phonenumber
@@ -90,7 +91,6 @@ export class EditAccount extends React.Component {
 
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                     </form>
-
                     <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                   </div>
                 </div>
@@ -105,8 +105,8 @@ export class EditAccount extends React.Component {
   render() {
     return (
       <div>
-        <Navbar/> {this.renderProperty()}
-
+        <Navbar/>
+        {this.renderProperty()}
         <Footer/>
       </div>
     )

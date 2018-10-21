@@ -7,14 +7,13 @@ import {Listproperty} from '../../../imports/api/property/collections';
 
 class Searchresults extends React.Component {
   g() {
-
     let property = this.props.property;
 
 
     if (this.props.property.length === 0) {
     return (
 
-      <div className="notfound center " >
+      <div className="notfound center">
         <br/><br/><br/>
           <h5>Sorry!! No property found in that location </h5>
       </div>
@@ -23,26 +22,21 @@ class Searchresults extends React.Component {
 
       return this.props.property.map(item => (
         <div key={Math.random()}>
-
           <div className="row">
-            <div className="col s12 m6 l9 ">
+            <div className="col s12 m6 l9">
               <div className="card card-shadow">
+                <div className="col s12 l8">
+                  <p className=" liststyle card-detail">{item.propertyname}</p>
+                  <p className=" card-detail">{ "price:" + item.price}</p>
+                  <p className="card-detail">{ "location:" + item.location}</p>
+                  <p className="header card-button card-detail"><a href={"/propertydetail?id=" + item._id} className="primary-content">More Details...</a></p>
+                </div>
                 <div className="card-image col s12 l4">
                   <img src={`/uploads/${item.imageId}.${item.imageType}`} style={{width: 100+ "%",height: 150 + "px"}} className="uploaded-image" alt="No Image Uploaded"/>
                 </div>
-                <div className="col s12 l8">
-                  <p className="header liststyle card-detail">{item.propertyname}</p>
-                  <p className=" card-detail">price:{item.price}</p>
-                  <p className="card-alt-detail">location:{item.location}</p>
-                  <br/>
-                  <h6 className="header liststyle card-detail"><a href={"/propertydetail?id=" + item._id} className="primary-content">More Details</a></h6>
-
-                </div>
-
               </div>
             </div>
           </div>
-          <br/>
           <hr className="list-hr s12 "/>
           <br/>
         </div>
@@ -56,7 +50,8 @@ class Searchresults extends React.Component {
         <Navbar/>
         <div className="container">
           <Altsearch/>
-            <h5 className="center" ><a href="/listedproperty" className={`${this.listedproperty} link`}>Go to Listed Properties</a></h5>
+          <br/>
+          <br/>
           {this.g()}
         </div>
         <hr/>

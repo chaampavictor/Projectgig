@@ -30,6 +30,10 @@ class Registration extends React.Component {
       }
     };
 
+    if(password.length <= 6){
+         Materialize.toast(`Password too short`, 9000, 'success-toast');
+      return;
+    };
 
     Accounts.createUser(user, err => {
       err

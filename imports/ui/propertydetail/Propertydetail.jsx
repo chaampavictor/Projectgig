@@ -21,11 +21,11 @@ export class Propertydetail extends React.Component {
                 <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 100 + "%",height:245+ "px"}} className="uploaddetail-image" />
                 <br/>
                 <p>{ "Name :" + prop.propertyname}</p>
-                <p>{ "Description :" + prop.description}</p>
+                <p>{ "Location :" + prop.location }</p>
                 <p>{ "Price :" + prop.price}</p>
                 <p>{ "Type :" + prop.type}</p>
+                <p>{ "Description :" + prop.description}</p>
                 <p>{ "Contact :" + prop.contact}</p>
-                <p>{ "Location :" + prop.location }</p>
               </div>
             </div>
           </div>

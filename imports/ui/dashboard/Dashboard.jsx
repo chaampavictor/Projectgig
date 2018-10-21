@@ -20,7 +20,6 @@ export class Dashboard extends React.Component {
       return;
     }
 
-
     return property.map((prop) => (
       <tr key={Math.random()}>
         <td>{count++}.</td>

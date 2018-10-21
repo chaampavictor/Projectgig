@@ -4,8 +4,6 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 import {Listproperty} from '../../../imports/api/property/collections';
 import {UserFiles} from '../../../imports/api/property/collections'
-
-
 import FileUpload from '../Upload.jsx';
 
 export class EditProperty extends React.Component {

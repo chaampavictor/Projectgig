@@ -71,7 +71,7 @@ componentDidMount(){
         <li><div className="divider"></div></li>
         <li><a href="/deleteaccount">Delete Account</a></li>
       </ul>
-      <a href="#" data-activates="slide-out" className="button-collapse fixed"><i className="small fa fa-bars footer-icon"></i></a>
+      <a href="#" data-activates="slide-out" className="button-collapse fixed default-margin"><i className="small fa fa-bars footer-icon"></i></a>
       <div className="right logged-nav-button">
         <a href="/" className={` link `}>Nidavel</a>
         <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>

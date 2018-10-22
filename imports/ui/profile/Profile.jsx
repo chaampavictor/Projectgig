@@ -84,6 +84,7 @@ export class Profile extends React.Component {
             {this.renderProperty()}
           </div>
         </div>
+        <div className="page-height"/>
         <hr className="alt-hr"/>
         <Footer/>
       </div>

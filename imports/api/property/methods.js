@@ -37,7 +37,6 @@ Meteor.methods({
    check(email, String);
    const initialUser = Meteor.users.findOne();
    const userId = initialUser._id;
-   const user = Accounts.findUserByEmail(email);
    if (Meteor.users.find().count() === 1) {
      Roles.addUsersToRoles(userId, 'admin');
      Meteor.users.update({ _id: userId }, { $set: { 'profile.status': 1 } });

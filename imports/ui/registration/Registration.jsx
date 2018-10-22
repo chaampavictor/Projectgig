@@ -54,6 +54,7 @@ class Registration extends React.Component {
             <div className="row">
               <div className="col s12 m6 card-style">
                 <div className="card">
+                  <br/>
                   <h5 className="card-title center">
                     signup</h5>
                   <div className="card-content">

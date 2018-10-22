@@ -29,6 +29,7 @@ class Login extends React.Component {
             <div className="row">
               <div className="col s12 m6 card-style">
                 <div className="card">
+                  <br/>
                   <h5 className="card-title center">Login</h5>
                   <div className="card-content">
                     <form className="col s12" onSubmit={this.login}>

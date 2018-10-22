@@ -56,13 +56,14 @@ componentDidMount(){
         <li><div className="divider"></div></li>
         <li><a href="/editaccount">Edit Account</a></li>
         <li><div className="divider"></div></li>
+        <li><a href="/deleteaccount">Delete Account</a></li>
+        <li><div className="divider"></div></li>
+        
         <li>
           {Roles.userIsInRole(Meteor.userId(), ['admin']) ? (<a href="/dashboard">Dashboard</a>)
-            :
-            (<p></p>)}
+          :
+          (<p></p>)}
         </li>
-        <li><div className="divider"></div></li>
-        <li><a href="/deleteaccount">Delete Account</a></li>
       </ul>
       <a href="#" data-activates="slide-out" className="button-collapse fixed default-margin"><i className="small fa fa-bars footer-icon"></i></a>
       <div className="right logged-nav-button">

@@ -58,7 +58,7 @@ componentDidMount(){
         <li><div className="divider"></div></li>
         <li><a href="/deleteaccount">Delete Account</a></li>
         <li><div className="divider"></div></li>
-        
+
         <li>
           {Roles.userIsInRole(Meteor.userId(), ['admin']) ? (<a href="/dashboard">Dashboard</a>)
           :
@@ -75,7 +75,7 @@ componentDidMount(){
     :
 <>
 
-<h6><a href="/" className={` link`}>Nidavel</a></h6>
+<h6 className="default-margin"><a href="/" className={` link`}>Nidavel</a></h6>
   <div className="right nav-button">
     <a href="/registration"><button id="nav-buttons">Signup</button></a>
     <a href="/about"><button id="nav-buttons">About</button></a>

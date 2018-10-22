@@ -55,15 +55,8 @@ componentDidMount(){
         <li><a href="/listedproperty">Listed Properties</a></li>
         <li><div className="divider"></div></li>
         <li><a href="/editaccount">Edit Account</a></li>
-
-
-
+        <li><div className="divider"></div></li>
         <li>
-
-
-
-
-
           {Roles.userIsInRole(Meteor.userId(), ['admin']) ? (<a href="/dashboard">Dashboard</a>)
             :
             (<p></p>)}

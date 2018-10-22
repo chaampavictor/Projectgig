@@ -32,7 +32,7 @@ class Searchresults extends React.Component {
                   <p className="header card-button card-detail"><a href={"/propertydetail?id=" + item._id} className="primary-content">More Details...</a></p>
                 </div>
                 <div className="card-image col s12 l4">
-                  <img src={`/uploads/${item.imageId}.${item.imageType}`} style={{width: 100+ "%",height: 150 + "px"}} className="uploaded-image" alt="No Image Uploaded"/>
+                  <img src={`/uploads/${item.imageId}.${item.imageType}`} style={{width: 100+ "%",height: 250 + "px"}} className="uploaded-image" alt="No Image Uploaded"/>
                 </div>
               </div>
             </div>

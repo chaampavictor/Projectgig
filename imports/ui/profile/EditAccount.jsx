@@ -91,7 +91,6 @@ export class EditAccount extends React.Component {
 
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                     </form>
-                    <a href="/registration" className={`${this.props.registration} link`}>create an account?</a>
                   </div>
                 </div>
               </div>

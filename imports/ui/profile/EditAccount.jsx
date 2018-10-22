@@ -63,34 +63,38 @@ export class EditAccount extends React.Component {
         <div id="login-card" className="section">
           <div className="container">
             <div className="row">
+
+
+
+
               <div className="col s12 m6 card-style">
                 <div className="card">
-                  <h5 className="default_color_text card-title center">Edit Account Details</h5>
+                  <br/>
+                  <h5 className="card-title center">
+                    signup</h5>
                   <div className="card-content">
-                    <form className="col s12" onSubmit={this.editUserDetails}>
-                      <br/>
-                      <br/>
+                    <form className="col s12 " onSubmit={this.editUserDetails}>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="name" defaultValue={this.name()} type="text" name='name'/>
+                          <input id="name" defaultValue={this.name()} type="text" className="input" name='name' required/>
                           <label className="active" htmlFor="name">Name</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="email" defaultValue={this.email()} type="text" name='email'/>
+                          <input id="email" defaultValue={this.email()} type="text" className="input" name='email' required/>
                           <label className="active" htmlFor="email">Email</label>
                         </div>
                       </div>
                       <div className="row">
                         <div className="input-field col s12">
-                          <input id="phonenumber" defaultValue={this.number()} type="text" name='phonenumber'/>
-                          <label className="active" htmlFor="email">Contact</label>
+                          <input id="phonenumber" defaultValue={this.email()} type="text" className="input" name='phonenumber' required/>
+                          <label className="active" htmlFor="phonenumber">Contact</label>
                         </div>
                       </div>
-
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                     </form>
+                    <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
                   </div>
                 </div>
               </div>

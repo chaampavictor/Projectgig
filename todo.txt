@@ -2,5 +2,5 @@ the app is 75% done first deployment,
 tasks left to be done include but not limeited to the following
 
 1.perfect the admin side !'super important';
-4.edit user Profile
-5.property not found page
+2.add dropdown on upload form
+3.

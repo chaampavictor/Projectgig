@@ -9,9 +9,11 @@ import {UserFiles} from '../../../imports/api/property/collections'
 export class Dashboard extends React.Component {
 
 
-  deleteProp = (e, id) => {
-    Meteor.call('deleteProp', id);
-  }
+
+    deleteProp = (e, id) => {
+      Meteor.call('deleteProp', id);
+    }
+
 
   propertyTable() {
     const property = this.props.property;

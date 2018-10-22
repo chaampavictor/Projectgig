@@ -40,7 +40,7 @@ export class Profile extends React.Component {
             <div className="card ">
               <div className="card-content ">
                 <span className="card-title center">
-                  <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 99 + "%",height: 200 + "px"}} className="uploaded-image" alt="No Image Uploaded"/>
+                  <img src={`/uploads/${prop.imageId}.${prop.imageType}`} style={{width: 80 + "%",height: 200 + "px"}} className="uploaded-image" alt="No Image Uploaded"/>
                 </span>
                 <br/>
                 <div className="center">
@@ -84,7 +84,6 @@ export class Profile extends React.Component {
             {this.renderProperty()}
           </div>
         </div>
-        <div className="page-height"/>
         <hr className="alt-hr"/>
         <Footer/>
       </div>

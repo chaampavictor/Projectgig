@@ -34,7 +34,6 @@ import {UserFiles} from '../../imports/api/property/collections.js'
         });
       }
       reader.readAsDataURL(file)
-              console.log(file);
         if (file) {
           let uploadInstance = UserFiles.insert({
             file: file,
@@ -57,14 +56,11 @@ import {UserFiles} from '../../imports/api/property/collections.js'
 
 
           uploadInstance.on('start', function () {
-         console.log('Starting');
        })
 
 
           uploadInstance.on('end', function (error, fileObj) {
-           console.log('On end File Object: ', fileObj);
            const id = fileObj._id
-           console.log(id);
            Session.set({
              imageId: fileObj._id,
              imageType: fileObj.ext
@@ -74,8 +70,6 @@ import {UserFiles} from '../../imports/api/property/collections.js'
 
 
         uploadInstance.on('uploaded', function (error, fileObj) {
-
-          console.log('uploaded: ', fileObj);
 
           // Remove the filename from the upload box
           self.refs['fileinput'].value = '';
@@ -91,8 +85,6 @@ import {UserFiles} from '../../imports/api/property/collections.js'
 
 
           uploadInstance.on('progress', function (progress, fileObj) {
-          console.log('Upload Percentage: ' + progress)
-          // Update our progress bar
           self.setState({
             progress: progress
           });

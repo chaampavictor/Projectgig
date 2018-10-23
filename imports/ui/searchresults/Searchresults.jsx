@@ -47,6 +47,9 @@ class Searchresults extends React.Component {
         <Navbar/>
         <div className="container">
           <Altsearch/>
+          <div>
+          <h6 className="center"><a href="/listedproperty">View Listed Properties<i className="fa fa-home"></i> </a></h6>
+        </div>
           <br/>
           <br/>
           {this.g()}

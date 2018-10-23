@@ -56,7 +56,7 @@ class Registration extends React.Component {
                 <div className="card">
                   <br/>
                   <h5 className="card-title center">
-                    signup</h5>
+                    Signup</h5>
                   <div className="card-content">
                     <form className="col s12 " onSubmit={this.saveUserDetails}>
                       <div className="row">

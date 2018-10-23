@@ -71,7 +71,7 @@ export class EditAccount extends React.Component {
                 <div className="card">
                   <br/>
                   <h5 className="card-title center">
-                    signup</h5>
+                    Edit Account Details</h5>
                   <div className="card-content">
                     <form className="col s12 " onSubmit={this.editUserDetails}>
                       <div className="row">
@@ -94,7 +94,7 @@ export class EditAccount extends React.Component {
                       </div>
                       <button className="btn waves-effect waves-light submit-button center" type="submit" name="action">Submit</button>
                     </form>
-                    <a href="/login" className={`${this.props.login} link`}>already have an account?</a>
+                    <a href="#">View user profile</a>
                   </div>
                 </div>
               </div>

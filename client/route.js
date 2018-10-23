@@ -1,22 +1,23 @@
 import React from 'react';
 import {mount} from 'react-mount-layout';
-import Landing from '../client/Landing.jsx';
-import NotFound from '../client/NotFound.jsx';
-import About from '../client/about/About.jsx';
-import Dashlogin from '../client/dashlogin/Dashlogin.jsx';
-import Dashboard from '../client/dashboard/Dashboard.jsx';
-import Dashuser from '../client/dashboard/Dashuser.jsx';
-import Registration from '../client/registration/Registration.jsx';
-import Property from '../client/property/Property.jsx';
-import EditProperty from '../client/property/EditProperty.jsx';
-import Propertydetail from '../client/propertydetail/Propertydetail.jsx';
-import Listedproperty from '../client/listedproperty/Listedproperty.jsx';
-import Profile from '../client/profile/Profile.jsx';
-import EditAccount from '../client/profile/EditAccount.jsx';
-import Login from '../client/login/Login.jsx';
-import Searchresults from '../client/searchresults/Searchresults.jsx';
-import Terms from '../client/terms/Terms.jsx';
-import Privacy from '../client/privacy/Privacy.jsx';
+import Landing from '../imports/ui/Landing.jsx';
+import NotFound from '../imports/ui/NotFound.jsx';
+import About from '../imports/ui/about/About.jsx';
+import Dashboard from '../imports/ui/dashboard/Dashboard.jsx';
+import Dashuser from '../imports/ui//dashboard/Dashuser.jsx';
+import Registration from '../imports/ui/registration/Registration.jsx';
+import Property from '../imports/ui/property/Property.jsx';
+import EditProperty from '../imports/ui/property/EditProperty.jsx';
+import EditAccount from '../imports/ui/profile/EditAccount.jsx';
+import DeleteAccount from '../imports/ui/profile/DeleteAccount.jsx';
+import Propertydetail from '../imports/ui/propertydetail/Propertydetail.jsx';
+import Listedproperty from '../imports/ui/listedproperty/Listedproperty.jsx';
+import Profile from '../imports/ui/profile/Profile.jsx';
+import Login from '../imports/ui/login/Login.jsx';
+import Searchresults from '../imports/ui/searchresults/Searchresults.jsx';
+import Terms from '../imports/ui/terms/Terms.jsx';
+import Privacy from '../imports/ui/privacy/Privacy.jsx';
+
 
 
 
@@ -27,13 +28,42 @@ loggedIn = FlowRouter.group({
       function(){
           if (!(Meteor.loggingIn() || Meteor.userId())) {
               return FlowRouter.go("/login");
-          } else if (!Roles.userIsInRole( Meteor.userId(), 'admin')) {
+          } else if (!Roles.userIsInRole( Meteor.userId(), 'Admin')) {
             // return FlowRouter.go("/");
           }
       }
   ]
 });
 
+
+
+const adminRoutes = FlowRouter.group({
+  triggersEnter: [
+    () => {
+      if (!(Meteor.loggingIn() || Meteor.userId())) {
+        return FlowRouter.go('/login');
+      }
+      else if (!Roles.userIsInRole(Meteor.userId(), ['content-manager', 'admin'])) {
+       return FlowRouter.go('/');
+     }
+    },
+  ],
+});
+
+
+
+adminRoutes.route('/dashboard', {
+  name: 'Admin',
+  action() {
+    mount(Dashboard, { children: <Dashboard /> });
+  },
+});
+adminRoutes.route('/dashuser', {
+  name: 'dashuser',
+  action() {
+    mount(Dashuser, { children: <Dashuser /> });
+  },
+});
 
 
 FlowRouter.route('/', {
@@ -59,12 +89,7 @@ open.route('/login', {
       });
     }
 });
-open.route('/editaccount', {
-    action: () => {
-      mount(EditAccount,{
-      });
-    }
-});
+
 loggedIn.route('/property', {
     action: () => {
       mount(Property,{
@@ -75,6 +100,18 @@ loggedIn.route('/property', {
 loggedIn.route('/editproperty', {
     action: () => {
       mount(EditProperty,{
+      });
+    }
+});
+loggedIn.route('/editaccount', {
+    action: () => {
+      mount(EditAccount,{
+      });
+    }
+});
+loggedIn.route('/deleteaccount', {
+    action: () => {
+      mount(DeleteAccount,{
       });
     }
 });
@@ -120,15 +157,21 @@ loggedIn.route('/dashboard', {
     });
   }
 });
-loggedIn.route('/dashuser', {
+loggedIn.route('/statistics', {
   action: () => {
-    mount(Dashuser,{
+    mount(Statistics,{
     });
   }
 });
-loggedIn.route('/dashLogin', {
+loggedIn.route('/dashUserProperty', {
   action: () => {
-    mount(Dashlogin,{
+    mount(DashUserProperty,{
+    });
+  }
+});
+loggedIn.route('/dashuser', {
+  action: () => {
+    mount(Dashuser,{
     });
   }
 });

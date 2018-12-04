@@ -29,7 +29,7 @@ export default class Tab extends Component {
           <div className="row">
             <div className="col s12 m7 l12">
                 <div className="card-content tab-style center">
-                  <p>Nidavel is a web based application that provides people with a platform were they can easily search for and find accomodation<br/> that suits their needs.</p>
+                  <p>Grippo is a web based application that provides people with a platform were they can easily search for and find accomodation<br/> that suits their needs.</p>
                 </div>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default class Tab extends Component {
             <div className="col s12 m7 l12">
                 <div className="card-content tab-style center">
                   <p>Hear me and rejoice, the privelage to view the children of <span className="span_delete">thanos</span> is upon you.</p>
-                  <p>The varguely irritating persons listed below might or might not possess skills straight from the furnances of Nidavellir </p>
+                  <p>The varguely irritating persons listed below might or might not possess skills straight from the furnances of Grippolir </p>
                 </div>
             </div>
           </div>

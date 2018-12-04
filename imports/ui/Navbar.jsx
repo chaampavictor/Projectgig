@@ -67,7 +67,7 @@ componentDidMount(){
       </ul>
       <a href="#" data-activates="slide-out" className="button-collapse fixed default-margin"><i className="small fa fa-bars footer-icon"></i></a>
       <div className="right logged-nav-button">
-        <a href="/" className={` link `}>Nidavel</a>
+        <a href="/" className={` link `}>Gripp<span id="logostyle">O</span></a>
         <a href="/about" className={`${this.about} link`}><button id="nav-buttons">About</button></a>
         <a href="#" onClick={e => this.logout(e)}><button  id="nav-buttons">Logout</button></a>
       </div>
@@ -75,7 +75,7 @@ componentDidMount(){
     :
 <>
 
-<h6 className="default-margin"><a href="/" className={` link`}>Nidavel</a></h6>
+<h6 className="default-margin"><a href="/" className={` link`}>Gripp<span id="logostyle">O</span></a></h6>
   <div className="right nav-button">
     <a href="/registration"><button id="nav-buttons">Signup</button></a>
     <a href="/about"><button id="nav-buttons">About</button></a>

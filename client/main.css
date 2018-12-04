@@ -1,4 +1,10 @@
 /* CSS declarations go here */
+#logostyle{
+  color: red !important;
+  font-size: 30px;
+  font-family: initial;
+  font-style: oblique;
+}
 
 .card-image{
 margin-bottom: 15px;

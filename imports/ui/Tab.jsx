@@ -29,7 +29,7 @@ export default class Tab extends Component {
           <div className="row">
             <div className="col s12 m7 l12">
                 <div className="card-content tab-style center">
-                  <p>Grippo is a web based application that provides people with a platform were they can easily search for and find accomodation<br/> that suits their needs.</p>
+                  <p>Gryppo is a web based application that provides people with a platform were they can easily search for and find accomodation<br/> that suits their needs.</p>
                 </div>
             </div>
           </div>
@@ -45,12 +45,18 @@ export default class Tab extends Component {
           </div>
         </div>
 
+
+
+
+
+
+
         <div id="test3" className="col s12 tab-style">
           <div className="row">
             <div className="col s12 m7 l12">
                 <div className="card-content tab-style center">
                   <p>Hear me and rejoice, the privelage to view the children of <span className="span_delete">thanos</span> is upon you.</p>
-                  <p>The varguely irritating persons listed below might or might not possess skills straight from the furnances of Grippolir </p>
+                  <p>The varguely irritating persons listed below might or might not possess skills straight from the furnances of Gryppolir </p>
                 </div>
             </div>
           </div>

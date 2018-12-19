@@ -1,9 +1,28 @@
 /* CSS declarations go here */
 #logostyle{
-  color: red !important;
-  font-size: 30px;
+  font-size: 20px;
   font-family: initial;
   font-style: oblique;
+  background: -webkit-linear-gradient(#fe8c00, #f83600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#secondlogostyle{
+  font-size: 25px;
+  font-family: initial;
+  font-style: oblique;
+  background: -webkit-linear-gradient(#fe8c00, #f83600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#logosize{
+  font-size: 20px !important;
+}
+
+.navlogo{
+color: white;
+margin-bottom: 25px;
 }
 
 .card-image{
@@ -148,9 +167,9 @@ margin-bottom: 15px;
 }
 
 .navbar-fixed {
-  height: 64px;
-  margin-top: 23px;
-  margin-bottom: -23px;
+    height: 78px;
+    margin-top: 9px;
+    margin-bottom: -23px;
 }
 
 #nav-buttons {
@@ -767,6 +786,8 @@ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default
   margin-left: 8px !important;
 }
 
-/*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-
-}*/
+.notfoundtext{
+  background: -webkit-linear-gradient(#fe8c00, #f83600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

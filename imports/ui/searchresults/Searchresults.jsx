@@ -12,7 +12,7 @@ class Searchresults extends React.Component {
     return (
       <div className="notfound center">
         <br/><br/><br/>
-          <h5>Sorry!! No property found in that location </h5>
+          <h5 className="notfoundtext">Sorry!! No property found in that location </h5>
       </div>
     );
   }

@@ -17,7 +17,7 @@ export default class Termsandconditions extends Component {
                 </h1>
               </center>
               <p>
-                Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern Nidavel’s relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website. The term ‘Nidavel’ or ‘us’ or ‘we’ refers to the owner of the website. The term ‘you’ refers to the user or viewer of our website. The use of this website is subject to the following terms of use:
+                Welcome to our website. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern Gryppo’s relationship with you in relation to this website. If you disagree with any part of these terms and conditions, please do not use our website. The term ‘Gryppo’ or ‘us’ or ‘we’ refers to the owner of the website. The term ‘you’ refers to the user or viewer of our website. The use of this website is subject to the following terms of use:
               </p>
               <ol>
                 <li>The content of the pages of this website is for your general information and use only. It is subject to change without notice.</li>

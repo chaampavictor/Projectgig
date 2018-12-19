@@ -792,3 +792,19 @@ input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+@font-face {
+ font-family: ‘digital_dream_fatregular’;
+   src: url(‘/fonts/digitaldreamfat-webfont.eot’);
+   src: url(‘/fonts/digitaldreamfat-webfont.eot?#iefix’) format(‘embedded-opentype’),
+     url(‘/fonts/digitaldreamfat-webfont.woff’) format(‘woff’),
+     url(‘/fonts/digitaldreamfat-webfont.ttf’) format(‘truetype’),
+     url(‘/fonts/digitaldreamfat-webfont.svg#digital_dream_fatregular’) format(‘svg’);
+ font-weight: normal;
+ font-style: normal;
+}
+
+/*body{
+ font-family: ‘digital_dream_fatregular’;
+}*/

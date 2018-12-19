@@ -9,6 +9,7 @@
 }
 #secondlogostyle{
   font-size: 25px;
+  font-weight: bold;
   font-family: initial;
   font-style: oblique;
   background: -webkit-linear-gradient(#fe8c00, #f83600);
